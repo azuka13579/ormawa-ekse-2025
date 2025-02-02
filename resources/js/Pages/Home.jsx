@@ -65,7 +65,7 @@ export default function Home({ nama }) {
                         <p className="text-lg text-white pt-4 max-w-[549px]">
                             <span className="font-bold">
                                 Ormawa Eksekutif PKU IPB
-                            </span>{" "}
+                            </span>
                             merupakan organisasi kemahasiswaan di lingkup
                             Pendidikan Kompetensi Umum yang dikhususkan untuk
                             mahasiswa tingkat PKU IPB. Fungsinya melibatkan
@@ -123,7 +123,9 @@ export default function Home({ nama }) {
                         luar biasa yang berawal dari sebuah mimpi.
                     </p>
                 </div>
-                <h1 className="font-bold text-8xl text-black">WOY INI AZKA</h1>
+                <h1 className="font bold">
+                    INI ALPAT ANJNG
+                </h1>
             </motion.div>
         </div>
     );
