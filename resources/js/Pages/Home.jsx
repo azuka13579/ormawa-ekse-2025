@@ -123,9 +123,7 @@ export default function Home({ nama }) {
                         luar biasa yang berawal dari sebuah mimpi.
                     </p>
                 </div>
-                <h1 className="font bold">
-                    INI ALPAT ANJNG
-                </h1>
+                <h1 className="font bold">Balik Lagi</h1>
             </motion.div>
         </div>
     );
