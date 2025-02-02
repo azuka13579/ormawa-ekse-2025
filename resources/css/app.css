@@ -1,6 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Custom Arrow Styling */
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  opacity: 0.8;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none; /* Menghilangkan default arrow */
+}
+/* Custom carousel styling */
+.slick-slide:not(.slick-center) {
+  opacity: 0.5;
+  transform: scale(0.85);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.slick-slide.slick-center {
+  opacity: 1;
+  border-radius: 20px;
+  transform: scale(1);
+}
+/* resources/css/app.css */
+.slick-slide {
+  @apply transition-all duration-500 ease-out;
+}
+
+.slick-center .absolute {
+  transform: scale(1) !important;
+  z-index: 20;
+}
+
+.slick-slide:not(.slick-center) .absolute {
+  transform: scale(0.85) translateX(25%);
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.slick-slide:not(.slick-center):nth-child(odd) .absolute {
+  transform: scale(0.85) translateX(-25%);
+}
 /* Mobile menu at the bottom */
 .md\:hidden {
     position: fixed;

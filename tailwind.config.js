@@ -12,6 +12,7 @@ export default {
             colors: {
                 sakarsaBlue: "#B8F2FF",
                 fontcolors: "#1B697D",
+                biru:'#16CDD8',
             },
             fontFamily: {
                 montserrat: ["Montserrat", "sans-serif"],
