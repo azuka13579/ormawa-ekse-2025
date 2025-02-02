@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
 import Navbar from "../Components/Navbar";
 import { motion } from "framer-motion"; // Import motion dari framer-motion
-import Carousel from "../Components/Corousel";
 import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
+import SakarsaDaily from '../Components/SakarsaDaily';
 
 export default function Home() {
-    const sliderRef = useRef(null);
-    const [headerRef, headerInView] = useInView({ triggerOnce: false, threshold: 0.2 });
-    const [sectionRef, sectionInView] = useInView({ triggerOnce: false, threshold: 0.2 });
-    const [textRef, textInView] = useInView({ triggerOnce: false, threshold: 0.2 });
-    const [carouselRef, carouselInView] = useInView({ triggerOnce: false, threshold: 0.2 });
+
+    
+    const [headerRef, headerInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
+    const [sectionRef, sectionInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
+    const [textRef, textInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
+
+    const [carouselRef, carouselInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
+        
 
     // Variants for animations
     const headerVariants = {
@@ -53,7 +56,6 @@ export default function Home() {
             }
         })
     };
-
     const carouselVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
@@ -179,10 +181,10 @@ export default function Home() {
                     </h2>
                 </motion.div>
 
-                {['Samudra', 'Wirakarsa'].map((title, i) => (
+                {['Samudra'].map((title) => (
                     <motion.div
                         key={title}
-                        custom={i+1}
+                        custom={1}
                         variants={textBlockVariants}
                     >
                         <div className='bg-biru rounded-3xl text-align max-w-[150px] mx-auto'>
@@ -191,6 +193,22 @@ export default function Home() {
                         <div className="py-5 max-w-[1200px] mx-auto rounded-3xl">
                             <p className="text-2xl text-fontcolors font-montserrat">
                         <span className="font-bold">Samudra</span> melambangkan dimensi tak terhingga dari potensi manusia, tak terbatas, mendalam, dan penuh misteri. Setiap gelombang membawa kisah perjuangan, setiap arus mengandung kekuatan transformasi.
+                        </p>
+                        </div>
+                    </motion.div>
+                ))}
+                {['Wirakarsa'].map((title) => (
+                    <motion.div
+                        key={title}
+                        custom={2}
+                        variants={textBlockVariants}
+                    >
+                        <div className='bg-biru rounded-3xl text-align max-w-[150px] mx-auto'>
+                            <h1 className='font-montserrat text-2xl font-bold text-white p-2'>{title}</h1>
+                        </div>
+                        <div className="py-5 max-w-[1200px] mx-auto rounded-3xl">
+                            <p className="text-2xl text-fontcolors font-montserrat">
+                        <span className="font-bold">Wirakarsa</span> adalah spirit kami, semangat para pejuang yang tidak sekadar bermimpi, namun menciptakan realitas.
                         </p>
                         </div>
                     </motion.div>
@@ -206,43 +224,9 @@ export default function Home() {
                         </p>
                 </motion.div>
             </motion.div>
-            <motion.div
-                ref={carouselRef}
-                initial="hidden"
-                animate={carouselInView ? "visible" : "hidden"}
-                variants={carouselVariants}
-                className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative">
-        <div className="relative">
-          <h1 className="font-rowdies text-5xl text-fontcolors">
-            Sakarsa’s
-          </h1>
-          <h3 className="font-montserrat text-xl text-fontcolors pb-10">
-            Weekly Daily
-          </h3>
-        
-          {/* Custom Arrows */}
-          <div className="absolute right-6 top-1/2 -translate-y-1/2 flex gap-4 z-10">
-            <button 
-              className="slick-prev-arrow bg-white p-2 rounded-full hover:bg-fontcolors transition"
-              onClick={() => sliderRef.current?.slickPrev()}
-            >
-              <svg className="w-6 h-6 text-fontcolors hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button 
-              className="slick-next-arrow bg-white p-2 rounded-full hover:bg-fontcolors transition"
-              onClick={() => sliderRef.current?.slickNext()}
-            >
-              <svg className="w-6 h-6 text-fontcolors hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        
-        <Carousel ref={sliderRef} />
-        </motion.div>
+            {/* Konten lain */}
+            <SakarsaDaily />
+            
         </div>
     );
 }
