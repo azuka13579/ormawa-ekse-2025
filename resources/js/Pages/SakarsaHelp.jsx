@@ -7,7 +7,7 @@ export default function SakarsaHelp() {
     <div>
         <Navbar />
       <Head title="Sakarsa Help" />
-      <h1>Hello World</h1>
+      <h1>Hello Dunia Indonesia</h1>
     </div>
   );
 }
