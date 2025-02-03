@@ -12,11 +12,15 @@ export default {
             colors: {
                 sakarsaBlue: "#B8F2FF",
                 fontcolors: "#1B697D",
+<<<<<<< HEAD
                 primary1: "#b9f2ff",
                 primary2: "#6ddaed",
                 primary3: "#a6cdd8",
                 primary4: "#1b697d",
                 primary5: "#124B56",
+=======
+                biru:'#16CDD8',
+>>>>>>> ec64172e5051d84902c8d60eefdf82f4abea93ed
             },
 
             fontFamily: {
