@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer"; // Import useInView unt
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
+import { Head } from "@inertiajs/react";
 
 export default function Home() {
     const [headerRef, headerInView] = useInView({
@@ -92,9 +93,10 @@ export default function Home() {
         <div>
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
+                <Head title="Beranda" />
 
                 {/* Animasi untuk bagian pertama */}
-                <div className="h-full flex flex-1">
+                <div className="h-full flex flex-1 mx-auto">
                     <div className="w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 ml-20 flex-col">
                         <div
                             className="font-rowdies font-bold text-6xl"
