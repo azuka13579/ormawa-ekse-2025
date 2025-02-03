@@ -24,15 +24,14 @@
         "lucide-react": "^0.474.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-<<<<<<< HEAD
+
         "react-icons": "^5.4.0",
         "react-intersection-observer": "^9.15.1",
-        "react-owl-carousel": "^2.3.3"
-=======
-        "react-intersection-observer": "^9.15.1",
+        "react-owl-carousel": "^2.3.3",
+  
         "react-slick": "^0.30.3",
         "slick-carousel": "^1.8.1",
         "swiper": "^11.2.2"
->>>>>>> ec64172e5051d84902c8d60eefdf82f4abea93ed
+
     }
 }

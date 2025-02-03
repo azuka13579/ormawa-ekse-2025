@@ -1,47 +1,65 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
 import { motion } from "framer-motion"; // Import motion dari framer-motion
 import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
-import SakarsaDaily from '../Components/SakarsaDaily';
+
+import SakarsaDaily from "../Components/SakarsaDaily";
 
 export default function Home() {
+    const [headerRef, headerInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+        trackVisibility: true,
+        delay: 100,
+    });
+    const [sectionRef, sectionInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+        trackVisibility: true,
+        delay: 100,
+    });
+    const [textRef, textInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+        trackVisibility: true,
+        delay: 100,
+    });
 
-    
-    const [headerRef, headerInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
-    const [sectionRef, sectionInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
-    const [textRef, textInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
-
-    const [carouselRef, carouselInView] = useInView({ triggerOnce: false, threshold: 0.2, trackVisibility: true, delay: 100 });
-        
+    const [carouselRef, carouselInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+        trackVisibility: true,
+        delay: 100,
+    });
 
     // Variants for animations
     const headerVariants = {
         hidden: { opacity: 0, y: 50, scale: 0.95 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
+        visible: {
+            opacity: 1,
+            y: 0,
             scale: 1,
-            transition: { 
-                type: "spring", 
+            transition: {
+                type: "spring",
                 stiffness: 100,
                 damping: 20,
-                staggerChildren: 0.3
-            }
-        }
+                staggerChildren: 0.3,
+            },
+        },
     };
 
     const sectionVariants = {
         hidden: { opacity: 0, x: -50 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             x: 0,
             transition: {
                 type: "tween",
                 ease: "easeOut",
                 duration: 1.2,
-                delay: 0.3
-            }
-        }
+                delay: 0.3,
+            },
+        },
     };
 
     const textBlockVariants = {
@@ -52,9 +70,9 @@ export default function Home() {
             transition: {
                 delay: i * 0.2,
                 type: "spring",
-                stiffness: 120
-            }
-        })
+                stiffness: 120,
+            },
+        }),
     };
     const carouselVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -64,9 +82,9 @@ export default function Home() {
             transition: {
                 type: "tween",
                 ease: "anticipate",
-                duration: 0.8
-            }
-        }
+                duration: 0.8,
+            },
+        },
     };
 
     return (
@@ -102,12 +120,11 @@ export default function Home() {
 
             {/* Animasi untuk bagian kedua */}
             <motion.div
-           
-           ref={sectionRef}
-           initial="hidden"
-           animate={sectionInView ? "visible" : "hidden"}
-           variants={sectionVariants}
-           className="px-10 py-10 max-w-screen-xl max-h-[1000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+                ref={sectionRef}
+                initial="hidden"
+                animate={sectionInView ? "visible" : "hidden"}
+                variants={sectionVariants}
+                className="px-10 py-10 max-w-screen-xl max-h-[1000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
             >
                 <div className="text-center mb-8">
                     <h1 className="text-6xl font-bold text-white font-rowdies">
@@ -167,7 +184,7 @@ export default function Home() {
                 animate={textInView ? "visible" : "hidden"}
                 className="text-center pt-10"
             >
-                <motion.div 
+                <motion.div
                     custom={0}
                     variants={textBlockVariants}
                     className="px-10 pt-10 pb-4 max-w-[1000px] mx-auto rounded-3xl"
@@ -180,35 +197,47 @@ export default function Home() {
                     </h2>
                 </motion.div>
 
-                {['Samudra'].map((title) => (
+                {["Samudra"].map((title) => (
                     <motion.div
                         key={title}
                         custom={1}
                         variants={textBlockVariants}
                     >
-                        <div className='bg-biru rounded-3xl text-align max-w-[150px] mx-auto'>
-                            <h1 className='font-montserrat text-2xl font-bold text-white p-2'>{title}</h1>
+                        <div className="bg-biru rounded-3xl text-align max-w-[150px] mx-auto">
+                            <h1 className="font-montserrat text-2xl font-bold text-white p-2">
+                                {title}
+                            </h1>
                         </div>
                         <div className="py-5 max-w-[1200px] mx-auto rounded-3xl">
                             <p className="text-2xl text-fontcolors font-montserrat">
-                        <span className="font-bold">Samudra</span> melambangkan dimensi tak terhingga dari potensi manusia, tak terbatas, mendalam, dan penuh misteri. Setiap gelombang membawa kisah perjuangan, setiap arus mengandung kekuatan transformasi.
-                        </p>
+                                <span className="font-bold">Samudra</span>{" "}
+                                melambangkan dimensi tak terhingga dari potensi
+                                manusia, tak terbatas, mendalam, dan penuh
+                                misteri. Setiap gelombang membawa kisah
+                                perjuangan, setiap arus mengandung kekuatan
+                                transformasi.
+                            </p>
                         </div>
                     </motion.div>
                 ))}
-                {['Wirakarsa'].map((title) => (
+                {["Wirakarsa"].map((title) => (
                     <motion.div
                         key={title}
                         custom={2}
                         variants={textBlockVariants}
                     >
-                        <div className='bg-biru rounded-3xl text-align max-w-[150px] mx-auto'>
-                            <h1 className='font-montserrat text-2xl font-bold text-white p-2'>{title}</h1>
+                        <div className="bg-biru rounded-3xl text-align max-w-[150px] mx-auto">
+                            <h1 className="font-montserrat text-2xl font-bold text-white p-2">
+                                {title}
+                            </h1>
                         </div>
                         <div className="py-5 max-w-[1200px] mx-auto rounded-3xl">
                             <p className="text-2xl text-fontcolors font-montserrat">
-                        <span className="font-bold">Wirakarsa</span> adalah spirit kami, semangat para pejuang yang tidak sekadar bermimpi, namun menciptakan realitas.
-                        </p>
+                                <span className="font-bold">Wirakarsa</span>{" "}
+                                adalah spirit kami, semangat para pejuang yang
+                                tidak sekadar bermimpi, namun menciptakan
+                                realitas.
+                            </p>
                         </div>
                     </motion.div>
                 ))}
@@ -219,13 +248,23 @@ export default function Home() {
                     className="py-10 max-w-[1200px] mx-auto rounded-3xl"
                 >
                     <p className="text-2xl text-fontcolors font-montserrat">
-                        <span className="font-bold">Samudra Wirakarsa </span> menjadi navigator peradaban, mengarungi tantangan dengan keberanian, mendobrak batas-batas dengan kreativitas, dan membangun jembatan menuju masa depan yang lebih cerah. Samudra Wirakarsa adalah pernyataan bahwa pemimpin sejati tidak menunggu perubahan, melainkan menciptakannya. Kami adalah gelegar inspirasi yang memecah kesunyian, cahaya yang menembus kegelapan, dan harapan yang tak pernah padam. Ini lah Samudra Wirakarsa, di mana setiap pikiran adalah gelombang perubahan, setiap gelombang adalah revolusi, dan setiap derap adalah sejarah.
-                        </p>
+                        <span className="font-bold">Samudra Wirakarsa </span>{" "}
+                        menjadi navigator peradaban, mengarungi tantangan dengan
+                        keberanian, mendobrak batas-batas dengan kreativitas,
+                        dan membangun jembatan menuju masa depan yang lebih
+                        cerah. Samudra Wirakarsa adalah pernyataan bahwa
+                        pemimpin sejati tidak menunggu perubahan, melainkan
+                        menciptakannya. Kami adalah gelegar inspirasi yang
+                        memecah kesunyian, cahaya yang menembus kegelapan, dan
+                        harapan yang tak pernah padam. Ini lah Samudra
+                        Wirakarsa, di mana setiap pikiran adalah gelombang
+                        perubahan, setiap gelombang adalah revolusi, dan setiap
+                        derap adalah sejarah.
+                    </p>
                 </motion.div>
             </motion.div>
             {/* Konten lain */}
             <SakarsaDaily />
-            
         </div>
     );
 }
