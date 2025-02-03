@@ -75,18 +75,10 @@ export default function Home() {
 
             {/* Animasi untuk bagian pertama */}
             <motion.div
-<<<<<<< HEAD
                 initial={{ opacity: 0, y: 50 }} // Mulai dari opacity 0 dan geser sedikit ke bawah
                 animate={{ opacity: inView ? 0 : 1 }} // Setelah animasi, opacity jadi 1 dan kembali ke posisi semula
                 transition={{ duration: 0.8 }} // Durasi animasi 1 detik
                 className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-4 md:space-y-0 max-w[500px]"
-=======
-               ref={headerRef}
-               initial="hidden"
-               animate={headerInView ? "visible" : "hidden"}
-               variants={headerVariants}
-               className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-4 md:space-y-0 max-w[500px]"
->>>>>>> ec64172e5051d84902c8d60eefdf82f4abea93ed
             >
                 {/* Teks */}
                 <div className="max-w-[600px] font-rowdies">
