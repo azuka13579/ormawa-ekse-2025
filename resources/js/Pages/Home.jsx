@@ -17,7 +17,7 @@ export default function Home({ nama }) {
             <motion.div
                 initial={{ opacity: 0, y: 50 }} // Mulai dari opacity 0 dan geser sedikit ke bawah
                 animate={{ opacity: inView ? 0 : 1 }} // Setelah animasi, opacity jadi 1 dan kembali ke posisi semula
-                transition={{ duration: 1.5, delay: 0.5 }} // Durasi animasi 1 detik
+                transition={{ duration: 0.8 }} // Durasi animasi 1 detik
                 className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-4 md:space-y-0 max-w[500px]"
             >
                 {/* Teks */}

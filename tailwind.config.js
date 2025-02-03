@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -12,7 +12,13 @@ export default {
             colors: {
                 sakarsaBlue: "#B8F2FF",
                 fontcolors: "#1B697D",
+                primary1: "#b9f2ff",
+                primary2: "#6ddaed",
+                primary3: "#a6cdd8",
+                primary4: "#1b697d",
+                primary5: "#124B56",
             },
+
             fontFamily: {
                 montserrat: ["Montserrat", "sans-serif"],
                 rowdies: ["Rowdies", "cursive"],

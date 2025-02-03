@@ -18,3 +18,7 @@ Route::get('/samudra-store', function () {
 Route::get('/tentang', function () {
     return Inertia::render('Tentang');
 })->name('tentang');
+
+Route::get('/beranda', function () {
+    return Inertia::render('Beranda');
+})->name('beranda');
