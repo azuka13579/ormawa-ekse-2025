@@ -89,35 +89,39 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar />
+            <div className="md:h-screen bg-white flex flex-col">
+                <Navbar />
 
-            {/* Animasi untuk bagian pertama */}
-            <motion.div
-                initial={{ opacity: 0, y: 50 }} // Mulai dari opacity 0 dan geser sedikit ke bawah
-                animate={{ opacity: headerInView ? 0 : 1 }} // Setelah animasi, opacity jadi 1 dan kembali ke posisi semula
-                transition={{ duration: 0.8 }} // Durasi animasi 1 detik
-                className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-4 md:space-y-0 max-w[500px]"
-            >
-                {/* Teks */}
-                <div className="max-w-[600px] font-rowdies">
-                    <h1 className="text-8xl md:text-6xl font-bold text-fontcolors leading-snug">
-                        Arungi Samudra, Capai Cakrawala, Wujudkan Cita
-                    </h1>
-                    <p className="text-2xl text-black mt-2 font-montserrat">
-                        Kami hadir untuk membantu KM PKU IPB!
-                    </p>
+                {/* Animasi untuk bagian pertama */}
+                <div className="h-full flex flex-1">
+                    <div className="kiri w-3/5 bg-white text-primary5 h-full flex justify-center gap-6 ml-20 flex-col">
+                        <div
+                            className="font-rowdies font-bold text-6xl"
+                            data-aos="fade-right"
+                            data-aos-duration="800"
+                        >
+                            <p>Arungi Samudra,</p>
+                            <p>Gapai Cakrawala,</p>
+                            <p>Wujudkan Cita</p>
+                        </div>
+                        <p
+                            className="font-montserrat text-2xl"
+                            data-aos="fade-right"
+                            data-aos-duration="800"
+                            data-aos-delay="200"
+                        >
+                            Kami Hadir Untuk Membantu KM PKU IPB!
+                        </p>
+                    </div>
+                    <div className="kanan flex-1 flex justify-center bg-black ">
+                        <img
+                            src="img/Home.png"
+                            alt=""
+                            className="w-full relative object-cover"
+                        />
+                    </div>
                 </div>
-
-                {/* Gambar */}
-                <div className="w-full md:w-1/2 flex justify-center p-0">
-                    <img
-                        src="img/Home.png"
-                        alt="Logo Sakarsa"
-                        className="w-full md:w-[500px] h-auto"
-                    />
-                </div>
-            </motion.div>
-
+            </div>
             {/* Animasi untuk bagian kedua */}
             <motion.div
                 ref={sectionRef}
