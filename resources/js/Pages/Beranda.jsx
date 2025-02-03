@@ -55,7 +55,7 @@ export default function Beranda() {
             </div>
 
             <div className="px-6 bg-white text-white font-montserrat">
-                <div className="p-12 h-full w-full bg-primary4 rounded-lg flex flex-col gap-14 text-justify">
+                <div className="p-12 h-full w-full bg-primary4 rounded-lg flex flex-col gap-14 text-justify relative">
                     <div
                         className="flex flex-col gap-2 justify-center items-center"
                         data-aos="fade-up"
@@ -72,7 +72,7 @@ export default function Beranda() {
                             data-aos="fade-up"
                             data-aos-duration="800"
                         >
-                            <p className="text-primary1 text-3xl font-semibold mb-4">
+                            <p className="text-primary1 text-2xl font-semibold mb-4">
                                 Ormawa Eksekutif PKU IPB
                             </p>
                             <p className="font-light">
@@ -87,13 +87,16 @@ export default function Beranda() {
                                 IPB.
                             </p>
                         </div>
+                        <div className="flex justify-center items-center mx-1 absolute right-[50%]">
+                            <img src="img/Line.png" alt="Line Image" />
+                        </div>
                         <div
                             className="kanan"
                             data-aos="fade-up"
                             data-aos-duration="800"
                             data-aos-delay="150"
                         >
-                            <p className="text-primary1 text-3xl font-semibold mb-4">
+                            <p className="text-primary1 text-2xl font-semibold mb-4">
                                 Peran Ormawa Eksekutif PKU IPB
                             </p>
                             <p className=" font-light">
