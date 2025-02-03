@@ -14,7 +14,11 @@ import { useInView } from "react-intersection-observer"; // Import useInView unt
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
+<<<<<<< HEAD
 >>>>>>> b7fe374 (update)
+=======
+import { Head } from "@inertiajs/react";
+>>>>>>> f6dc351 (Update Dulu Mang)
 
 export default function Home() {
     
@@ -24,6 +28,7 @@ export default function Home() {
             <Head title="Ormawa Eksekutif PKU IPB" />
            
             <div className="md:h-screen bg-white flex flex-col">
+<<<<<<< HEAD
                 <div className="bg-biru p-7 mb-24 md:hidden items-center">
                     <img src="img/Logowir.png" alt="Logo Sakarsa" />
                 </div>
@@ -37,6 +42,13 @@ export default function Home() {
                     <div className="md:w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 md:ml-20 text-center flex-col">
 =======
                 <div className="h-full flex flex-1">
+=======
+                <Navbar />
+                <Head title="Beranda" />
+
+                {/* Animasi untuk bagian pertama */}
+                <div className="h-full flex flex-1 mx-auto">
+>>>>>>> f6dc351 (Update Dulu Mang)
                     <div className="w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 ml-20 flex-col">
 >>>>>>> b7fe374 (update)
                         <div

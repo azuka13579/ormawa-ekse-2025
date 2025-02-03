@@ -19,9 +19,13 @@ export default {
                 primary5: "#124B56",
                 biru: "#16CDD8",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 coklat: "#A83F27",
 =======
 >>>>>>> b7fe374 (update)
+=======
+                coklat: "#A83F27",
+>>>>>>> f6dc351 (Update Dulu Mang)
             },
 
             fontFamily: {
