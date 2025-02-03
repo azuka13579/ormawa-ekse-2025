@@ -3,7 +3,6 @@ import Footer from "../Components/Footer";
 import "../../css/owl.theme.css";
 import Card from "../Components/Card2";
 import OwlCarousel from "react-owl-carousel";
-import Card4 from "../Components/CardPrestasi";
 import Navbar2 from "../Components/Navbar2";
 export default function Beranda() {
     const options = {
@@ -174,76 +173,7 @@ export default function Beranda() {
                     </OwlCarousel>
                 </div>
             </div>
-            <div className="py-10 bg-white flex flex-col gap-10">
-                <div className="flex justify-between">
-                    <div
-                        className="px-16 text-primary5 flex flex-col gap-2"
-                        data-aos="fade-up"
-                        data-aos-duration="800"
-                    >
-                        <h1 className="font-rowdies text-5xl font-bold">
-                            Prestasi
-                        </h1>
-                        <h2 className="font-montserrat font font-semibold text-4xl text-primary4">
-                            KM PKU IPB
-                        </h2>
-                    </div>
-                    <div
-                        className="px-16 text-primary5 flex flex-col justify-end gap-2"
-                        data-aos="fade-up"
-                        data-aos-duration="800"
-                    >
-                        <h2 className="font-montserrat font font-semibold text-4xl text-primary4 border-b-2 border-transparent hover:scale-105 hover:border-primary5 transition duration-150">
-                            Semua Prestasi
-                        </h2>
-                    </div>
-                </div>
-                <div className="flex gap-10 px-16">
-                    <div className=" w-3/5 text-primary5 rounded-lg group transition duration-300">
-                        <div
-                            className="overflow-hidden rounded-lg"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                        >
-                            <img
-                                src="https://osccdn.medcom.id/images/content/2022/02/21/68b0b9759f7d965cdd82cdee8154bbf6.png"
-                                alt=""
-                                className=" rounded-lg object-cover w-full group-hover:scale-125 transition duration-700 ease-in-out"
-                            />
-                        </div>
-                        <div className="pr-2">
-                            <h1
-                                className="font-bold text-3xl mt-4"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-anchor-placement="center-bottom"
-                            >
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Placeat, perferendis.
-                            </h1>
-                            <p
-                                className="mt-2"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-anchor-placement="center-bottom"
-                            >
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Vero consequuntur excepturi,
-                                aut voluptatum tenetur ipsam nobis nam,
-                                temporibus praesentium voluptatibus, nihil
-                                iusto. Eius iusto similique illum velit sed,
-                                pariatur rerum id repellendus suscipit, dicta,
-                                possimus facilis. Fuga corporis enim quos.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex-1 flex flex-col gap-4">
-                        <Card4></Card4>
-                        <Card4></Card4>
-                        <Card4></Card4>
-                    </div>
-                </div>
-            </div>
+            
 
             <Footer></Footer>
         </>
