@@ -18,6 +18,7 @@ export default {
                 primary4: "#1b697d",
                 primary5: "#124B56",
                 biru: "#16CDD8",
+                coklat: "#A83F27",
             },
 
             fontFamily: {
