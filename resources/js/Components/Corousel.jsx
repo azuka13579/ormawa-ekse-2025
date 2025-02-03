@@ -46,7 +46,7 @@ const Carousel = forwardRef((props, ref) => {
   ];
 
   return (
-    <div className="carousel-container mx-auto max-w-4xl px-4">
+    <div className="carousel-container mx-auto max-w-8xl px-4">
       <Slider ref={ref} {...settings}>
         {images.map((img, index) => (
           <div key={index} className="relative">
@@ -54,7 +54,7 @@ const Carousel = forwardRef((props, ref) => {
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}
-                className="rounded-xl shadow-xl w-96"
+                className="h-80 rounded-xl shadow-xl w-96"
               />
             </div>
           </div>
