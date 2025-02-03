@@ -17,6 +17,7 @@ export default {
                 primary3: "#a6cdd8",
                 primary4: "#1b697d",
                 primary5: "#124B56",
+                biru: "#16CDD8",
             },
 
             fontFamily: {
