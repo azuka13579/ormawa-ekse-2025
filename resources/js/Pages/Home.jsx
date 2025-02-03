@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
+<<<<<<< HEAD
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
@@ -7,6 +8,13 @@ import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 
+=======
+import { motion } from "framer-motion"; // Import motion dari framer-motion
+import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
+import Card4 from "../Components/CardPrestasi";
+import SakarsaDaily from "../Components/SakarsaDaily";
+import Footer from "../Components/Footer";
+>>>>>>> b7fe374 (update)
 
 export default function Home() {
     
@@ -21,11 +29,16 @@ export default function Home() {
                 </div>
             
                 {/* Animasi untuk bagian pertama */}
+<<<<<<< HEAD
                 <div className="h-full block md:flex flex-1 mx-auto"
                 data-aos="fade-up"
                         data-aos-duration="1000"
                 >
                     <div className="md:w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 md:ml-20 text-center flex-col">
+=======
+                <div className="h-full flex flex-1">
+                    <div className="w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 ml-20 flex-col">
+>>>>>>> b7fe374 (update)
                         <div
                             className="font-rowdies font-bold md:text-6xl text-4xl"
                             data-aos="fade-right"
@@ -44,7 +57,11 @@ export default function Home() {
                             Kami Hadir Untuk Membantu KM PKU IPB!
                         </p>
                     </div>
+<<<<<<< HEAD
                     <div className="flex justify-center ">
+=======
+                    <div className="kanan flex-1 flex justify-center ">
+>>>>>>> b7fe374 (update)
                         <img
                             src="img/Home.png"
                             alt=""
@@ -55,10 +72,19 @@ export default function Home() {
                 </div>
             </div>
             {/* Animasi untuk bagian kedua */}
+<<<<<<< HEAD
             <div
             data-aos="fade-up"
             data-aos-duration="800"
                 className="mt-6 px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+=======
+            <motion.div
+                ref={sectionRef}
+                initial="hidden"
+                animate={sectionInView ? "visible" : "hidden"}
+                variants={sectionVariants}
+                className="mt-6 px-10 py-10 max-w-screen-xl max-h-[1000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+>>>>>>> b7fe374 (update)
             >
                 <div className="text-center mb-8">
                     <h1 className="text-6xl font-bold text-white font-rowdies">
@@ -193,6 +219,7 @@ export default function Home() {
             {/* Konten lain */}
             <SakarsaDaily />
             <div className="py-10 bg-white flex flex-col gap-10">
+<<<<<<< HEAD
     <div className="flex justify-between flex-col md:flex-row gap-8">
         <div
             className="px-8 md:px-16 text-primary5 flex flex-col gap-2"
@@ -257,6 +284,77 @@ export default function Home() {
     </div>
 </div>
 
+=======
+                <div className="flex justify-between">
+                    <div
+                        className="px-16 text-primary5 flex flex-col gap-2"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+                        <h1 className="font-rowdies text-5xl font-bold">
+                            Prestasi
+                        </h1>
+                        <h2 className="font-montserrat font font-semibold text-4xl text-primary4">
+                            KM PKU IPB
+                        </h2>
+                    </div>
+                    <div
+                        className="px-16 text-primary5 flex flex-col justify-end gap-2"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+                        <h2 className="font-montserrat font font-semibold text-4xl text-primary4 border-b-2 border-transparent hover:scale-105 hover:border-primary5 transition duration-150">
+                            Semua Prestasi
+                        </h2>
+                    </div>
+                </div>
+                <div className="flex gap-10 px-16">
+                    <div className=" w-3/5 text-primary5 rounded-lg group transition duration-300">
+                        <div
+                            className="overflow-hidden rounded-lg"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                        >
+                            <img
+                                src="https://osccdn.medcom.id/images/content/2022/02/21/68b0b9759f7d965cdd82cdee8154bbf6.png"
+                                alt=""
+                                className=" rounded-lg object-cover w-full group-hover:scale-125 transition duration-700 ease-in-out"
+                            />
+                        </div>
+                        <div className="pr-2">
+                            <h1
+                                className="font-bold text-3xl mt-4"
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-anchor-placement="center-bottom"
+                            >
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Placeat, perferendis.
+                            </h1>
+                            <p
+                                className="mt-2"
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-anchor-placement="center-bottom"
+                            >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Vero consequuntur excepturi,
+                                aut voluptatum tenetur ipsam nobis nam,
+                                temporibus praesentium voluptatibus, nihil
+                                iusto. Eius iusto similique illum velit sed,
+                                pariatur rerum id repellendus suscipit, dicta,
+                                possimus facilis. Fuga corporis enim quos.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex-1 flex flex-col gap-4">
+                        <Card4></Card4>
+                        <Card4></Card4>
+                        <Card4></Card4>
+                    </div>
+                </div>
+            </div>
+>>>>>>> b7fe374 (update)
              <Footer></Footer>
         </div>
     );
