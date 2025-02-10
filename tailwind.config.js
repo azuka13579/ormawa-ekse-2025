@@ -17,6 +17,7 @@ export default {
                 primary3: "#a6cdd8",
                 primary4: "#1b697d",
                 primary5: "#124B56",
+                primary6: "#248DA8",
             },
 
             fontFamily: {

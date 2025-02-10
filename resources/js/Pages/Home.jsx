@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import { motion } from "framer-motion"; // Import motion dari framer-motion
 import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
 
@@ -269,6 +270,7 @@ export default function Home() {
             </motion.div>
             {/* Konten lain */}
             <SakarsaDaily />
+            <Footer></Footer>
         </div>
     );
 }

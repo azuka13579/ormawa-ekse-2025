@@ -8,14 +8,14 @@ export default function Navbar() {
 
     const isActive = (path) => {
         return url === path
-            ? "border-primary5"
-            : "text-fontcolors hover:border-primary5 hover:text-primary5 transition duration-300";
+            ? "border-primary5 border-b-2 text-primary5"
+            : "border-transparent text-primary4 text-fontcolors hover:border-primary5 hover:text-primary5 transition duration-200";
     };
 
     return (
         <>
             {/* Desktop Navbar */}
-            <nav className="hidden md:flex bg-primary1 shadow-md ">
+            <nav className="hidden md:flex bg-primary2 shadow-md ">
                 <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 p-4 w-full">
                     <div className="flex justify-between items-center h-16">
                         {/* Logo */}
@@ -33,7 +33,7 @@ export default function Navbar() {
                         <div className="flex space-x-8 font-montserrat text-lg">
                             <Link
                                 href="/"
-                                className={`font-bold border-transparent text-primary4 border-b-2 ${isActive(
+                                className={`font-bold border-b-2 ${isActive(
                                     "/"
                                 )}`}
                             >
@@ -41,7 +41,7 @@ export default function Navbar() {
                             </Link>
                             <Link
                                 href="/sakarsa-help"
-                                className={`font-bold border-transparent text-primary4 border-b-2 ${isActive(
+                                className={`font-bold border-b-2 ${isActive(
                                     "/sakarsa-help"
                                 )}`}
                             >
@@ -49,7 +49,7 @@ export default function Navbar() {
                             </Link>
                             <Link
                                 href="/samudra-store"
-                                className={`font-bold border-transparent text-primary4 border-b-2 ${isActive(
+                                className={`font-bold border-b-2 ${isActive(
                                     "/samudra-store"
                                 )}`}
                             >
@@ -57,7 +57,7 @@ export default function Navbar() {
                             </Link>
                             <Link
                                 href="/tentang"
-                                className={`font-bold border-transparent text-primary4 border-b-2 ${isActive(
+                                className={`font-bold border-b-2 ${isActive(
                                     "/tentang"
                                 )}`}
                             >

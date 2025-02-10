@@ -18,7 +18,7 @@ export default function SakarsaDaily() {
             transition: {
                 type: "tween",
                 ease: "anticipate",
-                duration: 0.2,
+                duration: 0.8,
             },
         },
     };
@@ -29,7 +29,7 @@ export default function SakarsaDaily() {
             initial="hidden"
             animate={carouselInView ? "visible" : "hidden"}
             variants={carouselVariants}
-            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
+            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl relative"
         >
             <div className="relative">
                 <h1 className="font-rowdies text-5xl text-fontcolors">
