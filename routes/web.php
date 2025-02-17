@@ -7,9 +7,9 @@ Route::get('/', function () {
     return Inertia::render('Home');
 })->name('home');
 
-Route::get('/sakarsa-help', function () {
-    return Inertia::render('SakarsaHelp');
-})->name('sakarsa-help');
+Route::get('/sakarsa-care', function () {
+    return Inertia::render('SakarsaCare');
+})->name('sakarsa-care');
 
 Route::get('/samudra-store', function () {
     return Inertia::render('SamudraStore');
@@ -18,7 +18,3 @@ Route::get('/samudra-store', function () {
 Route::get('/tentang', function () {
     return Inertia::render('Tentang');
 })->name('tentang');
-
-Route::get('/beranda', function () {
-    return Inertia::render('Beranda');
-})->name('beranda');
