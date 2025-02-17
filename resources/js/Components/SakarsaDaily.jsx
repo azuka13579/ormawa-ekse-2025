@@ -6,6 +6,7 @@ import Carousel from "./Corousel";
 export default function SakarsaDaily() {
     const sliderRef = useRef(null);
 <<<<<<< HEAD
+<<<<<<< HEAD
     const [carouselRef, carouselInView] = useInView({
         triggerOnce: false,
         threshold: 0.2,
@@ -35,6 +36,11 @@ export default function SakarsaDaily() {
     
 
     return (
+=======
+    
+
+    return (
+>>>>>>> e1a1c2c (update-responsif)
         <div 
             data-aos="fade-up"
             data-aos-duration="800"

@@ -18,7 +18,12 @@ import Footer from "../Components/Footer";
 >>>>>>> b7fe374 (update)
 =======
 import { Head } from "@inertiajs/react";
+<<<<<<< HEAD
 >>>>>>> f6dc351 (Update Dulu Mang)
+=======
+import Visi from "../Components/Visi";
+import Misi from "../Components/Misi";
+>>>>>>> e1a1c2c (update-responsif)
 
 export default function Home() {
     
@@ -28,6 +33,7 @@ export default function Home() {
             <Head title="Ormawa Eksekutif PKU IPB" />
            
             <div className="md:h-screen bg-white flex flex-col">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <div className="bg-biru p-7 mb-24 md:hidden items-center">
                     <img src="img/Logowir.png" alt="Logo Sakarsa" />
@@ -51,6 +57,18 @@ export default function Home() {
 >>>>>>> f6dc351 (Update Dulu Mang)
                     <div className="w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 ml-20 flex-col">
 >>>>>>> b7fe374 (update)
+=======
+                <div className="bg-biru p-7 mb-24 md:hidden">
+                    <img src="img/Logowir.png" alt="" />
+                </div>
+            
+                {/* Animasi untuk bagian pertama */}
+                <div className="h-full block md:flex flex-1 mx-auto"
+                data-aos="fade-up"
+                        data-aos-duration="1000"
+                >
+                    <div className="md:w-3/5 max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 md:ml-20 text-center flex-col">
+>>>>>>> e1a1c2c (update-responsif)
                         <div
                             className="font-rowdies font-bold md:text-6xl text-4xl"
                             data-aos="fade-right"
@@ -70,10 +88,14 @@ export default function Home() {
                         </p>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <div className="flex justify-center ">
 =======
                     <div className="kanan flex-1 flex justify-center ">
 >>>>>>> b7fe374 (update)
+=======
+                    <div className="flex justify-center ">
+>>>>>>> e1a1c2c (update-responsif)
                         <img
                             src="img/Home.png"
                             alt=""
@@ -85,10 +107,14 @@ export default function Home() {
             </div>
             {/* Animasi untuk bagian kedua */}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e1a1c2c (update-responsif)
             <div
             data-aos="fade-up"
             data-aos-duration="800"
                 className="mt-6 px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+<<<<<<< HEAD
 =======
             <motion.div
                 ref={sectionRef}
@@ -97,6 +123,8 @@ export default function Home() {
                 variants={sectionVariants}
                 className="mt-6 px-10 py-10 max-w-screen-xl max-h-[1000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
 >>>>>>> b7fe374 (update)
+=======
+>>>>>>> e1a1c2c (update-responsif)
             >
                 <div className="text-center mb-8">
                     <h1 className="text-6xl font-bold text-white font-rowdies">
@@ -232,6 +260,9 @@ export default function Home() {
             <SakarsaDaily />
             <div className="py-10 bg-white flex flex-col gap-10">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e1a1c2c (update-responsif)
     <div className="flex justify-between flex-col md:flex-row gap-8">
         <div
             className="px-8 md:px-16 text-primary5 flex flex-col gap-2"
@@ -265,6 +296,7 @@ export default function Home() {
                     alt=""
                     className="rounded-lg object-cover w-full group-hover:scale-125 transition duration-700 ease-in-out"
                 />
+<<<<<<< HEAD
             </div>
             <div className="pr-2">
                 <h1
@@ -367,6 +399,39 @@ export default function Home() {
                 </div>
             </div>
 >>>>>>> b7fe374 (update)
+=======
+            </div>
+            <div className="pr-2">
+                <h1
+                    className="font-bold text-xl md:text-3xl mt-4"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="center-bottom"
+                >
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, perferendis.
+                </h1>
+                <p
+                    className="mt-2 text-sm md:text-base"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="center-bottom"
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero consequuntur excepturi,
+                    aut voluptatum tenetur ipsam nobis nam, temporibus praesentium voluptatibus, nihil
+                    iusto. Eius iusto similique illum velit sed, pariatur rerum id repellendus suscipit,
+                    dicta, possimus facilis. Fuga corporis enim quos.
+                </p>
+            </div>
+        </div>
+        <div className="flex-1 flex flex-col gap-4">
+            <Card4></Card4>
+            <Card4></Card4>
+            <Card4></Card4>
+        </div>
+    </div>
+</div>
+
+>>>>>>> e1a1c2c (update-responsif)
              <Footer></Footer>
         </div>
     );
