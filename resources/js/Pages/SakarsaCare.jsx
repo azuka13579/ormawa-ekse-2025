@@ -1,0 +1,64 @@
+import React from "react";
+import { Head } from "@inertiajs/react";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+
+export default function SakarsaCare() {
+    return (
+        <div className="md:h-screen bg-white flex flex-col">
+        <Navbar />
+        <Head title="Sakarsa Care" />
+        
+        <div className="h-full block md:flex md:px-12 mx-auto mb-20 mt-20">
+          <div className="w-full sm:w-[550px] max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 flex-col">
+            <h1 
+              data-aos="fade-right"
+              data-aos-duration="800"
+              className="font-rowdies text-5xl sm:text-7xl text-center"
+            >
+              Sakarsa Care
+            </h1>
+            <p 
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              className="font-montserrat text-lg sm:text-xl text-center sm:text-left"
+            >
+              Sakarsa Care merupakan program kerja gabungan antara Biro Riset Pengembangan dengan Departemen Advokasi Kesejahteraan Mahasiswa Ormawa Eksekutif PKU IPB sebagai tempat menampung berbagai keluhan mahasiswa PKU IPB. Jadi buat kalian yang memiliki keluhan baik di bidang akademik dan non-akademik, pelayanan, sarana dan prasarana maupun finansial bisa menyampaikan keluhan kalian di laman ini!
+            </p>
+          </div>
+          <div 
+            data-aos="fade-left"
+            data-aos-duration="1200"
+            className="h-full flex flex-1 justify-center px-6 sm:px-12"
+          >
+            <img 
+              src="img/gambarnahkoda.png" 
+              alt="Ilustrasi Sakarsa Help" 
+              className="h-[300px] sm:h-[400px] w-full sm:w-[540px] object-cover"
+            />
+          </div>
+        </div>
+<div 
+  data-aos="fade-right"
+  data-aos-duration="1000"
+  className="bg-coklat md:mx-auto w-full md:w-[700px] justify-center text-center block md:flex items-center px-6 py-3 rounded-3xl mb-11 gap-20"
+>
+  <div className="">
+    <p className="font-montserrat text-s sm:text-xl text-white font-bold">
+      Wanna know more about us?
+    </p>
+  </div>
+  <div className="bg-white rounded-3xl py-2 px-6 text-center">
+    <p className="font-montserrat text-s     sm:text-xl text-coklat font-bold">
+      Contact Us
+    </p>
+  </div>
+</div>
+
+      
+        <Footer />
+      </div>
+      
+
+    );
+}

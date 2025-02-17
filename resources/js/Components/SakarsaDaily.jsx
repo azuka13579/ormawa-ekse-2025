@@ -5,6 +5,7 @@ import Carousel from "./Corousel";
 
 export default function SakarsaDaily() {
     const sliderRef = useRef(null);
+<<<<<<< HEAD
     const [carouselRef, carouselInView] = useInView({
         triggerOnce: false,
         threshold: 0.2,
@@ -30,12 +31,21 @@ export default function SakarsaDaily() {
             animate={carouselInView ? "visible" : "hidden"}
             variants={carouselVariants}
             className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl relative"
+=======
+    
+
+    return (
+        <div 
+            data-aos="fade-up"
+            data-aos-duration="800"
+            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
+>>>>>>> e1a1c2c (update-responsif)
         >
             <div className="relative">
-                <h1 className="font-rowdies text-5xl text-fontcolors">
+                <h1 className="font-rowdies text-4xl md:text-5xl text-fontcolors">
                     Sakarsa’s
                 </h1>
-                <h3 className="font-montserrat text-xl text-fontcolors pb-10">
+                <h3 className="font-montserrat text-lg md:text-xl text-fontcolors pb-10">
                     Weekly Daily
                 </h3>
 
@@ -81,6 +91,6 @@ export default function SakarsaDaily() {
             </div>
 
             <Carousel ref={sliderRef} />
-        </motion.div>
+        </div>
     );
 }
