@@ -1,13 +1,12 @@
 import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
-import { motion } from "framer-motion"; // Import motion dari framer-motion
-import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
+
 
 export default function Home() {
     
