@@ -22,11 +22,15 @@ export default function Navbar() {
                         <div className="flex">
                             <Link href="/">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <img
                                     src="/img/Logo.png"
                                     alt="Logo"
                                     className="h-20 w-auto"
                                 />
+=======
+                                <img src="/img/Logowir.png" alt="Logo" className="h-14 w-auto" />
+>>>>>>> 7e16c2c (update)
 =======
                                 <img src="/img/Logowir.png" alt="Logo" className="h-14 w-auto" />
 >>>>>>> 7e16c2c (update)
