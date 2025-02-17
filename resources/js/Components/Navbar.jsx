@@ -45,7 +45,7 @@ export default function Navbar() {
                                     "/sakarsa-help"
                                 )}`}
                             >
-                                Sakarsa Help
+                                Sakarsa Care
                             </Link>
                             <Link
                                 href="/samudra-store"
@@ -89,11 +89,16 @@ export default function Navbar() {
                             "/sakarsa-help"
                         )}`}
                     >
+<<<<<<< HEAD
                         <ion-icon
                             name="help-circle-outline"
                             className="text-2xl mb-1"
                         ></ion-icon>
                         Sakarsa Help
+=======
+                        <ion-icon name="help-circle-outline" className="text-2xl mb-1"></ion-icon>
+                        Sakarsa Care
+>>>>>>> e7670c0 (update alfath)
                     </Link>
                     <Link
                         href="/samudra-store"
