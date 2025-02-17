@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12c07cc (u)
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
@@ -8,6 +11,7 @@ import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 
+<<<<<<< HEAD
 =======
 import { motion } from "framer-motion"; // Import motion dari framer-motion
 import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
@@ -24,6 +28,8 @@ import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 >>>>>>> e1a1c2c (update-responsif)
+=======
+>>>>>>> 12c07cc (u)
 
 export default function Home() {
     
