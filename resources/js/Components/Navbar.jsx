@@ -35,7 +35,7 @@ export default function Navbar() {
                                 href="/sakarsa-help"
                                 className={`font-bold ${isActive('/sakarsa-help')}`}
                             >
-                                Sakarsa Help
+                                Sakarsa Care
                             </Link>
                             <Link
                                 href="/samudra-store"
@@ -71,7 +71,7 @@ export default function Navbar() {
                         className={`flex flex-col items-center text-sm font-bold ${isActive('/sakarsa-help')}`}
                     >
                         <ion-icon name="help-circle-outline" className="text-2xl mb-1"></ion-icon>
-                        Sakarsa Help
+                        Sakarsa Care
                     </Link>
                     <Link
                         href="/samudra-store"

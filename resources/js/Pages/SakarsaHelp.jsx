@@ -7,19 +7,19 @@ export default function SakarsaHelp() {
     return (
             <div className="md:h-screen bg-white flex flex-col">
             <Navbar />
-            <Head title="Sakarsa Help" />
+            <Head title="Sakarsa Care" />
             <div className="h-full flex flex-1 px-12 mx-auto mb-20 mt-20">
                 <div 
                 className="w-[550px] max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 flex-col">
                     <h1 
                     data-aos="fade-right"
                 data-aos-duration="800"
-                    className="font-rowdies text-7xl">Sakarsa Help</h1>
+                    className="font-rowdies text-7xl">Sakarsa Care</h1>
                     <p 
                     data-aos="fade-right"
                 data-aos-duration="1000"
                     className="font-montserrat text-xl">
-                        Sakarsa Help merupakan program kerja gabungan antara Biro Riset Pengembangan dengan Departemen Advokasi Kesejahteraan       Mahasiswa Ormawa Eksekutif PKU IPB sebagai tempat menampung berbagai keluhan mahasiswa PKU IPB. Jadi buat kalian yang       memiliki keluhan baik di bidang akademik dan non-akademik, pelayanan, sarana dan prasarana maupun finansial bisa      menyampaikan keluhan kalian di laman ini!
+                        Sakarsa Care merupakan program kerja gabungan antara Biro Riset Pengembangan dengan Departemen Advokasi Kesejahteraan       Mahasiswa Ormawa Eksekutif PKU IPB sebagai tempat menampung berbagai keluhan mahasiswa PKU IPB. Jadi buat kalian yang       memiliki keluhan baik di bidang akademik dan non-akademik, pelayanan, sarana dan prasarana maupun finansial bisa      menyampaikan keluhan kalian di laman ini!
                     </p>
                 </div>
                 <div 

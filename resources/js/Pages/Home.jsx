@@ -93,7 +93,7 @@ export default function Home() {
         <div>
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
-                <Head title="Beranda" />
+                <Head title="Ormawa Eksekutif PKU IPB" />
 
                 {/* Animasi untuk bagian pertama */}
                 <div className="h-full flex flex-1 mx-auto">

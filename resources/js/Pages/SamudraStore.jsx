@@ -6,7 +6,7 @@ export default function SakarsaHelp() {
   return (
     <div>
         <Navbar />
-      <Head title="Sakarsa Help" />
+      <Head title="Samudra Store" />
       <h1>Hello Coy</h1>
     </div>
   );
