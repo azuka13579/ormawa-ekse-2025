@@ -19,7 +19,7 @@ export default function Navbar() {
                         {/* Logo */}
                         <div className="flex">
                             <Link href="/">
-                                <img src="/img/Logo.png" alt="Logo" className="h-14 w-auto" />
+                                <img src="/img/Logowir.png" alt="Logo" className="h-14 w-auto" />
                             </Link>
                         </div>
 
