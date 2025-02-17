@@ -17,4 +17,8 @@ export default function CardTentang(props) {
             </div>
         </div>
     );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7e16c2c (update)

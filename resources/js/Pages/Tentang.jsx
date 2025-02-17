@@ -7,7 +7,11 @@ import CardTentang from "../Components/CardTentang";
 export default function SakarsaHelp() {
     return (
         <div>
+<<<<<<< HEAD
             <Head title="Sakarsa Help" />
+=======
+            <Head title="Ormawa Eksekutif PKU IPB" />
+>>>>>>> 7e16c2c (update)
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 
@@ -122,4 +126,8 @@ export default function SakarsaHelp() {
             <Footer></Footer>
         </div>
     );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7e16c2c (update)
