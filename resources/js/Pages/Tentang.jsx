@@ -3,19 +3,11 @@ import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
-<<<<<<< HEAD
-import ImageSlider from "../Components/Slide";
-=======
->>>>>>> 947de2c32cf72b0af2873536d2dd29747f0bf79d
 
 export default function SakarsaHelp() {
     return (
         <div>
-<<<<<<< HEAD
-            <Head title="Ormawa Eksekutif PKU IPB" />
-=======
             <Head title="Sakarsa Help" />
->>>>>>> 947de2c32cf72b0af2873536d2dd29747f0bf79d
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 
@@ -130,8 +122,4 @@ export default function SakarsaHelp() {
             <Footer></Footer>
         </div>
     );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 947de2c32cf72b0af2873536d2dd29747f0bf79d
