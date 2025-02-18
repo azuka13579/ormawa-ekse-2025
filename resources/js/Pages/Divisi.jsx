@@ -7,7 +7,7 @@ import CardAnggota from "../Components/CardAnggota";
 import "../../css/divisi.css";
 import "../../css/owl.theme.css";
 import OwlCarousel from "react-owl-carousel";
-
+import ImageSlider from "../Components/Slide"
 export default function Divisi() {
     const options = {
         loop: true,
@@ -146,6 +146,8 @@ export default function Divisi() {
                             </OwlCarousel>
                         </div>
                     </div>
+                    <ImageSlider></ImageSlider>
+
                 </div>
             </div>
             <Footer></Footer>

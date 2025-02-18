@@ -7,10 +7,10 @@ import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
     return (
-        <div className="bg-primary2 py-6 w-full flex md:flex-row flex-col md:justify-between items-center md:items-center font-montserrat md:px-10">
-            <div className="kiri flex gap-4">
-                <img src="img/home.png" alt="" className="w-24 object-cover" />
-                <div className="">
+        <div className="bg-primary2 mb-16 md:mb-0 py-6 w-full flex flex-col md:flex-row md:justify-between items-center font-montserrat md:px-10">
+            <div className="kiri flex flex-col md:flex-row gap-4 items-center md:items-start">
+                <img src="img/home.png" alt="" className="w-24 object-cover mb-4 md:mb-0" />
+                <div className="text-center md:text-left">
                     <h1 className="text-primary5 md:text-xl text-lg mb-2">
                         Dikembangkan oleh
                     </h1>
@@ -22,16 +22,16 @@ export default function Footer() {
                     </h1>
                 </div>
             </div>
-            <div className="Kanan flex flex-col gap-2 text-primary5 mr-4">
-                <h1 className="font-semibold font-montserrat text-xl text-center">
+            <div className="Kanan flex flex-col items-center md:items-start gap-4 text-primary5 mr-4 mt-4 md:mt-0">
+                <h1 className="font-semibold font-montserrat text-xl text-center md:text-left">
                     Hubungi Kami
                 </h1>
-                <div className="flex gap-4">
-                    <FaInstagram className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1 " />
-                    <FaXTwitter className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1 " />
-                    <FaTiktok className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1 " />
-                    <FaYoutube className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1 " />
-                    <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1 " />
+                <div className="flex gap-4 justify-center md:justify-start">
+                    <FaInstagram className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                    <FaXTwitter className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                    <FaTiktok className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                    <FaYoutube className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                    <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
                 </div>
             </div>
         </div>
