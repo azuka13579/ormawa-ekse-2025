@@ -51,6 +51,15 @@
   transform: scale(0.85) translateX(-25%);
 }
 /* Mobile menu at the bottom */
+/* Menyembunyikan scrollbar horizontal */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
 
 
 
