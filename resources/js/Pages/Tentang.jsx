@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
+import ImageSlider from "../Components/Slide";
 
 export default function SakarsaHelp() {
     return (
