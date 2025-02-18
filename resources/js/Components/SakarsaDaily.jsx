@@ -7,6 +7,17 @@ export default function SakarsaDaily() {
     const sliderRef = useRef(null);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    
+
+    return (
+        <div 
+            data-aos="fade-up"
+            data-aos-duration="800"
+            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
+=======
+>>>>>>> 9433adc2a006949527ed4dcd36d6d3bafa0a2fd2
     const [carouselRef, carouselInView] = useInView({
         triggerOnce: false,
         threshold: 0.2,
@@ -32,6 +43,7 @@ export default function SakarsaDaily() {
             animate={carouselInView ? "visible" : "hidden"}
             variants={carouselVariants}
             className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl relative"
+<<<<<<< HEAD
 =======
     
 
@@ -46,6 +58,9 @@ export default function SakarsaDaily() {
             data-aos-duration="800"
             className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
 >>>>>>> e1a1c2c (update-responsif)
+=======
+>>>>>>> 947de2c32cf72b0af2873536d2dd29747f0bf79d
+>>>>>>> 9433adc2a006949527ed4dcd36d6d3bafa0a2fd2
         >
             <div className="relative">
                 <h1 className="font-rowdies text-4xl md:text-5xl text-fontcolors">

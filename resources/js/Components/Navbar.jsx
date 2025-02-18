@@ -21,19 +21,9 @@ export default function Navbar() {
                         {/* Logo */}
                         <div className="flex">
                             <Link href="/">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                <img
-                                    src="/img/Logo.png"
-                                    alt="Logo"
-                                    className="h-20 w-auto"
-                                />
-=======
+
                                 <img src="/img/Logowir.png" alt="Logo" className="h-14 w-auto" />
->>>>>>> 7e16c2c (update)
-=======
-                                <img src="/img/Logowir.png" alt="Logo" className="h-14 w-auto" />
->>>>>>> 7e16c2c (update)
+
                             </Link>
                         </div>
 
@@ -48,20 +38,10 @@ export default function Navbar() {
                                 Beranda
                             </Link>
                             <Link
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                href="/sakarsa-help"
-                                className={`font-bold border-b-2 ${isActive(
-                                    "/sakarsa-help"
-                                )}`}
-=======
+
                                 href="/sakarsa-care"
                                 className={`font-bold ${isActive('/sakarsa-care')}`}
->>>>>>> e1a1c2c (update-responsif)
-=======
-                                href="/sakarsa-care"
-                                className={`font-bold ${isActive('/sakarsa-care')}`}
->>>>>>> e1a1c2c (update-responsif)
+
                             >
                                 Sakarsa Care
                             </Link>
@@ -102,36 +82,11 @@ export default function Navbar() {
                         Beranda
                     </Link>
                     <Link
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        href="/sakarsa-help"
-                        className={`flex flex-col items-center text-sm font-bold ${isActive(
-                            "/sakarsa-help"
-                        )}`}
-=======
+
                         href="/sakarsa-care"
-                        className={`flex flex-col items-center text-sm font-bold ${isActive('/sakarsa-care')}`}
->>>>>>> e1a1c2c (update-responsif)
-=======
-                        href="/sakarsa-care"
-                        className={`flex flex-col items-center text-sm font-bold ${isActive('/sakarsa-care')}`}
->>>>>>> e1a1c2c (update-responsif)
-                    >
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <ion-icon
-                            name="help-circle-outline"
-                            className="text-2xl mb-1"
-                        ></ion-icon>
-                        Sakarsa Help
-=======
+                        className={`flex flex-col items-center text-sm font-bold ${isActive('/sakarsa-care')}`}>
                         <ion-icon name="help-circle-outline" className="text-2xl mb-1"></ion-icon>
                         Sakarsa Care
->>>>>>> e7670c0 (update alfath)
-=======
-                        <ion-icon name="help-circle-outline" className="text-2xl mb-1"></ion-icon>
-                        Sakarsa Care
->>>>>>> e7670c0 (update alfath)
                     </Link>
                     <Link
                         href="/samudra-store"

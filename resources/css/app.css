@@ -53,11 +53,22 @@
 /* Mobile menu at the bottom */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e4465ba (update slidergambar)
 /* Menyembunyikan scrollbar horizontal */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
+=======
+/* Menyembunyikan scrollbar horizontal */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+>>>>>>> 9433adc2a006949527ed4dcd36d6d3bafa0a2fd2
 }
 
 .scrollbar-hidden {
@@ -70,6 +81,7 @@
 >>>>>>> e1a1c2c (update-responsif)
 =======
 >>>>>>> e4465ba (update slidergambar)
+
 
 
 
