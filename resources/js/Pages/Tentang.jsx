@@ -5,11 +5,15 @@ import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ImageSlider from "../Components/Slide";
 =======
 >>>>>>> 9433adc (update)
 =======
 >>>>>>> 7e16c2c (update)
+=======
+import ImageSlider from "../Components/Slide";
+>>>>>>> e4465ba (update slidergambar)
 
 export default function SakarsaHelp() {
     return (

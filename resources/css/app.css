@@ -52,6 +52,9 @@
 }
 /* Mobile menu at the bottom */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e4465ba (update slidergambar)
 /* Menyembunyikan scrollbar horizontal */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
@@ -61,9 +64,12 @@
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
+<<<<<<< HEAD
 =======
 
 >>>>>>> e1a1c2c (update-responsif)
+=======
+>>>>>>> e4465ba (update slidergambar)
 
 
 
