@@ -6,6 +6,7 @@ import CardTentang from "../Components/CardTentang";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ImageSlider from "../Components/Slide";
 =======
 >>>>>>> 9433adc (update)
@@ -14,10 +15,13 @@ import ImageSlider from "../Components/Slide";
 =======
 import ImageSlider from "../Components/Slide";
 >>>>>>> e4465ba (update slidergambar)
+=======
+>>>>>>> 9433adc (update)
 
 export default function SakarsaHelp() {
     return (
         <div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -31,6 +35,9 @@ export default function SakarsaHelp() {
 =======
             <Head title="Ormawa Eksekutif PKU IPB" />
 >>>>>>> 7e16c2c (update)
+=======
+            <Head title="Sakarsa Help" />
+>>>>>>> 9433adc (update)
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 
@@ -145,8 +152,8 @@ export default function SakarsaHelp() {
             <Footer></Footer>
         </div>
     );
-<<<<<<< HEAD
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 }
@@ -156,3 +163,5 @@ export default function SakarsaHelp() {
 =======
 }
 >>>>>>> 7e16c2c (update)
+=======
+>>>>>>> 9433adc (update)

@@ -2,8 +2,11 @@ import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 12c07cc (u)
+=======
+>>>>>>> 9433adc (update)
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
@@ -339,6 +342,7 @@ export default function Home() {
     </div>
 </div>
 
+<<<<<<< HEAD
 =======
                 <div className="flex justify-between">
                     <div
@@ -443,6 +447,8 @@ export default function Home() {
 </div>
 
 >>>>>>> e1a1c2c (update-responsif)
+=======
+>>>>>>> 9433adc (update)
              <Footer></Footer>
         </div>
     );
