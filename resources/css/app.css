@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* Custom Arrow Styling */
 .slick-prev,
 .slick-next {
@@ -18,6 +19,7 @@
 .slick-next:before {
   display: none; /* Menghilangkan default arrow */
 }
+
 /* Custom carousel styling */
 .slick-slide:not(.slick-center) {
   opacity: 0.5;
@@ -28,10 +30,10 @@
 
 .slick-slide.slick-center {
   opacity: 1;
-  border-radius: 20px;
   transform: scale(1);
+  border-radius: 20px;
 }
-/* resources/css/app.css */
+
 .slick-slide {
   @apply transition-all duration-500 ease-out;
 }
@@ -50,38 +52,13 @@
 .slick-slide:not(.slick-center):nth-child(odd) .absolute {
   transform: scale(0.85) translateX(-25%);
 }
-/* Mobile menu at the bottom */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e4465ba (update slidergambar)
-/* Menyembunyikan scrollbar horizontal */
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-=======
-/* Menyembunyikan scrollbar horizontal */
+
+/* Hide scrollbar */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
 
 .scrollbar-hidden {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
->>>>>>> 9433adc2a006949527ed4dcd36d6d3bafa0a2fd2
-}
-
-.scrollbar-hidden {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  -ms-overflow-style: none;
   scrollbar-width: none;  /* Firefox */
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> e1a1c2c (update-responsif)
-=======
->>>>>>> e4465ba (update slidergambar)
-
-
-
-
