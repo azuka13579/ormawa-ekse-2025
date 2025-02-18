@@ -1,6 +1,13 @@
 import React, { useRef } from "react";
 import Navbar from "../Components/Navbar";
+<<<<<<< HEAD
 import Card4 from "../Components/CardPrestasi";
+=======
+import Footer from "../Components/Footer";
+import { motion } from "framer-motion"; // Import motion dari framer-motion
+import { useInView } from "react-intersection-observer"; // Import useInView untuk mendeteksi scroll
+
+>>>>>>> 947de2c32cf72b0af2873536d2dd29747f0bf79d
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
@@ -192,6 +199,7 @@ export default function Home() {
             <Misi />
             {/* Konten lain */}
             <SakarsaDaily />
+<<<<<<< HEAD
             <div className="py-10 bg-white flex flex-col gap-10">
     <div className="flex justify-between flex-col md:flex-row gap-8">
         <div
@@ -258,6 +266,9 @@ export default function Home() {
 </div>
 
              <Footer></Footer>
+=======
+            <Footer></Footer>
+>>>>>>> 947de2c32cf72b0af2873536d2dd29747f0bf79d
         </div>
     );
 }
