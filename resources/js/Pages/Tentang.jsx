@@ -4,7 +4,7 @@ import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
 
-export default function SakarsaHelp() {
+export default function Tentang() {
     return (
         <div>
             <Head title="Sakarsa Help" />
@@ -12,7 +12,7 @@ export default function SakarsaHelp() {
                 <Navbar />
 
                 <div className="h-full flex flex-1">
-                    <div className="kiri w-3/5 bg-white text-primary5 h-full flex justify-center gap-10 ml-20 flex-col">
+                    <div className="kiri w-4/5 bg-white text-primary5 h-full flex justify-center gap-10 ml-20 flex-col relative">
                         <div
                             className="font-rowdies font-bold text-7xl"
                             data-aos="fade-right"
@@ -22,7 +22,7 @@ export default function SakarsaHelp() {
                             <p>Samudra Wirakarsa</p>
                         </div>
                         <div
-                            className="p-5 bg-primary4 text-white w-3/4 rounded-xl"
+                            className="p-5 bg-primary4 text-white w-3/5 rounded-xl"
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="200"
@@ -42,11 +42,11 @@ export default function SakarsaHelp() {
                             </p>
                         </div>
                     </div>
-                    <div className="kanan flex-1 flex justify-center ">
+                    <div className="absolute h-screen w-full">
                         <img
                             src="img/Home.png"
-                            alt=""
-                            className="w-full relative object-cover"
+                            alt="Gambar di kanan tengah"
+                            class="absolute -right-16 top-1/2 -translate-y-1/2 scale-75"
                         />
                     </div>
                 </div>

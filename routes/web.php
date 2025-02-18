@@ -22,3 +22,7 @@ Route::get('/tentang', function () {
 Route::get('/beranda', function () {
     return Inertia::render('Beranda');
 })->name('beranda');
+
+Route::get('/divisi', function () {
+    return Inertia::render('Divisi');
+})->name('divisi');

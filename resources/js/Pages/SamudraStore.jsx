@@ -6,9 +6,11 @@ import Footer from "../Components/Footer";
 export default function SakarsaHelp() {
     return (
         <div>
-            <Navbar />
-            <Head title="Sakarsa Help" />
-            <h1>Hello Coy</h1>
+            <div className="h-screen">
+                <Navbar />
+                <Head title="Sakarsa Help" />
+                <h1>Hello Coy</h1>
+            </div>
             <Footer></Footer>
         </div>
     );

@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "@inertiajs/react";
 
 export default function CardTentang(props) {
     return (
-        <div className="">
+        <Link className="" href="divisi">
             <div
                 className="w-full h-96 bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg flex items-end group hover:scale-105"
                 data-aos="fade-up"
@@ -15,6 +16,6 @@ export default function CardTentang(props) {
                     </h1>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
