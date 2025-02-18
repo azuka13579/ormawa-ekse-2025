@@ -21,11 +21,9 @@ export default function Navbar() {
                         {/* Logo */}
                         <div className="flex">
                             <Link href="/">
-                                <img
-                                    src="/img/Logo.png"
-                                    alt="Logo"
-                                    className="h-20 w-auto"
-                                />
+
+                                <img src="/img/Logowir.png" alt="Logo" className="h-14 w-auto" />
+
                             </Link>
                         </div>
 
@@ -40,12 +38,12 @@ export default function Navbar() {
                                 Beranda
                             </Link>
                             <Link
-                                href="/sakarsa-help"
-                                className={`font-bold border-b-2 ${isActive(
-                                    "/sakarsa-help"
-                                )}`}
+
+                                href="/sakarsa-care"
+                                className={`font-bold ${isActive('/sakarsa-care')}`}
+
                             >
-                                Sakarsa Help
+                                Sakarsa Care
                             </Link>
                             <Link
                                 href="/samudra-store"
@@ -84,16 +82,11 @@ export default function Navbar() {
                         Beranda
                     </Link>
                     <Link
-                        href="/sakarsa-help"
-                        className={`flex flex-col items-center text-sm font-bold ${isActive(
-                            "/sakarsa-help"
-                        )}`}
-                    >
-                        <ion-icon
-                            name="help-circle-outline"
-                            className="text-2xl mb-1"
-                        ></ion-icon>
-                        Sakarsa Help
+
+                        href="/sakarsa-care"
+                        className={`flex flex-col items-center text-sm font-bold ${isActive('/sakarsa-care')}`}>
+                        <ion-icon name="help-circle-outline" className="text-2xl mb-1"></ion-icon>
+                        Sakarsa Care
                     </Link>
                     <Link
                         href="/samudra-store"

@@ -3,11 +3,12 @@ import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
+import ImageSlider from "../Components/Slide";
 
 export default function Tentang() {
     return (
         <div>
-            <Head title="Sakarsa Help" />
+            <Head title="Ormawa Eksekutif PKU IPB" />
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 

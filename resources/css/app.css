@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* Custom Arrow Styling */
 .slick-prev,
 .slick-next {
@@ -18,6 +19,7 @@
 .slick-next:before {
   display: none; /* Menghilangkan default arrow */
 }
+
 /* Custom carousel styling */
 .slick-slide:not(.slick-center) {
   opacity: 0.5;
@@ -28,10 +30,10 @@
 
 .slick-slide.slick-center {
   opacity: 1;
-  border-radius: 20px;
   transform: scale(1);
+  border-radius: 20px;
 }
-/* resources/css/app.css */
+
 .slick-slide {
   @apply transition-all duration-500 ease-out;
 }
@@ -50,14 +52,13 @@
 .slick-slide:not(.slick-center):nth-child(odd) .absolute {
   transform: scale(0.85) translateX(-25%);
 }
-/* Mobile menu at the bottom */
-.md\:hidden {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--sakarsaBlue);
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
+/* Hide scrollbar */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
 }
 
-
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;  /* Firefox */
+}
