@@ -41,6 +41,7 @@ export default function Home() {
             <div className="md:h-screen bg-white flex flex-col">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div className="bg-biru p-7 mb-24 md:hidden items-center">
                     <img src="img/Logowir.png" alt="Logo Sakarsa" />
                 </div>
@@ -66,6 +67,10 @@ export default function Home() {
 =======
                 <div className="bg-biru p-7 mb-24 md:hidden">
                     <img src="img/Logowir.png" alt="" />
+=======
+                <div className="bg-biru p-7 mb-24 md:hidden items-center">
+                    <img src="img/Logowir.png" alt="Logo Sakarsa" />
+>>>>>>> b8a33f0 (update)
                 </div>
             
                 {/* Animasi untuk bagian pertama */}
