@@ -80,7 +80,7 @@ export default function Tentang() {
                 </div>
                 <div className="flex justify-center">
                     <h1
-                        className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full"
+                        className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full mt-8"
                         data-aos="fade-up"
                         data-aos-duration="800"
                     >

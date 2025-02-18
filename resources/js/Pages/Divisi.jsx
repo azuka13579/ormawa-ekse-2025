@@ -3,11 +3,33 @@ import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Cardkapten from "../Components/Cardkapten";
+import CardAnggota from "../Components/CardAnggota";
+import "../../css/divisi.css";
+import "../../css/owl.theme.css";
+import OwlCarousel from "react-owl-carousel";
 
 export default function Divisi() {
+    const options = {
+        loop: true,
+        // nav: true,
+        autoplaySpeed: 1000,
+        dragEndSpeed: 1000,
+        dotsSpeed: 1000,
+        autoplay: false,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true,
+        autoWidth: true,
+        stagePadding: 0,
+
+        dots: false,
+
+        // items: 3,
+        margin: -150,
+        center: true,
+    };
     return (
         <div>
-            <Head title="Sakarsa Help" />
+            <Head title="Divisi" />
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 
@@ -56,7 +78,7 @@ export default function Divisi() {
             </div>
 
             {/* sektion2 */}
-            <div className="w-full flex justify-center">
+            <div className="w-full flex flex-col justify-center py-8">
                 <div className="bg-white flex flex-col w-full gap-10">
                     <div className="px-20">
                         <h1
@@ -91,6 +113,38 @@ export default function Divisi() {
                             nama="Nama Saya Sangat panjang asli"
                             no="3"
                         ></Cardkapten>
+                    </div>
+                </div>
+                <div className="mt-8 flex flex-col px-20">
+                    <h1
+                        className="text-primary4 text-7xl font-rowdies font-bold"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+                        Anggota
+                    </h1>
+
+                    <div className="w-full mt-4">
+                        <div
+                            className=""
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                        >
+                            <OwlCarousel
+                                className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                                {...options}
+                            >
+                                <CardAnggota no="1"></CardAnggota>
+                                <CardAnggota no="2"></CardAnggota>
+                                <CardAnggota no="3"></CardAnggota>
+                                <CardAnggota no="4"></CardAnggota>
+                                <CardAnggota no="5"></CardAnggota>
+                                <CardAnggota no="5"></CardAnggota>
+                                <CardAnggota no="5"></CardAnggota>
+                                <CardAnggota no="5"></CardAnggota>
+                                <CardAnggota no="5"></CardAnggota>
+                            </OwlCarousel>
+                        </div>
                     </div>
                 </div>
             </div>

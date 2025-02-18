@@ -11,7 +11,7 @@ export default function CardTentang(props) {
                 data-aos-delay={props.delay}
             >
                 <div className="p-6 flex items-center">
-                    <h1 className="text-white font-montserrat text-2xl font-bold group-hover:text-black">
+                    <h1 className="text-white font-montserrat text-2xl font-bold group-hover:text-black transition duration-300">
                         {props.nama}
                     </h1>
                 </div>

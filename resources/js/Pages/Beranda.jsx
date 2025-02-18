@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Components/Footer";
-import "../../css/owl.theme.css";
 import Card from "../Components/Card2";
+import "../../css/owl.theme.css";
 import OwlCarousel from "react-owl-carousel";
 import Card4 from "../Components/CardPrestasi";
 import Navbar2 from "../Components/Navbar2";
