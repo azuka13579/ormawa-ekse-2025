@@ -16,8 +16,8 @@ export default function Home() {
             <Head title="Ormawa Eksekutif PKU IPB" />
            
             <div className="md:h-screen bg-white flex flex-col">
-                <div className="bg-biru p-7 mb-24 md:hidden">
-                    <img src="img/Logowir.png" alt="" />
+                <div className="bg-biru p-7 mb-24 md:hidden items-center">
+                    <img src="img/Logowir.png" alt="Logo Sakarsa" />
                 </div>
             
                 {/* Animasi untuk bagian pertama */}
