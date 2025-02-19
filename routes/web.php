@@ -19,11 +19,6 @@ Route::get('/tentang', function () {
     return Inertia::render('Tentang');
 })->name('tentang');
 
-
-Route::get('/beranda', function () {
-    return Inertia::render('Beranda');
-})->name('beranda');
-
 Route::get('/divisi', function () {
     return Inertia::render('Divisi');
 })->name('divisi');

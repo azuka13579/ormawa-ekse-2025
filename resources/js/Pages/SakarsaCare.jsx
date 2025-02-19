@@ -2,6 +2,7 @@ import React from "react";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import {Link} from "@inertiajs/react"
 
 export default function SakarsaCare() {
     return (
@@ -56,11 +57,18 @@ export default function SakarsaCare() {
                         Wanna know more about us?
                     </p>
                 </div>
-                <div className="bg-white rounded-3xl py-2 px-6 text-center">
-                    <p className="font-montserrat text-s     sm:text-xl text-coklat font-bold">
-                        Contact Us
+                <a
+                  href="https://instagram.com/ormawaeksekutifpku"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="bg-white rounded-3xl py-2 px-6 text-center">
+                    <p className="font-montserrat text-sm sm:text-xl text-coklat font-bold">
+                      Contact Us
                     </p>
-                </div>
+                  </div>
+                </a>
+
             </div>
 
             <Footer />
