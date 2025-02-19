@@ -41,7 +41,7 @@ export default function Navbar() {
                             </Link>
                             <Link
                                 href="/sakarsa-care"
-                                className={`font-bold ${isActive(
+                                className={`font-bold border-b-2 ${isActive(
                                     "/sakarsa-care"
                                 )}`}
                             >
