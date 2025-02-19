@@ -8,8 +8,12 @@ import { MdEmail } from "react-icons/md";
 export default function Footer() {
     return (
         <div className="bg-primary2 mb-16 md:mb-0 py-6 w-full flex flex-col md:flex-row md:justify-between items-center font-montserrat md:px-10">
-            <div className="kiri flex flex-col md:flex-row gap-4 items-center md:items-start">
-                <img src="img/home.png" alt="" className="w-24 object-cover mb-4 md:mb-0" />
+            <div className="kiri flex flex-col md:flex-row items-center md:items-start">
+                <img
+                    src="img/home.png"
+                    alt=""
+                    className="w-24 object-cover md:mb-0"
+                />
                 <div className="text-center md:text-left">
                     <h1 className="text-primary5 md:text-xl text-lg mb-2">
                         Dikembangkan oleh

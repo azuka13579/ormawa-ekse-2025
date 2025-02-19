@@ -7,7 +7,7 @@ import CardAnggota from "../Components/CardAnggota";
 import "../../css/divisi.css";
 import "../../css/owl.theme.css";
 import OwlCarousel from "react-owl-carousel";
-import ImageSlider from "../Components/Slide"
+import ImageSlider from "../Components/Slide";
 export default function Divisi() {
     const options = {
         loop: true,
@@ -34,40 +34,50 @@ export default function Divisi() {
                 <Navbar />
 
                 <div className="h-full flex flex-1">
-                    <div className="kiri w-4/5 bg-white text-primary5 h-full flex justify-center gap-10 ml-20 flex-col">
-                        <div
-                            className="font-rowdies font-bold text-7xl"
-                            data-aos="fade-right"
-                            data-aos-duration="800"
-                        >
-                            <p>Tentang Kita,</p>
-                            <p>Pengembangan Sumber Daya Mahasiswa</p>
-                            <p className="font-thin text-xl italic mt-4">
-                                Ormawa Eksekutif PKU 2024/2025
-                            </p>
-                        </div>
-                        <div
-                            className="p-5 bg-primary4 text-white w-3/5 rounded-xl"
-                            data-aos="fade-right"
-                            data-aos-duration="800"
-                            data-aos-delay="200"
-                        >
-                            <p
-                                className="font-montserrat text-lg"
+                    <div className="kiri md:w-4/5 bg-white text-primary5 h-full flex justify-center md:gap-10 md:ml-20 flex-col px-4 md:items-start items-center">
+                        <div className="">
+                            <img
+                                src="img/Home.png"
+                                alt="Gambar di kanan tengah"
+                                class="scale-75 md:hidden"
+                            />
+
+                            <div
+                                className="font-rowdies font-bold text-5xl md:text-6xl text-center md:text-left"
+                                data-aos="fade-right"
+                                data-aos-duration="800"
+                            >
+                                <p>Tentang Kita,</p>
+                                <p>Pengembangan Sumber Daya Mahasiswa</p>
+                                <p className="font-thin text-xl italic mt-4">
+                                    Ormawa Eksekutif PKU 2024/2025
+                                </p>
+                            </div>
+                            <div
+                                className="p-5 bg-primary4 text-white md:w-3/5 rounded-xl mt-6 md:mt-0"
                                 data-aos="fade-right"
                                 data-aos-duration="800"
                                 data-aos-delay="200"
                             >
-                                Ormawa Eksekutif PKU IPB merupakan organisasi
-                                kemahasiswaan di lingkup Pendidikan Kompetensi
-                                Umum yang dikhususkan untuk mahasiswa tingkat
-                                PKU IPB. Fungsinya melibatkan pemberian
-                                kesejahteraan penanganan segala problematika
-                                yang dialami mahasiswa PKU IPB.
-                            </p>
+                                <p
+                                    className="font-montserrat md:text-lg text-justify"
+                                    data-aos="fade-right"
+                                    data-aos-duration="800"
+                                    data-aos-delay="200"
+                                >
+                                    Ormawa Eksekutif PKU IPB merupakan
+                                    organisasi kemahasiswaan di lingkup
+                                    Pendidikan Kompetensi Umum yang dikhususkan
+                                    untuk mahasiswa tingkat PKU IPB. Fungsinya
+                                    melibatkan pemberian kesejahteraan
+                                    penanganan segala problematika yang dialami
+                                    mahasiswa PKU IPB.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div className="absolute h-screen w-full">
+
+                    <div className="absolute h-screen w-full md:visible invisible">
                         <img
                             src="img/Home.png"
                             alt="Gambar di kanan tengah"
@@ -78,9 +88,9 @@ export default function Divisi() {
             </div>
 
             {/* sektion2 */}
-            <div className="w-full flex flex-col justify-center py-8">
-                <div className="bg-white flex flex-col w-full gap-10">
-                    <div className="px-20">
+            <div className="w-full flex flex-col justify-center py-8 px-4">
+                <div className="bg-white flex flex-col w-full gap-10 items-center md:items-start">
+                    <div className="md:px-20 md:text-left text-center">
                         <h1
                             className="text-primary4 text-7xl font-rowdies font-bold"
                             data-aos="fade-up"
@@ -97,7 +107,7 @@ export default function Divisi() {
                         </h1>
                     </div>
 
-                    <div className="flex justify-between px-20">
+                    <div className="flex md:justify-between md:w-full flex-col md:flex-row md:px-20 gap-4">
                         <Cardkapten
                             delay="0"
                             nama="Alfath Asqar Tsani"
@@ -115,9 +125,9 @@ export default function Divisi() {
                         ></Cardkapten>
                     </div>
                 </div>
-                <div className="mt-8 flex flex-col px-20">
+                <div className="mt-8 flex flex-col md:px-20 px-4">
                     <h1
-                        className="text-primary4 text-7xl font-rowdies font-bold"
+                        className="text-primary4 text-6xl font-rowdies font-bold text-center md:text-left"
                         data-aos="fade-up"
                         data-aos-duration="800"
                     >
@@ -147,7 +157,6 @@ export default function Divisi() {
                         </div>
                     </div>
                     <ImageSlider></ImageSlider>
-
                 </div>
             </div>
             <Footer></Footer>

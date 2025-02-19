@@ -7,15 +7,20 @@ import ImageSlider from "../Components/Slide";
 
 export default function Tentang() {
     return (
-        <div>
+        <div className="">
             <Head title="Ormawa Eksekutif PKU IPB" />
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 
                 <div className="h-full flex flex-1">
-                    <div className="kiri w-4/5 bg-white text-primary5 h-full flex justify-center gap-10 ml-20 flex-col relative">
+                    <div className="kiri md:w-4/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative">
+                        <img
+                            src="img/Home.png"
+                            alt="Gambar di kanan tengah"
+                            class="scale-75 md:hidden"
+                        />
                         <div
-                            className="font-rowdies font-bold text-7xl"
+                            className="font-rowdies font-bold text-5xl md:text-7xl text-center md:text-left"
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
@@ -23,7 +28,7 @@ export default function Tentang() {
                             <p>Samudra Wirakarsa</p>
                         </div>
                         <div
-                            className="p-5 bg-primary4 text-white w-3/5 rounded-xl"
+                            className="p-5 bg-primary4 text-white md:w-3/5 rounded-xl text-justify"
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="200"
@@ -43,7 +48,7 @@ export default function Tentang() {
                             </p>
                         </div>
                     </div>
-                    <div className="absolute h-screen w-full">
+                    <div className="absolute h-screen w-full invisible md:visible">
                         <img
                             src="img/Home.png"
                             alt="Gambar di kanan tengah"
