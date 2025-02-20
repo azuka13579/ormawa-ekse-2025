@@ -16,8 +16,10 @@ export default function Tentang() {
                     <div className="kiri md:w-4/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative">
                         <img
                             src="img/Home.png"
-                            alt="Gambar di kanan tengah"
+                            alt="Gambar mobile di tengah"
                             class="scale-75 md:hidden"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
                         />
                         <div
                             className="font-rowdies font-bold text-5xl md:text-7xl text-center md:text-left"
@@ -48,7 +50,11 @@ export default function Tentang() {
                             </p>
                         </div>
                     </div>
-                    <div className="absolute h-screen w-full invisible md:visible">
+                    <div
+                        className="absolute h-screen w-full invisible md:visible"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
                         <img
                             src="img/Home.png"
                             alt="Gambar di kanan tengah"

@@ -69,7 +69,7 @@ export default function Navbar() {
             </nav>
 
             {/* Mobile Bottom Navigation */}
-            <div className="md:hidden fixed inset-x-0 bottom-0 bg-sakarsaBlue shadow-lg z-40">
+            <div className="md:hidden fixed inset-x-0 bottom-0 bg-sakarsaBlue shadow-lg z-40 w-screen">
                 <div className="flex justify-around p-2">
                     <Link
                         href="/"

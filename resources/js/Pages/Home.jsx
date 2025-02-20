@@ -24,7 +24,7 @@ export default function Home() {
                 {/* Animasi untuk bagian pertama */}
                 <div
                     className="h-full block md:flex flex-1 mx-auto"
-                    data-aos="fade-up"
+                    data-aos=""
                     data-aos-duration="1000"
                 >
                     {/* Bagian kiri konten */}
@@ -49,7 +49,11 @@ export default function Home() {
                     </div>
 
                     {/* Bagian kanan gambar */}
-                    <div className="kanan flex-1 flex justify-center items-center px-5 md:px-0">
+                    <div
+                        className="kanan flex-1 flex justify-center items-center px-5 md:px-0"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
                         <img
                             src="img/Home.png"
                             alt="Home"
