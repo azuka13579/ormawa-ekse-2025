@@ -21,6 +21,7 @@ export default {
                 coklat: "#A83F27",
                 primary6: "#248DA8",
                 primary7: "#16CDD8",
+                primary8: "#0C6C72"
             },
 
             fontFamily: {

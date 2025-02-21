@@ -47,14 +47,16 @@ export default function Navbar() {
                             >
                                 Sakarsa Care
                             </Link>
-                            <Link
+                            <a
                                 href="/samudra-store"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className={`font-bold border-b-2 ${isActive(
                                     "/samudra-store"
                                 )}`}
                             >
                                 Samudra Store
-                            </Link>
+                            </a>
                             <Link
                                 href="/tentang"
                                 className={`font-bold border-b-2 ${isActive(
@@ -95,8 +97,10 @@ export default function Navbar() {
                         ></ion-icon>
                         Sakarsa Care
                     </Link>
-                    <Link
+                    <a
                         href="/samudra-store"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`flex flex-col items-center text-sm font-bold ${isActive(
                             "/samudra-store"
                         )}`}
@@ -106,7 +110,7 @@ export default function Navbar() {
                             className="text-2xl mb-1"
                         ></ion-icon>
                         Samudra Store
-                    </Link>
+                    </a>
                     <Link
                         href="/tentang"
                         className={`flex flex-col items-center text-sm font-bold ${isActive(

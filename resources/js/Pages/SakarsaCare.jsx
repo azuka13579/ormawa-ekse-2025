@@ -15,7 +15,7 @@ export default function SakarsaCare() {
                     <h1
                         data-aos="fade-right"
                         data-aos-duration="800"
-                        className="font-rowdies text-5xl sm:text-7xl text-center"
+                        className="font-rowdies text-5xl sm:text-7xl text-left"
                     >
                         Sakarsa Care
                     </h1>

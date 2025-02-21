@@ -182,7 +182,7 @@ export default function Divisi() {
                 <img
                     src="img/timeline.png"
                     alt=""
-                    className="w-full h-auto object-cover"
+                    className="w-full md:w-3/4 h-auto object-cover mx-auto"
                     data-aos="fade-up"
                     data-aos-duration="1000"
                 />
