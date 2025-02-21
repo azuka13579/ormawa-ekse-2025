@@ -169,14 +169,23 @@ export default function Divisi() {
                     <ImageSlider></ImageSlider>
                 </div>
             </div>
-            <div className="flex justify-center">
-                <h1
-                    className="py-3 px-10 bg-gradient-to-r from-primary2 to-bg-primary6 bg-primary6 text-white text-5xl font-rowdies rounded-full mt-4"
+            <div className="md:px-20 px-4">
+                <div className="flex justify-center mb-4">
+                    <h1
+                        className="py-3 px-16 bg-gradient-to-r from-primary7 to-bg-primary6 bg-primary6 text-white text-5xl font-rowdies rounded-full mt-4 inline-block"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+                        Proker
+                    </h1>
+                </div>
+                <img
+                    src="img/timeline.png"
+                    alt=""
+                    className="w-full h-auto object-cover"
                     data-aos="fade-up"
-                    data-aos-duration="800"
-                >
-                    Proker
-                </h1>
+                    data-aos-duration="1000"
+                />
             </div>
 
             <div className="px-4 md:px-20 py-8 flex flex-col gap-6">
@@ -203,11 +212,15 @@ export default function Divisi() {
                     ></Cardproker>
                     <Cardproker
                         judul="Risbang Investigation 1.0"
-                        delay="100"
+                        delay="150"
                     ></Cardproker>
                     <Cardproker
                         judul="Risbang Investigation 1.0"
                         delay=""
+                    ></Cardproker>
+                    <Cardproker
+                        judul="Risbang Investigation (RISVES) 1.0"
+                        delay="150"
                     ></Cardproker>
                 </div>
             </div>
