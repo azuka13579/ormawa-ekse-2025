@@ -36,7 +36,7 @@ export default function Divisi() {
                 <div className="h-full flex flex-1">
                     <div className="kiri md:w-4/5 bg-white text-primary5 h-full flex justify-center md:gap-8 md:ml-20 flex-col px-4 md:items-start items-center">
                         <img
-                            src="img/Home.png"
+                            src="{{ asset('img/Home.png') }}"
                             alt="Gambar di kanan tengah"
                             class="scale-75 md:hidden"
                             data-aos="fade-up"
@@ -83,7 +83,7 @@ export default function Divisi() {
                     >
                         <img
                             src="img/Home.png"
-                            alt="Gambar di kanan tengah"
+                            alt="Gambar"
                             class="absolute -right-16 top-1/2 -translate-y-1/2 scale-75"
                         />
                     </div>
@@ -110,7 +110,7 @@ export default function Divisi() {
                         </h1>
                     </div>
 
-                    <div className="flex md:justify-between md:w-full flex-col md:flex-row md:px-20 gap-4">
+                    <div className="flex md:justify-between md:w-full flex-col md:flex-row md:px-20 md:gap-10 gap-4 md:items-center">
                         <Cardkapten
                             delay="0"
                             nama="Alfath Asqar Tsani"

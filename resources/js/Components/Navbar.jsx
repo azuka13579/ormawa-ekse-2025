@@ -15,7 +15,7 @@ export default function Navbar() {
     return (
         <>
             {/* Desktop Navbar */}
-            <nav className="hidden md:flex bg-primary2">
+            <nav className="hidden md:flex bg-primary1">
                 <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 p-4 w-full">
                     <div className="flex justify-between items-center h-16">
                         {/* Logo */}

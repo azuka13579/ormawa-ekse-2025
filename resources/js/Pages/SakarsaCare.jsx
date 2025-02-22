@@ -2,7 +2,7 @@ import React from "react";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import {Link} from "@inertiajs/react"
+import { Link } from "@inertiajs/react";
 
 export default function SakarsaCare() {
     return (
@@ -15,7 +15,7 @@ export default function SakarsaCare() {
                     <h1
                         data-aos="fade-right"
                         data-aos-duration="800"
-                        className="font-rowdies text-5xl sm:text-7xl text-left"
+                        className="font-rowdies text-5xl sm:text-7xl text-center md:text-left"
                     >
                         Sakarsa Care
                     </h1>
@@ -58,17 +58,16 @@ export default function SakarsaCare() {
                     </p>
                 </div>
                 <a
-                  href="https://instagram.com/ormawaeksekutifpku"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                    href="https://instagram.com/ormawaeksekutifpku"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
-                  <div className="bg-white rounded-3xl py-2 px-6 text-center">
-                    <p className="font-montserrat text-sm sm:text-xl text-coklat font-bold">
-                      Contact Us
-                    </p>
-                  </div>
+                    <div className="bg-white rounded-3xl py-2 px-6 text-center">
+                        <p className="font-montserrat text-sm sm:text-xl text-coklat font-bold">
+                            Contact Us
+                        </p>
+                    </div>
                 </a>
-
             </div>
 
             <Footer />

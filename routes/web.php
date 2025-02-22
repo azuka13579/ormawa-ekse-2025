@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,9 +21,15 @@ Route::get('/samudra-store', function () {
 Route::get('/tentang', function () {
     return Inertia::render('Tentang');
 })->name('tentang');
+
 Route::get('/divisi', function () {
     return Inertia::render('Divisi');
 })->name('divisi');
+
+
+// Route::get('/tentang/{divisi}',[DivisionController::class,'divisi']) ->name('divisi_dinamis');
+
+
 Route::get('/api/data', [DataController::class, 'index']);
 
 Route::get('/upload', [ImageController::class, 'create']); // Show form
