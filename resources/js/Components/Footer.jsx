@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="bg-primary1 mb-16 md:mb-0 py-6 w-full flex flex-col md:flex-row md:justify-between items-center font-montserrat md:px-10 xxl:px-0 max-w-[1300px]">
                 <div className="kiri flex flex-col md:flex-row items-center md:items-start ">
                     <img
-                        src="img/home.png"
+                        src={`${window.location.origin}/img/Home.png`}
                         alt=""
                         className="w-24 object-cover md:mb-0"
                     />

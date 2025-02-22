@@ -7,6 +7,29 @@ import Cardproker from "../Components/Cardproker";
 import ImageSlider from "../Components/Slide";
 
 export default function Divisicopy(props) {
+    const anggota = [
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+        "img/Rafa.png",
+    ];
+
     return (
         <div>
             <Head title={props.divisi} />
@@ -16,7 +39,8 @@ export default function Divisicopy(props) {
                 <div className="h-full flex flex-1">
                     <div className="md:w-4/5 bg-white text-primary5 h-full flex justify-center md:gap-8 md:ml-20 flex-col px-4 md:items-start items-center">
                         <img
-                            img src={`${window.location.origin}/img/Home.png`}
+                            img
+                            src={`${window.location.origin}/img/Home.png`}
                             alt="Gambar di kanan tengah"
                             className="scale-75 md:hidden"
                             data-aos="fade-up"
@@ -28,7 +52,9 @@ export default function Divisicopy(props) {
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
-                            <p className="text-4xl md:text-5xl">Tentang Kita,</p>
+                            <p className="text-4xl md:text-5xl">
+                                Tentang Kita,
+                            </p>
                             <p>{props.divisi || "Nama Divisi"}</p>
                             <p className="font-thin text-xl italic mt-4">
                                 Ormawa Eksekutif PKU 2024/2025
@@ -45,8 +71,8 @@ export default function Divisicopy(props) {
                                 kemahasiswaan di lingkup Pendidikan Kompetensi
                                 Umum yang dikhususkan untuk mahasiswa tingkat
                                 PKU IPB. Fungsinya melibatkan pemberian
-                                kesejahteraan dan penanganan problematika
-                                yang dialami mahasiswa PKU IPB.
+                                kesejahteraan dan penanganan problematika yang
+                                dialami mahasiswa PKU IPB.
                             </p>
                         </div>
                     </div>
@@ -57,7 +83,8 @@ export default function Divisicopy(props) {
                         data-aos-duration="800"
                     >
                         <img
-                            img src={`${window.location.origin}/img/Home.png`}
+                            img
+                            src={`${window.location.origin}/img/Home.png`}
                             alt="Gambar"
                             className="absolute -right-16 top-1/2 -translate-y-1/2 scale-75"
                         />
@@ -69,11 +96,19 @@ export default function Divisicopy(props) {
             <div className="w-full flex flex-col justify-center py-8 px-4">
                 <div className="bg-white flex flex-col w-full gap-10 items-center md:items-start">
                     <div className="md:px-20 md:text-left text-center">
-                        <h1 className="text-primary4 text-6xl font-rowdies font-bold" data-aos="fade-up" data-aos-duration="800">
+                        <h1
+                            className="text-primary4 text-6xl font-rowdies font-bold"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                        >
                             Kapten
                         </h1>
-                        <h1 className="text-primary6 text-2xl font-montserrat mt-2" data-aos="fade-up" data-aos-duration="800">
-                            Biro Riset Pengembangan
+                        <h1
+                            className="text-primary6 text-2xl font-montserrat mt-2"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                        >
+                            {props.divisi || "Nama Divisi"}
                         </h1>
                     </div>
 
@@ -83,46 +118,86 @@ export default function Divisicopy(props) {
                             { nama: "Azka Raditya Hafidz", no: "2" },
                             { nama: "Nama Saya Sangat Panjang Asli", no: "3" },
                         ].map((kapten, index) => (
-                            <Cardkapten key={index} delay={index * 100} {...kapten} />
+                            <Cardkapten
+                                key={index}
+                                delay={index * 100}
+                                {...kapten}
+                            />
                         ))}
                     </div>
                 </div>
 
                 {/* Anggota */}
                 <div className="mt-8 flex flex-col md:px-20 px-4">
-                    <h1 className="text-primary4 text-6xl font-rowdies font-bold text-center md:text-left" data-aos="fade-up" data-aos-duration="800">
+                    <h1
+                        className="text-primary4 text-6xl font-rowdies font-bold text-center md:text-left"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
                         Anggota
                     </h1>
-                    <h1 className="text-primary6 text-2xl font-montserrat mt-2" data-aos="fade-up" data-aos-duration="800">
-                        Biro Riset Pengembangan
+                    <h1
+                        className="text-primary6 text-2xl font-montserrat mt-2"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+                        {props.divisi || "Nama Divisi"}
                     </h1>
-                    <ImageSlider />
+
+                    <ImageSlider images={anggota} />
                 </div>
             </div>
 
             {/* Proker */}
             <div className="md:px-20 px-4">
                 <div className="flex justify-center mb-4">
-                    <h1 className="py-3 px-16 bg-gradient-to-r from-primary7 to-primary6 text-white text-5xl font-rowdies rounded-full mt-4 inline-block" data-aos="fade-up" data-aos-duration="800">
+                    <h1
+                        className="py-3 px-16 bg-gradient-to-r from-primary7 to-primary6 text-white text-5xl font-rowdies rounded-full mt-4 inline-block"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
                         Proker
                     </h1>
                 </div>
-                <img src={`${window.location.origin}/img/timeline.png`} alt="Timeline" className="w-full md:w-3/4 h-auto object-cover mx-auto" data-aos="fade-up" data-aos-duration="1000" />
+                <img
+                    src={`${window.location.origin}/img/timeline.png`}
+                    alt="Timeline"
+                    className="w-full md:w-3/4 h-auto object-cover mx-auto"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                />
             </div>
 
             {/* Proker Grid */}
             <div className="px-4 md:px-20 py-8 flex flex-col gap-6">
                 <div className="text-center">
-                    <h1 className="text-primary5 text-4xl font-rowdies font-bold" data-aos="fade-up" data-aos-duration="800">
+                    <h1
+                        className="text-primary5 text-4xl font-rowdies font-bold"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
                         Cari Tahu Lebih Banyak!
                     </h1>
-                    <h1 className="text-primary4 text-2xl font-montserrat" data-aos="fade-up" data-aos-duration="800">
+                    <h1
+                        className="text-primary4 text-2xl font-montserrat"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
                         Tentang Proker Kami
                     </h1>
                 </div>
-                <div className="flex flex-wrap md:grid md:grid-cols-2 gap-8">
-                    {["Risbang Investigation 1.0", "Risbang Investigation 1.0", "Risbang Investigation 1.0", "Risbang Investigation (RISVES) 1.0"].map((judul, index) => (
-                        <Cardproker key={index} judul={judul} delay={index % 2 === 0 ? "" : "150"} />
+                <div className="flex flex-wrap flex-col md:grid md:grid-cols-2 gap-8 px-4">
+                    {[
+                        "Risbang Investigation 1.0",
+                        "Risbang Investigation 1.0",
+                        "Risbang Investigation 1.0",
+                        "Risbang Investigation (RISVES) 1.0",
+                    ].map((judul, index) => (
+                        <Cardproker
+                            key={index}
+                            judul={judul}
+                            delay={index % 2 === 0 ? "" : "150"}
+                        />
                     ))}
                 </div>
             </div>

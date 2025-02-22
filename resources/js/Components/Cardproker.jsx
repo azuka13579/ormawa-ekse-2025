@@ -16,12 +16,12 @@ export default function Cardproker(props) {
                     </h1>
                 </div> */}
                 <img
-                    src="img/Home.png"
+                    src={`${window.location.origin}/img/Home.png`}
                     alt=""
                     className="w-auto h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
                 />
                 <h1
-                    className="text-slate-300 font-montserrat text-3xl font-bold drop-shadow-lg absolute bottom-6 left-6 
+                    className="text-slate-300 font-montserrat text-3xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6 
                 group-hover:text-white transition duration-300 group-hover:scale-105"
                 >
                     {props.judul}

@@ -65,7 +65,7 @@ export default function Tentang() {
             </div>
 
             {/* sektion2 */}
-            <div className="bg-white px-4 flex flex-col gap-8 py-10">
+            <div className="bg-white px-4 md:px-8 flex flex-col gap-8 py-10">
                 <div className="flex justify-center">
                     <h1
                         className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full"
@@ -75,20 +75,20 @@ export default function Tentang() {
                         Biro
                     </h1>
                 </div>
-                <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
-                    <CardTentang
-                        delay="0"
-                        nama="Biro Riset dan Pengembangan"
-                    ></CardTentang>
+                <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <CardTentang delay="0" nama="Biro Internal"></CardTentang>
                     <CardTentang
                         delay="100"
                         nama="Biro Media Branding"
                     ></CardTentang>
                     <CardTentang
                         delay="200"
+                        nama="Biro Riset dan Pengembangan"
+                    ></CardTentang>
+                    <CardTentang
+                        delay="300"
                         nama="Biro Kolaborasi dan Kemitraan"
                     ></CardTentang>
-                    <CardTentang delay="300" nama="Internal"></CardTentang>
                 </div>
                 <div className="flex justify-center">
                     <h1
@@ -99,12 +99,15 @@ export default function Tentang() {
                         Departemen
                     </h1>
                 </div>
-                <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
+                <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <CardTentang
                         delay="0"
                         nama="Departemen Sosial Lingkungan Hidup"
                     ></CardTentang>
-                    <CardTentang delay="100" nama="Seni Budaya"></CardTentang>
+                    <CardTentang
+                        delay="100"
+                        nama="Departemen Seni Budaya"
+                    ></CardTentang>
                     <CardTentang
                         delay="200"
                         nama="Departemen Ekonomi Kreatif"

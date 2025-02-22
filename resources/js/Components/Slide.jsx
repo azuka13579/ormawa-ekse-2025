@@ -1,57 +1,37 @@
 import React, { useState } from "react";
 
-const ImageSlider = () => {
+const ImageSlider = (props) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const images = [
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-    ];
+    const images = props.images;
 
     return (
         <div className="relative w-full rounded-lg">
-    {/* Slider Container */}
-    <div
-        data-aos="fade-up"
-        data-aos-duration="1200"
-        className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory scroll-smooth"
-    >
-        {images.map((src, index) => (
+            {/* Slider Container */}
             <div
-                key={index}
-                className="flex-shrink-0 snap-start"
-                style={{
-                    transform: `translateX(${index === currentSlide ? 0 : 10}px)`,
-                }}
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory scroll-smooth"
             >
-                <img
-                    src={`${window.location.origin}/${src}`}
-                    alt={`Slide ${index}`}
-                    className="h-auto max-h-[500px] w-auto object-contain"
-                />
+                {images.map((src, index) => (
+                    <div
+                        key={index}
+                        className="flex-shrink-0 snap-start"
+                        style={{
+                            transform: `translateX(${
+                                index === currentSlide ? 0 : 10
+                            }px)`,
+                        }}
+                    >
+                        <img
+                            src={`${window.location.origin}/${src}`}
+                            alt={`Slide ${index}`}
+                            className="h-auto max-h-[500px] w-auto object-contain"
+                        />
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
-</div>
-
+        </div>
     );
 };
 
