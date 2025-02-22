@@ -6,7 +6,7 @@ const ImageSlider = (props) => {
     const images = props.images;
 
     return (
-        <div className="relative w-full rounded-lg">
+        <div className="relative w-full rounded-2xl">
             {/* Slider Container */}
             <div
                 data-aos="fade-up"

@@ -137,7 +137,7 @@ export default function Divisicopy(props) {
                         Anggota
                     </h1>
                     <h1
-                        className="text-primary6 text-2xl font-montserrat mt-2"
+                        className="text-primary6 text-2xl font-montserrat mt-2 md:text-left text-center"
                         data-aos="fade-up"
                         data-aos-duration="800"
                     >
