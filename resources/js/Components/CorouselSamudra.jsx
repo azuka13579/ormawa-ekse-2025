@@ -62,12 +62,12 @@ const CarouselSamudra = forwardRef((props, ref) => {
             <Slider ref={ref} {...settings}>
                 {products.map((product, index) => (
                     <div key={index} className="relative px-4">
-                        <div className="relative flex flex-col bg-white p-4 shadow-xl h-[500px]">
+                        <div className="relative flex flex-col bg-white p-4 shadow-xl h-[550px]">
                             {/* Gambar Produk */}
                             <img
                                 src={`/img/${product.name}.png`|| "img/gambar.png"}
                                 alt={product.name}
-                                className="w-[300px] h-[300px] object-cover"
+                                className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover"
                             />
                             <div className="text-left mt-2">
                                 <p className="text-lg font-semibold">{product.name}</p>

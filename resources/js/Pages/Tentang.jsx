@@ -78,15 +78,15 @@ export default function Tentang() {
                 <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
                     <CardTentang
                         delay="0"
-                        nama="Riset dan Pengembangan"
+                        nama="Biro Riset dan Pengembangan"
                     ></CardTentang>
                     <CardTentang
                         delay="100"
-                        nama="Media Branding"
+                        nama="Biro Media Branding"
                     ></CardTentang>
                     <CardTentang
                         delay="200"
-                        nama="Kolaborasi dan Kemitraan"
+                        nama="Biro Kolaborasi dan Kemitraan"
                     ></CardTentang>
                     <CardTentang delay="300" nama="Internal"></CardTentang>
                 </div>
@@ -102,32 +102,32 @@ export default function Tentang() {
                 <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
                     <CardTentang
                         delay="0"
-                        nama="Sosial Lingkungan Hidup"
+                        nama="Departemen Sosial Lingkungan Hidup"
                     ></CardTentang>
                     <CardTentang delay="100" nama="Seni Budaya"></CardTentang>
                     <CardTentang
                         delay="200"
-                        nama="Ekonomi Kreatif"
+                        nama="Departemen Ekonomi Kreatif"
                     ></CardTentang>
                     <CardTentang
                         delay="300"
-                        nama="Advokasi Kesejahteraan Mahasiswa"
+                        nama="Departemen Advokasi Kesejahteraan Mahasiswa"
                     ></CardTentang>
                     <CardTentang
                         delay="0"
-                        nama="Pengembangan Sumber Daya Mahasiswa"
+                        nama="Departemen Pengembangan Sumber Daya Mahasiswa"
                     ></CardTentang>
                     <CardTentang
                         delay="100"
-                        nama="Kajian Aksi Strategis"
+                        nama="Departemen Kajian Aksi Strategis"
                     ></CardTentang>
                     <CardTentang
                         delay="200"
-                        nama="Akademik Prestasi"
+                        nama="Departemen Akademik Prestasi"
                     ></CardTentang>
                     <CardTentang
                         delay="300"
-                        nama="Pemuda Olahraga"
+                        nama="Departemen Pemuda Olahraga"
                     ></CardTentang>
                 </div>
             </div>

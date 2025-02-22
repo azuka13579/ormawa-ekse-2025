@@ -43,7 +43,7 @@ const ImageSlider = () => {
                 }}
             >
                 <img
-                    src={src}
+                    src={`${window.location.origin}/${src}`}
                     alt={`Slide ${index}`}
                     className="h-auto max-h-[500px] w-auto object-contain"
                 />

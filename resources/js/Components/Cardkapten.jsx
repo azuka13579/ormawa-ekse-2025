@@ -10,7 +10,9 @@ export default function Cardkapten(props) {
                 data-aos-delay={props.delay}
             >
                 <div className="flex flex-col relative">
-                    <img src="img/azka2.png" alt="" className="" />
+                    <img src= {`${window.location.origin}/img/azka2.png`}
+                    
+                    alt="" className="" />
                     <h1 className="text-white font-montserrat text-xl font-bold drop-shadow-lg absolute bottom-12 left-6">
                         {props.nama}
                     </h1>

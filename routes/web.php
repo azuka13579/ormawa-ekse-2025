@@ -5,7 +5,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Middleware\CheckDivision;
 Route::get('/', function () {
     return Inertia::render('Home');
 })->name('home');
@@ -26,8 +26,10 @@ Route::get('/divisi', function () {
     return Inertia::render('Divisi');
 })->name('divisi');
 
+Route::get('/tentang/{divisi}', [DivisionController::class, 'divisi'])
+    ->middleware(CheckDivision::class)
+    ->name('divisi_dinamis');
 
-// Route::get('/tentang/{divisi}',[DivisionController::class,'divisi']) ->name('divisi_dinamis');
 
 
 Route::get('/api/data', [DataController::class, 'index']);
