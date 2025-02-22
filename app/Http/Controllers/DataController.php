@@ -29,6 +29,24 @@ class DataController extends Controller
                     "stock" => 100,
                     "created_at" => "2025-02-03T12:05:00.000000Z",
                     "updated_at" => "2025-02-03T12:05:00.000000Z"
+                ],
+                [
+                    "id" => 3,
+                    "name" => "AI Chatbot ",
+                    "description" => "Access to an AI-powered chatbot service.",
+                    "price" => "15.99",
+                    "stock" => 100,
+                    "created_at" => "2025-02-03T12:05:00.000000Z",
+                    "updated_at" => "2025-02-03T12:05:00.000000Z"
+                ],
+                [
+                    "id" => 4,
+                    "name" => "AI Chatbot ",
+                    "description" => "Access to an AI-powered chatbot service.",
+                    "price" => "15.99",
+                    "stock" => 100,
+                    "created_at" => "2025-02-03T12:05:00.000000Z",
+                    "updated_at" => "2025-02-03T12:05:00.000000Z"
                 ]
             ],
         ], 200);
