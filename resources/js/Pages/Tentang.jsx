@@ -3,7 +3,7 @@ import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
-import ImageSlider from "../Components/Slide";
+import ProductList from "../Components/Testfetching";
 
 export default function Tentang() {
     return (
@@ -131,6 +131,7 @@ export default function Tentang() {
                     ></CardTentang>
                 </div>
             </div>
+            <ProductList></ProductList>
             <Footer></Footer>
         </div>
     );
