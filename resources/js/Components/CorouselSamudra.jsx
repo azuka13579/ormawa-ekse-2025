@@ -12,7 +12,7 @@ const CarouselSamudra = forwardRef((props, ref) => {
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/data")
             .then((response) => {
-                setProducts(response.data.data);
+                setProducts(response.data);
                 setLoading(false);
             })
             .catch((error) => {
@@ -65,16 +65,11 @@ const CarouselSamudra = forwardRef((props, ref) => {
                         <div className="relative flex flex-col bg-white p-4 shadow-xl h-[550px]">
                             {/* Gambar Produk */}
                             <img
-                                src={`/img/${product.name}.png`|| "img/gambar.png"}
+                                src={`${product.image_path}`|| "img/gambar.png"}
                                 alt={product.name}
                                 className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover"
                             />
-                            <div className="text-left mt-2">
-                                <p className="text-lg font-semibold">{product.name}</p>
-                                <p className="text-sm">Size: {product.size || "-"}</p>
-                                <p className="text-sm">Stock: {product.stock}</p>
-                                <button className="bg-white text-black px-3 py-1 rounded-md">View Details</button>
-                            </div>
+                            
                             {/* Counter Barang */}
                             <div className="flex items-center gap-2 mt-2">
                                 <button className="bg-gray-300 px-3 py-1 rounded-md" onClick={() => updateCount(index, -1)}>-</button>

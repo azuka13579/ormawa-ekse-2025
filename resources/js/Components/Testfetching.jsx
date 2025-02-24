@@ -8,7 +8,7 @@ export default function ProductList() {
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/data")
             .then((response) => {
-                setProducts(response.data.data); // Ambil bagian `data`
+                setProducts(response.data); // Ambil bagian `data`
                 setLoading(false);
             })
             .catch((error) => {
@@ -25,12 +25,8 @@ export default function ProductList() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {products.map((product) => (
                     <div key={product.id} className="border rounded-lg p-4 shadow-md bg-white">
-                        <h2 className="text-lg font-semibold">{product.name}</h2>
-                        <p className="text-sm text-gray-600">{product.description}</p>
-                        <p className="text-lg font-bold text-primary">Rp {product.price}</p>
-                        <p className={`text-sm ${product.stock > 0 ? "text-green-500" : "text-red-500"}`}>
-                            {product.stock > 0 ? `Stok: ${product.stock}` : "Habis"}
-                        </p>
+                       <img src={product.image_path} alt="Gambar" srcset="" />
+                        
                     </div>
                 ))}
             </div>

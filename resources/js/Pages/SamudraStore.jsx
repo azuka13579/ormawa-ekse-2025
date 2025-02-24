@@ -3,7 +3,6 @@ import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ProdukSamudra from "../Components/ProdukSamudra";
-import ProductList from "../Components/Testfetching";
 
 export default function SakarsaHelp() {
     return (
@@ -61,7 +60,7 @@ export default function SakarsaHelp() {
                 </div>
             <ProdukSamudra></ProdukSamudra>
 
-            <ProductList></ProductList>
+            
 
             <Footer></Footer>
         </div>

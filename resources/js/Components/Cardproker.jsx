@@ -41,7 +41,7 @@ export default function Cardproker(props) {
                     }}
                 >
                     <div
-                        className="w-4/5 max-h-[80vh] p-6 bg-white rounded-2xl shadow-xl relative overflow-auto scroll-smooth"
+                        className="w-4/5 max-h-[80vh] p-6 bg-white rounded-2xl shadow-xl relative overflow-auto scroll-smooth scrollbar-hidden"
                         data-aos="zoom-in"
                         data-aos-duration="400"
                     >

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LoginMasterController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\CheckDivision;
@@ -36,3 +37,4 @@ Route::get('/api/data', [DataController::class, 'index']);
 
 Route::get('/upload', [ImageController::class, 'create']); // Show form
 Route::post('/upload', [ImageController::class, 'store']); // Handle form submission
+Route::get('/logmas', [LoginMasterController::class, 'index'])->name('master-login-index');
