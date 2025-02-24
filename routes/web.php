@@ -32,7 +32,6 @@ Route::get('/tentang/{divisi}', [DivisionController::class, 'divisi'])
     ->name('divisi_dinamis');
 
 
-
 Route::get('/api/data', [DataController::class, 'index']);
 
 Route::get('/upload', [ImageController::class, 'create']); // Show form

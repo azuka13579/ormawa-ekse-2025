@@ -4,6 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { Link } from "@inertiajs/react";
 
 export default function Footer() {
     return (
@@ -32,11 +33,24 @@ export default function Footer() {
                         Hubungi Kami
                     </h1>
                     <div className="flex gap-4 justify-center md:justify-start">
-                        <FaInstagram className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        <FaXTwitter className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        <FaTiktok className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        <FaYoutube className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                        <a
+                            href="https://instagram.com/athdavindr"
+                            target="_blank"
+                        >
+                            <FaInstagram className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                        </a>
+                        <a href="">
+                            <FaXTwitter className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                        </a>
+                        <a href="">
+                            <FaTiktok className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                        </a>
+                        <a href="">
+                            <FaYoutube className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                        </a>
+                        <a href="">
+                            <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+                        </a>
                     </div>
                 </div>
             </div>
