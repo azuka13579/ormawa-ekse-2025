@@ -30,6 +30,8 @@ export default function Divisicopy(props) {
         "img/Rafa.png",
     ];
 
+    console.log(props);
+
     return (
         <div>
             <Head title={props.divisi} />
@@ -113,14 +115,11 @@ export default function Divisicopy(props) {
                     </div>
 
                     <div className="flex md:justify-between md:w-full flex-col md:flex-row md:px-20 md:gap-10 gap-4 md:items-center">
-                        {[
-                            { nama: "Alfath Asqar Tsani", no: "1" },
-                            { nama: "Azka Raditya Hafidz", no: "2" },
-                            { nama: "Nama Saya Sangat Panjang Asli", no: "3" },
-                        ].map((kapten, index) => (
+                        {props.data.map((kapten, index) => (
                             <Cardkapten
                                 key={index}
                                 delay={index * 100}
+                                no={index + 1}
                                 {...kapten}
                             />
                         ))}

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 
 export default function CardTentang(props) {
+    // console.log(props.nama);
     return (
         <Link className="" href={"tentang/" + props.nama}>
             <div
@@ -17,7 +18,7 @@ export default function CardTentang(props) {
                     </h1>
                 </div> */}
                 <img
-                    src="img/Home.png"
+                    src={`${window.location.origin}/img/Home.png`}
                     alt=""
                     className="w-full h-auto object-cover group-hover:scale-100 scale-90 transition duration-700 ease-in-out"
                 />

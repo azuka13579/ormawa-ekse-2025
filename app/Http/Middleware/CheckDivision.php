@@ -12,18 +12,18 @@ class CheckDivision
     {
         // Daftar divisi yang diperbolehkan
         $allowedDivisions = [
-            'risbang' => 'Biro Riset dan Pengembangan',
+            'risbang' => 'Biro Riset Pengembangan',
             'humas' => 'Biro Media Branding',
             'kemitraan' => 'Biro Kolaborasi dan Kemitraan',
             'internal' => 'Biro Internal',
-            'sosling' => 'Departemen Sosial Lingkungan Hidup',
-            'senbud' => 'Departemen Seni Budaya',
+            'sosling' => 'Departemen Sosial dan Lingkungan Hidup',
+            'senbud' => 'Departemen Seni dan Budaya',
             'ekraf' => 'Departemen Ekonomi Kreatif',
             'kesma' => 'Departemen Advokasi Kesejahteraan Mahasiswa',
             'psdm' => 'Departemen Pengembangan Sumber Daya Mahasiswa',
-            'kastrat' => 'Departemen Kajian Aksi Strategis',
+            'kastrat' => 'Departemen Kajian dan Aksi Strategis',
             'akpres' => 'Departemen Akademik Prestasi',
-            'olahraga' => 'Departemen Pemuda Olahraga'
+            'olahraga' => 'Departemen Pemuda dan Olahraga'
         ];
 
         // Ambil parameter 'divisi' dari URL

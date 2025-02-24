@@ -34,7 +34,7 @@ class DivisiSeeder extends Seeder
                 'divisi' => 'Biro Media Branding'
             ],
             [
-                'divisi' => 'Departemen Pengembangan Sumberdaya Mahasiswa'
+                'divisi' => 'Departemen Pengembangan Sumber Daya Mahasiswa'
             ],
             [
                 'divisi' => 'Biro Kolaborasi dan Kemitraan'

@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
 import ProductList from "../Components/Testfetching";
 
-export default function Tentang() {
+export default function Tentang(props) {
     return (
         <div className="">
             <Head title="Ormawa Eksekutif PKU IPB" />
@@ -76,23 +76,19 @@ export default function Tentang() {
                     </h1>
                 </div>
                 <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <CardTentang delay="0" nama="Biro Internal"></CardTentang>
-                    <CardTentang
-                        delay="100"
-                        nama="Biro Media Branding"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="200"
-                        nama="Biro Riset dan Pengembangan"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="300"
-                        nama="Biro Kolaborasi dan Kemitraan"
-                    ></CardTentang>
+                    {props.biro.map((divisi, index) => (
+                        <CardTentang
+                            key={index}
+                            delay={index * 100}
+                            nama={divisi.divisi}
+                            img=""
+                        />
+                    ))}
+                    ;
                 </div>
                 <div className="flex justify-center">
                     <h1
-                        className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full mt-8"
+                        className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full"
                         data-aos="fade-up"
                         data-aos-duration="800"
                     >
@@ -100,41 +96,18 @@ export default function Tentang() {
                     </h1>
                 </div>
                 <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <CardTentang
-                        delay="0"
-                        nama="Departemen Sosial Lingkungan Hidup"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="100"
-                        nama="Departemen Seni Budaya"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="200"
-                        nama="Departemen Ekonomi Kreatif"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="300"
-                        nama="Departemen Advokasi Kesejahteraan Mahasiswa"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="0"
-                        nama="Departemen Pengembangan Sumber Daya Mahasiswa"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="100"
-                        nama="Departemen Kajian Aksi Strategis"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="200"
-                        nama="Departemen Akademik Prestasi"
-                    ></CardTentang>
-                    <CardTentang
-                        delay="300"
-                        nama="Departemen Pemuda Olahraga"
-                    ></CardTentang>
+                    {props.departemen.map((divisi, index) => (
+                        <CardTentang
+                            key={index}
+                            delay={(index % 4) * 100}
+                            nama={divisi.divisi}
+                            img=""
+                        />
+                    ))}
+                    ;
                 </div>
             </div>
-            <ProductList></ProductList>
+            {/* <ProductList></ProductList> */}
             <Footer></Footer>
         </div>
     );
