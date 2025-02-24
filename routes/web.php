@@ -32,7 +32,6 @@ Route::get('/divisi', function () {
 //     ->name('divisi_dinamis');
 
 
-
 Route::get('/api/data', [DataController::class, 'index']);
 
 Route::get('/upload', [ImageController::class, 'create']); // Show form

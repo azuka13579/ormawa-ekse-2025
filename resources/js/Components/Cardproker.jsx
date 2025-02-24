@@ -26,7 +26,7 @@ export default function Cardproker(props) {
                 />
                 <h1
                     className="text-slate-300 font-montserrat text-3xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6 
-                group-hover:text-white transition duration-300 group-hover:scale-105"
+                group-hover:text-white transition duration-300 group-hover:scale-105 text-center"
                 >
                     {props.judul}
                 </h1>
