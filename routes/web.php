@@ -21,14 +21,15 @@ Route::get('/samudra-store', function () {
 })->name('samudra-store');
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
+Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middleware(CheckDivision::class)->name('tentang-divisi');
 
 Route::get('/divisi', function () {
     return Inertia::render('Divisi');
 })->name('divisi');
 
-Route::get('/tentang/{divisi}', [DivisionController::class, 'divisi'])
-    ->middleware(CheckDivision::class)
-    ->name('divisi_dinamis');
+// Route::get('/tentang/{divisi}', [DivisionController::class, 'divisi'])
+//     ->middleware(CheckDivision::class)
+//     ->name('divisi_dinamis');
 
 
 
