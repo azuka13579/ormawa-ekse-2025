@@ -10,7 +10,8 @@ const CarouselSamudra = forwardRef((props, ref) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/data")
+        axios
+            .get("http://127.0.0.1:8000/api/data")
             .then((response) => {
                 setProducts(response.data);
                 setLoading(false);
@@ -20,6 +21,8 @@ const CarouselSamudra = forwardRef((props, ref) => {
                 setLoading(false);
             });
     }, []);
+
+    console.log(products);
 
     const settings = {
         dots: true,
@@ -52,7 +55,13 @@ const CarouselSamudra = forwardRef((props, ref) => {
     };
 
     const updateCount = (index, value) => {
-        setProducts(prev => prev.map((item, i) => i === index ? { ...item, count: Math.max(1, (item.count || 1) + value) } : item));
+        setProducts((prev) =>
+            prev.map((item, i) =>
+                i === index
+                    ? { ...item, count: Math.max(1, (item.count || 1) + value) }
+                    : item
+            )
+        );
     };
 
     if (loading) return <p className="text-center text-gray-500">Loading...</p>;
@@ -65,16 +74,28 @@ const CarouselSamudra = forwardRef((props, ref) => {
                         <div className="relative flex flex-col bg-white p-4 shadow-xl h-[550px]">
                             {/* Gambar Produk */}
                             <img
-                                src={`${product.image_path}`|| "img/gambar.png"}
+                                src={
+                                    `${product.image_path}` || "img/gambar.png"
+                                }
                                 alt={product.name}
                                 className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover"
                             />
-                            
+
                             {/* Counter Barang */}
                             <div className="flex items-center gap-2 mt-2">
-                                <button className="bg-gray-300 px-3 py-1 rounded-md" onClick={() => updateCount(index, -1)}>-</button>
+                                <button
+                                    className="bg-gray-300 px-3 py-1 rounded-md"
+                                    onClick={() => updateCount(index, -1)}
+                                >
+                                    -
+                                </button>
                                 <span>{product.count || 1}</span>
-                                <button className="bg-gray-300 px-3 py-1 rounded-md" onClick={() => updateCount(index, 1)}>+</button>
+                                <button
+                                    className="bg-gray-300 px-3 py-1 rounded-md"
+                                    onClick={() => updateCount(index, 1)}
+                                >
+                                    +
+                                </button>
                             </div>
                             {/* Shopping Bag */}
                             <button className="mt-3 max-w-[150px] bg-black text-white px-3 py-1 flex items-center gap-2 rounded-md">

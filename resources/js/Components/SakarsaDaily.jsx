@@ -6,13 +6,11 @@ import Carousel from "./Corousel";
 export default function SakarsaDaily() {
     const sliderRef = useRef(null);
 
-
     return (
-        
-        <div 
+        <div
             data-aos="fade-up"
             data-aos-duration="800"
-            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
+            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 pb-4 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
         >
             <div className="relative">
                 <h1 className="font-rowdies text-4xl md:text-5xl text-fontcolors">

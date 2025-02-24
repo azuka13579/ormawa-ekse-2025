@@ -16,7 +16,7 @@ class TentangController extends Controller
         $departemen = [];
         foreach ($data as $value) {
             if(Str::contains($value, 'Biro')){
-                array_push($biro, $value);
+                array_push($biro, $value);   
             }
             if(Str::contains($value, 'Departemen')){
                 array_push($departemen, $value);

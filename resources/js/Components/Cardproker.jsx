@@ -52,7 +52,7 @@ export default function Cardproker(props) {
                             <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5"></div>
                             <div className="text-primary5 md:w-3/5">
                                 <div className="border-b-[2px] border-primary5 pb-4">
-                                    <h2 className="text-lg md:text-3xl font-bold ">
+                                    <h2 className="text-2xl md:text-4xl font-bold ">
                                         Risbang Investigation 1.0
                                     </h2>
                                     <p className="text-sm md:text-xl">
