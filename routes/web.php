@@ -4,6 +4,7 @@ use App\Http\Controllers\DataController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginMasterController;
+use App\Http\Controllers\TentangController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\CheckDivision;
@@ -19,9 +20,7 @@ Route::get('/samudra-store', function () {
     return Inertia::render('SamudraStore');
 })->name('samudra-store');
 
-Route::get('/tentang', function () {
-    return Inertia::render('Tentang');
-})->name('tentang');
+Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 
 Route::get('/divisi', function () {
     return Inertia::render('Divisi');
