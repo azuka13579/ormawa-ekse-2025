@@ -16,56 +16,52 @@ export default function Divisicopy(props) {
                 <Navbar />
 
                 <div className="h-full flex flex-1">
-                    <div className="md:w-4/5 bg-white text-primary5 h-full flex justify-center md:gap-8 md:ml-20 flex-col px-4 md:items-start items-center">
+                    <div className="kiri md:w-3/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative">
                         <img
-                            img
                             src={`${window.location.origin}/img/Home.png`}
-                            alt="Gambar di kanan tengah"
-                            className="scale-75 md:hidden"
+                            alt="Gambar mobile di tengah"
+                            class="scale-75 md:hidden"
                             data-aos="fade-up"
                             data-aos-duration="800"
                         />
-
                         <div
-                            className="font-rowdies font-bold text-5xl md:text-6xl text-center md:text-left"
+                            className="font-rowdies font-bold text-5xl md:text-7xl text-center md:text-left"
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
-                            <p className="text-4xl md:text-5xl">
-                                Tentang Kita,
-                            </p>
-                            <p>{props.divisi || "Nama Divisi"}</p>
-                            <p className="font-thin text-xl italic mt-4">
-                                Ormawa Eksekutif PKU 2024/2025
-                            </p>
+                            <p>Tentang Kita,</p>
+                            <p>{props.divisi}</p>
                         </div>
                         <div
-                            className="p-5 bg-primary4 text-white md:w-3/5 rounded-xl mt-6 md:mt-0"
+                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify max-w-[1000px]"
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="200"
                         >
-                            <p className="font-montserrat md:text-lg text-justify">
+                            <p
+                                className="font-montserrat text-lg"
+                                data-aos="fade-right"
+                                data-aos-duration="800"
+                                data-aos-delay="200"
+                            >
                                 Ormawa Eksekutif PKU IPB merupakan organisasi
                                 kemahasiswaan di lingkup Pendidikan Kompetensi
                                 Umum yang dikhususkan untuk mahasiswa tingkat
                                 PKU IPB. Fungsinya melibatkan pemberian
-                                kesejahteraan dan penanganan problematika yang
-                                dialami mahasiswa PKU IPB.
+                                kesejahteraan penanganan segala problematika
+                                yang dialami mahasiswa PKU IPB.
                             </p>
                         </div>
                     </div>
-
                     <div
-                        className="absolute h-screen w-full md:visible invisible"
+                        className="kanan flex-1 flex justify-center items-center invisible md:visible"
                         data-aos="fade-up"
                         data-aos-duration="800"
                     >
                         <img
-                            img
                             src={`${window.location.origin}/img/Home.png`}
-                            alt="Gambar"
-                            className="absolute -right-16 top-1/2 -translate-y-1/2 scale-75"
+                            alt="Gambar di kanan tengah"
+                            class="w-full h-auto object-cover max-w-[600px]"
                         />
                     </div>
                 </div>

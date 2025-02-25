@@ -28,7 +28,7 @@ export default function Home() {
                     data-aos-duration="1000"
                 >
                     {/* Bagian kiri konten */}
-                    <div className="md:w-3/5 max-h-[700px] text-primary5 flex justify-center text-center md:gap-6 flex-col px-5">
+                    <div className="md:w-3/5  text-primary5 flex justify-center text-center md:gap-6 flex-col px-5">
                         <div
                             className="font-rowdies font-bold md:text-6xl text-4xl"
                             data-aos="fade-right"
