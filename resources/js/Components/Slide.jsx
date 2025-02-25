@@ -5,6 +5,8 @@ const ImageSlider = (props) => {
 
     const images = props.images;
 
+    console.log(images);
+
     return (
         <div className="relative w-full rounded-2xl">
             {/* Slider Container */}
@@ -24,7 +26,7 @@ const ImageSlider = (props) => {
                         }}
                     >
                         <img
-                            src={`${window.location.origin}/${src}`}
+                            src={`${window.location.origin}/${src.image_path}`}
                             alt={`Slide ${index}`}
                             className="h-auto max-h-[500px] w-auto object-contain"
                         />

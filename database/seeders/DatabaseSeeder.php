@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             AdminHaidarSeeder::class,
             ImageHaidarSeeder::class,
             KaptenSeeder::class,
+            AnggotaSeeder::class
         ]);
     }
 }

@@ -30,7 +30,7 @@ export default function Divisicopy(props) {
         "img/Rafa.png",
     ];
 
-    console.log(props);
+    // console.log(props.anggota);
 
     return (
         <div>
@@ -143,7 +143,7 @@ export default function Divisicopy(props) {
                         {props.divisi || "Nama Divisi"}
                     </h1>
 
-                    <ImageSlider images={anggota} />
+                    <ImageSlider images={props.anggota} />
                 </div>
             </div>
 
@@ -168,8 +168,12 @@ export default function Divisicopy(props) {
             </div>
 
             {/* Proker Grid */}
-            <div className="px-4 md:px-20 py-8 flex flex-col gap-6">
-                <div className="text-center">
+            <div className="px-4 md:px-20 py-8 flex flex-col gap-6 ">
+                <div
+                    className="text-center"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                >
                     <h1
                         className="text-primary5 text-4xl font-rowdies font-bold"
                         data-aos="fade-up"
@@ -178,7 +182,7 @@ export default function Divisicopy(props) {
                         Cari Tahu Lebih Banyak!
                     </h1>
                     <h1
-                        className="text-primary4 text-2xl font-montserrat"
+                        className="text-primary4 text-2xl font-montserrat border-b-2 border-primary5 pb-2"
                         data-aos="fade-up"
                         data-aos-duration="800"
                     >
