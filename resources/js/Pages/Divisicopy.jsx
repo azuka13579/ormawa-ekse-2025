@@ -7,29 +7,6 @@ import Cardproker from "../Components/Cardproker";
 import ImageSlider from "../Components/Slide";
 
 export default function Divisicopy(props) {
-    const anggota = [
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-        "img/Rafa.png",
-    ];
-
     // console.log(props.anggota);
 
     return (
@@ -106,7 +83,7 @@ export default function Divisicopy(props) {
                             Kapten
                         </h1>
                         <h1
-                            className="text-primary6 text-2xl font-montserrat mt-2"
+                            className="text-primary6 text-2xl font-montserrat mt-2 "
                             data-aos="fade-up"
                             data-aos-duration="800"
                         >

@@ -13,7 +13,7 @@ const ImageSlider = (props) => {
             <div
                 data-aos="fade-up"
                 data-aos-duration="1200"
-                className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory scroll-smooth"
+                className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory scroll-smooth rounded-xl"
             >
                 {images.map((src, index) => (
                     <div
