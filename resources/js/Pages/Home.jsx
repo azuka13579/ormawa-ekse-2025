@@ -67,7 +67,7 @@ export default function Home() {
             <div
                 data-aos="fade-up"
                 data-aos-duration="800"
-                className=" px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+                className="px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
             >
                 <div className="text-center mb-8">
                     <h1 className="text-6xl font-bold text-white font-rowdies">
