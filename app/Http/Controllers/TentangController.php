@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anggota;
 use App\Models\Div;
 use App\Models\Kapten;
 use Illuminate\Http\Request;
@@ -28,22 +29,10 @@ class TentangController extends Controller
     }
 
     public function divisi($divisi){
-        // dd($divisi_route);
-        // $data = Kapten::all();
-        // $data_div = [];
-        // foreach ($data as $value) {
-        //     $prop = $value->relation->divisi;
-        //     if($prop != NULL){
-        //         if($prop == $divisi_route){
-        //             array_push($data_div, $value);
-        //         }
-        //     }
-        // }
-        // $data = Kapten::whereHas('relation', function ($query) use($divisi) {
-        //     $query->where('divisi', $divisi);
-        // })->with('relation')->get();
+        
         $id = Div::where('divisi', $divisi)->select('id')->get();
         $data = Kapten::where('div_id', $id[0]->id)->get();
-        return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data]);
+        $anggota = Anggota::where('div_id', $id[0]->id)->get();
+        return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data, 'anggota' => $anggota]);
     }
 }
