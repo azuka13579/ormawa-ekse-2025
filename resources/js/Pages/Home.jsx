@@ -28,7 +28,7 @@ export default function Home() {
                     data-aos-duration="1000"
                 >
                     {/* Bagian kiri konten */}
-                    <div className="md:w-3/5 max-h-[700px] text-primary5 flex justify-center text-center md:gap-6 flex-col px-5">
+                    <div className="md:w-3/5  text-primary5 flex justify-center text-center md:gap-6 flex-col px-5">
                         <div
                             className="font-rowdies font-bold md:text-6xl text-4xl"
                             data-aos="fade-right"
@@ -67,7 +67,7 @@ export default function Home() {
             <div
                 data-aos="fade-up"
                 data-aos-duration="800"
-                className=" px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+                className="px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
             >
                 <div className="text-center mb-8">
                     <h1 className="text-6xl font-bold text-white font-rowdies">

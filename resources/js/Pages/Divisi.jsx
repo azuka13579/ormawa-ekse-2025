@@ -166,7 +166,7 @@ export default function Divisi() {
                             </OwlCarousel>
                         </div>
                     </div>
-                    <ImageSlider></ImageSlider>
+                    {/* <ImageSlider></ImageSlider> */}
                 </div>
             </div>
             <div className="md:px-20 px-4">

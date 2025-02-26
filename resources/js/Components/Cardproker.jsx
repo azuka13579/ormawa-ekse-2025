@@ -8,7 +8,7 @@ export default function Cardproker(props) {
     return (
         <div className="bg-white p-4">
             <div
-                className="w-full h-80 bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg group hover:scale-105 relative transition duration-300 overflow-hidden flex justify-center"
+                className="w-full h-80 bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg group hover:scale-105 relative transition duration-300 overflow-hidden flex justify-center shadow-md"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay={props.delay}

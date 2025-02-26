@@ -5,13 +5,15 @@ const ImageSlider = (props) => {
 
     const images = props.images;
 
+    console.log(images);
+
     return (
         <div className="relative w-full rounded-2xl">
             {/* Slider Container */}
             <div
                 data-aos="fade-up"
                 data-aos-duration="1200"
-                className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory scroll-smooth"
+                className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory scroll-smooth rounded-xl"
             >
                 {images.map((src, index) => (
                     <div
@@ -24,7 +26,7 @@ const ImageSlider = (props) => {
                         }}
                     >
                         <img
-                            src={`${window.location.origin}/${src}`}
+                            src={`${window.location.origin}/${src.image_path}`}
                             alt={`Slide ${index}`}
                             className="h-auto max-h-[500px] w-auto object-contain"
                         />
