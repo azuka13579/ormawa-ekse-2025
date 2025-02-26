@@ -7,7 +7,7 @@ import Cardproker from "../Components/Cardproker";
 import ImageSlider from "../Components/Slide";
 
 export default function Divisicopy(props) {
-    // console.log(props.anggota);
+    console.log(props.proker);
 
     return (
         <div>
@@ -20,7 +20,7 @@ export default function Divisicopy(props) {
                         <img
                             src={`${window.location.origin}/img/Home.png`}
                             alt="Gambar mobile di tengah"
-                            class="scale-75 md:hidden"
+                            className="scale-75 md:hidden"
                             data-aos="fade-up"
                             data-aos-duration="800"
                         />
@@ -61,7 +61,7 @@ export default function Divisicopy(props) {
                         <img
                             src={`${window.location.origin}/img/Home.png`}
                             alt="Gambar di kanan tengah"
-                            class="w-full h-auto object-cover max-w-[600px]"
+                            className="w-full h-auto object-cover max-w-[600px]"
                         />
                     </div>
                 </div>
@@ -163,16 +163,12 @@ export default function Divisicopy(props) {
                     </h1>
                 </div>
                 <div className="flex flex-wrap flex-col md:grid md:grid-cols-2 gap-8 px-4">
-                    {[
-                        "Risbang Investigation 1.0",
-                        "Risbang Investigation 1.0",
-                        "Risbang Investigation 1.0",
-                        "Risbang Investigation (RISVES) 1.0",
-                    ].map((judul, index) => (
+                    {props.proker.map((proker, index) => (
                         <Cardproker
                             key={index}
-                            judul={judul}
+                            judul={proker.nama}
                             delay={index % 2 === 0 ? "" : "150"}
+                            {...proker}
                         />
                     ))}
                 </div>

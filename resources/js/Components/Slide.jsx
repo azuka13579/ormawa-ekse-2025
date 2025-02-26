@@ -5,7 +5,7 @@ const ImageSlider = (props) => {
 
     const images = props.images;
 
-    console.log(images);
+    // console.log(images)
 
     return (
         <div className="relative w-full rounded-2xl">

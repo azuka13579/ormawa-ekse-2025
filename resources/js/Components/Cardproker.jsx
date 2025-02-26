@@ -20,7 +20,7 @@ export default function Cardproker(props) {
                     </h1>
                 </div> */}
                 <img
-                    src={`${window.location.origin}/img/Home.png`}
+                    src={`${window.location.origin}/${props.image_path}`}
                     alt=""
                     className="w-auto h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
                 />
@@ -49,28 +49,32 @@ export default function Cardproker(props) {
                             <X size={20} />
                         </button>
                         <div className="flex md:flex-row flex-col gap-6">
-                            <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5"></div>
+                            <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5">
+                                <img
+                                    src={`${window.location.origin}/${props.image_path}`}
+                                    alt=""
+                                />
+                            </div>
                             <div className="text-primary5 md:w-3/5">
                                 <div className="border-b-[2px] border-primary5 pb-4">
                                     <h2 className="text-2xl md:text-4xl font-bold ">
-                                        Risbang Investigation 1.0
+                                        {props.nama}
                                     </h2>
                                     <p className="text-sm md:text-xl">
-                                        2 Februari - 26 Februari 2025
+                                        {props.start} - {props.end}
                                     </p>
                                 </div>
+                                <h1 className="text-2xl font-bold mt-4 ">
+                                    Tujuan
+                                </h1>
 
-                                <p className="text-sm mt-4 text-justify">
-                                    Program kerja yang bertujuan untuk
-                                    mengumpulkan data melalui platform fillout
-                                    serta mengolah dan menganalisis data terkait
-                                    pengalaman akademik mahasiswa PPKU, kemudian
-                                    mempublikasikan hasil beserta solusinya
-                                    untuk perbaikan kualitas pembelajaran. Lorem
-                                    ipsum dolor sit amet consectetur adipisicing
-                                    elit. Distinctio odit perspiciatis expedita
-                                    quam esse laudantium asperiores repellat
-                                    laboriosam voluptates numquam eos ipsa
+                                <p className="text-sm text-justify">
+                                    {props.deskripsi}
+                                </p>
+                                <h1 className="text-2xl font-bold mt-4 ">
+                                    Deskripsi
+                                </h1>
+                                <p className="text-sm text-justify">
                                     repudiandae dolores nulla alias, enim quas
                                     tempora cum earum eveniet aliquid. Nesciunt
                                     illo odio adipisci tempore laudantium
@@ -91,19 +95,6 @@ export default function Cardproker(props) {
                                     in similique, eaque voluptate. Perferendis
                                     quidem voluptatibus similique doloremque
                                     earum quia ex. Accusamus voluptatem delectus
-                                    quas incidunt, vero, quia consequatur sint
-                                    officia fuga facere, culpa quam quod hic
-                                    velit voluptate facilis quisquam qui ut!
-                                    Incidunt laborum odit minus inventore error
-                                    explicabo nesciunt illum, sunt eaque quos
-                                    reprehenderit eos ducimus numquam aperiam
-                                    enim laudantium delectus quod dolorem
-                                    excepturi eligendi voluptate ipsum
-                                    perspiciatis quasi? Quasi, aspernatur odit
-                                    quibusdam alias commodi, quidem adipisci
-                                    consequuntur doloremque deleniti pariatur
-                                    aliquid similique doloribus eum distinctio,
-                                    amet debitis modi error?
                                 </p>
                             </div>
                         </div>
