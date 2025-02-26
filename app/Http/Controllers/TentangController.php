@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Anggota;
 use App\Models\Div;
 use App\Models\Kapten;
+use App\Models\Proker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
@@ -33,6 +34,7 @@ class TentangController extends Controller
         $id = Div::where('divisi', $divisi)->select('id')->get();
         $data = Kapten::where('div_id', $id[0]->id)->get();
         $anggota = Anggota::where('div_id', $id[0]->id)->get();
-        return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data, 'anggota' => $anggota]);
+        $proker = Proker::where('div_id', $id[0]->id)->get();
+        return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data, 'anggota' => $anggota, 'proker' => $proker]);
     }
 }
