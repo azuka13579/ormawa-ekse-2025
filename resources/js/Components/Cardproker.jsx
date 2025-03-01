@@ -49,10 +49,11 @@ export default function Cardproker(props) {
                             <X size={20} />
                         </button>
                         <div className="flex md:flex-row flex-col gap-6">
-                            <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5">
+                            <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5 flex justify-center">
                                 <img
                                     src={`${window.location.origin}/${props.image_path}`}
                                     alt=""
+                                    className="h-full object-cover"
                                 />
                             </div>
                             <div className="text-primary5 md:w-3/5">

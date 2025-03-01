@@ -29,7 +29,6 @@ export default function Divisicopy(props) {
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
-                            <p>Tentang Kita,</p>
                             <p>{props.divisi}</p>
                         </div>
                         <div
