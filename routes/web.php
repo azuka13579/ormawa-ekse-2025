@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ImageController;
@@ -36,4 +37,6 @@ Route::get('/api/data', [DataController::class, 'index']);
 
 Route::get('/upload', [ImageController::class, 'create']); // Show form
 Route::post('/upload', [ImageController::class, 'store']); // Handle form submission
-Route::get('/logmas', [LoginMasterController::class, 'index'])->name('master-login-index');
+// Route::get('/logmas', [LoginMasterController::class, 'index'])->name('master-login-index');
+Route::get('/masuk', [AdminController::class, 'login'])->name('admin-login');
+Route::post('/masuk', [AdminController::class, 'authenticate']);

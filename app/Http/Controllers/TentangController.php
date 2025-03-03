@@ -35,6 +35,7 @@ class TentangController extends Controller
         $data = Kapten::where('div_id', $id[0]->id)->get();
         $anggota = Anggota::where('div_id', $id[0]->id)->get();
         $proker = Proker::where('div_id', $id[0]->id)->get();
+        // dd($proker);
         return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data, 'anggota' => $anggota, 'proker' => $proker]);
     }
 }

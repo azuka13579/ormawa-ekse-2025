@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('start');
             $table->date('end');
             $table->string('image_path');
+            $table->longText('tujuan');
             $table->longText('deskripsi');
             $table->timestamps();
         });

@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Proker>
  */
 class ProkerFactory extends Factory
 {
@@ -22,7 +22,8 @@ class ProkerFactory extends Factory
             'start' => now()->toDateString(),
             'end' => now()->toDateString(),
             'image_path' => 'storage\images\img.jpeg',
-            'deskripsi' => $this->faker->paragraph(3, false)
+            'tujuan' => $this->faker->paragraph(1, false),
+            'deskripsi' => $this->faker->paragraph(3, false),
         ];
     }
 }
