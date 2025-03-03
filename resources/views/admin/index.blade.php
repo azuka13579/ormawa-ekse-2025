@@ -7,7 +7,11 @@
     <title>Home | Admin</title>
 </head>
 <body>
-    <a href="">Tambah Proker</a>
+    <a href="{{ route('addproker') }}">Tambah Proker</a>
     {{-- List Proker + tombol edit --}}
+    <form action="" method="POST">
+        @csrf
+        <button type="submit">Keluar</button>
+    </form>
 </body>
 </html>

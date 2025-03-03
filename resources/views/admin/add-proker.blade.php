@@ -7,9 +7,18 @@
     <title>Tambah Proker | Admin</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="#" method="POST"  enctype="multipart/form-data">
         @csrf
-        <input type="text" name="">
+        Nama Proker : <input type="text" name="namaproker" required>
+        Tujuan : <input type="text" name="tujuan" required>
+        Deskripsi : <textarea name="deskripsi" required></textarea>
+        Gamber : 
+        <input type="file" name="image" required>
+        Tanggal dimulai proker : 
+        <input type="date" name="startdate">
+        Tanggal berakhir proker :
+        <input type="date" name="enddate">
+        <button type="submit">Simpan</button>
     </form>
 </body>
 </html>
