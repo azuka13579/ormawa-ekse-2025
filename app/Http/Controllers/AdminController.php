@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proker;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -11,6 +13,8 @@ class AdminController extends Controller
         return view('admin.login');
     }
     public function authenticate(Request $request){
+       
+
         $credential = $request->validate([
             'nim' => 'required',
             'password' => 'required'
@@ -21,6 +25,8 @@ class AdminController extends Controller
         // dd($request);
         if(Auth::attempt($credential)){
             $request->session()->regenerate();
+            // dd(Auth::user()->nama);
+            
 
             return redirect()->intended('/admin');
         }
