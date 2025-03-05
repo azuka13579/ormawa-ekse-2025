@@ -13,7 +13,7 @@ export default function CardBPH(props) {
                     <img
                         src={`${window.location.origin}/img/rafa.png`}
                         alt=""
-                        className={`md:${props.scale} top-60  relative scale-[0.8]`}
+                        className={`md:${props.scale} top-60  relative scale-[0.8] w-full`}
                     />
                     <h1 className="text-white font-montserrat text-xl font-bold drop-shadow-lg absolute bottom-12 left-6 right-6">
                         {props.nama}
