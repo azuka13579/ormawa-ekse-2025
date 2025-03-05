@@ -3,8 +3,10 @@ import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ProdukSamudra from "../Components/ProdukSamudra";
+import { usePage } from "@inertiajs/react";
 
 export default function SakarsaHelp() {
+    const { products } = usePage().props;
     return (
         <div>
             <Head title="Samudra Store" />
@@ -80,7 +82,9 @@ export default function SakarsaHelp() {
                     In Sale
                 </p>
             </div>
-            <ProdukSamudra></ProdukSamudra>
+            
+            <ProdukSamudra products={products} />
+
 
             <Footer></Footer>
         </div>

@@ -1,0 +1,15 @@
+<?php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class AdminSamudraStore extends Authenticatable
+{
+    use HasFactory;
+
+    protected $table = 'admin_samudra_stores';
+    protected $guarded = [];
+    protected $fillable = ['name', 'email', 'password'];
+}
+

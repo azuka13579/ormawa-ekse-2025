@@ -1,57 +1,27 @@
-import React, { useRef } from "react";
-import CarouselSamudra from "./CorouselSamudra";
+import React from "react";
+import { Link } from "@inertiajs/react";
 
-export default function ProdukSamudra() {
-    const sliderRef = useRef(null);
-
+export default function ProductsSamudra({ products }) {
     return (
-        <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 bg-white mt-8 relative "
-        >
-            {/* Tombol Previous di Kiri */}
-            <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full hover:bg-fontcolors transition shadow-md z-10"
-                onClick={() => sliderRef.current?.slickPrev()}
-            >
-                <svg
-                    className="w-6 h-6 text-fontcolors hover:text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                    />
-                </svg>
-            </button>
+        
+        <div className="container mx-auto px-4 my-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {products.map((product) => (
+                    <div key={product.id} className="border p-4 rounded-lg shadow-md">
+                        <img
+                    src={`/storage/${product.image}`}
+                alt={product.name}
+                 className="w-full h-40 object-cover rounded-md mb-2"
+                />
 
-            {/* Carousel */}
-            {/* <CarouselSamudra ref={sliderRef} /> */}
-
-            {/* Tombol Next di Kanan */}
-            <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full hover:bg-fontcolors transition shadow-md z-10"
-                onClick={() => sliderRef.current?.slickNext()}
-            >
-                <svg
-                    className="w-6 h-6 text-fontcolors hover:text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                    />
-                </svg>
-            </button>
+                        <h2 className="text-xl font-semibold">{product.name}</h2>
+                        <p className="text-gray-600">{product.description}</p>
+                        <p className="text-gray-600">{product.size}</p>
+                        <p className="text-lg font-bold text-green-600">Rp.{product.price}</p>
+                        <p className="text-gray-700">Stock: {product.stock}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
