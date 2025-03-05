@@ -11,10 +11,10 @@
     <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-xl font-bold mb-4">Edit Program Kerja</h1>
 
-        <form action="{{ route('editproker', $proker->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('updateproker', $proker->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label class="block mb-2">Nama Singkat Proker</label>
-            <input type="text" name="namaproker" value="{{ $proker->namasingkatan }}" required class="w-full p-2 border rounded mb-4">
+            <input type="text" name="namasingkat" value="{{ $proker->namasingkatan }}" required class="w-full p-2 border rounded mb-4">
             <label class="block mb-2">Nama Proker</label>
             <input type="text" name="namaproker" value="{{ $proker->nama }}" required class="w-full p-2 border rounded mb-4">
 

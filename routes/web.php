@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function(){
     Route::post('/add-proker', [ProkerController::class, 'simpan']);
 
     Route::get('/edit-proker/{id}', [ProkerController::class, 'edit'])->name('editproker');
-    Route::post('/edit-proker/{id}', [ProkerController::class, 'update']);
+    Route::post('/edit-proker/{id}', [ProkerController::class, 'update'])->name('updateproker');
 
     Route::post('/delete-proker/{id}', [ProkerController::class, 'delete'])->name('deleteproker');
 });

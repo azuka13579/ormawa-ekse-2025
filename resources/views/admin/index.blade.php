@@ -47,7 +47,9 @@
                                 <td class="px-6 py-4 text-sm text-gray-800 max-w-xs">{{ $proker->nama }}</td>
                                 <td class="px-6 py-4 text-sm text-gray-600">{{ Str::limit($proker->tujuan, 50) }}</td>
                                 <td class="px-6 py-4 text-sm text-gray-600">
-                                    <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">{{ $proker->start }} – {{ $proker->end }}</span>
+                                    <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">{{ \Carbon\Carbon::parse($proker->start)->locale('id')->translatedFormat('j F Y') }} – 
+                                        {{ \Carbon\Carbon::parse($proker->end)->locale('id')->translatedFormat('j F Y') }}
+                                        </span>
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="w-16 h-16 rounded-lg overflow-hidden border">

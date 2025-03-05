@@ -63,7 +63,7 @@ class ProkerController extends Controller
             'enddate' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-
+        
         if ($request->hasFile('image')) {
             if ($proker->image_path) {
                 Storage::delete(str_replace('storage/', '', $proker->image_path));
@@ -72,11 +72,16 @@ class ProkerController extends Controller
             $image_path = $image->store('proker', 'public');
             $proker->image_path = "storage/" . $image_path;
         }
-
-        $proker->update(array_merge($request->except(['_token', 'image']), [
+        $proker->update([
+            'namasingkatan' => $request->namasingkat,
             'nama' => $request->namaproker,
-            'namasingkatan' => $request->namasingkat
-        ]));
+            'deskripsi' => $request->deskripsi,
+            'tujuan' => $request->tujuan,
+            'start' => $request->startdate,
+            'end' => $request->enddate,
+            'image_path' => $proker->image_path, // Pastikan ini ada!
+        ]);
+        
         return redirect()->route('admin-index');
     }
 
