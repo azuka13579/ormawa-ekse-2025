@@ -5,24 +5,22 @@ export default function Cardkapten(props) {
         <div className="">
             <div
                 className="w-[300px] h-[400px] bg-primary7 from-primary4 to-[#31BFE3] rounded-lg flex 
-                items-end group hover:scale-105 overflow-hidden shadow-primary4 shadow-md "
+                items-center justify-center group hover:scale-105 overflow-hidden shadow-primary4 shadow-md relative "
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay={props.delay}
             >
-                <div className="flex flex-col relative">
-                    <img
-                        src={`${window.location.origin}/${props.image_path}`}
-                        alt=""
-                        className="group-hover:scale-110 transition duration-1000 ease-in-out"
-                    />
-                    <h1 className="text-white font-montserrat text-xl font-bold drop-shadow-lg absolute bottom-12 left-6 right-6">
-                        {props.nama}
-                    </h1>
-                    <h1 className="text-white font-montserrat text-lg font-light drop-shadow-lg absolute bottom-6 left-6 right-6">
-                        Kapten {props.no}
-                    </h1>
-                </div>
+                <img
+                    src={`${window.location.origin}/${props.image_path}`}
+                    alt=""
+                    className="group-hover:scale-110 transition duration-1000 ease-in-out h-full object-cover"
+                />
+                <h1 className="text-white font-montserrat text-xl font-bold drop-shadow-lg absolute bottom-12 left-6 right-6">
+                    {props.nama}
+                </h1>
+                <h1 className="text-white font-montserrat text-lg font-light drop-shadow-lg absolute bottom-6 left-6 right-6">
+                    Kapten {props.no}
+                </h1>
             </div>
         </div>
     );

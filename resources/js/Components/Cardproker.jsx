@@ -24,6 +24,7 @@ export default function Cardproker(props) {
                     alt=""
                     className="w-auto h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
                 />
+                <div className="w-full h-full absolute bg-gradient-to-t from-primary4 to-transparent -bottom-10"></div>
                 <h1
                     className="text-slate-300 font-montserrat text-3xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6 
                 group-hover:text-white transition duration-300 group-hover:scale-105 text-center"
@@ -53,7 +54,7 @@ export default function Cardproker(props) {
                                 <img
                                     src={`${window.location.origin}/${props.image_path}`}
                                     alt=""
-                                    className="h-full object-cover"
+                                    className="h-full object-cover rounded-xl"
                                 />
                             </div>
                             <div className="text-primary5 md:w-3/5">
@@ -70,32 +71,13 @@ export default function Cardproker(props) {
                                 </h1>
 
                                 <p className="text-sm text-justify">
-                                    {props.deskripsi}
+                                    {props.tujuan}
                                 </p>
                                 <h1 className="text-2xl font-bold mt-4 ">
                                     Deskripsi
                                 </h1>
                                 <p className="text-sm text-justify">
-                                    repudiandae dolores nulla alias, enim quas
-                                    tempora cum earum eveniet aliquid. Nesciunt
-                                    illo odio adipisci tempore laudantium
-                                    molestias culpa sequi ab ipsam alias
-                                    sapiente ad veritatis cum nam dolorem eius,
-                                    rem vitae labore id doloremque consectetur
-                                    quis obcaecati consequuntur. Aspernatur
-                                    doloremque architecto, cum aliquam aut
-                                    mollitia dicta quos autem dignissimos,
-                                    maiores animi commodi sed doloribus,
-                                    temporibus non numquam! Id esse reiciendis
-                                    dolor architecto aliquid animi quos non?
-                                    Debitis, ex optio nesciunt quae quasi autem
-                                    officia aliquid et sed? Assumenda facilis
-                                    dolore iusto maiores ipsa voluptate
-                                    accusantium! Mollitia esse, expedita
-                                    suscipit nesciunt dolor odit iure delectus
-                                    in similique, eaque voluptate. Perferendis
-                                    quidem voluptatibus similique doloremque
-                                    earum quia ex. Accusamus voluptatem delectus
+                                    {props.deskripsi}
                                 </p>
                             </div>
                         </div>

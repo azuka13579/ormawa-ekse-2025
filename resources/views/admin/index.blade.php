@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     Selamat datang {{ auth()->user()->nama }} dari {{ auth()->user()->div }}.</br>
