@@ -34,6 +34,6 @@ class AdminController extends Controller
     }
     public function keluar(){
         Auth::logout();
-        return to_route('home');
+        return to_route('login');
     }
 }
