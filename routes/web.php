@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DataController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginMasterController;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\CheckDivision;
 use App\Models\Proker;
+use App\Models\Div;
 Route::get('/', function () {
     return Inertia::render('Home');
 })->name('home');
@@ -45,7 +47,8 @@ Route::post('/masuk', [AdminController::class, 'authenticate']);
 
 Route::middleware('auth')->group(function(){
     Route::get('/admin', function(){
-        $prokers = Proker::all();
+        $div_id = Div::where('divisi', Auth::user()->div)->value('id');
+        $prokers = Proker::where('div_id', $div_id)->get();
         return view('admin.index', compact('prokers'));
     })->name('admin-index');
 

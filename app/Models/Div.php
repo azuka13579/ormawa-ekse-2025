@@ -12,8 +12,5 @@ class Div extends Model
     protected $table = 'divs';
     protected $fillable = ['divisi'];
 
-    public function prokers(): HasMany
-    {
-        return $this->hasMany(Proker::class);
-    }
+    
 }
