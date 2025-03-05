@@ -10,6 +10,7 @@ use App\Http\Controllers\TentangController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\CheckDivision;
+use App\Models\Proker;
 Route::get('/', function () {
     return Inertia::render('Home');
 })->name('home');
@@ -44,11 +45,19 @@ Route::post('/masuk', [AdminController::class, 'authenticate']);
 
 Route::middleware('auth')->group(function(){
     Route::get('/admin', function(){
-        return view('admin.index');
+        $prokers = Proker::all();
+        return view('admin.index', compact('prokers'));
     })->name('admin-index');
-    Route::post('/admin', [AdminController::class, 'keluar']);
+
+    Route::post('/admin', [AdminController::class, 'keluar'])->name('keluar');
+
     Route::get('/add-proker', function(){
         return view('admin.add-proker');
     })->name('addproker');
     Route::post('/add-proker', [ProkerController::class, 'simpan']);
+
+    Route::get('/edit-proker/{id}', [ProkerController::class, 'edit'])->name('editproker');
+    Route::post('/edit-proker/{id}', [ProkerController::class, 'update']);
+
+    Route::post('/delete-proker/{id}', [ProkerController::class, 'delete'])->name('deleteproker');
 });

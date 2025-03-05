@@ -9,5 +9,5 @@ class Proker extends Model
 {
     use HasFactory;
     protected $table = 'prokers';
-    protected $fillable = ['div_id', 'nama', 'start', 'end', 'image_path', 'deskripsi', 'tujuan'];
+    protected $fillable = ['div_id','namasingkatan', 'nama', 'start', 'end', 'image_path', 'deskripsi', 'tujuan'];
 }

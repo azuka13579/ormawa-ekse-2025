@@ -16,6 +16,10 @@
             @csrf
             
             <div>
+                <label class="block text-gray-700 font-medium">Nama Singkat Proker</label>
+                <input type="text" name="namasingkat" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
                 <label class="block text-gray-700 font-medium">Nama Proker</label>
                 <input type="text" name="namaproker" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
             </div>

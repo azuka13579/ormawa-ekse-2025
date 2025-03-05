@@ -165,7 +165,7 @@ export default function Divisicopy(props) {
                     {props.proker.map((proker, index) => (
                         <Cardproker
                             key={index}
-                            judul={proker.nama}
+                            judul={proker.namasingkatan}
                             delay={index % 2 === 0 ? "" : "150"}
                             {...proker}
                         />

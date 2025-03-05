@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('prokers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('div_id');
- 
             $table->foreign('div_id')->references('id')->on('divs');
+            $table->string('namasingkatan');
             $table->string('nama');
             $table->date('start');
             $table->date('end');
