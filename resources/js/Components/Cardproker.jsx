@@ -24,6 +24,7 @@ export default function Cardproker(props) {
                     alt=""
                     className="w-auto h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
                 />
+                <div className="w-full h-full absolute bg-gradient-to-t from-primary4 to-transparent -bottom-10"></div>
                 <h1
                     className="text-slate-300 font-montserrat text-3xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6 
                 group-hover:text-white transition duration-300 group-hover:scale-105 text-center"
@@ -53,7 +54,7 @@ export default function Cardproker(props) {
                                 <img
                                     src={`${window.location.origin}/${props.image_path}`}
                                     alt=""
-                                    className="h-full object-cover"
+                                    className="h-full object-cover rounded-xl"
                                 />
                             </div>
                             <div className="text-primary5 md:w-3/5">
