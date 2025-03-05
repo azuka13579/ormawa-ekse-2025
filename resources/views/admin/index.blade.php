@@ -7,6 +7,7 @@
     <title>Home | Admin</title>
 </head>
 <body>
+    Selamat datang {{ auth()->user()->nama }} dari {{ auth()->user()->div }}.</br>
     <a href="{{ route('addproker') }}">Tambah Proker</a>
     {{-- List Proker + tombol edit --}}
     <form action="" method="POST">

@@ -6,6 +6,7 @@ use App\Models\Div;
 use App\Models\Proker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProkerController extends Controller
 {
@@ -23,7 +24,11 @@ class ProkerController extends Controller
         //if($request->file('image')){
             $image = $request->file('image');
             // dd($image);
-            $image_path = $image->store('proker');
+            // $image_path = $image->store('proker');
+            // $image_path = "storage/".$image_path;
+            $image_path = Storage::putFile(
+                'proker', $image
+            );
             $image_path = "storage/".$image_path;
             // dd($image_path);
             //}
@@ -38,7 +43,7 @@ class ProkerController extends Controller
             'end' => $request['enddate'],
             'image_path' => $image_path,
         ];
-        // dd($data);
+        // dd($d/ata);
         Proker::create($data);
         return to_route('admin-index');
     }
