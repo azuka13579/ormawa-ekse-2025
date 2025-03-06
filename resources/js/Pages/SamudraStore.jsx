@@ -8,84 +8,114 @@ import { X } from "lucide-react";
 
 export default function SamudraStore() {
     const formatRupiah = (price) => {
-        return `Rp. ${Number(price).toLocaleString('id-ID')}`;
-      };
+        return `Rp. ${Number(price).toLocaleString("id-ID")}`;
+    };
     const { cart, removeFromCart } = useCart();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const { products } = usePage().props;
     return (
         <div>
             <Head title="Samudra Store" />
-            <div className="flex px-10 justify-between py-4 md:shadow-md fixed bg-white mt-0 z-40 w-full">
-            <img
-                src="img/Samudra.png"
-                alt="Samudra Store"
-                className="w-3/4 md:w-1/4 h-auto"
-            />
-            <button onClick={() => setIsCartOpen(true)} className="relative">
+            <div className="flex px-10 justify-between py-2 md:shadow-md fixed bg-white mt-0 z-40 w-full">
                 <img
-                    src={`${window.location.origin}/img/Keranjang.png`}
-                    alt="keranjang"
-                    className="w-full h-auto"
+                    src="img/Samudra.png"
+                    alt="Samudra Store"
+                    className="w-3/4 md:w-1/4 h-auto object-contain"
                 />
-                {cart.length > 0 && (
-                    <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        {cart.length}
-                    </span>
-                )}
-            </button>
+                <button
+                    onClick={() => setIsCartOpen(true)}
+                    className="relative hover:bg-primary3  p-2 rounded-xl transition duration-300"
+                >
+                    <img
+                        src={`${window.location.origin}/img/Keranjang.png`}
+                        alt="keranjang"
+                        className="w-full h-auto"
+                    />
+                    {cart.length > 0 && (
+                        <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            {cart.length}
+                        </span>
+                    )}
+                </button>
 
-            {/* Popup Keranjang */}
-            {isCartOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
-                <div className="w-4/5 md:w-1/3 bg-white p-6 rounded-lg shadow-lg relative">
-                    <button className="absolute top-3 right-3" onClick={() => setIsCartOpen(false)}>
-                        <X size={20} />
-                    </button>
-                    <h2 className="text-xl font-bold mb-4">Keranjang Belanja</h2>
-            
-                    {cart.length === 0 ? (
-                        <p className="text-center text-gray-500">Keranjang kosong</p>
-                    ) : (
-                        <div className="space-y-4">
-                            {cart.map((item) => (
-                                <div key={item.id} className="flex justify-between items-center border-b pb-2">
-                                    <div>
-                                        <p className="text-lg font-semibold">{item.name}</p>
-                                        <p className="text-gray-600">Size: {item.size}</p> {/* Menampilkan size */}
-                                        <p className="text-gray-600">
-                                            {formatRupiah
-                                            (item.price)} x {item.quantity}
-                                        </p>
+                {/* Popup Keranjang */}
+                {isCartOpen && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+                        <div
+                            className="w-4/5 md:w-1/3 bg-white p-6 rounded-lg shadow-lg relative"
+                            data-aos="zoom-in"
+                        >
+                            <button
+                                className="absolute top-3 right-3"
+                                onClick={() => setIsCartOpen(false)}
+                            >
+                                <X size={20} />
+                            </button>
+                            <h2 className="text-xl font-bold mb-4">
+                                Keranjang Belanja
+                            </h2>
+
+                            {cart.length === 0 ? (
+                                <p className="text-center text-gray-500">
+                                    Keranjang kosong
+                                </p>
+                            ) : (
+                                <div className="space-y-4">
+                                    {cart.map((item) => (
+                                        <div
+                                            key={item.id}
+                                            className="flex justify-between items-center border-b pb-2"
+                                        >
+                                            <div>
+                                                <p className="text-lg font-semibold">
+                                                    {item.name}
+                                                </p>
+                                                <p className="text-gray-600">
+                                                    Size: {item.size}
+                                                </p>{" "}
+                                                {/* Menampilkan size */}
+                                                <p className="text-gray-600">
+                                                    {formatRupiah(item.price)} x{" "}
+                                                    {item.quantity}
+                                                </p>
+                                            </div>
+                                            <button
+                                                className="text-red-500 font-bold"
+                                                onClick={() =>
+                                                    removeFromCart(item.id)
+                                                }
+                                            >
+                                                Hapus
+                                            </button>
+                                        </div>
+                                    ))}
+                                    {/* Menampilkan total harga */}
+                                    <div className="text-right font-bold text-lg mt-4">
+                                        Total:{" "}
+                                        {formatRupiah(
+                                            cart.reduce(
+                                                (total, item) =>
+                                                    total +
+                                                    item.price * item.quantity,
+                                                0
+                                            )
+                                        )}
                                     </div>
-                                    <button 
-                                        className="text-red-500 font-bold"
-                                        onClick={() => removeFromCart(item.id)}
+                                    <button
+                                        className="w-full bg-primary4 text-white py-2 mt-4 rounded-lg"
+                                        onClick={() => {
+                                            setIsCartOpen(false);
+                                            window.location.href = "/cart"; // Ganti dengan route ke halaman checkout
+                                        }}
                                     >
-                                        Hapus
+                                        Lanjut ke Checkout
                                     </button>
                                 </div>
-                            ))}
-                            {/* Menampilkan total harga */}
-                            <div className="text-right font-bold text-lg mt-4">
-                                Total: {formatRupiah(cart.reduce((total, item) => total + item.price * item.quantity, 0))}
-                            </div>
-                            <button 
-                                className="w-full bg-primary4 text-white py-2 mt-4 rounded-lg"
-                                onClick={() => {
-                                    setIsCartOpen(false);
-                                    window.location.href = "/cart"; // Ganti dengan route ke halaman checkout
-                                }}
-                            >
-                                Lanjut ke Checkout
-                            </button>
+                            )}
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
-            
-            )}
-        </div>
             <div className="h-24"></div>
             <div
                 data-aos="fade-up"

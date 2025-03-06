@@ -47,7 +47,6 @@ export default function ProductsSamudra({ product, index }) {
                             className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 z-20"
                             onClick={() => {
                                 setIsOpen(false);
-                                console.log(isOpen);
                             }}
                         >
                             <X size={20} />
@@ -152,7 +151,10 @@ export default function ProductsSamudra({ product, index }) {
 
                                 <button
                                     className="mt-4 px-4 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
-                                    onClick={() => addToCart(product, quantity)}
+                                    onClick={() => {
+                                        addToCart(product, quantity);
+                                        setIsOpen(false);
+                                    }}
                                 >
                                     Tambah ke Keranjang
                                 </button>
