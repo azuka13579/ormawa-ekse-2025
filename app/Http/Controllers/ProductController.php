@@ -39,8 +39,8 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'size' => 'required|string|max:50',
-            'price' => 'required|numeric|min:0',
+            'size' => 'string|max:50',
+            'price' => 'required|numeric|min:0|regex:/^\d+$/',
             'stock' => 'required|integer|min:0',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
@@ -65,8 +65,8 @@ class ProductController extends Controller
     $request->validate([
         'name' => 'required|string|max:255',
         'description' => 'required|string',
-        'size' => 'required|string|max:50',
-        'price' => 'required|numeric|min:0',
+        'size' => 'string|max:50',
+        'price' => 'required|numeric|min:0|regex:/^\d+$/',
         'stock' => 'required|integer|min:0',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
     ]);

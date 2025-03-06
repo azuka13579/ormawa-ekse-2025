@@ -43,7 +43,7 @@
                         <div>
                             <label class="block mb-2 font-semibold">Ukuran</label>
                             <input type="text" name="size" value="{{ old('size', $product->size) }}" 
-                                   class="w-full p-2 border rounded">
+                                   class="w-full p-2 border rounded" placeholder="XXL,XL,L,M,S (jika tidak ada isi '-')">
                         </div>
                     </div>
 
