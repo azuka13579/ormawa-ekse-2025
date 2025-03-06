@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 
 export default function ProductsSamudra({ product, index }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(0);
     return (
         <div className="group">
             <div
