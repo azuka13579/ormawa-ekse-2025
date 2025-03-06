@@ -5,6 +5,8 @@ import { X } from "lucide-react";
 export default function ProductsSamudra({ product, index }) {
     const [isOpen, setIsOpen] = useState(false);
     const [quantity, setQuantity] = useState(0);
+    const [selectedSize, setSelectedSize] = useState("");
+
     return (
         <div className="group">
             <div
@@ -93,6 +95,7 @@ export default function ProductsSamudra({ product, index }) {
                                                 </div>
                                             </label>
                                         ))}
+                                    <p>{selectedSize}</p>
                                 </div>
 
                                 <p className=" text-justify text-lg font-bold mt-2">
