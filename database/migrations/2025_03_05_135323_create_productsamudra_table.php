@@ -16,7 +16,7 @@ return new class extends Migration
         $table->string('name');
         $table->text('description');
         $table->string('size');
-        $table->decimal('price', 10, 2);
+        $table->decimal('price', 0, 2)->change();
         $table->integer('stock');
         $table->string('image');
         $table->timestamps();
@@ -26,8 +26,9 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('productsamudra');
+    public function down() {
+        Schema::table('productsamudra', function (Blueprint $table) {
+            $table->decimal('price', 10, 2)->change(); // Jika ingin rollback
+        });
     }
 };

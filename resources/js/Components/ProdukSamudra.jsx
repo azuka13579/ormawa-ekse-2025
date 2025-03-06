@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "@inertiajs/react";
 import { X } from "lucide-react";
+import { useCart } from "../Context/CartContext";
 
 export default function ProductsSamudra({ product, index }) {
+    const formatRupiah = (price) => {
+        return `Rp. ${Number(price).toLocaleString("id-ID")}`;
+    };
     const [isOpen, setIsOpen] = useState(false);
-    const [quantity, setQuantity] = useState(0);
-    const [selectedSize, setSelectedSize] = useState("");
-
+    const [quantity, setQuantity] = useState(1);
+    const { addToCart } = useCart();
     return (
         <div className="group">
             <div
@@ -29,7 +31,7 @@ export default function ProductsSamudra({ product, index }) {
                     </h2>
 
                     <p className="text-lg font-semibold text-primary4">
-                        Rp.{product.price}
+                        {formatRupiah(product.price)}
                     </p>
                     <p className="text-gray-700">Stock: {product.stock}</p>
                 </div>
@@ -71,43 +73,47 @@ export default function ProductsSamudra({ product, index }) {
                                 <p className="text-sm text-justify">
                                     {product.description}
                                 </p>
-                                <h1 className="text-lg font-bold mt-4 ">
-                                    Size
-                                </h1>
-                                <div className="flex gap-4">
-                                    {product.size
-                                        .split(" ")
-                                        .map((size, index) => (
-                                            <label key={index}>
-                                                <input
-                                                    type="radio"
-                                                    name="size"
-                                                    value={size}
-                                                    className="hidden peer"
-                                                    onChange={(e) =>
-                                                        setSelectedSize(
-                                                            e.target.value
-                                                        )
-                                                    }
-                                                />
-                                                <div className="cursor-pointer px-4 py-2 rounded-lg border border-primary4 text--primary4 font-semibold peer-checked:bg-primary4 peer-checked:text-white transition-all duration-300 hover:bg-primary1">
-                                                    {size}
-                                                </div>
-                                            </label>
-                                        ))}
-                                    <p>{selectedSize}</p>
-                                </div>
+                                {product.size !== "-" && (
+                                    <>
+                                        <h1 className="text-lg font-bold mt-4">
+                                            Size
+                                        </h1>
+                                        <div className="flex max-md:grid max-md:grid-cols-4 gap-4">
+                                            {product.size
+                                                .split(",")
+                                                .map((size, index) => (
+                                                    <label key={index}>
+                                                        <input
+                                                            type="radio"
+                                                            name="size"
+                                                            value={size}
+                                                            className="hidden peer"
+                                                            onChange={(e) =>
+                                                                setSelectedSize(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        />
+                                                        <div className="cursor-pointer px-3 py-2 rounded-lg border border-primary4 text--primary4 font-semibold peer-checked:bg-primary4 peer-checked:text-white transition-all duration-300 hover:bg-primary1">
+                                                            {size}
+                                                        </div>
+                                                    </label>
+                                                ))}
+                                        </div>
+                                    </>
+                                )}
 
                                 <p className=" text-justify text-lg font-bold mt-2">
-                                    Rp. {product.price}
+                                    {formatRupiah(product.price)}
                                 </p>
 
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-4 mt-4">
                                     <button
                                         className="px-3 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
                                         onClick={() =>
-                                            setQuantity((prev) =>
-                                                Math.max(1, prev - 1)
+                                            setQuantity(
+                                                Math.max(1, quantity - 1)
                                             )
                                         }
                                     >
@@ -117,27 +123,37 @@ export default function ProductsSamudra({ product, index }) {
                                         type="number"
                                         min="1"
                                         value={quantity}
-                                        onChange={(e) =>
+                                        onChange={(e) => {
+                                            const newQuantity =
+                                                parseInt(e.target.value) || 1;
                                             setQuantity(
-                                                Math.max(
-                                                    1,
-                                                    parseInt(e.target.value) ||
-                                                        1
+                                                Math.min(
+                                                    product.stock,
+                                                    Math.max(1, newQuantity)
                                                 )
-                                            )
-                                        }
+                                            );
+                                        }}
                                         className="w-16 p-2 border rounded-lg text-center"
                                     />
                                     <button
                                         className="px-3 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
                                         onClick={() =>
-                                            setQuantity((prev) => prev + 1)
+                                            setQuantity((prev) =>
+                                                Math.min(
+                                                    product.stock,
+                                                    prev + 1
+                                                )
+                                            )
                                         }
                                     >
                                         +
                                     </button>
                                 </div>
-                                <button className="mt-4 px-4 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all">
+
+                                <button
+                                    className="mt-4 px-4 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
+                                    onClick={() => addToCart(product, quantity)}
+                                >
                                     Tambah ke Keranjang
                                 </button>
                             </div>
