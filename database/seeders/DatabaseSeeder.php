@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdminSamudraStore;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,7 +22,13 @@ class DatabaseSeeder extends Seeder
             AdminHaidarSeeder::class,
             ImageHaidarSeeder::class,
             KaptenSeeder::class,
-            AnggotaSeeder::class
+            AnggotaSeeder::class,
+            
+        ]);
+          AdminSamudraStore::create([
+            'name' => 'Admin Samudra',
+            'email' => 'admin@samudrastore.com',
+            'password' => Hash::make('password123')
         ]);
     }
 }

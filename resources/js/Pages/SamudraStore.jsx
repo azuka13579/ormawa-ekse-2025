@@ -82,9 +82,13 @@ export default function SakarsaHelp() {
                     In Sale
                 </p>
             </div>
-            
-            <ProdukSamudra products={products} />
-
+            <div className="container mx-auto px-4 my-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative">
+                    {products.map((product, index) => (
+                        <ProdukSamudra product={product} index={index} />
+                    ))}
+                </div>
+            </div>
 
             <Footer></Footer>
         </div>

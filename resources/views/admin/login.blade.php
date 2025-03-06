@@ -11,7 +11,7 @@
     <div class="w-4/6 mx-auto flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-white rounded-md shadow-lg p-5">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           {{-- <img class="mx-auto h-2 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> --}}
-          <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Login menuju aplikasi</h2>
+          <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Login Admin Sakarsa</h2>
         </div>
         
         {{-- Retrieve Errors --}}
