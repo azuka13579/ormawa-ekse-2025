@@ -5,23 +5,20 @@ const CartContext = createContext();
 
 // Provider untuk membungkus aplikasi
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState([]); // Pastikan ada default []
 
-    // Tambah produk ke keranjang
+    // Fungsi untuk menambah produk ke keranjang
     const addToCart = (product, quantity, selectedSize = null) => {
         setCart((prevCart) => {
-            // Cek apakah produk sudah ada di keranjang
             const existingProductIndex = prevCart.findIndex(
                 (item) => item.id === product.id && item.selectedSize === selectedSize
             );
 
             if (existingProductIndex !== -1) {
-                // Jika produk sudah ada, update jumlahnya
                 const updatedCart = [...prevCart];
                 updatedCart[existingProductIndex].quantity += quantity;
                 return updatedCart;
             } else {
-                // Jika belum ada, tambahkan ke keranjang
                 return [...prevCart, { ...product, quantity, selectedSize }];
             }
         });
@@ -34,7 +31,7 @@ export const CartProvider = ({ children }) => {
         );
     };
 
-    // Bersihkan seluruh keranjang
+    // Bersihkan keranjang
     const clearCart = () => {
         setCart([]);
     };
@@ -46,7 +43,11 @@ export const CartProvider = ({ children }) => {
     );
 };
 
-// Custom hook untuk menggunakan CartContext
+// Custom hook untuk menggunakan context
 export const useCart = () => {
-    return useContext(CartContext);
+    const context = useContext(CartContext);
+    if (!context) {
+        throw new Error("useCart harus digunakan dalam CartProvider");
+    }
+    return context;
 };

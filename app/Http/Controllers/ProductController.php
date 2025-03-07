@@ -17,6 +17,14 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+    public function Checkout()
+    {
+        $products = Product::all();
+
+        return Inertia::render('Keranjang', [
+            'products' => $products
+        ]);
+    }
 
     public function dashboard()
     {

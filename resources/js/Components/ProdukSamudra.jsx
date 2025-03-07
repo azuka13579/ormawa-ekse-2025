@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import { useCart } from "../Context/CartContext";
+import { useSize } from "../Context/SizeContext";
 
 export default function ProductsSamudra({ product, index }) {
     const formatRupiah = (price) => {
@@ -9,6 +10,8 @@ export default function ProductsSamudra({ product, index }) {
     const [isOpen, setIsOpen] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const { addToCart } = useCart();
+    const { selectedSizes, setSelectedSize } = useSize();
+    const selectedSize = selectedSizes[product.id] || "";
     return (
         <div className="group">
             <div
@@ -84,23 +87,21 @@ export default function ProductsSamudra({ product, index }) {
                                                     <label key={index}>
                                                         <input
                                                             type="radio"
-                                                            name="size"
+                                                            name={`size-${product.id}`} // Buat unik berdasarkan ID produk
                                                             value={size}
+                                                            checked={selectedSize === size}
                                                             className="hidden peer"
-                                                            onChange={(e) =>
-                                                                setSelectedSize(
-                                                                    e.target
-                                                                        .value
-                                                                )
-                                                            }
+                                                            onChange={() => setSelectedSize(product.id, size)}
                                                         />
                                                         <div className="cursor-pointer px-3 py-2 rounded-lg border border-primary4 text--primary4 font-semibold peer-checked:bg-primary4 peer-checked:text-white transition-all duration-300 hover:bg-primary1">
                                                             {size}
                                                         </div>
                                                     </label>
                                                 ))}
+                                               
                                         </div>
                                     </>
+                                                
                                 )}
 
                                 <p className=" text-justify text-lg font-bold mt-2">

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Head } from "@inertiajs/react";
 import Footer from "../Components/Footer";
 import ProdukSamudra from "../Components/ProdukSamudra";
+import DisplaySize from "../Components/DisplaySize";
 import { usePage } from "@inertiajs/react";
 import { useCart } from "../Context/CartContext";
 import { X } from "lucide-react";
+import {Link} from "@inertiajs/react";
 
 export default function SamudraStore() {
     const formatRupiah = (price) => {
@@ -13,6 +15,7 @@ export default function SamudraStore() {
     const { cart, removeFromCart } = useCart();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const { products } = usePage().props;
+
     return (
         <div>
             <Head title="Samudra Store" />
@@ -71,7 +74,7 @@ export default function SamudraStore() {
                                                     {item.name}
                                                 </p>
                                                 <p className="text-gray-600">
-                                                    Size: {item.size}
+                                                    Size: <DisplaySize productId={item.id}></DisplaySize>
                                                 </p>{" "}
                                                 {/* Menampilkan size */}
                                                 <p className="text-gray-600">
@@ -101,16 +104,18 @@ export default function SamudraStore() {
                                             )
                                         )}
                                     </div>
+                                    <Link href="/samudra-store/checkout">
                                     <button
                                         className="w-full bg-primary4 text-white py-2 mt-4 rounded-lg"
                                         onClick={() => {
-                                            setIsCartOpen(false);
-                                            window.location.href = "/cart"; // Ganti dengan route ke halaman checkout
+                                           
                                         }}
                                     >
                                         Lanjut ke Checkout
                                     </button>
+                                    </Link>
                                 </div>
+                                
                             )}
                         </div>
                     </div>

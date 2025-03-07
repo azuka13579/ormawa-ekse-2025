@@ -22,6 +22,7 @@ Route::get('/sakarsa-care', function () {
 })->name('sakarsa-care');
 
 Route::get('/samudra-store', [ProductController::class, 'index'])->name('samudra.store');
+Route::get('/samudra-store/checkout', [ProductController::class, 'checkout'])->name('checkout.store');
 
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');

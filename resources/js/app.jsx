@@ -1,7 +1,8 @@
-import './bootstrap';
+import { CartProvider } from './Context/CartContext';
+import { SizeProvider } from './Context/SizeContext'; // Tambahkan SizeProvider
 import { createInertiaApp } from '@inertiajs/react';
 import { createRoot } from 'react-dom/client';
-import { CartProvider } from './Context/CartContext'; // Import CartProvider
+import './bootstrap';
 import '../css/app.css';
 
 createInertiaApp({
@@ -12,7 +13,9 @@ createInertiaApp({
   setup({ el, App, props }) {
     createRoot(el).render(
       <CartProvider>
-        <App {...props} />
+        <SizeProvider> {/* Bungkus dengan SizeProvider */}
+          <App {...props} />
+        </SizeProvider>
       </CartProvider>
     );
   },
