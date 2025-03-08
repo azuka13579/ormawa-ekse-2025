@@ -31,11 +31,14 @@ Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middlewar
 Route::get('/divisi', function () {
     return Inertia::render('Divisi');
 })->name('divisi');
+Route::get('/proker', function () {
+     $proker = Proker::all();
+    return Inertia::render('Allproker',["proker" => $proker]);
+})->name('proker');
 
-// Route::get('/tentang/{divisi}', [DivisionController::class, 'divisi'])
-//     ->middleware(CheckDivision::class)
-//     ->name('divisi_dinamis');
-
+Route::get('/login', function () {
+    return view('master.login');
+})->name('divisi');
 
 Route::get('/api/data', [DataController::class, 'index']);
 

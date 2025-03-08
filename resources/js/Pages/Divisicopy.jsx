@@ -5,9 +5,30 @@ import Navbar from "../Components/Navbar";
 import Cardkapten from "../Components/Cardkapten";
 import Cardproker from "../Components/Cardproker";
 import ImageSlider from "../Components/Slide";
+import "../../css/owl.theme.css";
+import OwlCarousel from "react-owl-carousel";
 
 export default function Divisicopy(props) {
+    const options = {
+        // loop: true,
+        // nav: true,
+        autoplaySpeed: 1000,
+        dragEndSpeed: 1000,
+        dotsSpeed: 1000,
+        autoplay: false,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true,
+        autoWidth: true,
+        stagePadding: 0,
+
+        dots: false,
+
+        // items: 2,
+        margin: 0,
+        center: true,
+    };
     console.log(props.proker);
+    console.log(props);
 
     return (
         <div>
@@ -99,7 +120,7 @@ export default function Divisicopy(props) {
                 </div>
 
                 {/* Anggota */}
-                <div className="mt-8 flex flex-col md:px-20 px-4">
+                <div className="mt-8 flex flex-col md:px-20">
                     <h1
                         className="text-primary4 text-6xl font-rowdies font-bold text-center md:text-left"
                         data-aos="fade-up"
@@ -116,6 +137,22 @@ export default function Divisicopy(props) {
                     </h1>
 
                     <ImageSlider images={props.anggota} />
+                    <div className="sm:hidden">
+                        <OwlCarousel
+                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                            {...options}
+                        >
+                            {props.anggota.map((src, index) => (
+                                <div key={index} className="">
+                                    <img
+                                        src={`${window.location.origin}/${src.image_path}`}
+                                        alt={`Slide ${index}`}
+                                        className="h-auto max-h-[500px] w-auto object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </OwlCarousel>
+                    </div>
                 </div>
             </div>
 

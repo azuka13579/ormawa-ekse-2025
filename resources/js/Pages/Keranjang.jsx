@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useForm, usePage } from "@inertiajs/react";
 import { useCart } from "../Context/CartContext";
 const fakultasData = {
-    "Faperta": ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
-    "FKH": ["Kedokteran Hewan"],
-    "FPIK": ["Manajemen Sumberdaya Perairan", "Budidaya Perairan"],
-    "Fapet": ["Nutrisi dan Teknologi Pakan", "Produksi Ternak"],
+    Faperta: ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
+    FKH: ["Kedokteran Hewan"],
+    FPIK: ["Manajemen Sumberdaya Perairan", "Budidaya Perairan"],
+    Fapet: ["Nutrisi dan Teknologi Pakan", "Produksi Ternak"],
 };
 
 export default function Checkout() {
@@ -20,7 +20,13 @@ export default function Checkout() {
         whatsapp: "",
         bukti_transfer: null,
         cart: cartData, // Masukkan cart ke dalam form data
-        total: Array.isArray(cartData) ? cartData.reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0) : 0, // Menghitung total harga produk
+        total: Array.isArray(cartData)
+            ? cartData.reduce(
+                  (total, item) =>
+                      total + parseFloat(item.price) * item.quantity,
+                  0
+              )
+            : 0, // Menghitung total harga produk
     });
 
     const [selectedFileName, setSelectedFileName] = useState("");
@@ -39,37 +45,46 @@ export default function Checkout() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         // Lakukan logika submit di sini (misalnya validasi atau perhitungan data)
-    
+
         alert("Checkout berhasil!");
-    
+
         // Redirect ke halaman yang diinginkan
         window.location.href = "/samudra-store"; // Ganti dengan URL yang sesuai
     };
-    
 
     return (
         <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-2xl font-bold mb-4 text-center">Checkout</h2>
 
             <div className="border-b pb-4 mb-4">
-    <h3 className="text-lg font-semibold">Detail Produk</h3>
-    {cartData.length === 0 ? (
-        <p>Keranjang Anda kosong</p>
-    ) : (
-        cartData.map((item) => (
-            <div key={item.id} className="flex justify-between border-b py-2">
-                <span>{item.name} (x{item.quantity})</span>
-                <span>{formatCurrency(parseFloat(item.price) * item.quantity)}</span> {/* Konversi harga ke float */}
-            </div>
-        ))
-    )}
+                <h3 className="text-lg font-semibold">Detail Produk</h3>
+                {cartData.length === 0 ? (
+                    <p>Keranjang Anda kosong</p>
+                ) : (
+                    cartData.map((item) => (
+                        <div
+                            key={item.id}
+                            className="flex justify-between border-b py-2"
+                        >
+                            <span>
+                                {item.name} (x{item.quantity})
+                            </span>
+                            <span>
+                                {formatCurrency(
+                                    parseFloat(item.price) * item.quantity
+                                )}
+                            </span>{" "}
+                            {/* Konversi harga ke float */}
+                        </div>
+                    ))
+                )}
 
-    <div className="font-bold text-right mt-2">
-        Total: {formatCurrency(data.total)}
-    </div>
-</div>
+                <div className="font-bold text-right mt-2">
+                    Total: {formatCurrency(data.total)}
+                </div>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-3">
                 <input
                     type="email"
@@ -104,7 +119,9 @@ export default function Checkout() {
                 >
                     <option value="">Pilih Fakultas</option>
                     {Object.keys(fakultasData).map((fak) => (
-                        <option key={fak} value={fak}>{fak}</option>
+                        <option key={fak} value={fak}>
+                            {fak}
+                        </option>
                     ))}
                 </select>
 
@@ -116,9 +133,12 @@ export default function Checkout() {
                     disabled={!data.fakultas}
                 >
                     <option value="">Pilih Departemen</option>
-                    {data.fakultas && fakultasData[data.fakultas].map((dep) => (
-                        <option key={dep} value={dep}>{dep}</option>
-                    ))}
+                    {data.fakultas &&
+                        fakultasData[data.fakultas].map((dep) => (
+                            <option key={dep} value={dep}>
+                                {dep}
+                            </option>
+                        ))}
                 </select>
 
                 <input
@@ -130,19 +150,29 @@ export default function Checkout() {
                     required
                 />
 
-                <h3 className="text-lg font-semibold mt-6">Nomor Rekening: 3288-9238-9198-1892-19</h3>
+                <h3 className="text-lg font-semibold mt-6">
+                    Nomor Rekening: 3288-9238-9198-1892-19
+                </h3>
 
-                <label className="block text-gray-700">Upload Bukti Transfer:</label>
+                <label className="block text-gray-700">
+                    Upload Bukti Transfer:
+                </label>
                 <input
                     type="file"
                     onChange={(e) => {
                         setData("bukti_transfer", e.target.files[0]);
-                        setSelectedFileName(e.target.files[0] ? e.target.files[0].name : "");
+                        setSelectedFileName(
+                            e.target.files[0] ? e.target.files[0].name : ""
+                        );
                     }}
                     className="w-full p-2 border rounded"
                     required
                 />
-                {selectedFileName && <p className="text-sm text-green-600">File: {selectedFileName}</p>}
+                {selectedFileName && (
+                    <p className="text-sm text-green-600">
+                        File: {selectedFileName}
+                    </p>
+                )}
 
                 <button
                     type="submit"
@@ -155,4 +185,3 @@ export default function Checkout() {
         </div>
     );
 }
-
