@@ -224,6 +224,7 @@ export default function Home() {
             <Misi />
             {/* Konten lain */}
             <SakarsaDaily />
+
             <div className="py-10 bg-white flex flex-col gap-10">
                 <div className="flex justify-between flex-col md:flex-row gap-8">
                     <div
