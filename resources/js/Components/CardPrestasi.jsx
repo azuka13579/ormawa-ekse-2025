@@ -59,7 +59,7 @@ export default function CardPrestasi() {
                                     </p>
                                 </div>
 
-                                <p className="text-sm mt-4 text-justify">
+                                <p className="text-sm mt-4 text-justify whitespace-pre-line">
                                     Program kerja yang bertujuan untuk
                                     mengumpulkan data melalui platform fillout
                                     serta mengolah dan menganalisis data terkait

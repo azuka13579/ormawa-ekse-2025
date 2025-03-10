@@ -70,13 +70,13 @@ export default function Cardproker(props) {
                                     Tujuan
                                 </h1>
 
-                                <p className="text-sm text-justify">
+                                <p className="text-sm text-justify whitespace-pre-line">
                                     {props.tujuan}
                                 </p>
                                 <h1 className="text-2xl font-bold mt-4 ">
                                     Deskripsi
                                 </h1>
-                                <p className="text-sm text-justify">
+                                <p className="text-sm text-justify whitespace-pre-line">
                                     {props.deskripsi}
                                 </p>
                             </div>

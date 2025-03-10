@@ -72,7 +72,7 @@ export default function ProductsSamudra({ product, index }) {
                                     Deskripsi
                                 </h1>
 
-                                <p className="text-sm text-justify">
+                                <p className="text-sm text-justify whitespace-pre-line">
                                     {product.description}
                                 </p>
                                 {product.size !== "-" && (
@@ -89,19 +89,25 @@ export default function ProductsSamudra({ product, index }) {
                                                             type="radio"
                                                             name={`size-${product.id}`} // Buat unik berdasarkan ID produk
                                                             value={size}
-                                                            checked={selectedSize === size}
+                                                            checked={
+                                                                selectedSize ===
+                                                                size
+                                                            }
                                                             className="hidden peer"
-                                                            onChange={() => setSelectedSize(product.id, size)}
+                                                            onChange={() =>
+                                                                setSelectedSize(
+                                                                    product.id,
+                                                                    size
+                                                                )
+                                                            }
                                                         />
                                                         <div className="cursor-pointer px-3 py-2 rounded-lg border border-primary4 text--primary4 font-semibold peer-checked:bg-primary4 peer-checked:text-white transition-all duration-300 hover:bg-primary1">
                                                             {size}
                                                         </div>
                                                     </label>
                                                 ))}
-                                               
                                         </div>
                                     </>
-                                                
                                 )}
 
                                 <p className=" text-justify text-lg font-bold mt-2">
@@ -151,13 +157,17 @@ export default function ProductsSamudra({ product, index }) {
                                 </div>
 
                                 <button
-                                    className="mt-4 px-4 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
+                                    className={`mt-4 px-4 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all
+                                        disabled:bg-red-500 disabled:`}
+                                    disabled={product.stock <= 0}
                                     onClick={() => {
                                         addToCart(product, quantity);
                                         setIsOpen(false);
                                     }}
                                 >
-                                    Tambah ke Keranjang
+                                    {product.stock > 0
+                                        ? "Tambah Ke Keranjang"
+                                        : "Habis"}
                                 </button>
                             </div>
                         </div>
