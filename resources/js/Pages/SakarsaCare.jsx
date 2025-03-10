@@ -10,7 +10,7 @@ export default function SakarsaCare() {
             <Navbar />
             <Head title="Sakarsa Care" />
 
-            <div className="h-full block md:flex md:px-12 mx-auto mb-20 mt-20">
+            <div className="h-full block md:flex md:px-12 mx-auto mb-20 mt-20 px-4">
                 <div className="w-full sm:w-[550px] max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 flex-col">
                     <h1
                         data-aos="fade-right"
@@ -37,7 +37,7 @@ export default function SakarsaCare() {
                 <div
                     data-aos="fade-left"
                     data-aos-duration="1200"
-                    className="h-full flex flex-1 justify-center px-6 sm:px-12"
+                    className="h-full flex flex-1 justify-center sm:px-12"
                 >
                     <img
                         src="img/gambarnahkoda.png"
@@ -50,7 +50,7 @@ export default function SakarsaCare() {
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-anchor-placement="center-bottom"
-                className="bg-coklat md:mx-auto w-full md:w-[700px] justify-center text-center block md:flex items-center px-6 py-3 rounded-3xl mb-11 gap-20"
+                className="bg-coklat md:mx-auto w-full md:w-[700px] justify-center text-center block md:flex items-center px-6 py-3 rounded-3xl mb-11 gap-20 "
             >
                 <div className="">
                     <p className="font-montserrat text-s sm:text-xl text-white font-bold">

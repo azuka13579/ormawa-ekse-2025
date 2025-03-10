@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('divs', function (Blueprint $table) {
             $table->id();
             $table->string('divisi');
+            $table->string('deskripsi');
+            $table->string('image_path');
+
             $table->timestamps();
         });
     }
