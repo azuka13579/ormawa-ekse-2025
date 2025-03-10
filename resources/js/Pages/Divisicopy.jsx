@@ -27,7 +27,7 @@ export default function Divisicopy(props) {
         margin: 0,
         center: true,
     };
-    console.log(props.logo);
+    console.log(props.deskripsi);
 
     return (
         <div>
@@ -38,7 +38,7 @@ export default function Divisicopy(props) {
                 <div className="h-full flex flex-1">
                     <div className="kiri md:w-3/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative items-center">
                         <img
-                            src={`${window.location.origin}/${props.logo}`}
+                            src={`${window.location.origin}/${props.deskripsi.image_path}`}
                             alt="Gambar mobile di tengah"
                             className="w-3/4 md:hidden"
                             data-aos="fade-up"
@@ -63,12 +63,7 @@ export default function Divisicopy(props) {
                                 data-aos-duration="800"
                                 data-aos-delay="200"
                             >
-                                Ormawa Eksekutif PKU IPB merupakan organisasi
-                                kemahasiswaan di lingkup Pendidikan Kompetensi
-                                Umum yang dikhususkan untuk mahasiswa tingkat
-                                PKU IPB. Fungsinya melibatkan pemberian
-                                kesejahteraan penanganan segala problematika
-                                yang dialami mahasiswa PKU IPB.
+                                {props.deskripsi.deskripsi}
                             </p>
                         </div>
                     </div>
@@ -78,7 +73,7 @@ export default function Divisicopy(props) {
                         data-aos-duration="800"
                     >
                         <img
-                            src={`${window.location.origin}/${props.logo}`}
+                            src={`${window.location.origin}/${props.deskripsi.image_path}`}
                             alt="Gambar di kanan tengah"
                             className="w-4/5 h-auto object-cover max-w-[600px] hover:scale-110 transition duration-1000"
                         />
