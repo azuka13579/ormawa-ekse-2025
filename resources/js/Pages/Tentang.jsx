@@ -191,7 +191,7 @@ export default function Tentang(props) {
                             key={index}
                             delay={index * 100}
                             nama={divisi.divisi}
-                            img=""
+                            img={divisi.image_path}
                         />
                     ))}
                     ;
@@ -206,7 +206,7 @@ export default function Tentang(props) {
                                 key={index}
                                 delay={index * 100}
                                 nama={divisi.divisi}
-                                img=""
+                                img={divisi.image_path}
                             />
                         ))}
                     </OwlCarousel>
@@ -226,7 +226,7 @@ export default function Tentang(props) {
                             key={index}
                             delay={(index % 4) * 100}
                             nama={divisi.divisi}
-                            img=""
+                            img={divisi.image_path}
                         />
                     ))}
                     ;
@@ -241,7 +241,7 @@ export default function Tentang(props) {
                                 key={index}
                                 delay={(index % 4) * 100}
                                 nama={divisi.divisi}
-                                img=""
+                                img={divisi.image_path}
                             />
                         ))}
                         ;
