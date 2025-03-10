@@ -9,7 +9,9 @@ import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 
-export default function Home() {
+export default function Home({proker}) {
+    
+    
     return (
         <div>
             <div className="md:h-screen bg-white flex flex-col">
@@ -223,7 +225,7 @@ export default function Home() {
             <Visi />
             <Misi />
             {/* Konten lain */}
-            <SakarsaDaily />
+            <SakarsaDaily Proker={proker} />
 
             <div className="py-10 bg-white flex flex-col gap-10">
                 <div className="flex justify-between flex-col md:flex-row gap-8">

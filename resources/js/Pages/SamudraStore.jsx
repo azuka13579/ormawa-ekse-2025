@@ -18,6 +18,7 @@ export default function SamudraStore() {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const { products } = usePage().props;
     const cartLength = cart.length;
+    const productLength = products.length;
 
     return (
         <div>
@@ -32,10 +33,10 @@ export default function SamudraStore() {
             {/* Button Keranjang */}
             <button
                 onClick={() => setIsCartOpen(!isCartOpen)}
-                className="relative flex items-center justify-center w-12 h-12 bg-primary1 text-black rounded-full shadow-md hover:bg-primary4 transition duration-300"
+                className="relative flex my-auto items-center justify-center w-12 h-12 bg-primary1 text-black rounded-full shadow-md hover:bg-primary4 transition duration-300"
             >
                 {/* Icon Keranjang */}
-                <ShoppingCart size={24} />
+                <ShoppingCart size={26} />
 
                 {/* Badge Jumlah Item */}
                 {cartLength > 0 && (
@@ -175,12 +176,24 @@ export default function SamudraStore() {
             <div
                 data-aos="fade-up"
                 data-aos-duration="900"
-                className="bg-primary8 max-w-[200px] md:max-w-[300px] text-center py-2 px-2 md:py-3 md:px-4 mx-auto rounded-3xl"
+                className="bg-gradient-to-r from-primary7 to-primary5 max-w-[200px] md:max-w-[300px] text-center py-2 px-2 md:py-3 md:px-4 mx-auto rounded-3xl"
             >
                 <p className="text-white font-bold font-montserrat text-xl md:text-5xl">
                     In Sale
                 </p>
             </div>
+            {productLength === 0 ? (
+                      <div
+                      data-aos="fade-up"
+                      data-aos-duration="900"
+                      className="my-36 bg-gradient-to-r from-primary7 to-primary5 max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] text-center py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-10 mx-auto rounded-3xl shadow-lg transition-all duration-300 hover:scale-105"
+                  >
+                      <p className="text-white font-bold font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                          COMING SOON!
+                      </p>
+                  </div>
+                    
+                    ) :(
             <div className="container mx-auto px-4 my-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative">
                     {products.map((product, index) => (
@@ -188,6 +201,7 @@ export default function SamudraStore() {
                     ))}
                 </div>
             </div>
+    )}
 
             <Footer></Footer>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useForm, usePage } from "@inertiajs/react";
 import { useCart } from "../Context/CartContext";
+import DisplaySize from "../Components/DisplaySize";
 
 const fakultasData = {
     Faperta: ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
@@ -69,6 +70,7 @@ export default function Checkout() {
                                 <div className="flex-1">
                                     <h3 className="font-medium text-gray-800">{item.name}</h3>
                                     <p className="text-sm text-gray-600">Jumlah: {item.quantity}</p>
+                                    <p className="text-sm text-gray-600">Size: <DisplaySize productId={item.id}></DisplaySize> </p>
                                 </div>
                                 <div className="text-lg font-medium text-gray-900">
                                     {formatCurrency(item.price * item.quantity)}

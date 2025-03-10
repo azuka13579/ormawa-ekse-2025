@@ -14,7 +14,8 @@ use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
 use App\Http\Controllers\ProductController;
 Route::get('/', function () {
-    return Inertia::render('Home');
+    $proker = Proker::all();
+   return Inertia::render('Home',["proker" => $proker]);
 })->name('home');
 
 Route::get('/sakarsa-care', function () {
