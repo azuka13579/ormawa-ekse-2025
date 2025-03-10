@@ -8,7 +8,7 @@ export default function Misi() {
         data-aos-duration="1200"
         className="flex md:justify-end md:mr-60">
     
-    <div className="bg-biru max-w-[600px] p-10 rounded-2xl">
+    <div className="bg-biru md:max-w-[600px] max-md:mx-auto max-w-96 md:p-10 p-5 rounded-2xl">
         <h1 className="font-rowdies text-5xl md:text-6xl text-white mb-5">Misi</h1>
         <p className="font-montserrat text-lg md:text-xl text-white mb-2 text-justify">1. Menciptakan lingkungan PKU IPB yang <span className="font-bold">suportif, harmonis, dan inklusif</span> berlandaskan nilai-nilai spiritual yang luhur</p>
         <p className="font-montserrat text-lg md:text-xl text-white mb-2 text-justify">2. Optimalisasi Peran ormawa sebagai wadah aspirasi yang <span className="font-bold">responsif, pelopor perbaikan, dan ruang diskusi</span> dengan mengedepankan prinsip <span className="font-bold">kolaborasi</span> antar KM PKU IPB.</p>
