@@ -16,7 +16,7 @@ return new class extends Migration
         $table->string('name');
         $table->text('description');
         $table->string('size');
-        $table->decimal('price', 0, 2)->change();
+        $table->unsignedBigInteger('price');
         $table->integer('stock');
         $table->string('image');
         $table->timestamps();
