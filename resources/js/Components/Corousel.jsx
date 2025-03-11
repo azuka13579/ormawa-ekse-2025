@@ -3,12 +3,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CarouselCardproker from "./CorouselCardProker";
+import { easeIn } from "framer-motion";
 
 const Carousel = forwardRef(({ prokers }, ref) => {
     const today = new Date();
-    
+
     // Filter proker yang sedang berlangsung
-    const activeProkers = prokers.filter(proker => {
+    const activeProkers = prokers.filter((proker) => {
         const startDate = new Date(proker.start);
         const endDate = new Date(proker.end);
         endDate.setDate(endDate.getDate() + 1);
@@ -21,14 +22,14 @@ const Carousel = forwardRef(({ prokers }, ref) => {
     const settings = {
         dots: !isSingleProker,
         infinite: !isSingleProker,
-        speed: 500,
+        speed: 1000,
         slidesToShow: isSingleProker ? 1 : 3,
         slidesToScroll: 1,
-        centerMode: !isSingleProker,
+        centerMode: true,
         focusOnSelect: true,
         centerPadding: "0",
         autoplay: !isSingleProker,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
         arrows: false,
         responsive: [
             {
@@ -49,18 +50,19 @@ const Carousel = forwardRef(({ prokers }, ref) => {
     };
 
     return (
-        <div className="carousel-container mx-auto max-w-6xl px-4 py-6">
+        <div className="carousel-container mx-auto max-w-6xl ">
             <Slider ref={ref} {...settings}>
                 {activeProkers.length > 0 ? (
                     activeProkers.map((proker, index) => (
                         <div key={proker.id} className="px-2">
-                            <CarouselCardproker {...proker} delay={index * 100} />
+                            <CarouselCardproker
+                                {...proker}
+                                delay={index * 100}
+                            />
                         </div>
                     ))
                 ) : (
-                    <div className="text-center text-xl font-semibold text-gray-600">
-                        
-                    </div>
+                    <div className="text-center text-xl font-semibold text-gray-600"></div>
                 )}
             </Slider>
         </div>
@@ -68,4 +70,3 @@ const Carousel = forwardRef(({ prokers }, ref) => {
 });
 
 export default Carousel;
-

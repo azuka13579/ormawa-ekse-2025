@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react";
 
 export default function CardTentang(props) {
     console.log(props.img);
-    
+
     // console.log(props.nama);
     return (
         <Link className="" href={"tentang/" + props.nama}>
