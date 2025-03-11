@@ -22,7 +22,7 @@ export default function Cardproker(props) {
                 <img
                     src={`${window.location.origin}/${props.image_path}`}
                     alt=""
-                    className="w-auto h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
+                    className="w-full h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
                 />
                 <div className="w-full h-full absolute bg-gradient-to-t from-primary4 to-transparent -bottom-10"></div>
                 <h1
@@ -54,7 +54,7 @@ export default function Cardproker(props) {
                                 <img
                                     src={`${window.location.origin}/${props.image_path}`}
                                     alt=""
-                                    className="h-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-xl"
                                 />
                             </div>
                             <div className="text-primary5 md:w-3/5">
@@ -70,13 +70,13 @@ export default function Cardproker(props) {
                                     Tujuan
                                 </h1>
 
-                                <p className="text-sm text-justify">
+                                <p className="text-sm text-justify whitespace-pre-line">
                                     {props.tujuan}
                                 </p>
                                 <h1 className="text-2xl font-bold mt-4 ">
                                     Deskripsi
                                 </h1>
-                                <p className="text-sm text-justify">
+                                <p className="text-sm text-justify whitespace-pre-line">
                                     {props.deskripsi}
                                 </p>
                             </div>

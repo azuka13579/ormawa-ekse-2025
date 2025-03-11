@@ -9,7 +9,9 @@ import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 
-export default function Home() {
+export default function Home({proker}) {
+    
+    
     return (
         <div>
             <div className="md:h-screen bg-white flex flex-col">
@@ -17,7 +19,7 @@ export default function Home() {
                 <Head title="Ormawa Eksekutif PKU IPB" />
 
                 {/* Bagian Header untuk mobile */}
-                <div className="md:hidden bg-biru p-5 mb-20">
+                <div className="md:hidden bg-primary1 p-3 mb-20">
                     <img src="img/Logowir.png" alt="gambar" />
                 </div>
 
@@ -67,13 +69,13 @@ export default function Home() {
             <div
                 data-aos="fade-up"
                 data-aos-duration="800"
-                className="px-10 py-10 max-w-screen-xl max-h-[12000px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+                className="px-5 py-9 md:px-10 md:py-10 md:max-w-screen-xl max-w-96 max-h-[1200px] mx-auto bg-fontcolors rounded-3xl shadow-md"
             >
                 <div className="text-center mb-8">
-                    <h1 className="text-6xl font-bold text-white font-rowdies">
+                    <h1 className="md:text-6xl text-4xl font-bold text-white font-rowdies">
                         Selayang Pandang
                     </h1>
-                    <p className="text-2xl text-white pt-5 font-montserrat">
+                    <p className="md:text-2xl text-xl text-white pt-5 font-montserrat">
                         Ormawa Eksekutif PKU IPB
                     </p>
                 </div>
@@ -81,10 +83,10 @@ export default function Home() {
                 <div className="block md:flex md:space-x-4 font-montserrat md:pl-10 md:pr-10">
                     {/* Kiri */}
                     <div className="w-full md:w-1/2">
-                        <h2 className="text-3xl font-semibold text-white italic">
+                        <h2 className="md:text-3xl text-2xl font-semibold text-white italic">
                             Ormawa Eksekutif PKU IPB
                         </h2>
-                        <p className="text-lg text-white pt-4 max-w-[549px] text-justify">
+                        <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
                             <span className="font-bold">
                                 Ormawa Eksekutif PKU IPB
                             </span>{" "}
@@ -112,10 +114,10 @@ export default function Home() {
 
                     {/* Kanan */}
                     <div className="w-full md:w-1/2">
-                        <h2 className="text-3xl font-semibold text-white italic">
+                        <h2 className="md:text-3xl text-2xl font-semibold text-white italic">
                             Peran Ormawa Eksekutif PKU IPB
                         </h2>
-                        <p className="text-lg text-white pt-4 max-w-[549px] text-justify">
+                        <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
                             Perannya sangat signifikan dalam kehidupan kampus
                             mahasiswa PKU, dengan pergerakan, pengembangan,
                             pelayanan, dan pengabdian. Dengan demikian,
@@ -146,7 +148,7 @@ export default function Home() {
                     <h2 className="md:text-7xl text-5xl font-bold text-fontcolors font-rowdies">
                         Samudra Wirakarsa
                     </h2>
-                    <div className="mt-4">
+                    <div className="mt-4 max-md:hidden">
                         <div
                             data-aos="fade-up"
                             data-aos-duration="700"
@@ -223,7 +225,8 @@ export default function Home() {
             <Visi />
             <Misi />
             {/* Konten lain */}
-            <SakarsaDaily />
+            <SakarsaDaily Proker={proker} />
+
             <div className="py-10 bg-white flex flex-col gap-10">
                 <div className="flex justify-between flex-col md:flex-row gap-8">
                     <div

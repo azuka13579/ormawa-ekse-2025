@@ -5,8 +5,28 @@ import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
 import ProductList from "../Components/Testfetching";
 import CardBPH from "../Components/CardBPH";
+import "../../css/owl.theme.css";
+import OwlCarousel from "react-owl-carousel";
 
 export default function Tentang(props) {
+    const options = {
+        // loop: true,
+        // nav: true,
+        autoplaySpeed: 1000,
+        dragEndSpeed: 1000,
+        dotsSpeed: 1000,
+        autoplay: false,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true,
+        autoWidth: true,
+        stagePadding: 0,
+
+        dots: false,
+
+        // items: 2,
+        margin: 10,
+        center: true,
+    };
     return (
         <div className="">
             <Head title="Ormawa Eksekutif PKU IPB" />
@@ -65,8 +85,8 @@ export default function Tentang(props) {
                 </div>
             </div>
 
-            <div className="">
-                <div className="md:text-left text-center px-20">
+            <div className="mt-4">
+                <div className="md:text-left text-center md:px-20 px-4">
                     <h1
                         className="text-primary4 text-6xl font-rowdies font-bold"
                         data-aos="fade-up"
@@ -82,47 +102,80 @@ export default function Tentang(props) {
                         {props.divisi || "Ormawa Eksekutif PKU 2024/2025"}
                     </h1>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 place-items-center py-8 gap-4 px-4 md:px-8">
-                    <CardBPH
-                        nama="Ayubi Fathan"
-                        jabatan="ketua Eksekutif"
-                        delay=""
-                        scale="scale-[0.8]"
-                    ></CardBPH>
-                    <CardBPH
-                        nama="Fiezha Hasby"
-                        jabatan="Wakil Ketua"
-                        delay="150"
-                        scale="scale-[0.8]"
-                    ></CardBPH>
+                <div className="sm:hidden mt-4">
+                    <OwlCarousel
+                        className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                        {...options}
+                    >
+                        <CardBPH
+                            nama="Ayubi Fathan"
+                            jabatan="ketua Eksekutif"
+                            delay=""
+                            scale="scale-[0.8]"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Wakil Ketua"
+                            delay="150"
+                            scale="scale-[0.8]"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Ayubi Fathan"
+                            jabatan="ketua Eksekutif"
+                            delay=""
+                            scale="scale-[0.8]"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Wakil Ketua"
+                            delay="150"
+                            scale="scale-[0.8]"
+                        ></CardBPH>
+                    </OwlCarousel>
                 </div>
-                <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
-                    <CardBPH
-                        nama="Fiezha Hasby"
-                        jabatan="Sekretaris Eksternal"
-                        delay=""
-                        top="top-48"
-                    ></CardBPH>
-                    <CardBPH
-                        nama="Fiezha Hasby"
-                        jabatan="Sekretaris Internal"
-                        delay="100"
-                    ></CardBPH>
-                    <CardBPH
-                        nama="Fiezha Hasby"
-                        jabatan="Sekretaris Eksternal"
-                        delay="200"
-                    ></CardBPH>
-                    <CardBPH
-                        nama="Fiezha Hasby"
-                        jabatan="Sekretaris Internal"
-                        delay="300"
-                    ></CardBPH>
+                <div className="sm:block hidden">
+                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-center py-8 gap-4 px-4 md:px-8">
+                        <CardBPH
+                            nama="Ayubi Fathan"
+                            jabatan="ketua Eksekutif"
+                            delay=""
+                            scale="scale-[0.8]"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Wakil Ketua"
+                            delay="150"
+                            scale="scale-[0.8]"
+                        ></CardBPH>
+                    </div>
+                    <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Sekretaris Eksternal"
+                            delay=""
+                            top="top-48"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Sekretaris Internal"
+                            delay="100"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Sekretaris Eksternal"
+                            delay="200"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby"
+                            jabatan="Sekretaris Internal"
+                            delay="300"
+                        ></CardBPH>
+                    </div>
                 </div>
             </div>
 
             {/* sektion2 */}
-            <div className="bg-white px-4 md:px-8 flex flex-col gap-8 mt-8">
+            <div className="bg-white px-2 md:px-8 py-4 flex flex-col gap-8 mt-8">
                 <div className="flex justify-center">
                     <h1
                         className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full"
@@ -132,16 +185,31 @@ export default function Tentang(props) {
                         Biro
                     </h1>
                 </div>
-                <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:grid hidden">
                     {props.biro.map((divisi, index) => (
                         <CardTentang
                             key={index}
                             delay={index * 100}
                             nama={divisi.divisi}
-                            img=""
+                            img={divisi.image_path}
                         />
                     ))}
                     ;
+                </div>
+                <div className="sm:hidden">
+                    <OwlCarousel
+                        className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                        {...options}
+                    >
+                        {props.biro.map((divisi, index) => (
+                            <CardTentang
+                                key={index}
+                                delay={index * 100}
+                                nama={divisi.divisi}
+                                img={divisi.image_path}
+                            />
+                        ))}
+                    </OwlCarousel>
                 </div>
                 <div className="flex justify-center">
                     <h1
@@ -152,16 +220,32 @@ export default function Tentang(props) {
                         Departemen
                     </h1>
                 </div>
-                <div className="grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="sm:grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
                     {props.departemen.map((divisi, index) => (
                         <CardTentang
                             key={index}
                             delay={(index % 4) * 100}
                             nama={divisi.divisi}
-                            img=""
+                            img={divisi.image_path}
                         />
                     ))}
                     ;
+                </div>
+                <div className="sm:hidden">
+                    <OwlCarousel
+                        className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                        {...options}
+                    >
+                        {props.departemen.map((divisi, index) => (
+                            <CardTentang
+                                key={index}
+                                delay={(index % 4) * 100}
+                                nama={divisi.divisi}
+                                img={divisi.image_path}
+                            />
+                        ))}
+                        ;
+                    </OwlCarousel>
                 </div>
             </div>
             {/* <ProductList></ProductList> */}

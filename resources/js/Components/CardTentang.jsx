@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 
 export default function CardTentang(props) {
+    console.log(props.img);
+
     // console.log(props.nama);
     return (
         <Link className="" href={"tentang/" + props.nama}>
             <div
                 className="w-full h-96 max-w-[400px] bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg group hover:scale-105 relative transition duration-300 overflow-hidden
-                flex justify-center"
+                flex justify-center items-center"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay={props.delay}
@@ -18,9 +20,9 @@ export default function CardTentang(props) {
                     </h1>
                 </div> */}
                 <img
-                    src={`${window.location.origin}/img/Home.png`}
+                    src={`${window.location.origin}/${props.img}`}
                     alt=""
-                    className="w-full h-auto object-cover group-hover:scale-100 scale-90 transition duration-700 ease-in-out"
+                    className="md:w-full md:h-full md:object-contain w-full h-auto object-contain group-hover:scale-100 scale-90 transition duration-700 ease-in-out"
                 />
                 <h1
                     className="text-slate-300 font-montserrat text-2xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6

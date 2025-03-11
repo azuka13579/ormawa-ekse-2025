@@ -31,11 +31,12 @@ class TentangController extends Controller
 
     public function divisi($divisi){
         
-        $id = Div::where('divisi', $divisi)->select('id')->get();
+        $id = Div::where('divisi', $divisi)->select('id','image_path','deskripsi')->get();
+        $deskripsi = $id[0];
         $data = Kapten::where('div_id', $id[0]->id)->get();
         $anggota = Anggota::where('div_id', $id[0]->id)->get();
         $proker = Proker::where('div_id', $id[0]->id)->get();
         // dd($proker);
-        return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data, 'anggota' => $anggota, 'proker' => $proker]);
+        return Inertia::render('Divisicopy',['divisi' => $divisi, 'data' => $data, 'anggota' => $anggota, 'proker' => $proker, 'deskripsi' => $deskripsi]);
     }
 }

@@ -1,11 +1,9 @@
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import Carousel from "./Corousel";
 
-export default function SakarsaDaily() {
+export default function SakarsaDaily({Proker,Divisi}) {
     const sliderRef = useRef(null);
-
+    console.log(Proker)
     return (
         <div
             data-aos="fade-up"
@@ -61,7 +59,7 @@ export default function SakarsaDaily() {
                 </div>
             </div>
 
-            <Carousel ref={sliderRef} />
+            <Carousel ref={sliderRef} prokers={Proker} divisi={Divisi}/>
         </div>
     );
 }
