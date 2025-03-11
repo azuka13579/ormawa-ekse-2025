@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { useForm, usePage } from "@inertiajs/react";
 import { useCart } from "../Context/CartContext";
-<<<<<<< HEAD
-import DisplaySize from "../Components/DisplaySize"
-=======
 import DisplaySize from "../Components/DisplaySize";
+import { useSize } from "../Context/SizeContext";
 
->>>>>>> dfbeaf517a1a5a10cbd216e99f4cd6e439c9f03e
 const fakultasData = {
     Faperta: ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
     FKH: ["Kedokteran Hewan"],
@@ -15,8 +12,20 @@ const fakultasData = {
 };
 
 export default function Checkout() {
+    
     const cart = useCart();
+   
     const cartData = cart.cart;
+    const { selectedSizes } = useSize();
+    const selectedSizesList = cartData.map(item => selectedSizes[item.id] || "-");
+    const mergedCart = cartData.map((item, index) => ({
+        ...item,
+        selectedSize: selectedSizesList[index] || '-',
+    }));
+
+    
+
+
     const { data, setData, post, processing } = useForm({
         email: "",
         name: "",
@@ -25,7 +34,7 @@ export default function Checkout() {
         departemen: "",
         whatsapp: "",
         bukti_transfer: null,
-        cart: cartData,
+        cart: mergedCart,
         total: cartData.reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0),
     });
 
@@ -45,7 +54,13 @@ export default function Checkout() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        post(route("checkout.store"), {
+    
+        if (!data.bukti_transfer) {
+            alert("Harap upload bukti transfer!");
+            return;
+        }
+    
+        post("/samudra-store/checkout/payment", {  // Ganti dengan URL absolut
             onSuccess: () => {
                 alert("Checkout berhasil!");
                 window.location.href = "/samudra-store";
@@ -55,6 +70,7 @@ export default function Checkout() {
             },
         });
     };
+    
     
 
     return (
@@ -90,112 +106,11 @@ export default function Checkout() {
                     </div>
                 </div>
 
-<<<<<<< HEAD
-            <div className="border-b pb-4 mb-4">
-    <h3 className="text-lg font-semibold">Detail Produk</h3>
-    {cartData.length === 0 ? (
-        <p>Keranjang Anda kosong</p>
-    ) : (
-        cartData.map((item) => (
-            <div key={item.id} className="flex border-b py-2">
-                <p>Size:</p><DisplaySize productId={item.id}></DisplaySize> {/* Konversi harga ke float */}
-                <span>{item.name} (x{item.quantity})</span>
-                <span>{formatCurrency(parseFloat(item.price) * item.quantity)}</span>
-            </div>
-        ))
-    )}
-
-    <div className="font-bold text-right mt-2">
-        Total: {formatCurrency(data.total)}
-    </div>
-</div>
-            <form onSubmit={handleSubmit} className="space-y-3" method="POST">
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={data.email}
-                    onChange={(e) => setData("email", e.target.value)}
-                    className="w-full p-2 border rounded"
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Nama"
-                    value={data.name}
-                    onChange={(e) => setData("name", e.target.value)}
-                    className="w-full p-2 border rounded"
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="NIM"
-                    value={data.nim}
-                    onChange={(e) => setData("nim", e.target.value)}
-                    className="w-full p-2 border rounded"
-                    required
-                />
-
-                <select
-                    value={data.fakultas}
-                    onChange={(e) => setData("fakultas", e.target.value)}
-                    className="w-full p-2 border rounded"
-                    required
-                >
-                    <option value="">Pilih Fakultas</option>
-                    {Object.keys(fakultasData).map((fak) => (
-                        <option key={fak} value={fak}>{fak}</option>
-                    ))}
-                </select>
-
-                <select
-                    value={data.departemen}
-                    onChange={(e) => setData("departemen", e.target.value)}
-                    className="w-full p-2 border rounded"
-                    required
-                    disabled={!data.fakultas}
-                >
-                    <option value="">Pilih Departemen</option>
-                    {data.fakultas && fakultasData[data.fakultas].map((dep) => (
-                        <option key={dep} value={dep}>{dep}</option>
-                    ))}
-                </select>
-
-                <input
-                    type="text"
-                    placeholder="Nomor WhatsApp"
-                    value={data.whatsapp}
-                    onChange={(e) => setData("whatsapp", e.target.value)}
-                    className="w-full p-2 border rounded"
-                    required
-                />
-
-                <h3 className="text-lg font-semibold mt-6">Nomor Rekening: 3288-9238-9198-1892-19</h3>
-
-                <label className="block text-gray-700">Upload Bukti Transfer:</label>
-                <input
-                    type="file"
-                    onChange={(e) => {
-                        setData("bukti_transfer", e.target.files[0]);
-                        setSelectedFileName(e.target.files[0] ? e.target.files[0].name : "");
-                    }}
-                    className="w-full p-2 border rounded"
-                    required
-                />
-                {selectedFileName && <p className="text-sm text-green-600">File: {selectedFileName}</p>}
-
-                <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 disabled:bg-gray-400"
-                    disabled={processing}
-                >
-                    {processing ? "Memproses..." : "Bayar"}
-                </button>
-            </form>
-=======
                 {/* Checkout Form */}
                 <div className="bg-white p-6 shadow-lg rounded-xl">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Detail Pembeli</h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
+                        
                         {/* Personal Info */}
                         <div className="space-y-4">
                             <div>
@@ -367,7 +282,7 @@ export default function Checkout() {
                     </form>
                 </div>
             </div>
->>>>>>> dfbeaf517a1a5a10cbd216e99f4cd6e439c9f03e
+
         </div>
     );
 }

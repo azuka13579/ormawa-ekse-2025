@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\PaymentController;
+use App\Models\Penjualan;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProkerController;
@@ -24,7 +26,7 @@ Route::get('/sakarsa-care', function () {
 
 Route::get('/samudra-store', [ProductController::class, 'index'])->name('samudra.store');
 Route::get('/samudra-store/checkout', [ProductController::class, 'checkout'])->name('checkout.store');
-
+Route::post('/samudra-store/checkout/payment', [PaymentController::class, 'index'])->name('checkout.payment');
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middleware(CheckDivision::class)->name('tentang-divisi');
@@ -86,6 +88,7 @@ Route::prefix('adminsamudra')->group(function () {
             Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
             Route::post('/{product}/update', [ProductController::class, 'update'])->name('admin.products.update');
             Route::delete('/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+            Route::get('/penjualan', [PaymentController::class, 'show'])->name('admin.products.penjualan');
         });
     });
 });
