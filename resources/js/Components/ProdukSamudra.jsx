@@ -81,13 +81,17 @@ export default function ProductsSamudra({ product, index }) {
                             <X size={20} />
                         </button>{" "}
                         <div className="flex md:flex-row flex-col gap-6">
-                            <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5 flex justify-center">
-                                <img
-                                    src={`/storage/${product.image}`}
-                                    alt=""
-                                    className="h-full object-cover rounded-xl"
-                                />
-                            </div>
+                        
+    <div className="flex-1 max-w-sm md:max-w-[300px] md:max-h-[300px] aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 flex justify-center items-center overflow-hidden">
+        <img
+            src={`/storage/${product.image}`}
+            alt="Product Image"
+            className="w-full h-full object-cover rounded-xl"
+        />
+    </div>
+
+
+
                             <div className="text-primary5 md:w-3/5">
                                 <div className="border-b-[2px] border-primary5 pb-2">
                                     <h2 className="text-2xl md:text-4xl font-bold ">

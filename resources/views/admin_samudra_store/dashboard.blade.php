@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - Samudra Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://unpkg.com/@heroicons/v2.0.18/24/outline/index.js"></script>
     <style>
         @keyframes fadeIn {
@@ -26,27 +27,33 @@
 <body class="bg-gray-50">
 
     <nav class="bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white shadow-lg">
-        <div class="container mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-8">
-                <h1 class="text-2xl font-bold tracking-tight">🌊 Samudra Store Admin</h1>
-                <div class="flex space-x-6">
-                    <a href="{{ route('admin.products.index') }}" class="px-4 py-2 rounded-lg hover:bg-blue-700/30 transition-all duration-300 flex items-center space-x-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                        </svg>
-                        <span>Produk</span>
-                    </a>
-                    <a href="#" class="px-4 py-2 rounded-lg hover:bg-blue-700/30 transition-all duration-300 flex items-center space-x-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                        <span>Penjualan</span>
-                    </a>
-                </div>
+        <div class="container font-montserrat mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="../img/Samudrastore.png" alt="Samudra Store" class="max-w-[80px] md:max-w-[100px] h-auto">
+                <h1 class="text-2xl font-bold tracking-tight text-primary5">Samudra Store Admin</h1>
             </div>
+    
+            <!-- Navigasi -->
+            <div class="hidden md:flex space-x-6">
+                <a href="{{ route('admin.products.index') }}" class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-blue-700/30 transition-all duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                    <span>Produk</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-blue-700/30 transition-all duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <span>Penjualan</span>
+                </a>
+            </div>
+    
+            <!-- Logout -->
             <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
-                <button type="submit" class="flex items-center space-x-2 bg-red-500/90 hover:bg-red-600 px-4 py-2 rounded-lg transition-all duration-300 hover:shadow-md">
+                <button type="submit" class="flex items-center space-x-2 bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
                     </svg>
@@ -55,6 +62,7 @@
             </form>
         </div>
     </nav>
+    
 
     <!-- Konten Dashboard -->
     <div class="container mx-auto p-6 fade-in">
