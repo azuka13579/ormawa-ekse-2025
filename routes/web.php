@@ -14,6 +14,7 @@ use App\Http\Middleware\CheckDivision;
 use App\Models\Proker;
 use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
+
 use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     $proker = Proker::all();
@@ -27,6 +28,7 @@ Route::get('/sakarsa-care', function () {
 Route::get('/samudra-store', [ProductController::class, 'index'])->name('samudra.store');
 Route::get('/samudra-store/checkout', [ProductController::class, 'checkout'])->name('checkout.store');
 Route::post('/samudra-store/checkout/payment', [PaymentController::class, 'index'])->name('checkout.payment');
+// Route::get('/samudra-store/checkout/berhasil', [PaymentController::class, 'berhasil'])->name('checkout.berhasil');
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middleware(CheckDivision::class)->name('tentang-divisi');
@@ -79,6 +81,7 @@ Route::prefix('adminsamudra')->group(function () {
     Route::middleware(['auth:adminsamudrastore'])->group(function () {
         // Dashboard Utama
         Route::get('/dashboard', [ProductController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/show', [PaymentController::class, 'show'])->name('admin.penjualan');
         
         // Manajemen Produk
         Route::prefix('products')->group(function () {

@@ -31,6 +31,7 @@ class PaymentController extends Controller
             'image_path' => $image_path
         ];
         Penjualan::create($data);
+
     }
 
     public function show(){
@@ -46,6 +47,7 @@ class PaymentController extends Controller
                 array_push($tmp1, [
                     'id' => $produk_retrieved[0]->id,
                     'nama_produk' => $produk_retrieved[0]->name,
+                    'size' => $buy_product['size'],
                     'price' => $produk_retrieved[0]->price,
                     'kuantitas' => (int)$buy_product['kuantitas'],
                     'image_path' => $produk_retrieved[0]->image
@@ -66,4 +68,6 @@ class PaymentController extends Controller
         }
         dd($arr_ret);
     }
+
+   
 }

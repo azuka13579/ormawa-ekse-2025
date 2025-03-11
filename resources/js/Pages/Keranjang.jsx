@@ -12,19 +12,17 @@ const fakultasData = {
 };
 
 export default function Checkout() {
-    
     const cart = useCart();
-   
+
     const cartData = cart.cart;
     const { selectedSizes } = useSize();
-    const selectedSizesList = cartData.map(item => selectedSizes[item.id] || "-");
+    const selectedSizesList = cartData.map(
+        (item) => selectedSizes[item.id] || "-"
+    );
     const mergedCart = cartData.map((item, index) => ({
         ...item,
-        selectedSize: selectedSizesList[index] || '-',
+        selectedSize: selectedSizesList[index] || "-",
     }));
-
-    
-
 
     const { data, setData, post, processing } = useForm({
         email: "",
@@ -35,10 +33,15 @@ export default function Checkout() {
         whatsapp: "",
         bukti_transfer: null,
         cart: mergedCart,
-        total: cartData.reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0),
+        total: cartData.reduce(
+            (total, item) => total + parseFloat(item.price) * item.quantity,
+            0
+        ),
     });
 
     const [selectedFileName, setSelectedFileName] = useState("");
+    const [berhasil, setBerhasil] = useState(false);
+    const [pembelianId, setPembelianId] = useState(null);
 
     useEffect(() => {
         setData("departemen", "");
@@ -54,43 +57,56 @@ export default function Checkout() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         if (!data.bukti_transfer) {
             alert("Harap upload bukti transfer!");
             return;
         }
-    
-        post("/samudra-store/checkout/payment", {  // Ganti dengan URL absolut
+
+        post("/samudra-store/checkout/payment", {
+            // Ganti dengan URL absolut
             onSuccess: () => {
-                alert("Checkout berhasil!");
-                window.location.href = "/samudra-store";
+                // setPembelianId(response.props.penjualan_id);
+                setBerhasil(true);
             },
             onError: (errors) => {
                 alert("Terjadi kesalahan: " + Object.values(errors).join(", "));
             },
         });
     };
-    
-    
 
     return (
         <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Order Summary */}
                 <div className="bg-white p-6 shadow-lg rounded-xl">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Ringkasan Pesanan</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                        Ringkasan Pesanan
+                    </h2>
                     <div className="space-y-6">
                         {cartData.map((item) => (
-                            <div key={item.id} className="flex items-center gap-4 pb-4 border-b border-gray-200">
-                                <img 
-                                    src={`/storage/${item.image}`} 
-                                    alt={item.name} 
+                            <div
+                                key={item.id}
+                                className="flex items-center gap-4 pb-4 border-b border-gray-200"
+                            >
+                                <img
+                                    src={`/storage/${item.image}`}
+                                    alt={item.name}
                                     className="w-20 h-20 object-cover rounded-lg border border-gray-200"
                                 />
                                 <div className="flex-1">
-                                    <h3 className="font-medium text-gray-800">{item.name}</h3>
-                                    <p className="text-sm text-gray-600">Jumlah: {item.quantity}</p>
-                                    <p className="text-sm text-gray-600">Size: <DisplaySize productId={item.id}></DisplaySize> </p>
+                                    <h3 className="font-medium text-gray-800">
+                                        {item.name}
+                                    </h3>
+                                    <p className="text-sm text-gray-600">
+                                        Jumlah: {item.quantity}
+                                    </p>
+                                    <p className="text-sm text-gray-600">
+                                        Size:{" "}
+                                        <DisplaySize
+                                            productId={item.id}
+                                        ></DisplaySize>{" "}
+                                    </p>
                                 </div>
                                 <div className="text-lg font-medium text-gray-900">
                                     {formatCurrency(item.price * item.quantity)}
@@ -108,41 +124,54 @@ export default function Checkout() {
 
                 {/* Checkout Form */}
                 <div className="bg-white p-6 shadow-lg rounded-xl">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Detail Pembeli</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                        Detail Pembeli
+                    </h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        
                         {/* Personal Info */}
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Email
+                                </label>
                                 <input
                                     type="email"
                                     value={data.email}
-                                    onChange={(e) => setData("email", e.target.value)}
+                                    onChange={(e) =>
+                                        setData("email", e.target.value)
+                                    }
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                     placeholder="email@example.com"
                                     required
                                 />
                             </div>
-                            
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Nama Lengkap
+                                    </label>
                                     <input
                                         type="text"
                                         value={data.name}
-                                        onChange={(e) => setData("name", e.target.value)}
+                                        onChange={(e) =>
+                                            setData("name", e.target.value)
+                                        }
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         placeholder="Nama lengkap"
                                         required
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">NIM</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        NIM
+                                    </label>
                                     <input
                                         type="text"
                                         value={data.nim}
-                                        onChange={(e) => setData("nim", e.target.value)}
+                                        onChange={(e) =>
+                                            setData("nim", e.target.value)
+                                        }
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         placeholder="Nomor Induk Mahasiswa"
                                         required
@@ -153,35 +182,62 @@ export default function Checkout() {
 
                         {/* Academic Info */}
                         <div className="space-y-4">
-                            <h3 className="text-lg font-medium text-gray-900">Informasi Akademik</h3>
+                            <h3 className="text-lg font-medium text-gray-900">
+                                Informasi Akademik
+                            </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Fakultas</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Fakultas
+                                    </label>
                                     <select
                                         value={data.fakultas}
-                                        onChange={(e) => setData("fakultas", e.target.value)}
+                                        onChange={(e) =>
+                                            setData("fakultas", e.target.value)
+                                        }
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         required
                                     >
                                         <option value="">Pilih Fakultas</option>
-                                        {Object.keys(fakultasData).map((fak) => (
-                                            <option key={fak} value={fak}>{fak}</option>
-                                        ))}
+                                        {Object.keys(fakultasData).map(
+                                            (fak) => (
+                                                <option key={fak} value={fak}>
+                                                    {fak}
+                                                </option>
+                                            )
+                                        )}
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Departemen</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Departemen
+                                    </label>
                                     <select
                                         value={data.departemen}
-                                        onChange={(e) => setData("departemen", e.target.value)}
+                                        onChange={(e) =>
+                                            setData(
+                                                "departemen",
+                                                e.target.value
+                                            )
+                                        }
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         required
                                         disabled={!data.fakultas}
                                     >
-                                        <option value="">Pilih Departemen</option>
-                                        {data.fakultas && fakultasData[data.fakultas].map((dep) => (
-                                            <option key={dep} value={dep}>{dep}</option>
-                                        ))}
+                                        <option value="">
+                                            Pilih Departemen
+                                        </option>
+                                        {data.fakultas &&
+                                            fakultasData[data.fakultas].map(
+                                                (dep) => (
+                                                    <option
+                                                        key={dep}
+                                                        value={dep}
+                                                    >
+                                                        {dep}
+                                                    </option>
+                                                )
+                                            )}
                                     </select>
                                 </div>
                             </div>
@@ -189,58 +245,78 @@ export default function Checkout() {
 
                         {/* Payment Info */}
                         <div className="space-y-4">
-                            <h3 className="text-lg font-medium text-gray-900">Informasi Pembayaran</h3>
+                            <h3 className="text-lg font-medium text-gray-900">
+                                Informasi Pembayaran
+                            </h3>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Nomor WhatsApp
+                                </label>
                                 <input
                                     type="tel"
                                     value={data.whatsapp}
-                                    onChange={(e) => setData("whatsapp", e.target.value)}
+                                    onChange={(e) =>
+                                        setData("whatsapp", e.target.value)
+                                    }
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                     placeholder="62812-3456-7890"
                                     required
                                 />
                             </div>
-                            
+
                             <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                                 <div className="mb-2 text-sm text-gray-600">
-                                    <span className="font-medium">Transfer ke:</span>
+                                    <span className="font-medium">
+                                        Transfer ke:
+                                    </span>
                                     <div className="mt-1 bg-gray-50 p-3 rounded-md">
-                                        <div className="font-mono">3288 9238 9198 1892 19</div>
-                                        <div className="text-xs text-gray-500 mt-1">BRI a.n. Samudra Store</div>
+                                        <div className="font-mono">
+                                            3288 9238 9198 1892 19
+                                        </div>
+                                        <div className="text-xs text-gray-500 mt-1">
+                                            BRI a.n. Samudra Store
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-3">Upload Bukti Transfer</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-3">
+                                    Upload Bukti Transfer
+                                </label>
                                 <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
                                     <div className="flex flex-col items-center text-gray-600">
-                                        <svg 
-                                            className="w-8 h-8 mb-2" 
-                                            fill="none" 
-                                            stroke="currentColor" 
+                                        <svg
+                                            className="w-8 h-8 mb-2"
+                                            fill="none"
+                                            stroke="currentColor"
                                             viewBox="0 0 24 24"
                                         >
-                                            <path 
-                                                strokeLinecap="round" 
-                                                strokeLinejoin="round" 
-                                                strokeWidth={2} 
-                                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" 
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                                             />
                                         </svg>
                                         <span className="text-sm">
-                                            {selectedFileName || "Klik atau drag file bukti transfer"}
+                                            {selectedFileName ||
+                                                "Klik atau drag file bukti transfer"}
                                         </span>
                                     </div>
-                                    <input 
-                                        type="file" 
-                                        className="hidden" 
+                                    <input
+                                        type="file"
+                                        className="hidden"
                                         onChange={(e) => {
-                                            setData("bukti_transfer", e.target.files[0]);
-                                            setSelectedFileName(e.target.files[0]?.name || "");
-                                        }} 
-                                        required 
+                                            setData(
+                                                "bukti_transfer",
+                                                e.target.files[0]
+                                            );
+                                            setSelectedFileName(
+                                                e.target.files[0]?.name || ""
+                                            );
+                                        }}
+                                        required
                                     />
                                 </label>
                             </div>
@@ -253,23 +329,23 @@ export default function Checkout() {
                         >
                             {processing ? (
                                 <div className="flex items-center justify-center gap-2">
-                                    <svg 
-                                        className="animate-spin h-5 w-5 text-white" 
-                                        xmlns="http://www.w3.org/2000/svg" 
-                                        fill="none" 
+                                    <svg
+                                        className="animate-spin h-5 w-5 text-white"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
                                         viewBox="0 0 24 24"
                                     >
-                                        <circle 
-                                            className="opacity-25" 
-                                            cx="12" 
-                                            cy="12" 
-                                            r="10" 
-                                            stroke="currentColor" 
+                                        <circle
+                                            className="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
                                             strokeWidth="4"
                                         ></circle>
-                                        <path 
-                                            className="opacity-75" 
-                                            fill="currentColor" 
+                                        <path
+                                            className="opacity-75"
+                                            fill="currentColor"
                                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                         ></path>
                                     </svg>
@@ -282,7 +358,57 @@ export default function Checkout() {
                     </form>
                 </div>
             </div>
+            {berhasil && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 font-montserrat">
+                    <div
+                        className="w-4/5 max-w-md p-6 bg-white rounded-2xl shadow-xl relative overflow-hidden text-center"
+                        data-aos="zoom-in"
+                        data-aos-duration="400"
+                    >
+                        {/* Ikon sukses */}
+                        <div className="flex justify-center mb-4">
+                            <svg
+                                className="w-16 h-16 text-green-500"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                        </div>
 
+                        {/* Pesan sukses */}
+                        <h2 className="text-2xl font-semibold text-gray-800">
+                            Pembayaran Berhasil!
+                        </h2>
+                        <h2 className="text-2xl font-semibold text-gray-800">
+                            {/* Id pembelian anda : {pembelianId} */}
+                        </h2>
+                        <p className="text-gray-600 mt-2">
+                            Terima kasih telah berbelanja di Samudra Store.
+                        </p>
+                        <p className="text-gray-600">
+                            Pesanan Anda akan segera kami proses.
+                        </p>
+
+                        {/* Tombol kembali ke home */}
+                        <button
+                            onClick={() =>
+                                (window.location.href = "/samudra-store")
+                            }
+                            className="mt-6 w-full bg-primary4 text-white py-3 rounded-lg font-medium hover:bg-primary5 transition-colors"
+                        >
+                            Kembali ke Beranda
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
