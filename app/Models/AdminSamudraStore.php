@@ -8,7 +8,7 @@ class AdminSamudraStore extends Authenticatable
 {
     use HasFactory;
 
-    protected $table = 'admin_samudra_stores';
+    protected $table = 'store_admins';
     protected $guarded = [];
     protected $fillable = ['name', 'email', 'password'];
 }

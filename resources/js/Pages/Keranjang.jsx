@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useForm, usePage } from "@inertiajs/react";
 import { useCart } from "../Context/CartContext";
+import DisplaySize from "../Components/DisplaySize"
 const fakultasData = {
     "Faperta": ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
     "FKH": ["Kedokteran Hewan"],
@@ -59,9 +60,10 @@ export default function Checkout() {
         <p>Keranjang Anda kosong</p>
     ) : (
         cartData.map((item) => (
-            <div key={item.id} className="flex justify-between border-b py-2">
+            <div key={item.id} className="flex border-b py-2">
+                <p>Size:</p><DisplaySize productId={item.id}></DisplaySize> {/* Konversi harga ke float */}
                 <span>{item.name} (x{item.quantity})</span>
-                <span>{formatCurrency(parseFloat(item.price) * item.quantity)}</span> {/* Konversi harga ke float */}
+                <span>{formatCurrency(parseFloat(item.price) * item.quantity)}</span>
             </div>
         ))
     )}
@@ -70,7 +72,7 @@ export default function Checkout() {
         Total: {formatCurrency(data.total)}
     </div>
 </div>
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3" method="POST">
                 <input
                     type="email"
                     placeholder="Email"
