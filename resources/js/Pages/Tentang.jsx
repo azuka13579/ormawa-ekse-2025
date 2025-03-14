@@ -23,7 +23,7 @@ export default function Tentang(props) {
 
         dots: false,
 
-        // items: 2,
+        items: 2,
         margin: 10,
         center: true,
     };
@@ -148,7 +148,7 @@ export default function Tentang(props) {
                                 jabatan="Wakil Ketua"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/bend2"
+                                image_path="images/bph/bend2.jpeg"
                             ></CardBPH>
                         </OwlCarousel>
                     </div>
@@ -211,7 +211,7 @@ export default function Tentang(props) {
                         Biro
                     </h1>
                 </div>
-                <div className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:grid hidden">
+                <div className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
                     {props.biro.map((divisi, index) => (
                         <CardTentang
                             key={index}

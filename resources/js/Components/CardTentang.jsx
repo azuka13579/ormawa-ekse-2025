@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 
 export default function CardTentang(props) {
-    console.log(props.img);
+    // console.log(props.img);
 
     // console.log(props.nama);
     return (
         <Link className="" href={"tentang/" + props.nama}>
             <div
-                className="w-full h-96 max-w-[400px] bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg group hover:scale-105 relative transition duration-300 overflow-hidden
+                className="sm:w-full sm:h-96 sm:max-w-[400px] h-[400px] max-w-[300px] bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg group hover:scale-105 relative transition duration-300 overflow-hidden
                 flex justify-center items-center"
                 data-aos="fade-up"
                 data-aos-duration="800"
