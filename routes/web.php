@@ -82,6 +82,11 @@ Route::prefix('adminsamudra')->group(function () {
         // Dashboard Utama
         Route::get('/dashboard', [ProductController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('/show', [PaymentController::class, 'show'])->name('admin.penjualan');
+        Route::get('/penjualan', [PaymentController::class, 'show'])->name('admin.products.penjualan');
+        Route::post('/penjualan/update-status/', [PaymentController::class, 'updateStatus'])->name('admin.updateStatus');
+        Route::delete('/admin/delete/{id}', [PaymentController::class, 'deleteOrder'])->name('admin.deleteOrder');
+        Route::post('/penjualan/update-diterima/', [PaymentController::class, 'updateDiterima'])->name('admin.updateDiterima');
+
         
         // Manajemen Produk
         Route::prefix('products')->group(function () {
@@ -91,7 +96,7 @@ Route::prefix('adminsamudra')->group(function () {
             Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
             Route::post('/{product}/update', [ProductController::class, 'update'])->name('admin.products.update');
             Route::delete('/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
-            Route::get('/penjualan', [PaymentController::class, 'show'])->name('admin.products.penjualan');
+
         });
     });
 });

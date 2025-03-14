@@ -23,8 +23,11 @@ return new class extends Migration
                 'produk'
             );
             $table->string('image_path');
+            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->boolean('status_diterima')->default(false);
             $table->timestamps();
         });
+        
     }
 
     /**
