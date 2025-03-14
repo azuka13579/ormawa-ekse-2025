@@ -57,6 +57,7 @@ export default function Home({proker}) {
                         data-aos-duration="800"
                     >
                         <img
+                            loading="lazy"
                             src="img/Home.png"
                             alt="Home"
                             className="w-full h-auto max-w-[600px] object-cover"

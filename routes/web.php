@@ -5,6 +5,7 @@ use App\Http\Controllers\DataController;
 use App\Http\Controllers\PaymentController;
 use App\Models\Penjualan;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProkerController;
 use App\Http\Controllers\TentangController;
@@ -28,6 +29,9 @@ Route::get('/sakarsa-care', function () {
 Route::get('/samudra-store', [ProductController::class, 'index'])->name('samudra.store');
 Route::get('/samudra-store/checkout', [ProductController::class, 'checkout'])->name('checkout.store');
 Route::post('/samudra-store/checkout/payment', [PaymentController::class, 'index'])->name('checkout.payment');
+
+Route::post('/send-order-email', [OrderController::class, 'sendOrderEmail']);
+
 // Route::get('/samudra-store/checkout/berhasil', [PaymentController::class, 'berhasil'])->name('checkout.berhasil');
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');

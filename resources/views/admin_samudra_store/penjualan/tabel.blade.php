@@ -181,7 +181,10 @@
                 @endif
             </button>
         </td>
-        <td class="p-3 text-gray-700">{{ date('d M Y, H:i', strtotime($pembeli['waktu_pembelian'])) }}</td>
+        <td class="p-3 text-gray-700">
+            {{ \Carbon\Carbon::parse($pembeli['waktu_pembelian'])->timezone('Asia/Jakarta')->format('d M Y, H:i') }}
+        </td>
+        
 
         <td>
             <button class="delete-btn px-4 py-2 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors flex items-center shadow-sm"

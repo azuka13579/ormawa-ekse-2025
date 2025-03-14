@@ -3,6 +3,7 @@ import { useForm, usePage } from "@inertiajs/react";
 import { useCart } from "../Context/CartContext";
 import DisplaySize from "../Components/DisplaySize";
 import { useSize } from "../Context/SizeContext";
+import axios from "axios";
 
 const fakultasData = {
     Faperta: ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
@@ -13,6 +14,18 @@ const fakultasData = {
 
 export default function Checkout() {
     const cart = useCart();
+    const [toastMessage, setToastMessage] = useState("");
+const [toastType, setToastType] = useState(""); // success / error
+const [showToast, setShowToast] = useState(false);
+const triggerToast = (message, type = "success") => {
+    setToastMessage(message);
+    setToastType(type);
+    setShowToast(true);
+
+    setTimeout(() => {
+        setShowToast(false);
+    }, 3000); // Hilang otomatis setelah 3 detik
+};
 
     const cartData = cart.cart;
     const { selectedSizes } = useSize();
@@ -24,24 +37,45 @@ export default function Checkout() {
         selectedSize: selectedSizesList[index] || "-",
     }));
 
-    const { data, setData, post, processing } = useForm({
-        email: "",
-        name: "",
-        nim: "",
-        fakultas: "",
-        departemen: "",
-        whatsapp: "",
-        bukti_transfer: null,
-        cart: mergedCart,
-        total: cartData.reduce(
-            (total, item) => total + parseFloat(item.price) * item.quantity,
-            0
-        ),
-    });
+   // Tambahkan pengecekan sebelum menggunakan data
+const { data, setData, post, processing } = useForm({
+    email: "",
+    name: "",
+    nim: "",
+    fakultas: "",
+    departemen: "",
+    whatsapp: "",
+    bukti_transfer: null,
+    cart: mergedCart || [], // Tambahkan fallback ke array kosong
+    total: Array.isArray(cartData) ? cartData.reduce(
+        (total, item) => total + parseFloat(item.price) * item.quantity,
+        0
+    ) : 0, // Tambahkan pengecekan
+});
+    
+const sendEmail = async () => {
+    try {
+        await axios.post("/send-order-email", {
+            name: data.name,
+            nim: data.nim,
+            fakultas: data.fakultas,
+            departemen: data.departemen,
+            whatsapp: data.whatsapp,
+            email: data.email,
+            cart: mergedCart,
+            total: data.total,
+        });
+
+        triggerToast("Email pesanan berhasil dikirim!", "success");
+    } catch (error) {
+        console.error("Gagal mengirim email:", error);
+        triggerToast("Terjadi kesalahan saat mengirim email.", "error");
+    }
+};
+
 
     const [selectedFileName, setSelectedFileName] = useState("");
     const [berhasil, setBerhasil] = useState(false);
-    const [pembelianId, setPembelianId] = useState(null);
 
     useEffect(() => {
         setData("departemen", "");
@@ -54,29 +88,53 @@ export default function Checkout() {
             maximumFractionDigits: 0,
         }).format(amount);
     };
-
-    const handleSubmit = (e) => {
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    
+    // Error popup state
+    const [showError, setShowError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    
+    const handleSubmitClick = (e) => {
         e.preventDefault();
-
+        
         if (!data.bukti_transfer) {
-            alert("Harap upload bukti transfer!");
+            // Show error popup instead of alert
+            setErrorMessage("Harap upload bukti transfer!");
+            setShowError(true);
             return;
         }
-
+        
+        // Show confirmation popup
+        setShowConfirmation(true);
+    };
+    
+    const handleConfirmSubmit = () => {
+        setShowConfirmation(false);
+        
         post("/samudra-store/checkout/payment", {
-            // Ganti dengan URL absolut
             onSuccess: () => {
-                // setPembelianId(response.props.penjualan_id);
                 setBerhasil(true);
             },
             onError: (errors) => {
-                alert("Terjadi kesalahan: " + Object.values(errors).join(", "));
+                setErrorMessage("Terjadi kesalahan: " + Object.values(errors).join(", "));
+                setShowError(true);
             },
         });
     };
 
     return (
+        
         <div className="min-h-screen bg-gray-50">
+            {showToast && (
+    <div
+        className={`fixed top-5 right-5 px-4 py-2 rounded-lg shadow-md text-white transition-opacity duration-300 ${
+            toastType === "success" ? "bg-green-500" : "bg-red-500"
+        }`}
+    >
+        {toastMessage}
+    </div>
+)}
+
             <div className="bg-primary1 w-full flex justify-center py-4">
                 <h1 className="font-montserrat font-bold md:text-4xl text-2xl text-primary5">
                     Form Pembayaran
@@ -132,7 +190,7 @@ export default function Checkout() {
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">
                         Detail Pembeli
                     </h2>
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form className="space-y-6">
                         {/* Personal Info */}
                         <div className="space-y-4">
                             <div>
@@ -327,39 +385,93 @@ export default function Checkout() {
                             </div>
                         </div>
 
-                        <button
-                            type="submit"
-                            disabled={processing}
-                            className="w-full bg-primary4 text-white py-3 rounded-lg font-medium hover:bg-primary5 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        {/* Submit Button */}
+            <button
+                type="button"
+                onClick={handleSubmitClick}
+                disabled={processing}
+                className="w-full bg-primary4 text-white py-3 rounded-lg font-medium hover:bg-primary5 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+            >
+                {processing ? (
+                    <div className="flex items-center justify-center gap-2">
+                        <svg
+                            className="animate-spin h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
                         >
-                            {processing ? (
-                                <div className="flex items-center justify-center gap-2">
-                                    <svg
-                                        className="animate-spin h-5 w-5 text-white"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <circle
-                                            className="opacity-25"
-                                            cx="12"
-                                            cy="12"
-                                            r="10"
-                                            stroke="currentColor"
-                                            strokeWidth="4"
-                                        ></circle>
-                                        <path
-                                            className="opacity-75"
-                                            fill="currentColor"
-                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                        ></path>
-                                    </svg>
-                                    Memproses...
-                                </div>
-                            ) : (
-                                "Konfirmasi Pembayaran"
-                            )}
-                        </button>
+                            <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                            ></circle>
+                            <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                        </svg>
+                        Memproses...
+                    </div>
+                ) : (
+                    "Konfirmasi Pembayaran"
+                )}
+            </button>
+            
+            {/* Confirmation Popup */}
+            {showConfirmation && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                        <h3 className="text-lg font-bold mb-4">Konfirmasi Pembayaran</h3>
+                        <p className="mb-6">Apakah Anda yakin ingin melanjutkan pembayaran ini?</p>
+                        
+                        <div className="flex justify-end space-x-3">
+                            <button
+                                type="button"
+                                onClick={() => setShowConfirmation(false)}
+                                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100"
+                                disabled={processing}
+                            >
+                                Batal
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    handleConfirmSubmit();
+                                    sendEmail();
+                                }}
+                                className="px-4 py-2 bg-primary4 text-white rounded-lg hover:bg-primary5"
+                                disabled={processing}
+                            >
+                                {processing ? "Memproses..." : "Ya, Saya Yakin"}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            
+            {/* Error Popup */}
+            {showError && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                        <h3 className="text-lg font-bold mb-4 text-red-600">Peringatan</h3>
+                        <p className="mb-6">{errorMessage}</p>
+                        
+                        <div className="flex justify-end">
+                            <button
+                                type="button"
+                                onClick={() => setShowError(false)}
+                                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                            >
+                                Tutup
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
                     </form>
                 </div>
             </div>
@@ -404,9 +516,9 @@ export default function Checkout() {
 
                         {/* Tombol kembali ke home */}
                         <button
-                            onClick={() =>
-                                (window.location.href = "/samudra-store")
-                            }
+                            onClick={() => {
+                                window.location.href = "/samudra-store";
+                            }}
                             className="mt-6 w-full bg-primary4 text-white py-3 rounded-lg font-medium hover:bg-primary5 transition-colors"
                         >
                             Kembali ke Beranda

@@ -133,6 +133,7 @@ export default function SamudraStore() {
                     alt="Samudra Store"
                     data-aos="fade-up"
                     data-aos-duration="1000"
+                    loading="lazy"
                     className="md:w-1/5 w-3/4 mx-auto"
                 />
                 <h1 className="bg-gradient-to-r from-primary7 to-primary5 text-3xl md:text-8xl bg-clip-text text-transparent font-rowdies font-bold mx-auto">
