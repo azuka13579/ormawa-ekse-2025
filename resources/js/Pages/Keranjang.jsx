@@ -76,8 +76,13 @@ export default function Checkout() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="min-h-screen bg-gray-50">
+            <div className="bg-primary1 w-full flex justify-center py-4">
+                <h1 className="font-montserrat font-bold md:text-4xl text-2xl text-primary5">
+                    Form Pembayaran
+                </h1>
+            </div>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 sm:px-6 lg:px- py-8">
                 {/* Order Summary */}
                 <div className="bg-white p-6 shadow-lg rounded-xl">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">
@@ -140,7 +145,7 @@ export default function Checkout() {
                                     onChange={(e) =>
                                         setData("email", e.target.value)
                                     }
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
                                     placeholder="email@example.com"
                                     required
                                 />
@@ -157,7 +162,7 @@ export default function Checkout() {
                                         onChange={(e) =>
                                             setData("name", e.target.value)
                                         }
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
                                         placeholder="Nama lengkap"
                                         required
                                     />
@@ -172,7 +177,7 @@ export default function Checkout() {
                                         onChange={(e) =>
                                             setData("nim", e.target.value)
                                         }
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
                                         placeholder="Nomor Induk Mahasiswa"
                                         required
                                     />
@@ -195,7 +200,7 @@ export default function Checkout() {
                                         onChange={(e) =>
                                             setData("fakultas", e.target.value)
                                         }
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
                                         required
                                     >
                                         <option value="">Pilih Fakultas</option>
@@ -220,7 +225,7 @@ export default function Checkout() {
                                                 e.target.value
                                             )
                                         }
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
                                         required
                                         disabled={!data.fakultas}
                                     >
@@ -258,7 +263,7 @@ export default function Checkout() {
                                     onChange={(e) =>
                                         setData("whatsapp", e.target.value)
                                     }
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
                                     placeholder="62812-3456-7890"
                                     required
                                 />
@@ -284,7 +289,7 @@ export default function Checkout() {
                                 <label className="block text-sm font-medium text-gray-700 mb-3">
                                     Upload Bukti Transfer
                                 </label>
-                                <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                                <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary3 transition-colors">
                                     <div className="flex flex-col items-center text-gray-600">
                                         <svg
                                             className="w-8 h-8 mb-2"
@@ -325,7 +330,7 @@ export default function Checkout() {
                         <button
                             type="submit"
                             disabled={processing}
-                            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                            className="w-full bg-primary4 text-white py-3 rounded-lg font-medium hover:bg-primary5 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                         >
                             {processing ? (
                                 <div className="flex items-center justify-center gap-2">

@@ -96,6 +96,7 @@
                         <th class="p-5 text-left font-bold text-gray-800">Resi</th>
                         <th class="p-5 text-center font-bold text-gray-800">Status Pembayaran</th>
                         <th class="p-5 text-center font-bold text-gray-800">Status Terima</th>
+                        <th class="p-5 text-center font-bold text-gray-800">Waktu Pembelian</th>
                         <th class="p-5 text-center font-bold text-gray-800">Hapus</th>
                     </tr>
                 </thead>
@@ -180,6 +181,8 @@
                 @endif
             </button>
         </td>
+        <td class="p-3 text-gray-700">{{ date('d M Y, H:i', strtotime($pembeli['waktu_pembelian'])) }}</td>
+
         <td>
             <button class="delete-btn px-4 py-2 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors flex items-center shadow-sm"
                         data-id="{{ $pembeli['id_beli'] }}">

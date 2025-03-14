@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('divisi');
             $table->string('deskripsi');
             $table->string('image_path');
+            $table->string('timeline_path');
 
             $table->timestamps();
         });

@@ -11,7 +11,7 @@ export default function CardBPH(props) {
             >
                 <div className="flex flex-col relative">
                     <img
-                        src={`${window.location.origin}/img/rafa.png`}
+                        src={`${window.location.origin}/${props.image_path}`}
                         alt=""
                         className={`md:${props.scale} top-60  relative scale-[0.8] w-full`}
                     />

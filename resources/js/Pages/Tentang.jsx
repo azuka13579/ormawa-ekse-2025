@@ -103,35 +103,55 @@ export default function Tentang(props) {
                     </h1>
                 </div>
                 <div className="sm:hidden mt-4">
-                    <OwlCarousel
-                        className="owl-theme from-blue-500 via-sky-300 to-blue-500"
-                        {...options}
-                    >
-                        <CardBPH
-                            nama="Ayubi Fathan"
-                            jabatan="ketua Eksekutif"
-                            delay=""
-                            scale="scale-[0.8]"
-                        ></CardBPH>
-                        <CardBPH
-                            nama="Fiezha Hasby"
-                            jabatan="Wakil Ketua"
-                            delay="150"
-                            scale="scale-[0.8]"
-                        ></CardBPH>
-                        <CardBPH
-                            nama="Ayubi Fathan"
-                            jabatan="ketua Eksekutif"
-                            delay=""
-                            scale="scale-[0.8]"
-                        ></CardBPH>
-                        <CardBPH
-                            nama="Fiezha Hasby"
-                            jabatan="Wakil Ketua"
-                            delay="150"
-                            scale="scale-[0.8]"
-                        ></CardBPH>
-                    </OwlCarousel>
+                    <div className="w-full overflow-hidden">
+                        <OwlCarousel
+                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                            {...options}
+                        >
+                            <CardBPH
+                                nama="Ayubi Fathan"
+                                jabatan="ketua Eksekutif"
+                                delay=""
+                                scale="scale-[0.8]"
+                                image_path="images/bph/ketua.jpeg"
+                            ></CardBPH>
+                            <CardBPH
+                                nama="Fiezha Hasby"
+                                jabatan="Wakil Ketua"
+                                delay=""
+                                scale="scale-[0.8]"
+                                image_path="images/bph/wakil.jpeg"
+                            ></CardBPH>
+                            <CardBPH
+                                nama="Ayubi Fathan"
+                                jabatan="ketua Eksekutif"
+                                delay=""
+                                scale="scale-[0.8]"
+                                image_path="images/bph/sekre1.jpeg"
+                            ></CardBPH>
+                            <CardBPH
+                                nama="Fiezha Hasby"
+                                jabatan="Wakil Ketua"
+                                delay=""
+                                scale="scale-[0.8]"
+                                image_path="images/bph/sekre2.jpeg"
+                            ></CardBPH>
+                            <CardBPH
+                                nama="Fiezha Hasby"
+                                jabatan="Wakil Ketua"
+                                delay=""
+                                scale="scale-[0.8]"
+                                image_path="images/bph/bend1.jpeg"
+                            ></CardBPH>
+                            <CardBPH
+                                nama="Fiezha Hasby"
+                                jabatan="Wakil Ketua"
+                                delay=""
+                                scale="scale-[0.8]"
+                                image_path="images/bph/bend2"
+                            ></CardBPH>
+                        </OwlCarousel>
+                    </div>
                 </div>
                 <div className="sm:block hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2 place-items-center py-8 gap-4 px-4 md:px-8">
@@ -140,12 +160,14 @@ export default function Tentang(props) {
                             jabatan="ketua Eksekutif"
                             delay=""
                             scale="scale-[0.8]"
+                            image_path="images/bph/ketua.jpeg"
                         ></CardBPH>
                         <CardBPH
                             nama="Fiezha Hasby"
                             jabatan="Wakil Ketua"
                             delay="150"
                             scale="scale-[0.8]"
+                            image_path="images/bph/wakil.jpeg"
                         ></CardBPH>
                     </div>
                     <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
@@ -154,21 +176,25 @@ export default function Tentang(props) {
                             jabatan="Sekretaris Eksternal"
                             delay=""
                             top="top-48"
+                            image_path="images/bph/sekre1.jpeg"
                         ></CardBPH>
                         <CardBPH
                             nama="Fiezha Hasby"
                             jabatan="Sekretaris Internal"
                             delay="100"
+                            image_path="images/bph/sekre2.jpeg"
                         ></CardBPH>
                         <CardBPH
                             nama="Fiezha Hasby"
-                            jabatan="Sekretaris Eksternal"
+                            jabatan="Bendahara Eksternal"
                             delay="200"
+                            image_path="images/bph/bend1.jpeg"
                         ></CardBPH>
                         <CardBPH
                             nama="Fiezha Hasby"
-                            jabatan="Sekretaris Internal"
+                            jabatan="Bendahara Internal"
                             delay="300"
+                            image_path="images/bph/bend2.jpeg"
                         ></CardBPH>
                     </div>
                 </div>
@@ -197,19 +223,21 @@ export default function Tentang(props) {
                     ;
                 </div>
                 <div className="sm:hidden">
-                    <OwlCarousel
-                        className="owl-theme from-blue-500 via-sky-300 to-blue-500"
-                        {...options}
-                    >
-                        {props.biro.map((divisi, index) => (
-                            <CardTentang
-                                key={index}
-                                delay={index * 100}
-                                nama={divisi.divisi}
-                                img={divisi.image_path}
-                            />
-                        ))}
-                    </OwlCarousel>
+                    <div className="w-full">
+                        <OwlCarousel
+                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                            {...options}
+                        >
+                            {props.biro.map((divisi, index) => (
+                                <CardTentang
+                                    key={index}
+                                    delay={index * 100}
+                                    nama={divisi.divisi}
+                                    img={divisi.image_path}
+                                />
+                            ))}
+                        </OwlCarousel>
+                    </div>
                 </div>
                 <div className="flex justify-center">
                     <h1
@@ -232,20 +260,22 @@ export default function Tentang(props) {
                     ;
                 </div>
                 <div className="sm:hidden">
-                    <OwlCarousel
-                        className="owl-theme from-blue-500 via-sky-300 to-blue-500"
-                        {...options}
-                    >
-                        {props.departemen.map((divisi, index) => (
-                            <CardTentang
-                                key={index}
-                                delay={(index % 4) * 100}
-                                nama={divisi.divisi}
-                                img={divisi.image_path}
-                            />
-                        ))}
-                        ;
-                    </OwlCarousel>
+                    <div className="w-full">
+                        <OwlCarousel
+                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                            {...options}
+                        >
+                            {props.departemen.map((divisi, index) => (
+                                <CardTentang
+                                    key={index}
+                                    delay={(index % 4) * 100}
+                                    nama={divisi.divisi}
+                                    img={divisi.image_path}
+                                />
+                            ))}
+                            ;
+                        </OwlCarousel>
+                    </div>
                 </div>
             </div>
             {/* <ProductList></ProductList> */}

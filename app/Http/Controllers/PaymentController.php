@@ -86,6 +86,7 @@ $search = $query->get();
             'recipe_path' => $pembeli->image_path,
             'status' => $pembeli->status,
             'status_diterima' => $pembeli->status_diterima,
+            'waktu_pembelian' => $pembeli->created_at
         ];
     }
 

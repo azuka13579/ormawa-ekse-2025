@@ -131,22 +131,6 @@ export default function Divisicopy(props) {
                     </h1>
 
                     <ImageSlider images={props.anggota} />
-                    <div className="sm:hidden">
-                        <OwlCarousel
-                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
-                            {...options}
-                        >
-                            {props.anggota.map((src, index) => (
-                                <div key={index} className="">
-                                    <img
-                                        src={`${window.location.origin}/${src.image_path}`}
-                                        alt={`Slide ${index}`}
-                                        className="h-auto max-h-[500px] w-auto object-contain"
-                                    />
-                                </div>
-                            ))}
-                        </OwlCarousel>
-                    </div>
                 </div>
             </div>
 
@@ -162,7 +146,7 @@ export default function Divisicopy(props) {
                     </h1>
                 </div>
                 <img
-                    src={`${window.location.origin}/img/timeline.png`}
+                    src={`${window.location.origin}/${props.deskripsi.timeline_path}`}
                     alt="Timeline"
                     className="w-full md:w-3/4 h-auto object-cover mx-auto"
                     data-aos="fade-up"

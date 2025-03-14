@@ -20,12 +20,13 @@ class AnggotaSeeder extends Seeder
         //         'image_path' => 'storage\images\img.jpeg'
         //     ]
         // ]);
+        $dept = ['adkesmah','slh','internal','senbud', 'akpres', 'medbrand', 'psdm', 'komit', 'kastrat', 'ekraf', 'peraga', 'risbang'];
 
         for ($i=1; $i < 13; $i++) { 
             for ($j=1; $j < 16; $j++) { 
                 Anggota::factory()->create([
                     'div_id' => $i,
-                    'image_path' => 'storage\images\img.jpeg'
+                    'image_path' => 'images/anggota/' . $dept[$i - 1] .'/' .$j .'.jpeg'
                 ]);
             }
         }

@@ -31,7 +31,7 @@ class TentangController extends Controller
 
     public function divisi($divisi){
         
-        $id = Div::where('divisi', $divisi)->select('id','image_path','deskripsi')->get();
+        $id = Div::where('divisi', $divisi)->select('id','image_path','deskripsi','timeline_path')->get();
         $deskripsi = $id[0];
         $data = Kapten::where('div_id', $id[0]->id)->get();
         $anggota = Anggota::where('div_id', $id[0]->id)->get();

@@ -10,7 +10,7 @@ class Div extends Model
     use HasFactory;
 
     protected $table = 'divs';
-    protected $fillable = ['divisi','deskripsi','image_path'];
+    protected $fillable = ['divisi','deskripsi','image_path','timeline_path'];
 
     
 }
