@@ -88,7 +88,7 @@ Route::prefix('adminsamudra')->group(function () {
         Route::get('/show', [PaymentController::class, 'show'])->name('admin.penjualan');
         Route::get('/penjualan', [PaymentController::class, 'show'])->name('admin.products.penjualan');
         Route::post('/penjualan/update-status/', [PaymentController::class, 'updateStatus'])->name('admin.updateStatus');
-        Route::delete('/admin/delete/{id}', [PaymentController::class, 'deleteOrder'])->name('admin.deleteOrder');
+        Route::delete('/penjualan/delete/{id}', [PaymentController::class, 'deleteOrder'])->name('admin.deleteOrder');
         Route::post('/penjualan/update-diterima/', [PaymentController::class, 'updateDiterima'])->name('admin.updateDiterima');
 
         
