@@ -587,6 +587,9 @@ const sendEmail = async () => {
                         <p className="text-gray-600">
                             Pesanan Anda akan segera kami proses.
                         </p>
+                        <p className="text-gray-600">
+                            Silahkan Cek email masuk atau spam untuk detail pesanan Anda! 😊
+                        </p>
 
                         {/* Tombol kembali ke home */}
                         <button

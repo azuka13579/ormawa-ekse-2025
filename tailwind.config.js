@@ -27,6 +27,7 @@ export default {
             fontFamily: {
                 montserrat: ["Montserrat", "sans-serif"],
                 rowdies: ["Rowdies", "cursive"],
+                adihaus: ["AdihausDIN", "Helvetica", "Arial", "sans-serif"],
             },
         },
     },

@@ -1,6 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "AdihausDIN";
+  src: url("/font/adihausdin_regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AdihausDIN";
+  src: url("/font/adihausdin_bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AdihausDIN";
+  src: url("/font/adihausdin_cn.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 /* Custom Arrow Styling */
 .slick-prev,

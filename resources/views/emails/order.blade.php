@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Pesanan - Samudra Store</title>
+    <title>🔥 Konfirmasi Pesanan - Samudra Store 🔥</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,61 +17,70 @@
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
+        h2 {
+            color: #1b697d;
+            font-size: 20px;
+            font-weight: bold;
+        }
         p {
-            font-size: 14px;
-            color: #555;
+            font-size: 16px;
+            color: #2e2828;
         }
         .order-info {
-            background: #fafafa;
-            padding: 10px;
+            background: #f8f9fa;
+            padding: 15px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: left;
         }
-        .order-info strong {
-            color: #222;
+        .order-info p {
+            margin: 5px 0;
         }
         .product-list {
             list-style-type: none;
             padding: 0;
         }
         .product-list li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .product-list img {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-            margin-right: 10px;
-            vertical-align: middle;
+            padding: 12px;
+            border-bottom: 2px solid #ddd;
+            font-size: 16px;
         }
         .total {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             color: #d9534f;
+            margin-top: 15px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button:hover {
+            background-color: #0a641d;
         }
         .footer {
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-            margin-top: 20px;
-        }
-        .footer a {
-            color: #007bff;
-            text-decoration: none;
+            font-size: 14px;
+            color: #645e5e;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Halo, {{ $order['nama'] }}!</h2>
-        <p>Terima kasih telah melakukan pemesanan di <strong>Samudra Store</strong>. Berikut adalah detail pesanan Anda:</p>
+        <h2>PESANAN ANDA TELAH DITERIMA!</h2>
+        <p>Halo, <strong>{{ $order['nama'] }}</strong>!</p>
+        <p>Terima kasih telah berbelanja di <strong>Samudra Store</strong>. Kami sangat senang melayani Anda! Berikut detail pesanan Anda:</p>
         
         <div class="order-info">
             <p><strong>Nama:</strong> {{ $order['nama'] }}</p>
@@ -79,27 +88,29 @@
             <p><strong>Fakultas:</strong> {{ $order['fakultas'] }}</p>
             <p><strong>Departemen:</strong> {{ $order['departemen'] }}</p>
             <p><strong>WhatsApp:</strong> {{ $order['no_wa'] }}</p>
-            
         </div>
 
-        <h3>📦 Detail Produk Pesanan Anda</h3>
+        <h3>DETAIL PRODUK PESANAN</h3>
         <ul class="product-list">
             @foreach ($order['produk'] as $produk)
                 <li>
-                    <strong>{{ $produk['nama_produk'] }}</strong> - 
-                    Size: {{ $produk['size'] }} - 
-                    Harga: Rp{{ number_format($produk['price'], 0, ',', '.') }} - 
-                    Kuantitas: {{ $produk['kuantitas'] }}
+                    <strong>{{ $produk['nama_produk'] }}</strong> | 
+                    Size: {{ $produk['size'] }} | 
+                    Harga: <strong>Rp{{ number_format($produk['price'], 0, ',', '.') }}</strong> | 
+                    Kuantitas: <strong>{{ $produk['kuantitas'] }}</strong>
                 </li>
             @endforeach
         </ul>
 
-        <p class="total">Total Pembayaran: Rp{{ number_format($order['total'], 0, ',', '.') }}</p>
+        <p class="total">Total Pembayaran: <strong>Rp{{ number_format($order['total'], 0, ',', '.') }}</strong></p>
 
-        <p>Pesanan Anda akan segera diproses. Mohon pastikan nomor WhatsApp yang Anda cantumkan aktif agar kami dapat menghubungi Anda jika diperlukan.</p>
-        <p>Jika ada pertanyaan, silakan hubungi kami di <a href="mailto:support@samudrastore.com">support@samudrastore.com</a></p>
+        <p>Pesanan Anda sedang dalam proses! Pastikan nomor WhatsApp Anda aktif agar tim kami bisa menghubungi Anda jika diperlukan.</p>
+        <p>Bergabunglah dengan komunitas Samudra Store untuk mendapatkan update terbaru terkait informasi pesanan:</p>
+        <a href="https://chat.whatsapp.com/your-group-link" class="cta-button">GABUNG GRUP WHATSAPP</a>
+        
+        <p>Ada pertanyaan? Hubungi kami di <a href="mailto:support@samudrastore.com">support@samudrastore.com</a></p>
 
-        <p class="footer">Terima kasih sudah berbelanja di <strong>Samudra Store</strong>! 😊</p>
+        <p class="footer">Terima kasih telah memilih <strong>Samudra Store</strong>! Sampai jumpa di pesanan berikutnya! 😊</p>
     </div>
 </body>
 </html>
