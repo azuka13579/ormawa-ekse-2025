@@ -47,9 +47,9 @@ export default function SakarsaCare() {
                 </div>
             </div>
             <div
-                data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-anchor-placement="center-bottom"
+                // data-aos="fade-right"
+                // data-aos-duration="800"
+                // data-aos-anchor-placement="center-bottom"
                 className="bg-coklat md:mx-auto w-full md:w-[700px] justify-center text-center block md:flex items-center px-6 py-3 rounded-3xl mb-11 gap-20 "
             >
                 <div className="">

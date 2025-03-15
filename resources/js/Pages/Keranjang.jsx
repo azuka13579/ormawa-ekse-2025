@@ -5,10 +5,84 @@ import DisplaySize from "../Components/DisplaySize";
 import { useSize } from "../Context/SizeContext";
 
 const fakultasData = {
-    Faperta: ["Agronomi", "Ilmu Tanah", "Proteksi Tanaman"],
-    FKH: ["Kedokteran Hewan"],
-    FPIK: ["Manajemen Sumberdaya Perairan", "Budidaya Perairan"],
-    Fapet: ["Nutrisi dan Teknologi Pakan", "Produksi Ternak"],
+    Faperta: [
+        "Smart Agriculture",
+        "Manajemen Sumberdaya Lahan",
+        "Agronomi dan Holtikultura",
+        "Proteksi Tanaman",
+        "Arsitektur Lanskap",
+    ],
+    SKHB: ["Kedokteran Hewan", "Sains Biomedis"],
+    FPIK: [
+        "Teknologi dan Manajemen Perikanan Budidaya",
+        "Manajemen Sumberdaya Perairan",
+        "Teknologi Hasil Perairan",
+        "Teknologi dan Manajemen Perikanan Tangkap",
+        "Ilmu dan Teknologi Kelautan",
+    ],
+    Fapet: [
+        "Teknologi Produksi Ternak",
+        "Nutrisi dan Teknologi Pakan",
+        "Teknologi Hasil Ternak",
+    ],
+    Fahutan: [
+        "Manajemen Hutan",
+        "Teknologi Hasil Hutan",
+        "Konservasi Sumberdaya Hutan dan Ekowisata",
+        "Silvikultur",
+    ],
+    Fateta: [
+        "Teknik Pertanian dan Biosistem",
+        "Teknologi Pangan",
+        "Teknik Industri Pertanian",
+        "Teknik Sipil dan Lingkungan",
+    ],
+    FMIPA: [
+        "Bioinformatika",
+        "Meteorologi Terapan",
+        "Biologi",
+        "Kimia",
+        "Fisika",
+        "Biokimia",
+    ],
+    FEM: [
+        "Ekonomi Pembangunan",
+        "Manajemen",
+        "Agribisnis",
+        "Ekonomi Sumberdaya dan Lingkungan",
+        "Ekonomi Syariah",
+    ],
+    FEMA: [
+        "Ilmu Gizi",
+        "Ilmu Keluarga dan Konsumen",
+        "Sains Komunikasi dan Pengembangan Masyarakat",
+    ],
+    Vokasi: [
+        "Ekowisata",
+        "Teknologi Rekayasa Perangkat Lunak",
+        "Teknologi Rekayasan Koputer",
+        "Supervisor Jaminan Mutu Pangan",
+        "Manajemen Industri Jasa Makanan dan Gizi",
+        "Teknologi dan Manajemen Pembenihan Ikan",
+        "Teknologi dan Manajemen Ternak",
+        "Manajemen Agribisnis",
+        "Manajemen Industri",
+        "Analisis Kimia",
+        "Teknik dan Manajemen Lingkungan",
+        "Akuntansi",
+        "Parademik Veteriner",
+        "Teknologi dan Manajemen Produksi Perkebunan",
+        "Teknologi Produksi dan Pengembangan Masyarakat Pertanian",
+    ],
+    SB: ["Bisnis"],
+    FK: ["Kedokteran"],
+    SSMI: [
+        "Statistika dan Sains Data",
+        "Matematika",
+        "Ilmu Komputer",
+        "Aktuaria",
+        "Kecerdasan Buatan",
+    ],
 };
 
 export default function Checkout() {
