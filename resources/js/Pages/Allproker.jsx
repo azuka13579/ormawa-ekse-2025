@@ -12,7 +12,7 @@ export default function Allproker(props) {
                 <h1 className="text-7xl my-4 bg-gradient-to-r from-primary2 to-primary5 text-transparent bg-clip-text font-montserrat font-bold">
                     All Proker
                 </h1>
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 w-full">
                     {props.proker.map((proker, index) => (
                         <Cardproker
                             key={index}

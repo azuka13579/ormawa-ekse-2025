@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Div;
+use App\Models\Information;
 use App\Models\Proker;
 use Illuminate\Http\Request;
 
@@ -32,6 +34,15 @@ class AdminController extends Controller
         }
         return back()->withErrors(['Login Gagal!']);
     }
+
+    public function index(){
+        $div_id = Div::where('divisi', Auth::user()->div)->value('id');
+        $prokers = Proker::where('div_id', $div_id)->latest()->get();
+        $information = Information::where('div_id', $div_id)->latest()->get();
+        return view('admin.index',['prokers' => $prokers, 'information' => $information]);
+    }
+
+
     public function keluar(){
         Auth::logout();
         return to_route('login');
