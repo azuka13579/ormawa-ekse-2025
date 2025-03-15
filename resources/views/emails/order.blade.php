@@ -106,9 +106,9 @@
 
         <p>Pesanan Anda sedang dalam proses! Pastikan nomor WhatsApp Anda aktif agar tim kami bisa menghubungi Anda jika diperlukan.</p>
         <p>Bergabunglah dengan komunitas Samudra Store untuk mendapatkan update terbaru terkait informasi pesanan:</p>
-        <a href="https://chat.whatsapp.com/your-group-link" class="cta-button">GABUNG GRUP WHATSAPP</a>
+        <a href="https://chat.whatsapp.com/ILQmPUgljqW4SqdLaa7Tij" class="cta-button">GABUNG GRUP WHATSAPP</a>
         
-        <p>Ada pertanyaan? Hubungi kami di <a href="mailto:support@samudrastore.com">support@samudrastore.com</a></p>
+        <p>Ada pertanyaan? Hubungi kami di <a href="mailto:ekraf.eksepku61@gmail.com">support@ekraf.eksepku61@gmail.com.com</a></p>
 
         <p class="footer">Terima kasih telah memilih <strong>Samudra Store</strong>! Sampai jumpa di pesanan berikutnya! 😊</p>
     </div>

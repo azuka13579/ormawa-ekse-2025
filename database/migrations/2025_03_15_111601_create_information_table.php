@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('div_id')->references('id')->on('divs');
             $table->string('judul');
             $table->string('deskripsi_singkat');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->string('narahubung');
             $table->string('image_path');
             $table->timestamps();

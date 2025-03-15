@@ -3,78 +3,91 @@ import React from "react";
 import { useState } from "react";
 import { X } from "lucide-react";
 
+// CardPrestasi.jsx
 export default function CardPrestasi(props) {
     const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <div className="">
+        <div className="w-full md:w-full">
             <div
-                className="bg-white text-primary5 font-montserrat flex rounded-lg group transition duration-700 overflow-hidden"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                href="home"
+                className="bg-white text-primary5 font-montserrat flex flex-col rounded-lg group transition duration-300 overflow-hidden shadow-md hover:shadow-lg cursor-pointer"
                 onClick={() => setIsOpen(true)}
             >
-                <div className="w-2/5 overflow-hidden">
+                <div className="aspect-video overflow-hidden">
                     <img
-                        src={props.image_path}
-                        alt=""
-                        className="aspect-square object-cover rounded-lg group-hover:scale-125 transition duration-700 ease-in-out "
+                        src={props.image_path || '/images/default-achievement.jpg'}
+                        alt={props.judul}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                     />
                 </div>
 
-                <div className="p-4 flex-1 transition duration-300 group-hover:bg-primary5 group-hover:text-white ">
-                    <h1 className="font-bold text-xl">{props.judul}</h1>
-                    <p className="line-clamp-4">{props.deskripsi_singkat}</p>
+                <div className="p-4 transition-colors duration-300">
+                    <h1 className="font-bold text-lg mb-2 line-clamp-2">{props.judul}</h1>
+                    <p className="text-sm text-gray-600 line-clamp-3 mb-3">
+                        {props.deskripsi_singkat}
+                    </p>
+                    <span className="text-xs text-primary4 font-semibold">
+                        {new Date(props.created_at).toLocaleDateString("id-ID", {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        })}
+                    </span>
                 </div>
             </div>
 
+            {/* Modal */}
             {isOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10 font-montserrat">
-                    <div
-                        className="w-4/5 max-h-[80vh] p-6 bg-white rounded-2xl shadow-xl relative overflow-auto scroll-smooth scrollbar-hidden"
-                        data-aos="zoom-in"
-                        data-aos-duration="400"
-                    >
+                <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
+                    <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
                         <button
-                            className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 z-20"
-                            onClick={() => {
-                                setIsOpen(false);
-                                console.log(isOpen);
-                            }}
+                            className="sticky top-2 left-full -translate-x-12 bg-white/80 backdrop-blur-sm rounded-full p-1 shadow-sm hover:bg-gray-100 transition-colors"
+                            onClick={() => setIsOpen(false)}
+                            aria-label="Tutup modal"
                         >
-                            <X size={20} />
+                            <X size={24} className="text-gray-600" />
                         </button>
-                        <div className="flex md:flex-row flex-col gap-6">
-                            <div className="flex-1 g-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5">
-                                <img
-                                    src={props.image_path}
-                                    alt=""
-                                    className="rounded-xl"
-                                />
-                            </div>
-                            <div className="text-primary5 md:w-3/5">
-                                <div className="border-b-[2px] border-primary5 pb-2">
-                                    <h2 className="text-lg md:text-3xl font-bold ">
-                                        {props.judul}
-                                    </h2>
-                                    <p className="text-base italic">
-                                        Published on{" "}
-                                        {new Date(
-                                            props.created_at
-                                        ).toLocaleString("id-ID", {
-                                            year: "numeric",
-                                            month: "long",
-                                            day: "numeric",
-                                        })}{" "}
-                                    </p>
-                                    <p className="text-base">
-                                        {props.narahubung}
-                                    </p>
+                        
+                        <div className="p-6">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="md:w-1/2">
+                                    <img
+                                        src={props.image_path}
+                                        alt={props.judul}
+                                        className="rounded-lg w-full h-auto max-h-64 md:max-h-none object-cover"
+                                    />
                                 </div>
-
-                                <p className="text-sm mt-4 text-justify whitespace-pre-line">
-                                    {props.deskripsi}
-                                </p>
+                                
+                                <div className="md:w-1/2">
+                                    <div className="border-b-2 border-primary5 pb-3 mb-4">
+                                        <h2 className="text-2xl font-bold mb-2">{props.judul}</h2>
+                                        <p className="text-sm text-gray-500">
+                                            Dipublikasikan pada {new Date(props.created_at).toLocaleDateString("id-ID", {
+                                                day: 'numeric',
+                                                month: 'long',
+                                                year: 'numeric'
+                                            })}
+                                        </p>
+                                    </div>
+                                    
+                                    <div className="prose prose-sm max-w-none">
+                                        <p className="whitespace-pre-line mb-6">
+                                            {props.deskripsi}
+                                        </p>
+                                        
+                                        {props.narahubung && (
+                                            <div className="bg-primary5/10 p-4 rounded-lg">
+                                                <p className="text-sm font-semibold text-primary5">
+                                                    Narahubung Informasi:
+                                                    <span className="block mt-1 font-normal">
+                                                        {props.narahubung}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
