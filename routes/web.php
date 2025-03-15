@@ -12,14 +12,17 @@ use App\Http\Controllers\TentangController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\CheckDivision;
+use App\Models\Information;
 use App\Models\Proker;
 use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
-
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ProductController;
+
 Route::get('/', function () {
     $proker = Proker::all();
-   return Inertia::render('Home',["proker" => $proker]);
+     $informasi = Information::latest()->take(4)->get();
+   return Inertia::render('Home',["proker" => $proker,"informasi" => $informasi]);
 })->name('home');
 
 Route::get('/sakarsa-care', function () {
@@ -41,7 +44,7 @@ Route::get('/divisi', function () {
     return Inertia::render('Divisi');
 })->name('divisi');
 Route::get('/proker', function () {
-     $proker = Proker::all();
+     $proker = Proker::all(); 
     return Inertia::render('Allproker',["proker" => $proker]);
 })->name('proker');
 
@@ -58,11 +61,7 @@ Route::get('/masuk', [AdminController::class, 'login'])->name('login');
 Route::post('/masuk', [AdminController::class, 'authenticate']);
 
 Route::middleware('auth')->group(function(){
-    Route::get('/admin', function(){
-        $div_id = Div::where('divisi', Auth::user()->div)->value('id');
-        $prokers = Proker::where('div_id', $div_id)->get();
-        return view('admin.index', compact('prokers'));
-    })->name('admin-index');
+    Route::get('/admin',[AdminController::class, 'index'])->name('admin-index');
 
     Route::post('/admin', [AdminController::class, 'keluar'])->name('keluar');
 
@@ -70,11 +69,17 @@ Route::middleware('auth')->group(function(){
         return view('admin.add-proker');
     })->name('addproker');
     Route::post('/add-proker', [ProkerController::class, 'simpan']);
-
     Route::get('/edit-proker/{id}', [ProkerController::class, 'edit'])->name('editproker');
     Route::post('/edit-proker/{id}', [ProkerController::class, 'update'])->name('updateproker');
-
     Route::post('/delete-proker/{id}', [ProkerController::class, 'delete'])->name('deleteproker');
+
+    Route::get('/add-informasi', function(){
+        return view('admin.add-informasi');
+    })->name('addinformasi');
+    Route::post('/add-informasi', [InformationController::class, 'simpan']);
+    Route::get('/edit-informasi/{id}', [InformationController::class, 'edit'])->name('editinformasi');
+    Route::post('/edit-informasi/{id}', [InformationController::class, 'update'])->name('updateinformasi');
+    Route::post('/delete-informasi/{id}', [InformationController::class, 'delete'])->name('deleteinformasi');
 });
 
 Route::prefix('adminsamudra')->group(function () {

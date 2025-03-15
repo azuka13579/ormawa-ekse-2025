@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import Carousel from "./Corousel";
 
-export default function SakarsaDaily({Proker,Divisi}) {
+export default function SakarsaDaily({ Proker, Divisi }) {
     const sliderRef = useRef(null);
-    console.log(Proker)
+    // console.log(Proker)
     return (
         <div
             data-aos="fade-up"
@@ -59,7 +59,7 @@ export default function SakarsaDaily({Proker,Divisi}) {
                 </div>
             </div>
 
-            <Carousel ref={sliderRef} prokers={Proker} divisi={Divisi}/>
+            <Carousel ref={sliderRef} prokers={Proker} divisi={Divisi} />
         </div>
     );
 }

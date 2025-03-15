@@ -9,9 +9,10 @@ import { Head } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 
-export default function Home({proker}) {
-    
-    
+export default function Home({ proker, informasi }) {
+    const [informasiUtama, ...informasi2] = informasi;
+    console.log(informasiUtama, informasi2);
+
     return (
         <div>
             <div className="md:h-screen bg-white flex flex-col">
@@ -236,7 +237,7 @@ export default function Home({proker}) {
                         data-aos-duration="800"
                     >
                         <h1 className="font-rowdies text-3xl md:text-5xl font-bold">
-                            Prestasi
+                            Informasi
                         </h1>
                         <h2 className="font-montserrat font-semibold text-2xl md:text-4xl text-primary4">
                             KM PKU IPB
@@ -260,41 +261,54 @@ export default function Home({proker}) {
                             data-aos-duration="800"
                         >
                             <img
-                                src="https://osccdn.medcom.id/images/content/2022/02/21/68b0b9759f7d965cdd82cdee8154bbf6.png"
+                                src={`${informasiUtama.image_path}`}
                                 alt=""
-                                className="rounded-lg object-cover w-full group-hover:scale-125 transition duration-700 ease-in-out"
+                                className="rounded-lg object-cover w-full h-[350px] group-hover:scale-125 transition duration-700 ease-in-out"
                             />
                         </div>
                         <div className="pr-2">
-                            <h1
-                                className="font-bold text-xl md:text-3xl mt-4"
+                            <div
+                                className="flex justify-between mt-2"
                                 data-aos="fade-up"
                                 data-aos-duration="800"
                                 data-aos-anchor-placement="center-bottom"
                             >
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Placeat, perferendis.
-                            </h1>
+                                <h1 className="font-bold text-xl md:text-3xl">
+                                    {informasiUtama.judul}
+                                </h1>
+                                <p className="text-base italic">
+                                    Published on{" "}
+                                    {new Date(
+                                        informasiUtama.created_at
+                                    ).toLocaleString("id-ID", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })}{" "}
+                                </p>
+                            </div>
                             <p
-                                className="mt-2 text-sm md:text-base"
+                                className="text-base"
                                 data-aos="fade-up"
                                 data-aos-duration="800"
                                 data-aos-anchor-placement="center-bottom"
                             >
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Vero consequuntur excepturi,
-                                aut voluptatum tenetur ipsam nobis nam,
-                                temporibus praesentium voluptatibus, nihil
-                                iusto. Eius iusto similique illum velit sed,
-                                pariatur rerum id repellendus suscipit, dicta,
-                                possimus facilis. Fuga corporis enim quos.
+                                {informasiUtama.narahubung}
+                            </p>
+                            <p
+                                className="mt-2 text-sm md:text-base line-clamp-6"
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-anchor-placement="center-bottom"
+                            >
+                                {informasiUtama.deskripsi}
                             </p>
                         </div>
                     </div>
                     <div className="flex-1 flex flex-col gap-4">
-                        <Card4></Card4>
-                        <Card4></Card4>
-                        <Card4></Card4>
+                        {informasi2.map((informasi, index) => (
+                            <Card4 {...informasi}></Card4>
+                        ))}
                     </div>
                 </div>
             </div>
