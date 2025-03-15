@@ -273,12 +273,13 @@
                 if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
                     const id = this.getAttribute("data-id");
 
-                    fetch(`/admin/delete/${id}`, {
-                        method: "DELETE",
-                        headers: {
-                            "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").getAttribute("content"),
-                        }
-                    })
+                    fetch(`/adminsamudra/penjualan/delete/${id}`, {
+    method: "DELETE",
+    headers: {
+        "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").getAttribute("content"),
+    }
+})
+
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {

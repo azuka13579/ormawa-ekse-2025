@@ -127,11 +127,17 @@ $search = $query->get();
     }
 
     public function deleteOrder($id)
-    {
-        $order = Penjualan::findOrFail($id);
-        $order->delete();
-        return response()->json(['success' => true, 'message' => 'Data berhasil dihapus']);
+{
+    $order = Penjualan::find($id);
+    
+    if (!$order) {
+        return response()->json(['error' => 'Data tidak ditemukan'], 404);
     }
+
+    $order->delete();
+    return response()->json(['success' => true, 'message' => 'Data berhasil dihapus']);
+}
+
     public function updateDiterima(Request $request)
 {
    
