@@ -85,13 +85,13 @@
             <table class="w-full text-base">
                 <thead class="bg-gradient-to-r from-blue-50 to-blue-100">
                     <tr>
-                        <th class="p-5 text-left font-bold text-gray-800">Nama</th>
+                        <th class="p-5 text-left font-bold text-gray-800 px-10">Nama</th>
                         <th class="p-5 text-left font-bold text-gray-800">NIM</th>
                         <th class="p-5 text-left font-bold text-gray-800">Email</th>
                         <th class="p-5 text-left font-bold text-gray-800">No WhatssApp</th>
                         <th class="p-5 text-left font-bold text-gray-800">Fakultas</th>
                         <th class="p-5 text-left font-bold text-gray-800">Departemen</th>
-                        <th class="p-5 text-left font-bold text-gray-800">Produk</th>
+                        <th class="p-5 text-left font-bold text-gray-800 px-32">Produk</th>
                         <th class="p-5 text-left font-bold text-gray-800">Total</th>
                         <th class="p-5 text-left font-bold text-gray-800">Resi</th>
                         <th class="p-5 text-center font-bold text-gray-800">Status Pembayaran</th>
@@ -103,7 +103,7 @@
                 <tbody class="divide-y divide-gray-200 text-sm">
                     @foreach ($data as $pembeli)
     <tr class="hover:bg-blue-50 transition-colors">
-        <td class="p-3 text-gray-700">{{ $pembeli['nama'] }}</td>
+        <td class="p-3 text-gray-700 font-bold ">{{ $pembeli['nama'] }}</td>
         <td class="p-3 text-gray-700">{{ $pembeli['nim'] }}</td>
         <td class="p-3 text-gray-700">{{ $pembeli['email'] }}</td>
         <td class="p-3 text-gray-700">{{ $pembeli['no_wa'] }}</td>
