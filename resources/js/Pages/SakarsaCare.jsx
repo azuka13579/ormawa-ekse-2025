@@ -3,6 +3,7 @@ import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "@inertiajs/react";
+import BlurText from "../Components/Risves3.0";
 
 export default function SakarsaCare() {
     return (
@@ -70,15 +71,10 @@ export default function SakarsaCare() {
                     </div>
                 </a>
             </div>
-            <div
-                data-aos="fade-up"
-                data-aos-duration="900"
-                className="my-36 bg-gradient-to-r from-primary7 to-primary5 max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] text-center py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-10 mx-auto rounded-3xl shadow-lg transition-all duration-300 hover:scale-105"
-            >
-                <p className="text-white font-bold font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl ">
-                    COMING SOON!!! RISVES 3
-                </p>
-            </div>
+           
+
+            <BlurText></BlurText>
+            
 
             <Footer />
         </div>

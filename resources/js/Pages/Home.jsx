@@ -227,6 +227,20 @@ export default function Home({ proker, informasi }) {
             <Misi />
             {/* Konten lain */}
             <SakarsaDaily Proker={proker} />
+            <div className="flex flex-col md:flex-row justify-between items-start gap-6 mt-5 mb-8">
+            <div className="space-y-3">
+                <h1 className="text-3xl md:text-4xl font-bold text-primary5 font-rowdies">
+                    Informasi
+                </h1>
+                <h2 className="text-2xl md:text-3xl text-primary4 font-semibold font-montserrat">
+                    KM PKU IPB
+                </h2>
+            </div>
+            
+           
+        </div>
+        <div className="py-8 md:py-12 bg-white">
+
 
         <div className="flex flex-col lg:flex-row gap-8 font-montserrat">
             {/* Main Featured Content */}
@@ -238,7 +252,7 @@ export default function Home({ proker, informasi }) {
                         alt="Informasi Belum Tersedia"
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
-                    />
+                        />
                 </div>
 
                 <div className="p-6">
@@ -249,10 +263,10 @@ export default function Home({ proker, informasi }) {
                         <time className="text-sm text-gray-500 shrink-0">
                             {informasiUtama?.created_at
                                 ? new Date(informasiUtama.created_at).toLocaleDateString("id-ID", {
-                                      year: "numeric",
-                                      month: "long",
-                                      day: "numeric",
-                                  })
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                })
                                 : "-"}
                         </time>
                     </div>
@@ -267,8 +281,8 @@ export default function Home({ proker, informasi }) {
 
                         {informasiUtama?.deskripsi && informasiUtama.deskripsi.length > 300 && (
                             <button
-                                onClick={() => setShowFull(!showFull)}
-                                className="text-primary5 font-medium hover:underline"
+                            onClick={() => setShowFull(!showFull)}
+                            className="text-primary5 font-medium hover:underline"
                             >
                                 {showFull ? "Tampilkan lebih sedikit" : "Baca selengkapnya"}
                             </button>
@@ -293,9 +307,9 @@ export default function Home({ proker, informasi }) {
                     {informasi2.length > 0 ? (
                         informasi2.map((informasi, index) => (
                             <Card4 
-                                key={index} 
-                                {...informasi} 
-                                className="transform transition-transform hover:-translate-y-1"
+                            key={index} 
+                            {...informasi} 
+                            className="transform transition-transform hover:-translate-y-1"
                             />
                         ))
                     ) : (
@@ -308,10 +322,11 @@ export default function Home({ proker, informasi }) {
                             data-aos="fade-up"
                             data-aos-duration="800"
                             className="text-lg md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 border-transparent hover:border-primary5"
-                        >
+                            >
                             Lihat Semua Informasi →
                         </Link>
                     </div>
+                            </div>
 
                     
             </div>
