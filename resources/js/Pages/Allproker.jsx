@@ -4,7 +4,6 @@ import Footer from "../Components/Footer";
 import Cardproker from "../Components/Cardproker";
 
 export default function Allproker(props) {
-    console.log(props.proker);
     return (
         <div>
             <Navbar></Navbar>

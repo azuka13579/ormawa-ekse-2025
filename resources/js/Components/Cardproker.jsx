@@ -2,9 +2,25 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 import { useState } from "react";
 import { X } from "lucide-react";
+const divisiData = [
+    { id: 1, nama: "Departemen Advokasi Kesejahteraan Mahasiswa" },
+    { id: 2, nama: "Departemen Sosial dan Lingkungan Hidup" },
+    { id: 3, nama: "Biro Internal" },
+    { id: 4, nama: "Departemen Seni dan Budaya" },
+    { id: 5, nama: "Departemen Akademik Prestasi" },
+    { id: 6, nama: "Biro Media Branding" },
+    { id: 7, nama: "Departemen Pengembangan Sumber Daya Mahasiswa" },
+    { id: 8, nama: "Biro Kolaborasi dan Kemitraan" },
+    { id: 9, nama: "Departemen Kajian dan Aksi Strategis" },
+    { id: 10, nama: "Departemen Ekonomi Kreatif" },
+    { id: 11, nama: "Departemen Pemuda dan Olahraga" },
+    { id: 12, nama: "Biro Riset Pengembangan" },
+];
 
 export default function Cardproker(props) {
     const [isOpen, setIsOpen] = useState(false);
+    const divisi = divisiData.find((d) => d.id === props.div_id);
+    console.log(divisi);
     return (
         <div className="bg-white p-4">
             <div
@@ -64,6 +80,9 @@ export default function Cardproker(props) {
                                     </h2>
                                     <p className="text-sm md:text-xl">
                                         {props.start} - {props.end}
+                                    </p>
+                                    <p className="text-sm italic">
+                                        {divisi.nama}
                                     </p>
                                 </div>
                                 <h1 className="text-2xl font-bold mt-4 ">

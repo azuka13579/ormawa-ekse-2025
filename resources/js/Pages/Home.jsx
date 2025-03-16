@@ -3,11 +3,10 @@ import Navbar from "../Components/Navbar";
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 import { useState } from "react";
-
 
 export default function Home({ proker, informasi }) {
     const [informasiUtama, ...informasi2] = informasi;
@@ -228,26 +227,6 @@ export default function Home({ proker, informasi }) {
             <Misi />
             {/* Konten lain */}
             <SakarsaDaily Proker={proker} />
-            
-<div className="py-8 md:py-12 bg-white">
-    <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
-            <div className="space-y-2">
-                <h1 className="text-3xl md:text-4xl font-bold text-primary5 font-rowdies">
-                    Informasi
-                </h1>
-                <h2 className="text-2xl md:text-3xl text-primary4 font-semibold font-montserrat">
-                    KM PKU IPB
-                </h2>
-            </div>
-            
-            <a
-                href="#"
-                className="text-lg md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 border-transparent hover:border-primary5"
-            >
-                Lihat Semua Informasi →
-            </a>
-        </div>
 
         <div className="flex flex-col lg:flex-row gap-8 font-montserrat">
             {/* Main Featured Content */}
@@ -324,11 +303,20 @@ export default function Home({ proker, informasi }) {
                             <p className="text-gray-500">Belum ada informasi tambahan</p>
                         </div>
                     )}
-                </div>
+                        <Link
+                            href="/informasi"
+                            data-aos="fade-up"
+                            data-aos-duration="800"
+                            className="text-lg md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 border-transparent hover:border-primary5"
+                        >
+                            Lihat Semua Informasi →
+                        </Link>
+                    </div>
+
+                    
             </div>
-        </div>
-    </div>
-</div>
+            </div>
+            
 
             <Footer></Footer>
         </div>

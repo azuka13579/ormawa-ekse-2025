@@ -40,13 +40,15 @@ Route::post('/send-order-email', [OrderController::class, 'sendOrderEmail']);
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middleware(CheckDivision::class)->name('tentang-divisi');
 
-Route::get('/divisi', function () {
-    return Inertia::render('Divisi');
-})->name('divisi');
 Route::get('/proker', function () {
-     $proker = Proker::all(); 
+     $proker = Proker::latest()->get(); 
     return Inertia::render('Allproker',["proker" => $proker]);
 })->name('proker');
+
+Route::get('/informasi', function () {
+     $informasi = Information::latest()->get(); 
+    return Inertia::render('Informasi',["informasi" => $informasi]);
+})->name('informasi');
 
 Route::get('/login', function () {
     return view('master.login');

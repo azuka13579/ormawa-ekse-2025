@@ -35,19 +35,17 @@ export default function SakarsaCare() {
                     </p>
                 </div>
                 <div
-    data-aos="fade-left"
-    data-aos-duration="1200"
-    className="flex flex-1 justify-center px-6 sm:px-12"
->
-    <img
-        src="images/logo/adkesmah.png"
-        alt="Logo Adkesmah - Sakarsa Care"
-        loading="lazy"
-        className="h-[250px] sm:h-[320px] w-auto max-w-[400px] object-contain rounded-lg"
-    />
-</div>
-
-
+                    data-aos="fade-left"
+                    data-aos-duration="1200"
+                    className="flex flex-1 justify-center px-6 sm:px-12"
+                >
+                    <img
+                        src="images/logo/adkesmah.png"
+                        alt="Logo Adkesmah - Sakarsa Care"
+                        loading="lazy"
+                        className="h-[250px] sm:h-[320px] w-auto max-w-[400px] object-contain rounded-lg"
+                    />
+                </div>
             </div>
             <div
                 // data-aos="fade-right"
@@ -65,12 +63,21 @@ export default function SakarsaCare() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <div className="bg-white rounded-3xl py-2 px-6 text-center">
-                        <p className="font-montserrat text-sm sm:text-xl text-primary3 font-bold">
+                    <div className="bg-white rounded-3xl py-2 px-6 text-center hover:bg-primary1 duration-300 transition hover:text-primary5">
+                        <p className="font-montserrat text-sm sm:text-xl font-bold">
                             Contact Us
                         </p>
                     </div>
                 </a>
+            </div>
+            <div
+                data-aos="fade-up"
+                data-aos-duration="900"
+                className="my-36 bg-gradient-to-r from-primary7 to-primary5 max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] text-center py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-10 mx-auto rounded-3xl shadow-lg transition-all duration-300 hover:scale-105"
+            >
+                <p className="text-white font-bold font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl ">
+                    COMING SOON!!! RISVES 3
+                </p>
             </div>
 
             <Footer />
