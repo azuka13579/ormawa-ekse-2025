@@ -88,8 +88,7 @@ Route::prefix('adminsamudra')->group(function () {
     Route::post('/logout', [AdminSamudraStoreController::class, 'logout'])->name('admin.logout');
 
     Route::middleware(['auth:adminsamudrastore'])->group(function () {
-        // Dashboard Utama
-        Route::get('/dashboard', [ProductController::class, 'dashboard'])->name('admin.dashboard');
+        
         Route::get('/show', [PaymentController::class, 'show'])->name('admin.penjualan');
         Route::get('/penjualan', [PaymentController::class, 'show'])->name('admin.products.penjualan');
         Route::post('/penjualan/update-status/', [PaymentController::class, 'updateStatus'])->name('admin.updateStatus');

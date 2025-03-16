@@ -12,7 +12,6 @@ import { useState } from "react";
 export default function Home({ proker, informasi }) {
     const [informasiUtama, ...informasi2] = informasi;
     const [showFull, setShowFull] = useState(false);
-    console.log(informasiUtama, informasi2);
 
     return (
         <div>
@@ -60,7 +59,7 @@ export default function Home({ proker, informasi }) {
                     >
                         <img
                             loading="lazy"
-                            src="img/Home.png"
+                            src="img/Home1.png"
                             alt="Home"
                             className="w-full h-auto max-w-[600px] object-cover"
                         />
@@ -250,7 +249,7 @@ export default function Home({ proker, informasi }) {
             </a>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 font-montserrat">
             {/* Main Featured Content */}
             <div className="lg:w-2/3">
             <article className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow">
@@ -279,7 +278,7 @@ export default function Home({ proker, informasi }) {
                         </time>
                     </div>
                     <div className="space-y">
-                        <p className="text-2xl md:text-3xl font-semibold font-adihaus text-primary5">{informasiUtama?.deskripsi_singkat || "-"}</p>
+                        <p className="text-2xl md:text-3xl font-semibold text-primary5">{informasiUtama?.deskripsi_singkat || "-"}</p>
                     </div>
 
                     <div className="space-y-4">

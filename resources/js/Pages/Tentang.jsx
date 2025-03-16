@@ -36,7 +36,8 @@ export default function Tentang(props) {
                 <div className="h-full flex flex-1">
                     <div className="kiri md:w-3/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative">
                         <img
-                            src="img/Home.png"
+                            loading="lazy"
+                            src="img/Home1.png"
                             alt="Gambar mobile di tengah"
                             class="scale-75 md:hidden"
                             data-aos="fade-up"
@@ -77,7 +78,7 @@ export default function Tentang(props) {
                         data-aos-duration="800"
                     >
                         <img
-                            src="img/Home.png"
+                            src="img/Home1.png"
                             alt="Gambar di kanan tengah"
                             class="w-full h-auto object-cover max-w-[600px]"
                         />

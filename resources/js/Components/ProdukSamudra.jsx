@@ -12,196 +12,158 @@ export default function ProductsSamudra({ product, index }) {
     const { addToCart } = useCart();
     const { selectedSizes, setSelectedSize } = useSize();
     const selectedSize = selectedSizes[product.id] || "";
+
     return (
-        <div className="group">
+        <div className="group relative">
             <div
-                key={product.id}
-                className="border rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+                className="card-hover-effect bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-out overflow-hidden"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay={(index % 4) * 100}
                 onClick={() => setIsOpen(true)}
             >
-                <div className="relative group font-adihaus">
-                    
-
-                    <div className="overflow-hidden bg-gray-100 aspect-square">
+                <div className="flex flex-col h-full">
+                    {/* Image Section */}
+                    <div className="relative aspect-square overflow-hidden bg-gray-50">
                         <img
                             src={`/storage/${product.image}`}
                             alt={product.name}
-                            className="mx-auto sm:mt-10 sm:w-11/12 sm:h-11/12w-full h-full object-cover rounded-t-md transition-transform duration-300 "
+                            className="object-contain w-full h-full p-4 transition-transform duration-500 group-hover:scale-105"
                         />
+                        
+                        {/* Stock Badge */}
+                        <div className={`absolute top-2 right-2 px-3 py-1 rounded-full text-xs font-semibold ${
+                            product.stock > 0 
+                                ? "bg-green-100 text-green-800" 
+                                : "bg-red-100 text-red-800"
+                        }`}>
+                            {product.stock > 0 ? `${product.stock} tersedia` : "Habis"}
+                        </div>
                     </div>
 
-                    <div className="p-4 bg-white group-hover:bg-primary1/20 transition-all duration-300">
-
-                        <h2 className="text-sm text-primary5 truncate">
-                            Samudra Store
-                        </h2>
-                        <h2 className="text-2xl text-primary5 truncate">
+                    {/* Content Section */}
+                    <div className="p-4 font-montserrat flex flex-col flex-grow">
+                        <h3 className=" text-gray-500 text-sm mb-1">Samudra Store</h3>
+                        <h2 className="font-bold text-gray-900 text-lg line-clamp-2 mb-2">
                             {product.name}
                         </h2>
-
-                        <div className="gap-2 flex flex-col">
-                            <p className="text-sm text-primary4">
+                        
+                        <div className="mt-auto">
+                            <p className="text-xl font-bold text-primary4">
                                 {formatRupiah(product.price)}
                             </p>
-
-                            <div className="flex items-center">
-                                <span
-                                    className={`inline-block w-2 h-2 rounded-full mr-1 ${
-                                        product.stock > 0
-                                            ? "bg-green-500"
-                                            : "bg-red-500"
-                                    }`}
-                                ></span>
-                                <p className="text-sm text-gray-700">
-                                    {product.stock > 0
-                                        ? `Stock: ${product.stock}`
-                                        : "Out of Stock"}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mt-3 pt-3 border-t border-gray-100">
-                            <button className="w-full bg-primary1 hover:bg-primary1/80 text-primary5 font-medium py-2 rounded-md transition-colors duration-200">
-                                View Details
+                            
+                            <button className="font-montserrat w-full mt-3 bg-gradient-to-r from-primary4 to-primary3 hover:opacity-90 text-white font-semibold py-2.5 rounded-lg transition-all duration-200">
+                                Lihat Detail
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* Modal */}
             {isOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-40 font-montserrat">
-                    <div
-                        className="w-4/5 max-h-[80vh] p-6 bg-white rounded-2xl shadow-xl relative overflow-auto scroll-smooth scrollbar-hidden"
-                        data-aos="zoom-in"
-                        data-aos-duration="400"
-                    >
+                <div className="scrollbar-hidden fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 animate-fade-in">
+                    <div className="scrollbar-hidden modal-content w-[90%] max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                         <button
-                            className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 z-20"
-                            onClick={() => {
-                                setIsOpen(false);
-                            }}
+                            className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            onClick={() => setIsOpen(false)}
                         >
-                            <X size={20} />
-                        </button>{" "}
-                        <div className="flex md:flex-row flex-col gap-6">
-                            <div className="flex-1 max-w-sm md:max-w-[300px] md:max-h-[300px] aspect-square bg-gray-100 rounded-lg md:mb-0 mb-4 flex justify-center items-center overflow-hidden">
-                                <img
-                                    src={`/storage/${product.image}`}
-                                    alt="Product Image"
-                                    className="w-full h-full object-cover rounded-xl"
-                                />
-                            </div>
+                            <X size={24} className="text-gray-600" />
+                        </button>
 
-                            <div className="text-primary5 md:w-3/5">
-                                <div className="border-b-[2px] border-primary5 pb-2">
-                                    <h2 className="text-2xl md:text-4xl font-bold ">
+                        {/* Image Column */}
+                        <div className="md:w-1/2 bg-gray-50 p-8 flex items-center justify-center">
+                            <img
+                                src={`/storage/${product.image}`}
+                                alt={product.name}
+                                className="object-contain max-h-[400px] w-full rounded-xl"
+                            />
+                        </div>
+
+                        {/* Content Column */}
+                        <div className="scrollbar-hidden md:w-1/2 p-6 md:p-8 overflow-y-auto">
+                            <div className="space-y-6">
+                                <div className="border-b pb-4">
+                                    <h1 className="text-3xl font-bold text-gray-900">
                                         {product.name}
-                                    </h2>
+                                    </h1>
+                                    <p className="text-xl font-bold text-primary4 mt-2">
+                                        {formatRupiah(product.price)}
+                                    </p>
                                 </div>
-                                <h1 className="text-xl font-bold mt-4 ">
-                                    Deskripsi
-                                </h1>
 
-                                <p className="text-sm text-justify whitespace-pre-line">
-                                    {product.description}
-                                </p>
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-2">Deskripsi</h3>
+                                    <p className="text-gray-600 whitespace-pre-line">
+                                        {product.description}
+                                    </p>
+                                </div>
+
                                 {product.size !== "-" && (
-                                    <>
-                                        <h1 className="text-lg font-bold mt-4">
-                                            Size
-                                        </h1>
-                                        <div className="flex max-md:grid max-md:grid-cols-4 gap-4">
-                                            {product.size
-                                                .split(",")
-                                                .map((size, index) => (
-                                                    <label key={index}>
-                                                        <input
-                                                            type="radio"
-                                                            name={`size-${product.id}`} // Buat unik berdasarkan ID produk
-                                                            value={size}
-                                                            checked={
-                                                                selectedSize ===
-                                                                size
-                                                            }
-                                                            className="hidden peer"
-                                                            onChange={() =>
-                                                                setSelectedSize(
-                                                                    product.id,
-                                                                    size
-                                                                )
-                                                            }
-                                                        />
-                                                        <div className="cursor-pointer px-3 py-2 rounded-lg border border-primary4 text--primary4 font-semibold peer-checked:bg-primary4 peer-checked:text-white transition-all duration-300 hover:bg-primary1">
-                                                            {size}
-                                                        </div>
-                                                    </label>
-                                                ))}
+                                    <div>
+                                        <h3 className="text-lg font-semibold mb-3">Pilih Ukuran</h3>
+                                        <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                                            {product.size.split(",").map((size) => (
+                                                <button
+                                                    key={size}
+                                                    onClick={() => setSelectedSize(product.id, size)}
+                                                    className={`size-button ${
+                                                        selectedSize === size
+                                                            ? "bg-primary4 text-white"
+                                                            : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                                    }`}
+                                                >
+                                                    {size}
+                                                </button>
+                                            ))}
                                         </div>
-                                    </>
+                                    </div>
                                 )}
 
-                                <p className=" text-justify text-lg font-bold mt-2">
-                                    {formatRupiah(product.price)}
-                                </p>
+                                <div className="space-y-4">
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-lg font-semibold">Jumlah</h3>
+                                        <div className="flex items-center gap-3">
+                                            <button
+                                                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                                className="quantity-button"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                type="number"
+                                                value={quantity}
+                                                onChange={(e) => {
+                                                    const val = Math.min(product.stock, Math.max(1, parseInt(e.target.value) || 1))
+                                                    setQuantity(val)
+                                                }}
+                                                className="w-16 text-center border rounded-lg py-2"
+                                            />
+                                            <button
+                                                onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
+                                                className="quantity-button"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
 
-                                <div className="flex items-center gap-4 mt-4">
                                     <button
-                                        className="px-3 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
-                                        onClick={() =>
-                                            setQuantity(
-                                                Math.max(1, quantity - 1)
-                                            )
-                                        }
-                                    >
-                                        -
-                                    </button>
-                                    <input
-                                        type="number"
-                                        min="1"
-                                        value={quantity}
-                                        onChange={(e) => {
-                                            const newQuantity =
-                                                parseInt(e.target.value) || 1;
-                                            setQuantity(
-                                                Math.min(
-                                                    product.stock,
-                                                    Math.max(1, newQuantity)
-                                                )
-                                            );
+                                        onClick={() => {
+                                            addToCart(product, quantity)
+                                            setIsOpen(false)
                                         }}
-                                        className="w-16 p-2 border rounded-lg text-center"
-                                    />
-                                    <button
-                                        className="px-3 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all"
-                                        onClick={() =>
-                                            setQuantity((prev) =>
-                                                Math.min(
-                                                    product.stock,
-                                                    prev + 1
-                                                )
-                                            )
-                                        }
+                                        disabled={product.stock <= 0}
+                                        className={`w-full py-3.5 rounded-lg font-semibold transition-all ${
+                                            product.stock > 0
+                                                ? "bg-primary4 hover:bg-primary5 text-white"
+                                                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                                        }`}
                                     >
-                                        +
+                                        {product.stock > 0 ? "Tambahkan ke Keranjang" : "Stok Habis"}
                                     </button>
                                 </div>
-
-                                <button
-                                    className={`mt-4 px-4 py-2 bg-primary4 text-white font-semibold rounded-lg hover:bg-primary5 transition-all
-                                        disabled:bg-red-500 disabled:`}
-                                    disabled={product.stock <= 0}
-                                    onClick={() => {
-                                        addToCart(product, quantity);
-                                        setIsOpen(false);
-                                    }}
-                                >
-                                    {product.stock > 0
-                                        ? "Tambah Ke Keranjang"
-                                        : "Habis"}
-                                </button>
                             </div>
                         </div>
                     </div>

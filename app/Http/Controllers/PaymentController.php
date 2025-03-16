@@ -16,13 +16,27 @@ class PaymentController extends Controller
     public function index(Request $request){        
         $image = $request->file('bukti_transfer');
         $image_path = $image->store('recipes');
+        
         $produk = [];
         foreach ($request->cart as $value) {
-            array_push($produk, [
-                'id' => $value['id'],
-                'kuantitas' => $value['quantity'],
-                'size' => $value['selectedSize']
-            ]);
+            
+            $product = Product::find($value['id']);
+            
+            if ($product && $product->stock >= $value['quantity']) {
+                
+                $product->stock -= $value['quantity'];
+                $product->save();
+    
+                array_push($produk, [
+                    'id' => $value['id'],
+                    'kuantitas' => $value['quantity'],
+                    'size' => $value['selectedSize']
+                ]);
+            } else {
+                return response()->json([
+                    'message' => "Stok produk {$product->name} tidak mencukupi!"
+                ], 400);
+            }
         }
         $data = [
             'nama' => $request->name,
@@ -35,6 +49,7 @@ class PaymentController extends Controller
             'image_path' => $image_path
         ];
         Penjualan::create($data);
+
 
     }
 
@@ -126,17 +141,34 @@ $search = $query->get();
         return response()->json(['success' => false, 'message' => 'Status tidak valid']);
     }
 
-    public function deleteOrder($id)
-{
-    $order = Penjualan::find($id);
     
-    if (!$order) {
-        return response()->json(['error' => 'Data tidak ditemukan'], 404);
+    public function deleteOrder($id)
+    {
+        $order = Penjualan::find($id);
+        
+        if (!$order) {
+            return response()->json(['error' => 'Data tidak ditemukan'], 404);
+        }
+    
+        // Loop semua produk dalam pesanan dan kembalikan stoknya
+        foreach ($order->produk as $item) {
+            $product = Product::find($item['id']);
+            
+            if ($product) {
+                $product->stock += $item['kuantitas']; // Kembalikan stok
+                $product->save();
+            }
+        }
+    
+        // Hapus pesanan setelah stok dikembalikan
+        $order->delete();
+    
+        return response()->json([
+            'success' => true, 
+            'message' => 'Data berhasil dihapus dan stok dikembalikan'
+        ]);
     }
-
-    $order->delete();
-    return response()->json(['success' => true, 'message' => 'Data berhasil dihapus']);
-}
+    
 
     public function updateDiterima(Request $request)
 {

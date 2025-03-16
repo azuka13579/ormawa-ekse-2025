@@ -515,7 +515,7 @@ const sendEmail = async () => {
                                 type="button"
                                 onClick={() => {
                                     handleConfirmSubmit();
-                                    sendEmail();
+                                   
                                 }}
                                 className="px-4 py-2 bg-primary4 text-white rounded-lg hover:bg-primary5"
                                 disabled={processing}
