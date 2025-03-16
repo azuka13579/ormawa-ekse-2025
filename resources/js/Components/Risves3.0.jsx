@@ -90,7 +90,7 @@ const BlurText = ({
     <div className="mx-auto my-20">
       <div ref={ref} className={`blur-text ${className} flex flex-col items-center gap-2`}>
         {processedLines.map((line, lineIndex) => (
-          <p key={lineIndex} className="text-8xl font-montserrat flex flex-wrap font-bold">
+          <p key={lineIndex} className="md:text-8xl text-2xl font-montserrat flex flex-wrap font-bold">
             {line.map((element, elementIndex) => {
               // Calculate the overall index for this element across all lines
               const overallIndex = processedLines
