@@ -44,14 +44,14 @@ class PaymentController extends Controller
     $limit = $request->query('limit', 10);
 
     // Query data utama
-    $query = Penjualan::where('nim', 'like', "%{$search}%");
+    $query = Penjualan::where('nim', 'like', "%{$search}%")->latest();
 
 // Jika juga ingin mencari di dalam produk JSON
 $query->orWhere('nama', 'like', "%{$search}%");
 
 $search = $query->get();
 
-    $data = $query->get(); // Ambil semua data tanpa pagination dulu
+    $data = $query->latest()->get(); // Ambil semua data tanpa pagination dulu
     //dd($data); //
 
     $arr_ret = [];

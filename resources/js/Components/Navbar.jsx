@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Navbar() {
     const { url } = usePage();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!isDropdownOpen);
+    };
 
     const isActive = (path) => {
         return url === path
