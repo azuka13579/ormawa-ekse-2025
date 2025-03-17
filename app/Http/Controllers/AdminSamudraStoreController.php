@@ -20,7 +20,7 @@ class AdminSamudraStoreController extends Controller
 
         // Ubah guard jadi 'adminsamudrastore'
         if (Auth::guard('adminsamudrastore')->attempt($credentials)) {
-            return redirect()->route('admin.dashboard'); // Sesuaikan dengan rute admin Samudra Store
+            return redirect()->route('admin.products.index'); // Sesuaikan dengan rute admin Samudra Store
         }
 
         return back()->withErrors(['email' => 'Email atau password salah']);

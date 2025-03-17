@@ -75,7 +75,20 @@ html.app-loaded {
   height: 40px;
   transition: opacity 0.3s ease;
 }
+.slides-imageslide > .imageslide {
+  font-family: Montserrat;
+}
 
+.slides-imageslide > .blank, 
+.slides-imageslide > .imageslide {
+  margin-right: 0;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transform-origin: center center;
+  transition: transform .5s;
+  position: relative;
+  text-align: left;
+}
 .slick-prev:hover,
 .slick-next:hover {
   opacity: 0.8;

@@ -9,6 +9,7 @@ import { X } from "lucide-react";
 import { Link } from "@inertiajs/react";
 import { ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
+import BlurText from "../Components/BlurText";
 
 export default function SamudraStore() {
     const formatRupiah = (price) => {
@@ -204,15 +205,7 @@ export default function SamudraStore() {
                 </p>
             </div>
             {productLength === 0 ? (
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="900"
-                    className="my-36 bg-gradient-to-r from-primary7 to-primary5 max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] text-center py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-10 mx-auto rounded-3xl shadow-lg transition-all duration-300 hover:scale-105"
-                >
-                    <p className="text-white font-bold font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                        COMING SOON!
-                    </p>
-                </div>
+                <BlurText text="COMING SOON!" delay={200} />
             ) : (
                 <div className="container mx-auto px-4 my-4">
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative">

@@ -248,8 +248,8 @@ export default function Home({ proker, informasi }) {
             <article className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow">
                 <div className="aspect-[16/9] overflow-hidden">
                     <img
-                        src={informasiUtama?.image_path || "/images/default-cover.jpg"}
-                        alt="Informasi Belum Tersedia"
+                        src={informasiUtama?.image_path || null}
+                        alt=""
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
                         />
@@ -321,7 +321,7 @@ export default function Home({ proker, informasi }) {
                             href="/informasi"
                             data-aos="fade-up"
                             data-aos-duration="800"
-                            className="text-lg md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 border-transparent hover:border-primary5"
+                            className="text-lg md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 max-w-[280px] border-transparent hover:border-primary5"
                             >
                             Lihat Semua Informasi →
                         </Link>

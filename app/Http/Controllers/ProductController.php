@@ -28,7 +28,7 @@ class ProductController extends Controller
 
     public function dashboard()
     {
-        $products = Product::all()->latest();
+        $products = Product::all();
         return view('admin_samudra_store.dashboard', ['products' => $products]);
     }
 

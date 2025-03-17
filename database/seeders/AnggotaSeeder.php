@@ -26,7 +26,7 @@ class AnggotaSeeder extends Seeder
             for ($j=1; $j < 16; $j++) { 
                 Anggota::factory()->create([
                     'div_id' => $i,
-                    'image_path' => 'images/anggota/' . $dept[$i - 1] .'/' .$j .'.jpeg'
+                    'image_path' => 'images/anggota/' . $dept[$i - 1] .'/' .$j .'.png'
                 ]);
             }
         }

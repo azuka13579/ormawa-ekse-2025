@@ -148,7 +148,7 @@ export default function Divisicopy(props) {
                 <img
                     src={`${window.location.origin}/${props.deskripsi.timeline_path}`}
                     alt="Timeline"
-                    className="w-full md:w-2/3 h-auto object-cover mx-auto"
+                    className="w-full md:w-1/2 h-auto object-cover mx-auto"
                     data-aos="fade-up"
                     data-aos-duration="1000"
                 />

@@ -15,7 +15,7 @@ export default function CardBPH(props) {
                         alt=""
                         className={`md:${props.scale} top-60  relative scale-[0.8] w-full`}
                     />
-                    <h1 className="text-white font-montserrat text-xl font-bold drop-shadow-lg absolute bottom-12 left-6 right-6">
+                    <h1 className="text-white font-montserrat text-lg font-bold drop-shadow-lg absolute bottom-20 left-6 right-6">
                         {props.nama}
                     </h1>
                     <h1 className="text-white font-montserrat text-lg font-light drop-shadow-lg absolute bottom-6 left-6 right-6">
