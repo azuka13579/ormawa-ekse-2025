@@ -227,111 +227,136 @@ export default function Home({ proker, informasi }) {
             <Misi />
             {/* Konten lain */}
             <SakarsaDaily Proker={proker} />
-            <div className="flex flex-col md:flex-row justify-between items-start gap-6 mt-5 mb-8">
-            <div className="space-y-3">
-                <h1 className="text-3xl md:text-4xl font-bold text-primary5 font-rowdies">
-                    Informasi
-                </h1>
-                <h2 className="text-2xl md:text-3xl text-primary4 font-semibold font-montserrat">
-                    KM PKU IPB
-                </h2>
+            <div className="flex flex-row justify-between items-end mt-8 md:px-16 px-4">
+                <div
+                    className="space-y-3"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                >
+                    <h1 className="text-2xl md:text-5xl font-bold text-primary5 font-rowdies">
+                        Informasi
+                    </h1>
+                    <h2 className="text-xl md:text-3xl text-primary4 font-semibold font-montserrat">
+                        KM PKU IPB
+                    </h2>
+                </div>
+                <div className="">
+                    {" "}
+                    <Link
+                        href="/informasi"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                        className="text-base md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 max-w-[280px] border-transparent hover:border-primary5 duration-300"
+                    >
+                        Lihat Semua Informasi →
+                    </Link>
+                </div>
             </div>
-            
-           
-        </div>
-        <div className="py-8 md:py-12 bg-white">
-
-
-        <div className="flex flex-col lg:flex-row gap-8 font-montserrat">
-            {/* Main Featured Content */}
-            <div className="lg:w-2/3">
-            <article className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[16/9] overflow-hidden">
-                    <img
-                        src={informasiUtama?.image_path || null}
-                        alt=""
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        />
-                </div>
-
-                <div className="p-6">
-                    <div className="flex flex-col md:flex-row justify-between gap-4 mb-4">
-                        <h1 className="text-2xl md:text-3xl font-bold text-primary5">
-                            {informasiUtama?.judul || "Belum ada informasi tersedia"}
-                        </h1>
-                        <time className="text-sm text-gray-500 shrink-0">
-                            {informasiUtama?.created_at
-                                ? new Date(informasiUtama.created_at).toLocaleDateString("id-ID", {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                })
-                                : "-"}
-                        </time>
-                    </div>
-                    <div className="space-y">
-                        <p className="text-2xl md:text-3xl font-semibold text-primary5">{informasiUtama?.deskripsi_singkat || "-"}</p>
-                    </div>
-
-                    <div className="space-y-4">
-                        <p className={`whitespace-pre-line text-gray-600 leading-relaxed ${showFull ? "" : "line-clamp-5"}`}>
-                            {informasiUtama?.deskripsi || "Deskripsi belum tersedia."}
-                        </p>
-
-                        {informasiUtama?.deskripsi && informasiUtama.deskripsi.length > 300 && (
-                            <button
-                            onClick={() => setShowFull(!showFull)}
-                            className="text-primary5 font-medium hover:underline"
-                            >
-                                {showFull ? "Tampilkan lebih sedikit" : "Baca selengkapnya"}
-                            </button>
-                        )}
-
-                        {informasiUtama?.narahubung && (
-                            <div className="bg-primary5/5 p-4 rounded-lg border border-primary5/20">
-                                <p className="text-sm font-medium text-primary5">
-                                    Kontak Informasi:
-                                    <span className="block mt-1 font-normal">{informasiUtama.narahubung}</span>
-                                </p>
+            <div className="py-8 md:py-12 -mt-4 bg-white md:px-16 px-4">
+                <div className="flex flex-col lg:flex-row gap-8 font-montserrat">
+                    {/* Main Featured Content */}
+                    <div
+                        className="lg:w-2/3"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+                        <article className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow">
+                            <div className="aspect-[16/9] overflow-hidden">
+                                <img
+                                    src={informasiUtama?.image_path || null}
+                                    alt=""
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    loading="lazy"
+                                />
                             </div>
-                        )}
-                    </div>
-                </div>
-            </article>
-        </div>
 
-            {/* Secondary Cards */}
-            <div className="lg:w-1/3">
-                <div className="grid gap-6">
-                    {informasi2.length > 0 ? (
-                        informasi2.map((informasi, index) => (
-                            <Card4 
-                            key={index} 
-                            {...informasi} 
-                            className="transform transition-transform hover:-translate-y-1"
-                            />
-                        ))
-                    ) : (
-                        <div className="text-center p-6 bg-gray-50 rounded-xl">
-                            <p className="text-gray-500">Belum ada informasi tambahan</p>
+                            <div className="p-6">
+                                <div className="flex flex-col md:flex-row justify-between gap-4 mb-4">
+                                    <h1 className="text-2xl md:text-3xl font-bold text-primary5">
+                                        {informasiUtama?.judul ||
+                                            "Belum ada informasi tersedia"}
+                                    </h1>
+                                    <time className="text-sm text-gray-500 shrink-0">
+                                        {informasiUtama?.created_at
+                                            ? new Date(
+                                                  informasiUtama.created_at
+                                              ).toLocaleDateString("id-ID", {
+                                                  year: "numeric",
+                                                  month: "long",
+                                                  day: "numeric",
+                                              })
+                                            : "-"}
+                                    </time>
+                                </div>
+                                {/* <div className="space-y">
+                                    <p className="text-2xl md:text-3xl font-semibold text-primary5">
+                                        {informasiUtama?.deskripsi_singkat ||
+                                            "-"}
+                                    </p>
+                                </div> */}
+
+                                <div className="space-y-4">
+                                    <p
+                                        className={`whitespace-pre-line text-gray-600 leading-relaxed ${
+                                            showFull ? "" : "line-clamp-5"
+                                        }`}
+                                    >
+                                        {informasiUtama?.deskripsi ||
+                                            "Deskripsi belum tersedia."}
+                                    </p>
+
+                                    {informasiUtama?.deskripsi &&
+                                        informasiUtama.deskripsi.length >
+                                            300 && (
+                                            <button
+                                                onClick={() =>
+                                                    setShowFull(!showFull)
+                                                }
+                                                className="text-primary5 font-medium hover:underline"
+                                            >
+                                                {showFull
+                                                    ? "Tampilkan lebih sedikit"
+                                                    : "Baca selengkapnya"}
+                                            </button>
+                                        )}
+
+                                    {informasiUtama?.narahubung && (
+                                        <div className="bg-primary5/5 p-4 rounded-lg border border-primary5/20">
+                                            <p className="text-sm font-medium text-primary5">
+                                                Kontak Informasi:
+                                                <span className="block mt-1 font-normal">
+                                                    {informasiUtama.narahubung}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    {/* Secondary Cards */}
+                    <div className="lg:w-1/3">
+                        <div className="grid gap-6">
+                            {informasi2.length > 0 ? (
+                                informasi2.map((informasi, index) => (
+                                    <Card4
+                                        key={index}
+                                        {...informasi}
+                                        className="transform transition-transform hover:-translate-y-1"
+                                    />
+                                ))
+                            ) : (
+                                <div className="text-center p-6 bg-gray-50 rounded-xl">
+                                    <p className="text-gray-500">
+                                        Belum ada informasi tambahan
+                                    </p>
+                                </div>
+                            )}
                         </div>
-                    )}
-                        <Link
-                            href="/informasi"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            className="text-lg md:text-xl font-semibold text-primary4 hover:text-primary5 transition-colors border-b-2 max-w-[280px] border-transparent hover:border-primary5"
-                            >
-                            Lihat Semua Informasi →
-                        </Link>
                     </div>
-                            </div>
-
-                    
+                </div>
             </div>
-            </div>
-            
 
             <Footer></Footer>
         </div>

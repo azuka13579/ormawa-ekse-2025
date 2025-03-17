@@ -63,12 +63,15 @@ export default function Tentang(props) {
                                 data-aos-duration="800"
                                 data-aos-delay="200"
                             >
-                                <span className="font-bold">Ormawa Eksekutif PKU IPB</span>{" "} merupakan organisasi
-                                kemahasiswaan di lingkup Pendidikan Kompetensi
-                                Umum yang dikhususkan untuk mahasiswa tingkat
-                                PKU IPB. Fungsinya melibatkan pemberian
-                                kesejahteraan penanganan segala problematika
-                                yang dialami mahasiswa PKU IPB.
+                                <span className="font-bold">
+                                    Ormawa Eksekutif PKU IPB
+                                </span>{" "}
+                                merupakan organisasi kemahasiswaan di lingkup
+                                Pendidikan Kompetensi Umum yang dikhususkan
+                                untuk mahasiswa tingkat PKU IPB. Fungsinya
+                                melibatkan pemberian kesejahteraan penanganan
+                                segala problematika yang dialami
+                                mahasiswa PKU IPB.
                             </p>
                         </div>
                     </div>
@@ -156,50 +159,44 @@ export default function Tentang(props) {
                 </div>
                 <div className="sm:block hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2 place-items-center py-8 gap-4 px-4 md:px-8">
-                    <CardBPH
-                                nama="Fiezha Hasby Ari Widana"
-                                jabatan="Ketua Umum Ormawa Eksekutif PKU"
-                                delay=""
-                                
-                                image_path="images/bph/ketua.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Fatma Dwi Hasanah"
-                                jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
-                                delay=""
-                                
-                                image_path="images/bph/wakil.png"
-                            ></CardBPH>
+                        <CardBPH
+                            nama="Fiezha Hasby Ari Widana"
+                            jabatan="Ketua Umum Ormawa Eksekutif PKU"
+                            delay=""
+                            image_path="images/bph/ketua.png"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Fatma Dwi Hasanah"
+                            jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
+                            delay=""
+                            image_path="images/bph/wakil.png"
+                        ></CardBPH>
                     </div>
                     <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
                         <CardBPH
-                                nama="Tedy Kusuma Hidayat"
-                                jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
-                                delay=""
-                                
-                                image_path="images/bph/sekre1.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Arifatu Dzikra"
-                                jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
-                                delay=""
-                                
-                                image_path="images/bph/sekre2.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Dewi Ayu Lestari"
-                                jabatan="Bendahara Internal Ormawa Eksekutif PKU"
-                                delay=""
-                                
-                                image_path="images/bph/bend1.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Nur Fadillah"
-                                jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
-                                delay=""
-                                
-                                image_path="images/bph/bend2.png"
-                            ></CardBPH>
+                            nama="Tedy Kusuma Hidayat"
+                            jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
+                            delay=""
+                            image_path="images/bph/sekre1.png"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Arifatu Dzikra"
+                            jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
+                            delay=""
+                            image_path="images/bph/sekre2.png"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Dewi Ayu Lestari"
+                            jabatan="Bendahara Internal Ormawa Eksekutif PKU"
+                            delay=""
+                            image_path="images/bph/bend1.png"
+                        ></CardBPH>
+                        <CardBPH
+                            nama="Nur Fadillah"
+                            jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
+                            delay=""
+                            image_path="images/bph/bend2.png"
+                        ></CardBPH>
                     </div>
                 </div>
             </div>
@@ -229,7 +226,7 @@ export default function Tentang(props) {
                 <div className="sm:hidden">
                     <div className="w-full">
                         <OwlCarousel
-                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
+                            className="owl-theme from-blue-500 via-sky-300 to-blue-500 w-full"
                             {...options}
                         >
                             {props.biro.map((divisi, index) => (
