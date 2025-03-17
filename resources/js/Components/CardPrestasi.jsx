@@ -23,7 +23,7 @@ export default function CardPrestasi(props) {
                             "/images/default-achievement.jpg"
                         }
                         alt={props.judul}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                     />
                 </div>

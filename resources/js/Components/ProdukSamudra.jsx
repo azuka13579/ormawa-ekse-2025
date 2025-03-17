@@ -30,29 +30,35 @@ export default function ProductsSamudra({ product, index }) {
                             alt={product.name}
                             className="object-contain w-full h-full p-4 transition-transform duration-500 group-hover:scale-105"
                         />
-                        
+
                         {/* Stock Badge */}
-                        <div className={`absolute top-2 right-2 px-3 py-1 rounded-full text-xs font-semibold ${
-                            product.stock > 0 
-                                ? "bg-green-100 text-green-800" 
-                                : "bg-red-100 text-red-800"
-                        }`}>
-                            {product.stock > 0 ? `${product.stock} tersedia` : "Habis"}
+                        <div
+                            className={`absolute top-2 right-2 px-3 py-1 rounded-full text-xs font-semibold ${
+                                product.stock > 0
+                                    ? "bg-green-100 text-green-800"
+                                    : "bg-red-100 text-red-800"
+                            }`}
+                        >
+                            {product.stock > 0
+                                ? `${product.stock} tersedia`
+                                : "Habis"}
                         </div>
                     </div>
 
                     {/* Content Section */}
                     <div className="p-4 font-montserrat flex flex-col flex-grow">
-                        <h3 className=" text-gray-500 text-sm mb-1">Samudra Store</h3>
+                        <h3 className=" text-gray-500 text-sm mb-1">
+                            Samudra Store
+                        </h3>
                         <h2 className="font-bold text-gray-900 text-lg line-clamp-2 mb-2">
                             {product.name}
                         </h2>
-                        
+
                         <div className="mt-auto">
                             <p className="text-xl font-bold text-primary4">
                                 {formatRupiah(product.price)}
                             </p>
-                            
+
                             <button className="font-montserrat w-full mt-3 bg-gradient-to-r from-primary4 to-primary3 hover:opacity-90 text-white font-semibold py-2.5 rounded-lg transition-all duration-200">
                                 Lihat Detail
                             </button>
@@ -64,7 +70,11 @@ export default function ProductsSamudra({ product, index }) {
             {/* Modal */}
             {isOpen && (
                 <div className="scrollbar-hidden fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 animate-fade-in">
-                    <div className="scrollbar-hidden modal-content w-[90%] max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                    <div
+                        className="scrollbar-hidden modal-content w-[90%] max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row relative"
+                        data-aos="zoom-in"
+                        data-aos-duration="400"
+                    >
                         <button
                             className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
                             onClick={() => setIsOpen(false)}
@@ -94,7 +104,9 @@ export default function ProductsSamudra({ product, index }) {
                                 </div>
 
                                 <div>
-                                    <h3 className="text-lg font-semibold mb-2">Deskripsi</h3>
+                                    <h3 className="text-lg font-semibold mb-2">
+                                        Deskripsi
+                                    </h3>
                                     <p className="text-gray-600 whitespace-pre-line">
                                         {product.description}
                                     </p>
@@ -102,31 +114,50 @@ export default function ProductsSamudra({ product, index }) {
 
                                 {product.size !== "-" && (
                                     <div>
-                                        <h3 className="text-lg font-semibold mb-3">Pilih Ukuran</h3>
+                                        <h3 className="text-lg font-semibold mb-3">
+                                            Pilih Ukuran
+                                        </h3>
                                         <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                                            {product.size.split(",").map((size) => (
-                                                <button
-                                                    key={size}
-                                                    onClick={() => setSelectedSize(product.id, size)}
-                                                    className={`size-button ${
-                                                        selectedSize === size
-                                                            ? "bg-primary4 text-white"
-                                                            : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                                                    }`}
-                                                >
-                                                    {size}
-                                                </button>
-                                            ))}
+                                            {product.size
+                                                .split(",")
+                                                .map((size) => (
+                                                    <button
+                                                        key={size}
+                                                        onClick={() =>
+                                                            setSelectedSize(
+                                                                product.id,
+                                                                size
+                                                            )
+                                                        }
+                                                        className={`size-button ${
+                                                            selectedSize ===
+                                                            size
+                                                                ? "bg-primary4 text-white"
+                                                                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                                        }`}
+                                                    >
+                                                        {size}
+                                                    </button>
+                                                ))}
                                         </div>
                                     </div>
                                 )}
 
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between">
-                                        <h3 className="text-lg font-semibold">Jumlah</h3>
+                                        <h3 className="text-lg font-semibold">
+                                            Jumlah
+                                        </h3>
                                         <div className="flex items-center gap-3">
                                             <button
-                                                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                                onClick={() =>
+                                                    setQuantity(
+                                                        Math.max(
+                                                            1,
+                                                            quantity - 1
+                                                        )
+                                                    )
+                                                }
                                                 className="quantity-button"
                                             >
                                                 -
@@ -135,13 +166,28 @@ export default function ProductsSamudra({ product, index }) {
                                                 type="number"
                                                 value={quantity}
                                                 onChange={(e) => {
-                                                    const val = Math.min(product.stock, Math.max(1, parseInt(e.target.value) || 1))
-                                                    setQuantity(val)
+                                                    const val = Math.min(
+                                                        product.stock,
+                                                        Math.max(
+                                                            1,
+                                                            parseInt(
+                                                                e.target.value
+                                                            ) || 1
+                                                        )
+                                                    );
+                                                    setQuantity(val);
                                                 }}
                                                 className="w-16 text-center border rounded-lg py-2"
                                             />
                                             <button
-                                                onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
+                                                onClick={() =>
+                                                    setQuantity(
+                                                        Math.min(
+                                                            product.stock,
+                                                            quantity + 1
+                                                        )
+                                                    )
+                                                }
                                                 className="quantity-button"
                                             >
                                                 +
@@ -151,8 +197,8 @@ export default function ProductsSamudra({ product, index }) {
 
                                     <button
                                         onClick={() => {
-                                            addToCart(product, quantity)
-                                            setIsOpen(false)
+                                            addToCart(product, quantity);
+                                            setIsOpen(false);
                                         }}
                                         disabled={product.stock <= 0}
                                         className={`w-full py-3.5 rounded-lg font-semibold transition-all ${
@@ -161,7 +207,9 @@ export default function ProductsSamudra({ product, index }) {
                                                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
                                         }`}
                                     >
-                                        {product.stock > 0 ? "Tambahkan ke Keranjang" : "Stok Habis"}
+                                        {product.stock > 0
+                                            ? "Tambahkan ke Keranjang"
+                                            : "Stok Habis"}
                                     </button>
                                 </div>
                             </div>
