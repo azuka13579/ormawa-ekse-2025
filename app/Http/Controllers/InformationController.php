@@ -16,7 +16,7 @@ class InformationController extends Controller
             'deskripsi_singkat' => 'required',
             'deskripsi' => 'required',
             'narahubung' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:4096'
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:8192'
         ]);
 
         $image_path = "";
@@ -55,7 +55,7 @@ class InformationController extends Controller
             'deskripsi_singkat' => 'required',
             'deskripsi' => 'required',
             'narahubung' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:4096'
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:8192'
         ]);
         
         if ($request->hasFile('image')) {

@@ -37,6 +37,8 @@
             <div>
                 <label class="block text-gray-700 font-medium">Gambar</label>
                 <input type="file" name="image" required class="w-full px-4 py-2 border rounded-lg">
+             <p class="text-sm text-gray-500 mt-1">Format: JPEG, PNG, JPG (Maks. 4MB). Usahakan gambar jelas </p>
+                
             </div>
             
             <div class="text-center">

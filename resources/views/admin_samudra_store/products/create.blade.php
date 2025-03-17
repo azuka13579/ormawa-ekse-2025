@@ -112,7 +112,7 @@
                                    accept="image/jpeg, image/png, image/jpg, image/gif"
                                    required>
                             <p class="text-sm text-gray-500 mt-1">
-                                Format: JPEG, PNG, JPG, GIF (Maks. 4MB). Usahakan gambar jelas dan background rapi
+                                Format: JPEG, PNG, JPG (Maks. 4MB). Usahakan gambar jelas dan background rapi
                             </p>
                         </div>
                     </div>

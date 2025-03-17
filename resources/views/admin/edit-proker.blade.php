@@ -32,6 +32,8 @@
 
             <label class="block mb-2">Gambar</label>
             <input type="file" name="image" class="w-full p-2 border rounded mb-4">
+             <p class="text-sm text-gray-500 mt-1">Format: JPEG, PNG, JPG (Maks. 4MB). Usahakan gambar jelas </p>
+
             @if($proker->image_path)
                 <p class="text-sm text-gray-500">Gambar saat ini:</p>
                 <img src="{{ asset($proker->image_path) }}" alt="Gambar Proker" class="w-32 h-32 object-cover rounded mb-4">

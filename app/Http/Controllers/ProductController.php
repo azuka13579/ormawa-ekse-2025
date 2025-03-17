@@ -50,7 +50,7 @@ class ProductController extends Controller
             'size' => 'string|max:50',
             'price' => 'required|numeric|min:0|regex:/^\d+$/',
             'stock' => 'required|integer|min:0',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:8192'
         ]);
 
         $imagePath = $request->file('image')->store('products', 'public');
@@ -76,7 +76,7 @@ class ProductController extends Controller
         'size' => 'string|max:50',
         'price' => 'required|numeric|min:0|regex:/^\d+$/',
         'stock' => 'required|integer|min:0',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:8192'
     ]);
 
     // Cek apakah ada file gambar baru yang diunggah

@@ -18,7 +18,7 @@ class ProkerController extends Controller
             'deskripsi' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:8192'
         ]);
 
         $image_path = "";
@@ -61,7 +61,7 @@ class ProkerController extends Controller
             'deskripsi' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:8192'
         ]);
         
         if ($request->hasFile('image')) {

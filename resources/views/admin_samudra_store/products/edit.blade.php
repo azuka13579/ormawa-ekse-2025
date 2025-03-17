@@ -114,7 +114,7 @@
                                        class="w-full"
                                        accept="image/jpeg, image/png, image/jpg, image/webp">
                                 <p class="text-sm text-gray-500 mt-2">
-                                    Format: JPEG, PNG, JPG, WEBP (Maks. 2MB)<br>
+                                    Format: JPEG, PNG, JPG (Maks. 4MB)<br>
                                     Kosongkan jika tidak ingin mengganti gambar
                                 </p>
                                 
