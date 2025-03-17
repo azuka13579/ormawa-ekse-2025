@@ -33,24 +33,40 @@ export default function Footer() {
                         Hubungi Kami
                     </h1>
                     <div className="flex gap-4 justify-center md:justify-start">
-                        <a
-                            href="https://instagram.com/athdavindr"
-                            target="_blank"
-                        >
-                            <FaInstagram className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        </a>
-                        <a href="">
-                            <FaXTwitter className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        </a>
-                        <a href="">
-                            <FaTiktok className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        </a>
-                        <a href="">
-                            <FaYoutube className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        </a>
-                        <a href="">
-                            <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
-                        </a>
+                    <a
+    href="https://instagram.com/ormawaeksekutifpku"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <FaInstagram className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+</a>
+<a
+    href="https://x.com/ormawaeksepku"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <FaXTwitter className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+</a>
+<a
+    href="https://tiktok.com/@ormawaeksekutifpku"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <FaTiktok className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+</a>
+<a
+    href="https://youtube.com/@ormawaeksekutifpkuipb"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <FaYoutube className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+</a>
+<a
+    href="mailto:eksekutifpku@apps.ipb.ac.id"
+>
+    <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+</a>
+
                     </div>
                 </div>
             </div>

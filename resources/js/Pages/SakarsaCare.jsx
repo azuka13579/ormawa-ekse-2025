@@ -60,7 +60,7 @@ export default function SakarsaCare() {
                     </p>
                 </div>
                 <a
-                    href="https://instagram.com/ormawaeksekutifpku"
+                    href="https://linktr.ee/halomincare"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

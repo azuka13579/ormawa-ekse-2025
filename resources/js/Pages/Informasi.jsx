@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 import BlurText from "../Components/BlurText";
 
 export default function Informasi(props) {
-    
+    const informasi = props.informasi;
     return (
         <div>
             <Navbar></Navbar>
@@ -15,13 +15,20 @@ export default function Informasi(props) {
                 />
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 xxl:grid-cols-4 w-full gap-6 px-8 pb-4">
-                    {props.informasi.map((info, index) => (
-                        <CardPrestasi
-                            key={index}
-                            {...info}
-                            className="transform transition-transform hover:-translate-y-1"
-                        />
-                    ))}
+                    {
+                        informasi.leght > 0 ? (
+                            informasi.map((info, index) => (
+                                <CardPrestasi
+                                    key={index}
+                                    {...info}
+                                    className="transform transition-transform hover:-translate-y-1"
+                                />
+                            ))
+                        ) : (<div className="my-20 text-center p-6 bg-gray-50 rounded-xl">
+                            <p className="text-gray-500 text-xl">Informasi Belum Tersedia</p>
+                        </div>)
+                    }
+                    
                 </div>
             </div>
             <Footer></Footer>

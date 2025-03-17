@@ -63,7 +63,7 @@ export default function Tentang(props) {
                                 data-aos-duration="800"
                                 data-aos-delay="200"
                             >
-                                Ormawa Eksekutif PKU IPB merupakan organisasi
+                                <span className="font-bold">Ormawa Eksekutif PKU IPB</span>{" "} merupakan organisasi
                                 kemahasiswaan di lingkup Pendidikan Kompetensi
                                 Umum yang dikhususkan untuk mahasiswa tingkat
                                 PKU IPB. Fungsinya melibatkan pemberian
@@ -114,42 +114,42 @@ export default function Tentang(props) {
                                 jabatan="Ketua Umum Ormawa Eksekutif PKU"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/ketua.jpeg"
+                                image_path="images/bph/ketua.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Fatma Dwi Hasanah"
                                 jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/wakil.jpeg"
+                                image_path="images/bph/wakil.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Tedy Kusuma Hidayat"
                                 jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/sekre1.jpeg"
+                                image_path="images/bph/sekre1.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Arifatu Dzikra"
                                 jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/sekre2.jpeg"
+                                image_path="images/bph/sekre2.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Dewi Ayu Lestari"
                                 jabatan="Bendahara Internal Ormawa Eksekutif PKU"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/bend1.jpeg"
+                                image_path="images/bph/bend1.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Nur Fadillah"
                                 jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
                                 delay=""
                                 scale="scale-[0.8]"
-                                image_path="images/bph/bend2.jpeg"
+                                image_path="images/bph/bend2.png"
                             ></CardBPH>
                         </OwlCarousel>
                     </div>
@@ -161,14 +161,14 @@ export default function Tentang(props) {
                                 jabatan="Ketua Umum Ormawa Eksekutif PKU"
                                 delay=""
                                 
-                                image_path="images/bph/ketua.jpeg"
+                                image_path="images/bph/ketua.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Fatma Dwi Hasanah"
                                 jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
                                 delay=""
                                 
-                                image_path="images/bph/wakil.jpeg"
+                                image_path="images/bph/wakil.png"
                             ></CardBPH>
                     </div>
                     <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
@@ -177,28 +177,28 @@ export default function Tentang(props) {
                                 jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
                                 delay=""
                                 
-                                image_path="images/bph/sekre1.jpeg"
+                                image_path="images/bph/sekre1.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Arifatu Dzikra"
                                 jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
                                 delay=""
                                 
-                                image_path="images/bph/sekre2.jpeg"
+                                image_path="images/bph/sekre2.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Dewi Ayu Lestari"
                                 jabatan="Bendahara Internal Ormawa Eksekutif PKU"
                                 delay=""
                                 
-                                image_path="images/bph/bend1.jpeg"
+                                image_path="images/bph/bend1.png"
                             ></CardBPH>
                             <CardBPH
                                 nama="Nur Fadillah"
                                 jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
                                 delay=""
                                 
-                                image_path="images/bph/bend2.jpeg"
+                                image_path="images/bph/bend2.png"
                             ></CardBPH>
                     </div>
                 </div>

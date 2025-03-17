@@ -63,7 +63,7 @@ export default function Divisicopy(props) {
                                 data-aos-duration="800"
                                 data-aos-delay="200"
                             >
-                                {props.deskripsi.deskripsi}
+                                <span className="font-bold">{props.divisi}</span>{" "}{props.deskripsi.deskripsi}
                             </p>
                         </div>
                     </div>
