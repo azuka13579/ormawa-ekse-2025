@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Master</title>
-    @vite('resources/css/app.css')
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-full">
     <div class="w-4/6 mx-auto flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-white rounded-md shadow-lg p-5">
