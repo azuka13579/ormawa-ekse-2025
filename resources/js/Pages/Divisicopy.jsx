@@ -45,7 +45,7 @@ export default function Divisicopy(props) {
                             data-aos-duration="800"
                         />
                         <div
-                            className="font-rowdies font-bold text-5xl md:text-7xl text-center md:text-left"
+                            className="font-rowdies font-bold text-5xl md:text-6xl text-center md:text-left"
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
@@ -63,7 +63,10 @@ export default function Divisicopy(props) {
                                 data-aos-duration="800"
                                 data-aos-delay="200"
                             >
-                                <span className="font-bold">{props.divisi}</span>{" "}{props.deskripsi.deskripsi}
+                                <span className="font-bold">
+                                    {props.divisi}
+                                </span>{" "}
+                                {props.deskripsi.deskripsi}
                             </p>
                         </div>
                     </div>
