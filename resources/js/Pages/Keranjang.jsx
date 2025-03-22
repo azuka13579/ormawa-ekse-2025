@@ -423,10 +423,10 @@ const sendEmail = async () => {
                                     </span>
                                     <div className="mt-1 bg-gray-50 p-3 rounded-md">
                                         <div className="font-mono">
-                                            3288 9238 9198 1892 19
+                                            9014 1548 5674 
                                         </div>
                                         <div className="text-xs text-gray-500 mt-1">
-                                            BRI a.n. Samudra Store
+                                            Sea Bank a.n. MUHAMMMAD SYARIEF HIDAYATULLAH
                                         </div>
                                     </div>
                                 </div>
