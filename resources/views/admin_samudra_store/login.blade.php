@@ -11,6 +11,11 @@
     <div class="w-full max-w-md p-6 font-montserrat bg-white rounded-lg shadow-lg transform transition duration-500">
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Login Admin Samudra Store</h2>
         
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div>{{ $error }}</div>
+            @endforeach
+        @endif
         <form method="POST" action="{{ route('admin.login') }}">
             @csrf
             

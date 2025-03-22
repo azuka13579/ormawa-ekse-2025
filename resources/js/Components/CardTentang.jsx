@@ -21,6 +21,7 @@ export default function CardTentang(props) {
                 </div> */}
                 <img
                     src={`${window.location.origin}/${props.img}`}
+                    loading="lazy"
                     alt=""
                     className="md:w-full md:h-full md:object-contain w-full h-auto object-contain group-hover:scale-100 scale-90 transition duration-700 ease-in-out"
                 />

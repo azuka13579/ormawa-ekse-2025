@@ -49,85 +49,74 @@ class PaymentController extends Controller
             'image_path' => $image_path
         ];
         Penjualan::create($data);
-
-
     }
 
     public function show(Request $request)
-{
-    $search = $request->query('search');
-    $limit = $request->query('limit', 10);
+    {
+        $search = $request->query('search');
+        $limit = $request->query('limit', 10);
 
-    // Query data utama
-    $query = Penjualan::where('nim', 'like', "%{$search}%")->latest();
+        $query = Penjualan::where('nim', 'like', "%{$search}%")->latest();
 
-// Jika juga ingin mencari di dalam produk JSON
-$query->orWhere('nama', 'like', "%{$search}%");
+        $query->orWhere('nama', 'like', "%{$search}%");
 
-$search = $query->get();
+        $search = $query->get();
 
-    $data = $query->latest()->get(); // Ambil semua data tanpa pagination dulu
-    //dd($data); //
+        $data = $query->latest()->get();
 
-    $arr_ret = [];
-    
-    foreach ($data as $pembeli) {
-        $tmp1 = [];
+        $arr_ret = [];
+        
+        foreach ($data as $pembeli) {
+            $tmp1 = [];
 
-        foreach ($pembeli->produk as $buy_product) {
-            $produk_retrieved = Product::find((int)$buy_product['id']);
+            foreach ($pembeli->produk as $buy_product) {
+                $produk_retrieved = Product::find((int)$buy_product['id']);
 
-            if ($produk_retrieved) {
-                $tmp1[] = [
-                    'id' => $produk_retrieved->id,
-                    'nama_produk' => $produk_retrieved->name,
-                    'size' => $buy_product['size'],
-                    'price' => $produk_retrieved->price,
-                    'kuantitas' => (int)$buy_product['kuantitas'],
-                    'image_path' => $produk_retrieved->image
-                ];
+                if ($produk_retrieved) {
+                    $tmp1[] = [
+                        'id' => $produk_retrieved->id,
+                        'nama_produk' => $produk_retrieved->name,
+                        'size' => $buy_product['size'],
+                        'price' => $produk_retrieved->price,
+                        'kuantitas' => (int)$buy_product['kuantitas'],
+                        'image_path' => $produk_retrieved->image
+                    ];
+                }
             }
+
+            $arr_ret[] = [
+                'id_beli' => $pembeli->id,
+                'nama' => $pembeli->nama,
+                'nim' => $pembeli->nim,
+                'fakultas' => $pembeli->fakultas,
+                'departemen' => $pembeli->departemen,
+                'email' => $pembeli->email,
+                'no_wa' => $pembeli->no_wa,
+                'produk' => $tmp1,
+                'recipe_path' => $pembeli->image_path,
+                'status' => $pembeli->status,
+                'status_diterima' => $pembeli->status_diterima,
+                'waktu_pembelian' => $pembeli->created_at
+            ];
         }
 
-        $arr_ret[] = [
-            'id_beli' => $pembeli->id,
-            'nama' => $pembeli->nama,
-            'nim' => $pembeli->nim,
-            'fakultas' => $pembeli->fakultas,
-            'departemen' => $pembeli->departemen,
-            'email' => $pembeli->email,
-            'no_wa' => $pembeli->no_wa,
-            'produk' => $tmp1,
-            'recipe_path' => $pembeli->image_path,
-            'status' => $pembeli->status,
-            'status_diterima' => $pembeli->status_diterima,
-            'waktu_pembelian' => $pembeli->created_at
-        ];
-    }
+        $page = $request->query('page', 1);
+        $perPage = $limit;
+        $offset = ($page - 1) * $perPage;
+        
+        $pagedData = array_slice($arr_ret, $offset, $perPage);
 
-    // **Pagination Manual**
-    $page = $request->query('page', 1); // Halaman saat ini
-    $perPage = $limit; // Jumlah data per halaman
-    $offset = ($page - 1) * $perPage;
-    
-    // Slice array sesuai halaman
-    $pagedData = array_slice($arr_ret, $offset, $perPage);
+        $data = new LengthAwarePaginator($pagedData, count($arr_ret), $perPage, $page, [
+            'path' => $request->url(),
+            'query' => $request->query()
 
-    // Buat instance LengthAwarePaginator
-    $data = new LengthAwarePaginator($pagedData, count($arr_ret), $perPage, $page, [
-        'path' => $request->url(),
-        'query' => $request->query()
+        ]);
 
-    ]);
-    
-
-    //dd($arr_ret);
-    return view('admin_samudra_store.penjualan.tabel', [
-        'data' => $data, // Ubah dari $arr_ret ke $data yang sudah dipaginasi
-        'search' => $search,
-        'limit' => $limit
-    ]);
-    
+        return view('admin_samudra_store.penjualan.tabel', [
+            'data' => $data,
+            'search' => $search,
+            'limit' => $limit
+        ]);    
     }
 
     public function updateStatus(Request $request)
@@ -171,7 +160,7 @@ $search = $query->get();
     
 
     public function updateDiterima(Request $request)
-{
+    {
    
         $request->validate([
             'id' => 'required|exists:penjualans,id',
@@ -184,6 +173,5 @@ $search = $query->get();
 
         return response()->json(['success' => true, 'message' => 'Status berhasil diperbarui.']);
     
-}
-
+    }
 }

@@ -2,15 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Penjualan; // Sesuaikan dengan model yang digunakan
 use App\Models\Product;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
 use App\Mail\OrderMail;
 use Illuminate\Support\Facades\Mail;
 
-class OrderController extends Controller
+class StoreController extends Controller
 {
-    public function sendOrderEmail(Request $request)
+    public function index(){
+        $products = Product::all();
+
+        return Inertia::render('SamudraStore', [
+            'products' => $products
+        ]);
+    }
+    public function indexCheckout(){
+        $products = Product::all();
+
+        return Inertia::render('Keranjang', [
+            'products' => $products
+        ]);
+    }
+
+    public function kirimEmail(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|string',
@@ -51,9 +66,10 @@ class OrderController extends Controller
             'total' => $validatedData['total'],
             
         ];
-
+        // dd($orderData);
         // Kirim email
         Mail::to($validatedData['email'])->send(new OrderMail($orderData));
+        
 
         return response()->json(['message' => 'Email pesanan berhasil dikirim']);
     }

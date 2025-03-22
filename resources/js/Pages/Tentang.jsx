@@ -12,18 +12,18 @@ export default function Tentang(props) {
     const options = {
         // loop: true,
         // nav: true,
-        autoplaySpeed: 1000,
+        //autoplaySpeed: 1000,
         dragEndSpeed: 1000,
         dotsSpeed: 1000,
         autoplay: false,
-        autoplayTimeout: 1000,
+        
         autoplayHoverPause: true,
         autoWidth: true,
         stagePadding: 0,
 
         dots: false,
 
-        items: 2,
+        //items: 2,
         margin: 10,
         center: true,
     };
@@ -39,7 +39,7 @@ export default function Tentang(props) {
                             loading="lazy"
                             src="img/Home1.png"
                             alt="Gambar mobile di tengah"
-                            class="scale-75 md:hidden"
+                            className="scale-75 md:hidden"
                             data-aos="fade-up"
                             data-aos-duration="800"
                         />
@@ -83,7 +83,7 @@ export default function Tentang(props) {
                         <img
                             src="img/Home1.png"
                             alt="Gambar di kanan tengah"
-                            class="w-full h-auto object-cover max-w-[600px]"
+                            className="w-full h-auto object-cover max-w-[600px]"
                         />
                     </div>
                 </div>
@@ -212,7 +212,7 @@ export default function Tentang(props) {
                         Biro
                     </h1>
                 </div>
-                <div className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
+                <div className="sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
                     {props.biro.map((divisi, index) => (
                         <CardTentang
                             key={index}
@@ -223,8 +223,8 @@ export default function Tentang(props) {
                     ))}
                     ;
                 </div>
-                <div className="sm:hidden">
-                    <div className="w-full">
+                <div className="sm:hidden block w-full">
+                    <div className="w-full sm:hidden">
                         <OwlCarousel
                             className="owl-theme from-blue-500 via-sky-300 to-blue-500 w-full"
                             {...options}
@@ -249,7 +249,7 @@ export default function Tentang(props) {
                         Departemen
                     </h1>
                 </div>
-                <div className="sm:grid grid:cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
+                <div className="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
                     {props.departemen.map((divisi, index) => (
                         <CardTentang
                             key={index}
@@ -260,8 +260,8 @@ export default function Tentang(props) {
                     ))}
                     ;
                 </div>
-                <div className="sm:hidden">
-                    <div className="w-full">
+                <div className="sm:hidden block w-full">
+                    <div className="w-full sm:hidden">
                         <OwlCarousel
                             className="owl-theme from-blue-500 via-sky-300 to-blue-500"
                             {...options}

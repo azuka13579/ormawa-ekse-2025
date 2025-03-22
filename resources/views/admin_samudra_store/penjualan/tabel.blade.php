@@ -216,7 +216,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </button>
-            <img id="modalResiImage" class="w-full h-auto rounded-lg">
+            <img id="modalResiImage" class="w-1/2 h-auto rounded-lg">
         </div>
     </div>
 

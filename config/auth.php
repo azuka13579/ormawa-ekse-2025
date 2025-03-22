@@ -30,19 +30,19 @@ return [
     */
 
     'guards' => [
-    'web' => [
-        'driver' => 'session',
-        'provider' => 'users',
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'adminormawa' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'adminsamudrastore' => [
+            'driver' => 'session',
+            'provider' => 'adminsamudras',
+        ],
     ],
-    'admin' => [
-        'driver' => 'session',
-        'provider' => 'admins',
-    ],
-    'adminsamudrastore' => [
-        'driver' => 'session',
-        'provider' => 'adminsamudras',
-    ],
-],
 
     /*
     |--------------------------------------------------------------------------
@@ -60,15 +60,15 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\Admin::class),
         ],
-    'admins' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Admin::class,
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'adminsamudras' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AdminSamudraStore::class,
+        ],
     ],
-    'adminsamudras' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\AdminSamudraStore::class, // Pastikan model ini ada
-    ],
-],
 
     /*
     |--------------------------------------------------------------------------
