@@ -6,13 +6,14 @@
     <title>Dashboard Penjualan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body class="bg-gray-100">
     <nav class="bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white shadow-lg">
         <div class="container font-montserrat mx-auto flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center space-x-3">
-                <img src="../img/Samudrastore.png" alt="Samudra Store" class="max-w-[80px] md:max-w-[100px] h-auto">
+                <img src="../../img/Samudrastore.png" alt="Samudra Store" class="max-w-[80px] md:max-w-[100px] h-auto">
                 <h1 class="text-2xl font-bold tracking-tight text-primary5">Samudra Store Admin</h1>
             </div>
     
@@ -46,7 +47,17 @@
     </nav>
 
     <div class="max-w-9xl mx-auto bg-white p-6 shadow-lg rounded-lg">
-        <h1 class="text-2xl font-bold mb-6 text-gray-700">Dashboard Penjualan</h1>
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-700">Dashboard Penjualan</h1>
+            
+            <!-- Export Button -->
+            <button id="export-excel" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium flex items-center gap-2 shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Export ke Excel
+            </button>
+        </div>
 
         <!-- Filter dan Search -->
         <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6 bg-white p-5 rounded-lg shadow-md">
@@ -82,7 +93,7 @@
         </div>
 
         <div class="overflow-x-auto rounded-lg border shadow-lg">
-            <table class="w-full text-base">
+            <table id="sales-table" class="w-full text-base">
                 <thead class="bg-gradient-to-r from-blue-50 to-blue-100">
                     <tr>
                         <th class="p-5 text-left font-bold text-gray-800 px-10">Nama</th>
@@ -114,7 +125,10 @@
             @foreach ($pembeli['produk'] as $produk)
                 @php $subtotal = $produk['price'] * $produk['kuantitas']; @endphp
                 @php $totalBelanja += $subtotal; @endphp
-                <div class="flex mb-2 last:mb-0 bg-white py-10 px-4 rounded-lg border border-gray-100 shadow-sm">
+                <div class="flex mb-2 last:mb-0 bg-white py-10 px-4 rounded-lg border border-gray-100 shadow-sm"
+                data-price="{{ $produk['price'] }}"
+     data-subtotal="{{ $subtotal }}"
+                >
                     <img src="{{ asset('storage/' . ($produk['image_path'] ?? 'default.png')) }}" 
                          class="w-16 h-16 rounded-md object-cover mr-4 border shadow-sm">
                     <div class="block pr-16">
@@ -226,7 +240,7 @@
             const searchInput = document.getElementById("search");
             const searchButton = document.getElementById("search-btn");
             const limitSelect = document.getElementById("limit");
-
+            const exportButton = document.getElementById("export-excel");
             function updateURL() {
                 const search = searchInput.value;
                 const limit = limitSelect.value;
@@ -273,7 +287,7 @@
                 if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
                     const id = this.getAttribute("data-id");
 
-                    fetch(`/adminsamudra/penjualan/delete/${id}`, {
+                    fetch(`/samudra-store/admin/penjualan/delete/${id}`, {
     method: "DELETE",
     headers: {
         "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").getAttribute("content"),
@@ -292,9 +306,139 @@
                 }
             });
         });
+        exportButton.addEventListener("click", function() {
+                exportTableToExcel();
+            });
         
-        // Toggle Diterima Status
-       // Replace your current toggle-diterima event listener code with this:
+            function exportTableToExcel() {
+    // Show loading state
+    
+    exportButton.innerHTML = '<svg class="animate-spin w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Exporting...';
+    exportButton.disabled = true;
+
+    // Prepare data array for Excel
+    let data = [];
+    
+    // Add header row
+    const headers = [
+        'Nama', 'NIM', 'Email', 'No WhatsApp', 'Fakultas', 'Departemen', 
+        'Produk', 'Ukuran', 'Jumlah', 'Harga Satuan', 'Total Produk',
+        'Total Belanja', 'Status Pembayaran', 'Status Penerimaan', 'Waktu Pembelian'
+    ];
+    data.push(headers);
+    
+    // Extract data from table rows
+    document.querySelectorAll('#sales-table tbody tr').forEach(row => {
+        const cells = row.querySelectorAll('td');
+        
+        const nama = cells[0].textContent.trim();
+        const nim = cells[1].textContent.trim();
+        const email = cells[2].textContent.trim();
+        const noWa = cells[3].textContent.trim();
+        const fakultas = cells[4].textContent.trim();
+        const departemen = cells[5].textContent.trim();
+        
+        // Handle products
+        const produkCell = cells[6];
+        const produkItems = produkCell.querySelectorAll('.flex.mb-2');
+        
+        // Parse total belanja (remove currency formatting)
+        const totalBelanjaText = cells[7].textContent.trim().replace('Rp', '').replace(/\./g, '');
+        const totalBelanja = parseFloat(totalBelanjaText);
+        
+        // Status conditions
+        let statusPembayaran = "Pending";
+        const statusCell = cells[9];
+        if (statusCell.querySelector('span')) {
+            const statusText = statusCell.querySelector('span').textContent.trim();
+            statusPembayaran = statusText.includes('Valid') ? 'Status Pembayaran Valid' : 'Status Pembayaran Tidak Valid';
+        }
+        
+        const statusDiterima = cells[10].querySelector('button').textContent.trim().includes('Sudah') ? 'Sudah Diterima KM IPB' : 'Belum Diterima KM IPB';
+        const waktuPembelian = cells[11].textContent.trim();
+        
+        // Process products
+        if (produkItems.length > 0) {
+            produkItems.forEach((item, index) => {
+                const namaProduk = item.querySelector('p.text-gray-800').textContent.trim();
+                const infoText = item.querySelector('p.text-base.text-gray-600').textContent;
+                
+                // Extract size and quantity
+                const sizeMatch = infoText.match(/Ukuran:\s*([^\s]+)/);
+                const quantityMatch = infoText.match(/Jumlah:\s*(\d+)/);
+                const ukuran = sizeMatch?.[1] || '';
+                const jumlah = quantityMatch?.[1] || '';
+                
+                // Extract price and subtotal from data attributes
+                const hargaSatuan = parseFloat(item.dataset.price) || 0;
+                const totalProduk = parseFloat(item.dataset.subtotal) || 0;
+                
+                // Build row data
+                const rowData = [
+                    nama, nim, email, noWa, fakultas, departemen,
+                    namaProduk, ukuran, jumlah,
+                    hargaSatuan,
+                    totalProduk,
+                    index === 0 ? totalBelanja : '', // Show total once
+                    index === 0 ? statusPembayaran : '',
+                    index === 0 ? statusDiterima : '',
+                    index === 0 ? waktuPembelian : ''
+                ];
+                
+                data.push(rowData);
+            });
+        } else {
+            // Fallback for rows without products
+            data.push([
+                nama, nim, email, noWa, fakultas, departemen,
+                '', '', '', 0, 0,
+                totalBelanja, statusPembayaran, statusDiterima, waktuPembelian
+            ]);
+        }
+    });
+    
+    // Create workbook and worksheet
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Sales Data");
+    
+    // Set column widths and styles
+    const colWidths = [
+        { wch: 20 }, { wch: 15 }, { wch: 25 }, { wch: 15 }, 
+        { wch: 15 }, { wch: 15 }, { wch: 30 }, { wch: 10 }, 
+        { wch: 10 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, 
+        { wch: 20 }, { wch: 20 }, { wch: 20 }
+    ];
+    ws['!cols'] = colWidths;
+    
+    // Format numbers
+    const numberColumns = [8, 9, 10]; // Jumlah, Harga, Total Produk, Total Belanja
+    const range = XLSX.utils.decode_range(ws['!ref']);
+    for (let col = 0; col <= range.e.c; col++) {
+        if (numberColumns.includes(col)) {
+            for (let row = 1; row <= range.e.r; row++) {
+                const cell = XLSX.utils.encode_cell({ r: row, c: col });
+                if (ws[cell] && !isNaN(ws[cell].v)) {
+                    ws[cell].t = 'n'; // Set type to number
+                    ws[cell].z = '#,##0.00'; // Format with thousand separator
+                }
+            }
+        }
+    }
+    
+    // Generate Excel file
+    const currentDate = new Date().toISOString().slice(0, 10);
+    XLSX.writeFile(wb, `Samudra_Store_Sales_${currentDate}.xlsx`);
+    
+    // Reset button
+    setTimeout(() => {
+        exportButton.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        Export ke Excel`;
+        exportButton.disabled = false;
+    }, 1000);
+}
 document.querySelectorAll(".toggle-diterima-btn").forEach(button => {
     button.addEventListener("click", function() {
         const id = this.getAttribute("data-id");

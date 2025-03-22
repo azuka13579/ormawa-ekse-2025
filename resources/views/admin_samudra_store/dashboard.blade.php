@@ -30,7 +30,7 @@
         <div class="container font-montserrat mx-auto flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center space-x-3">
-                <img src="../img/Samudrastore.png" alt="Samudra Store" class="max-w-[80px] md:max-w-[100px] h-auto">
+                <img src="../../img/Samudrastore.png" alt="Samudra Store" class="max-w-[80px] md:max-w-[100px] h-auto">
                 <h1 class="text-2xl font-bold tracking-tight text-primary5">Samudra Store Admin</h1>
             </div>
     
