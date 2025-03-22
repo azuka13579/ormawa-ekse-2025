@@ -3,30 +3,33 @@ import Footer from "../Components/Footer";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import CardTentang from "../Components/CardTentang";
-import ProductList from "../Components/Testfetching";
 import CardBPH from "../Components/CardBPH";
 import "../../css/owl.theme.css";
 import OwlCarousel from "react-owl-carousel";
-
 export default function Tentang(props) {
+    // Updated carousel options with center focused settings
     const options = {
-        // loop: true,
-        // nav: true,
-        //autoplaySpeed: 1000,
-        dragEndSpeed: 1000,
-        dotsSpeed: 1000,
-        autoplay: false,
-        
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
         autoplayHoverPause: true,
-        autoWidth: true,
-        stagePadding: 0,
-
-        dots: false,
-
-        //items: 2,
-        margin: 10,
+        responsive: {
+            0: {
+                items: 1,
+                stagePadding: 0,
+            },
+            480: {
+                items: 1,
+                stagePadding: 50,
+            }
+        },
+        nav: false,
+        dots: true,
+        dotsSpeed: 500,
         center: true,
+        margin: 0,
     };
+    
     return (
         <div className="">
             <Head title="Ormawa Eksekutif PKU IPB" />
@@ -71,7 +74,7 @@ export default function Tentang(props) {
                                 untuk mahasiswa tingkat PKU IPB. Fungsinya
                                 melibatkan pemberian kesejahteraan penanganan
                                 segala problematika yang dialami
-                                mahasiswa PKU IPB.
+                                mahasiswa PKU IPB.
                             </p>
                         </div>
                     </div>
@@ -106,55 +109,64 @@ export default function Tentang(props) {
                         {props.divisi || "Ormawa Eksekutif PKU 2024/2025"}
                     </h1>
                 </div>
-                <div className="sm:hidden mt-4">
-                    <div className="w-full overflow-hidden">
-                        <OwlCarousel
-                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
-                            {...options}
-                        >
-                            <CardBPH
-                                nama="Fiezha Hasby Ari Widana"
-                                jabatan="Ketua Umum Ormawa Eksekutif PKU"
-                                delay=""
-                                scale="scale-[0.8]"
-                                image_path="images/bph/ketua.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Fatma Dwi Hasanah"
-                                jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
-                                delay=""
-                                scale="scale-[0.8]"
-                                image_path="images/bph/wakil.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Tedy Kusuma Hidayat"
-                                jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
-                                delay=""
-                                scale="scale-[0.8]"
-                                image_path="images/bph/sekre1.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Arifatu Dzikra"
-                                jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
-                                delay=""
-                                scale="scale-[0.8]"
-                                image_path="images/bph/sekre2.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Dewi Ayu Lestari"
-                                jabatan="Bendahara Internal Ormawa Eksekutif PKU"
-                                delay=""
-                                scale="scale-[0.8]"
-                                image_path="images/bph/bend1.png"
-                            ></CardBPH>
-                            <CardBPH
-                                nama="Nur Fadillah"
-                                jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
-                                delay=""
-                                scale="scale-[0.8]"
-                                image_path="images/bph/bend2.png"
-                            ></CardBPH>
-                        </OwlCarousel>
+                <div className="sm:hidden mt-4 w-full">
+                    {/* Centered BPH OwlCarousel for mobile */}
+                    <div className="flex justify-center">
+                        <div className="w-full">
+                            <OwlCarousel
+                                className="owl-theme"
+                                {...options}
+                            >
+                                <div className="item flex justify-center">
+                                    <CardBPH
+                                        nama="Fiezha Hasby Ari Widana"
+                                        jabatan="Ketua Umum Ormawa Eksekutif PKU"
+                                        delay=""
+                                        image_path="images/bph/ketua.png"
+                                    />
+                                </div>
+                                <div className="item flex justify-center">
+                                    <CardBPH
+                                        nama="Fatma Dwi Hasanah"
+                                        jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
+                                        delay=""
+                                        image_path="images/bph/wakil.png"
+                                    />
+                                </div>
+                                <div className="item flex justify-center">
+                                    <CardBPH
+                                        nama="Tedy Kusuma Hidayat"
+                                        jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
+                                        delay=""
+                                        image_path="images/bph/sekre1.png"
+                                    />
+                                </div>
+                                <div className="item flex justify-center">
+                                    <CardBPH
+                                        nama="Arifatu Dzikra"
+                                        jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
+                                        delay=""
+                                        image_path="images/bph/sekre2.png"
+                                    />
+                                </div>
+                                <div className="item flex justify-center">
+                                    <CardBPH
+                                        nama="Dewi Ayu Lestari"
+                                        jabatan="Bendahara Internal Ormawa Eksekutif PKU"
+                                        delay=""
+                                        image_path="images/bph/bend1.png"
+                                    />
+                                </div>
+                                <div className="item flex justify-center">
+                                    <CardBPH
+                                        nama="Nur Fadillah"
+                                        jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
+                                        delay=""
+                                        image_path="images/bph/bend2.png"
+                                    />
+                                </div>
+                            </OwlCarousel>
+                        </div>
                     </div>
                 </div>
                 <div className="sm:block hidden">
@@ -221,23 +233,26 @@ export default function Tentang(props) {
                             img={divisi.image_path}
                         />
                     ))}
-                    ;
                 </div>
                 <div className="sm:hidden block w-full">
-                    <div className="w-full sm:hidden">
-                        <OwlCarousel
-                            className="owl-theme from-blue-500 via-sky-300 to-blue-500 w-full"
-                            {...options}
-                        >
-                            {props.biro.map((divisi, index) => (
-                                <CardTentang
-                                    key={index}
-                                    delay={index * 100}
-                                    nama={divisi.divisi}
-                                    img={divisi.image_path}
-                                />
-                            ))}
-                        </OwlCarousel>
+                    {/* Centered Biro OwlCarousel for mobile */}
+                    <div className="flex justify-center">
+                        <div className="w-full">
+                            <OwlCarousel
+                                className="owl-theme"
+                                {...options}
+                            >
+                                {props.biro.map((divisi, index) => (
+                                    <div key={index} className="item flex justify-center">
+                                        <CardTentang
+                                            delay={index * 100}
+                                            nama={divisi.divisi}
+                                            img={divisi.image_path}
+                                        />
+                                    </div>
+                                ))}
+                            </OwlCarousel>
+                        </div>
                     </div>
                 </div>
                 <div className="flex justify-center">
@@ -258,28 +273,30 @@ export default function Tentang(props) {
                             img={divisi.image_path}
                         />
                     ))}
-                    ;
                 </div>
                 <div className="sm:hidden block w-full">
-                    <div className="w-full sm:hidden">
-                        <OwlCarousel
-                            className="owl-theme from-blue-500 via-sky-300 to-blue-500"
-                            {...options}
-                        >
-                            {props.departemen.map((divisi, index) => (
-                                <CardTentang
-                                    key={index}
-                                    delay={(index % 4) * 100}
-                                    nama={divisi.divisi}
-                                    img={divisi.image_path}
-                                />
-                            ))}
-                            ;
-                        </OwlCarousel>
+                    {/* Centered Departemen OwlCarousel for mobile */}
+                    <div className="flex justify-center">
+                        <div className="w-full">
+                            <OwlCarousel
+                                className="owl-theme"
+                                {...options}
+                            >
+                                {props.departemen.map((divisi, index) => (
+                                    <div key={index} className="item flex justify-center">
+                                        <CardTentang
+                                            delay={(index % 4) * 100}
+                                            nama={divisi.divisi}
+                                            img={divisi.image_path}
+                                        />
+                                    </div>
+                                ))}
+                            </OwlCarousel>
+                        </div>
                     </div>
                 </div>
             </div>
-            {/* <ProductList></ProductList> */}
+           
             <Footer></Footer>
         </div>
     );

@@ -23,206 +23,152 @@ class AdminHaidarSeeder extends Seeder
                 'password' => Hash::make('haidarganteng')
             ],[
                 'nama' => 'Kyla Anggrahita Wahyudin',
-                'nim' => 'I3401241148',
+                'nim' => 'adkesy1',
                 'div' => 'Departemen Advokasi Kesejahteraan Mahasiswa',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('sayanganak')
             ],[
                 'nama' => 'Azarah Alri',
-                'nim' => 'F2401241017',
+                'nim' => 'adkesy2',
                 'div' => 'Departemen Advokasi Kesejahteraan Mahasiswa',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('sekremeong')
             ],[
                 'nama' => 'Delvin Adithya',
-                'nim' => 'M0403241001',
+                'nim' => 'adkesy3',
                 'div' => 'Departemen Advokasi Kesejahteraan Mahasiswa',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('bendesigma')
             ],
             
             [
                 'nama' => 'Okta Fitra Vidian',
-                'nim' => 'F1401241090',
+                'nim' => 'slhkapten1',
                 'div' => 'Departemen Sosial dan Lingkungan Hidup',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('solihun')
             ],[
                 'nama' => 'Fitri Aulia Nurinsani',
-                'nim' => 'C5401241075',
+                'nim' => 'slhkapten2',
                 'div' => 'Departemen Sosial dan Lingkungan Hidup',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('solihun')
             ],[
                 'nama' => 'Fahri Rahma Akbarsyah',
-                'nim' => 'H3401241117',
+                'nim' => 'slhkapten3',
                 'div' => 'Departemen Sosial dan Lingkungan Hidup',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('solihun')
             ],
             
             [
-                'nama' => 'Elegi Gita Manuella',
-                'nim' => 'I3401241076',
+                'nama' => 'Daffa Naufal F',
+                'nim' => 'Birbat',
                 'div' => 'Biro Internal',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('Birosahabat')
             ],[
-                'nama' => 'Danya Christabel Novelina Silalahi',
-                'nim' => 'F2401241025',
+                'nama' => 'Micko Fahraezi',
+                'nim' => 'Samudracintaa4',
                 'div' => 'Biro Internal',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('Sayangikamusedalamsamudraa')
             ],[
                 'nama' => 'Naisya Sarwa Nafisah',
-                'nim' => 'M0404241053',
+                'nim' => 'Pinus',
                 'div' => 'Biro Internal',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('PinusianGen4')
             ],
             
             [
                 'nama' => 'Moura Dwitama',
-                'nim' => 'M0404241023',
+                'nim' => 'ibukosbucend',
                 'div' => 'Departemen Seni dan Budaya',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('budakcenibudaya')
             ],[
-                'nama' => 'Asyaima Putri Maulani Rasyidin',
-                'nim' => 'D3401241017',
+                'nama' => 'Ahmad Faizullah Kianafa Rizwan',
+                'nim' => 'sssenbuddd',
                 'div' => 'Departemen Seni dan Budaya',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Naura Salsabila Putri Ramadhani',
-                'nim' => 'M0404241032',
-                'div' => 'Departemen Seni dan Budaya',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('ppinniped')
             ],
-            
             [
                 'nama' => 'Zidny Ilman Nafi',
-                'nim' => 'M0403241068',
+                'nim' => 'akprezzz',
                 'div' => 'Departemen Akademik Prestasi',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('otwmapres')
             ],[
-                'nama' => 'Muthia Rahma',
-                'nim' => 'G0401241007',
+                'nama' => 'Daffa Nasywan Islamy',
+                'nim' => 'daffawn',
                 'div' => 'Departemen Akademik Prestasi',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('1sampai77')
             ],[
-                'nama' => 'Lara Tria Novita',
-                'nim' => 'M0401241122',
+                'nama' => 'Annisa Marwah',
+                'nim' => 'akpraise',
                 'div' => 'Departemen Akademik Prestasi',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('calonmaprezzzz')
             ],
             
             [
                 'nama' => 'Pascal Arya Nugroho',
-                'nim' => 'M0401241078',
+                'nim' => 'adminekse',
                 'div' => 'Biro Media Branding',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('nita123')
             ],[
                 'nama' => 'Salma Rana Mudrikah',
-                'nim' => 'A4401241060',
+                'nim' => 'salmasekre',
                 'div' => 'Biro Media Branding',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('hijauhijaufaperta')
             ],[
                 'nama' => 'Kezia Oktaviani',
-                'nim' => 'H2401241033',
+                'nim' => 'ecakezia',
                 'div' => 'Biro Media Branding',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('menedahsyat')
             ],
             
             [
-                'nama' => 'Radit Anggara',
-                'nim' => 'I3401241095',
+                'nama' => 'Admin Departemen Pengembangan Sumberdaya Mahasiswa',
+                'nim' => 'psdm_ormawaeksepku',
                 'div' => 'Departemen Pengembangan Sumberdaya Mahasiswa',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('psdmanjay123')
             ],[
                 'nama' => 'Lita Thalisa Tiara',
-                'nim' => 'C2401241069',
+                'nim' => 'tiaralita',
                 'div' => 'Departemen Pengembangan Sumberdaya Mahasiswa',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('Tata1011')
             ],[
-                'nama' => 'Shaqylla Iqnasia Putri Nugraha',
-                'nim' => 'M0404241047',
+                'nama' => 'COPM PSDM',
+                'nim' => 'medcompsdm',
                 'div' => 'Departemen Pengembangan Sumberdaya Mahasiswa',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('medcom123')
             ],
             
             [
-                'nama' => 'Muhammad Reza. A',
-                'nim' => 'A2401241179',
+                'nama' => 'Admin Biro Kolaborasi dan Kemitraan',
+                'nim' => 'calling',
                 'div' => 'Biro Kolaborasi dan Kemitraan',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Yusril Muhammad Firdaus',
-                'nim' => 'I3401241010',
-                'div' => 'Biro Kolaborasi dan Kemitraan',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Gilan Eka El Ginar',
-                'nim' => 'I3401241145',
-                'div' => 'Biro Kolaborasi dan Kemitraan',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('justcalling')
             ],
             
             [
-                'nama' => 'Joseph Farrel',
-                'nim' => 'G7401241021',
+                'nama' => 'Admin Departemen Kajian Aksi Strategis',
+                'nim' => 'kastrateksekutifpku',
                 'div' => 'Departemen Kajian dan Aksi Strategis',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Salmaa Maisuun',
-                'nim' => 'C5401241068',
-                'div' => 'Departemen Kajian dan Aksi Strategis',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Miftah Rizki Abni Husyairi',
-                'nim' => 'M0401241088',
-                'div' => 'Departemen Kajian dan Aksi Strategis',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('neo_otorianitarisme')
             ],
-            
             [
-                'nama' => 'Rezki Bima Prabaswara',
-                'nim' => 'K1401241015',
+                'nama' => 'Admin Departemen Ekraf',
+                'nim' => 'Ekrafeksepku',
                 'div' => 'Departemen Ekonomi Kreatif',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Maleeka Ayesha Nugroho',
-                'nim' => 'H4401241010',
-                'div' => 'Departemen Ekonomi Kreatif',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Muhammad Syarief Hidayatullah',
-                'nim' => 'K1401241181',
-                'div' => 'Departemen Ekonomi Kreatif',
-                'password' => Hash::make('haidarganteng')
-            ],
-            
-            [
-                'nama' => 'Khalifa Alfaiz Wicaksono',
-                'nim' => 'C5401241030',
-                'div' => 'Departemen Pemuda dan Olahraga',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Lysandra Jasmine Latifah Hendra',
-                'nim' => 'F1401241095',
-                'div' => 'Departemen Pemuda dan Olahraga',
-                'password' => Hash::make('haidarganteng')
-            ],[
-                'nama' => 'Anes Sulistiawati',
-                'nim' => 'C2401241017',
-                'div' => 'Departemen Pemuda dan Olahraga',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('2025cuancuancuan')
             ],
             
             [
                 'nama' => 'Alfath Asqar Tsani',
-                'nim' => 'M0403241019',
+                'nim' => 'alfathganteng',
                 'div' => 'Biro Riset Pengembangan',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('salma3012')
             ],[
                 'nama' => 'Azzahra Kholisa Aura',
-                'nim' => 'I2401241063',
+                'nim' => 'aura_aneh',
                 'div' => 'Biro Riset Pengembangan',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('aura1234')
             ],[
                 'nama' => 'Bradja Putra Jajuli',
-                'nim' => 'M0401241004',
+                'nim' => 'bradja_aja',
                 'div' => 'Biro Riset Pengembangan',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('bradja123')
             ],
         ]);
     }

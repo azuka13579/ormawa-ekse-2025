@@ -1,27 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: "AdihausDIN";
-  src: url("/font/AdihausDIN/adihausdin_regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: "AdihausDIN";
-  src: url("/font/AdihausDIN/adihausdin_bold.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AdihausDIN";
-  src: url("/font/AdihausDIN/adihausdin_cn.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-/* Tambahkan di resources/css/app.css */
 
 /* Pastikan body tidak bisa discroll selama preloader */
 body.loading {

@@ -5,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import Cardkapten from "../Components/Cardkapten";
 import Cardproker from "../Components/Cardproker";
 import ImageSlider from "../Components/Slide";
+import BlurText from "../Components/BlurText";
 import "../../css/owl.theme.css";
 import OwlCarousel from "react-owl-carousel";
 
@@ -132,8 +133,8 @@ export default function Divisicopy(props) {
                     >
                         {props.divisi || "Nama Divisi"}
                     </h1>
-
-                    <ImageSlider images={props.anggota} />
+                    <BlurText text="Coming Sooon!" />
+                   {/*<imageSlider images={props.anggota} />*/}
                 </div>
             </div>
 
