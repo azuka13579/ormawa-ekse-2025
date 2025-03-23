@@ -6,6 +6,7 @@ import CardTentang from "../Components/CardTentang";
 import CardBPH from "../Components/CardBPH";
 import "../../css/owl.theme.css";
 import OwlCarousel from "react-owl-carousel";
+import BlurText from "../Components/BlurText";
 export default function Tentang(props) {
     // Updated carousel options with center focused settings
     const options = {
@@ -216,13 +217,7 @@ export default function Tentang(props) {
             {/* sektion2 */}
             <div className="bg-white px-2 md:px-8 py-4 flex flex-col gap-8 mt-8">
                 <div className="flex justify-center">
-                    <h1
-                        className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full"
-                        data-aos="fade-up"
-                        data-aos-duration="800"
-                    >
-                        Biro
-                    </h1>
+                   <BlurText text="Biro"></BlurText>
                 </div>
                 <div className="sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
                     {props.biro.map((divisi, index) => (
@@ -256,13 +251,7 @@ export default function Tentang(props) {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <h1
-                        className="py-3 px-8 bg-primary6 text-white text-5xl font-rowdies rounded-full"
-                        data-aos="fade-up"
-                        data-aos-duration="800"
-                    >
-                        Departemen
-                    </h1>
+                    <BlurText text="Departemen"></BlurText>
                 </div>
                 <div className="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
                     {props.departemen.map((divisi, index) => (

@@ -23,12 +23,10 @@ class DatabaseSeeder extends Seeder
             ImageHaidarSeeder::class,
             KaptenSeeder::class,
             AnggotaSeeder::class,
+            AdminSamudraStoreSeeder::class,
+            
             
         ]);
-          AdminSamudraStore::create([
-            'name' => 'Admin Samudra',
-            'email' => 'admin@samudrastore.com',
-            'password' => Hash::make('password123')
-        ]);
+         
     }
 }

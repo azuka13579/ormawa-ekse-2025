@@ -11,24 +11,26 @@ import OwlCarousel from "react-owl-carousel";
 
 export default function Divisicopy(props) {
     const options = {
-        // loop: true,
-        // nav: true,
-        autoplaySpeed: 1000,
-        dragEndSpeed: 1000,
-        dotsSpeed: 1000,
-        autoplay: false,
-        autoplayTimeout: 1000,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
         autoplayHoverPause: true,
-        autoWidth: true,
-        stagePadding: 0,
-
-        dots: false,
-
-        // items: 2,
-        margin: 0,
+        responsive: {
+            0: {
+                items: 1,
+                stagePadding: 0,
+            },
+            480: {
+                items: 1,
+                stagePadding: 50,
+            }
+        },
+        nav: false,
+        dots: true,
+        dotsSpeed: 500,
         center: true,
+        margin: 0,
     };
-    console.log(props.deskripsi);
 
     return (
         <div>

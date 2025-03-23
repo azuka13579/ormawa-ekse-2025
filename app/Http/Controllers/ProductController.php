@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -27,10 +28,16 @@ class ProductController extends Controller
     }
 
     public function dashboard()
-    {
-        $products = Product::all();
-        return view('admin_samudra_store.dashboard', ['products' => $products]);
-    }
+{
+    $products = Product::all();
+    $nama_admin = Auth::user();
+
+    return view('admin_samudra_store.dashboard', [
+        'products' => $products,
+        'nama_admin' => $nama_admin
+    ]);
+}
+
 
     public function create()
     {

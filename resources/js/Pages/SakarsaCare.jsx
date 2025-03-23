@@ -52,7 +52,7 @@ export default function SakarsaCare() {
                 // data-aos="fade-right"
                 // data-aos-duration="800"
                 // data-aos-anchor-placement="center-bottom"
-                className="bg-primary4 md:mx-auto w-full md:w-[700px] justify-center text-center block md:flex items-center px-6 py-3 rounded-3xl mb-11 gap-20 "
+                className="bg-primary4 mx-auto md:mx-auto md:w-[700px] w-[300px] justify-center text-center block md:flex items-center px-6 py-3 rounded-3xl mb-11 gap-20 "
             >
                 <div className="">
                     <p className="font-montserrat text-s sm:text-xl text-white font-bold">
@@ -64,7 +64,7 @@ export default function SakarsaCare() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <div className="bg-white rounded-3xl py-2 px-6 text-center hover:bg-primary1 duration-300 transition hover:text-primary5">
+                    <div className="bg-white max-md:mx-auto max-md:max-w-[200px] rounded-3xl py-2 px-6 text-center hover:bg-primary1 duration-300 transition hover:text-primary5">
                         <p className="font-montserrat text-sm sm:text-xl font-bold">
                             Contact Us
                         </p>

@@ -195,15 +195,7 @@ export default function SamudraStore() {
                     Happy Shopping!
                 </h1>
             </div>
-            <div
-                data-aos="fade-up"
-                data-aos-duration="900"
-                className="bg-gradient-to-r from-primary7 to-primary5 max-w-[200px] md:max-w-[300px] text-center py-2 px-2 md:py-3 md:px-4 mx-auto rounded-3xl"
-            >
-                <p className="text-white font-bold font-montserrat text-xl md:text-5xl">
-                    In Sale
-                </p>
-            </div>
+            <BlurText text="In Sale"></BlurText>
             {productLength === 0 ? (
                 <BlurText text="COMING SOON!" delay={200} />
             ) : (

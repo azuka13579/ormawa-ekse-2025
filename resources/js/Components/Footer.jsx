@@ -4,6 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Link } from "@inertiajs/react";
 
 export default function Footer() {
@@ -65,6 +66,11 @@ export default function Footer() {
     href="mailto:eksekutifpku@apps.ipb.ac.id"
 >
     <MdEmail className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
+</a>
+<a
+    href="https://wa.me/+6281367809725"
+>
+    <FaWhatsapp className="text-4xl bg-primary1 p-1.5 rounded-full text-primary5 font-bold hover:bg-primary5 transition duration-300 hover:text-primary1" />
 </a>
 
                     </div>

@@ -15,7 +15,7 @@ class AdminHaidarSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('admins')->insert([
+        $admins = ([
             [
                 'nama' => 'Muhammad Haidar',
                 'nim' => 'M0403241038',
@@ -171,5 +171,8 @@ class AdminHaidarSeeder extends Seeder
                 'password' => Hash::make('bradja123')
             ],
         ]);
+        foreach ($admins as $admin) {
+            Admin::create($admin);
+        }
     }
 }

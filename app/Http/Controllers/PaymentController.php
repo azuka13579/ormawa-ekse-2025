@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Penjualan;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator; 
 use Illuminate\Support\Facades\Log;
@@ -53,6 +54,7 @@ class PaymentController extends Controller
 
     public function show(Request $request)
     {
+        $nama_admin = Auth::user();
         $search = $request->query('search');
         $limit = $request->query('limit', 10);
 
@@ -113,6 +115,7 @@ class PaymentController extends Controller
         ]);
 
         return view('admin_samudra_store.penjualan.tabel', [
+            'nama_admin' => $nama_admin,
             'data' => $data,
             'search' => $search,
             'limit' => $limit
