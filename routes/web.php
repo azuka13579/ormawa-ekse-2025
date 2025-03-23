@@ -20,14 +20,16 @@ use App\Http\Controllers\ProductController;
 Route::fallback(function () {
     return Inertia::render('Errors/404');
 });
-// -------------------WEBSITE ORMAWAEKSE-------------------
-// Home
-Route::get('/', function () {
-    $proker = Proker::all();
-    $informasi = Information::latest()->take(4)->get();
-   return Inertia::render('Home',["proker" => $proker,"informasi" => $informasi]);
-})->name('home');
-
+Route::middleware(['throttle:4,1'])->group(function(){
+    
+    // -------------------WEBSITE ORMAWAEKSE-------------------
+    // Home
+    Route::get('/', function () {
+        $proker = Proker::all();
+        $informasi = Information::latest()->take(4)->get();
+        return Inertia::render('Home',["proker" => $proker,"informasi" => $informasi]);
+    })->name('home');
+    
 // Home - Proker Selengkapnya
 Route::get('/proker', function () {
      $proker = Proker::latest()->get(); 
@@ -48,6 +50,15 @@ Route::get('/sakarsa-care', function () {
 // Tentang
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middleware(CheckDivision::class)->name('tentang-divisi');
+// -------------------WEBSITE SAMUDRA STORE----------------------
+// Home
+Route::get('/samudra-store', [StoreController::class, 'index'])->name('samudra.store');
+
+// Checkout Keranjang
+Route::get('/samudra-store/checkout', [StoreController::class, 'indexCheckout'])->name('checkout.store');
+Route::post('/samudra-store/checkout/payment', [PaymentController::class, 'index'])->name('checkout.payment');
+Route::post('/send-order-email', [StoreController::class, 'kirimEmail']);
+});
 
 
 
@@ -62,7 +73,7 @@ Route::middleware('auth:adminormawa')->group(function(){
     // Halaman Home - Admin Ormawaekse
     Route::get('/admin',[AdminController::class, 'index'])->name('admin-index');
     Route::post('/admin', [AdminController::class, 'keluar'])->name('keluar');
-
+    
     // Halaman Tambah Proker - Admin Ormawaekse
     Route::get('/add-proker', function(){
         return view('admin.add-proker');
@@ -71,7 +82,7 @@ Route::middleware('auth:adminormawa')->group(function(){
     Route::get('/edit-proker/{id}', [AdminController::class, 'editProker'])->name('editproker');
     Route::post('/edit-proker/{id}', [AdminController::class, 'updateProker'])->name('updateproker');
     Route::post('/delete-proker/{id}', [AdminController::class, 'deleteProker'])->name('deleteproker');
-
+    
     // Halaman Tambah Informasi - Admin Ormawaekse
     Route::get('/add-informasi', function(){
         return view('admin.add-informasi');
@@ -83,14 +94,7 @@ Route::middleware('auth:adminormawa')->group(function(){
 });
 
 
-// -------------------WEBSITE SAMUDRA STORE----------------------
-// Home
-Route::get('/samudra-store', [StoreController::class, 'index'])->name('samudra.store');
 
-// Checkout Keranjang
-Route::get('/samudra-store/checkout', [StoreController::class, 'indexCheckout'])->name('checkout.store');
-Route::post('/samudra-store/checkout/payment', [PaymentController::class, 'index'])->name('checkout.payment');
-Route::post('/send-order-email', [StoreController::class, 'kirimEmail']);
 
 // ------------------ADMIN SAMUDRA STORE---------------------------
 Route::prefix('samudra-store/admin')->group(function () {

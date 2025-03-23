@@ -24,8 +24,19 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        // Handle Error 404 (Not Found)
         $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, $request) {
-            return Inertia::render('Errors/404'); // Perbaikan di sini
+            return Inertia::render('Errors/404')->toResponse($request)->setStatusCode(404);
         });
+    
+        // Handle Error 429 (Too Many Requests)
+        $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException $e, $request) {
+            return Inertia::render('Errors/429', [
+                'message' => 'Terlalu banyak permintaan dalam waktu singkat. Server kita butuh kopi sebentar!'
+            ])->toResponse($request)->setStatusCode(429);
+        });
+    
+        
     })
     ->create();
+    
