@@ -1,6 +1,6 @@
 // Components/PreLoader.jsx
 import React, { useState, useEffect } from 'react';
-import BlurText from './BlurText';
+import BlurText from './TextIncome';
 
 const PreLoader = ({ onLoadComplete }) => {
   const [loading, setLoading] = useState(true);
