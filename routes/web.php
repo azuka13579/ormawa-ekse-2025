@@ -20,7 +20,7 @@ use App\Http\Controllers\ProductController;
 Route::fallback(function () {
     return Inertia::render('Errors/404');
 });
-Route::middleware(['throttle:4,1'])->group(function(){
+Route::middleware(['throttle:10,1'])->group(function(){
     
     // -------------------WEBSITE ORMAWAEKSE-------------------
     // Home
