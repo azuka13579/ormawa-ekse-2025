@@ -305,21 +305,14 @@ export default function Home({ proker, informasi }) {
                                             "Deskripsi belum tersedia."}
                                     </p>
 
-                                    {informasiUtama?.deskripsi &&
-                                        informasiUtama.deskripsi.length >
-                                            300 && (
-                                            <button
-                                                onClick={() =>
-                                                    setShowFull(!showFull)
-                                                }
-                                                className="text-primary5 font-medium hover:underline"
-                                            >
-                                                {showFull
-                                                    ? "Tampilkan lebih sedikit"
-                                                    : "Baca selengkapnya"}
-                                            </button>
-                                        )}
-
+                                    <button
+                                        onClick={() => setShowFull(!showFull)}
+                                        className="text-primary5 font-medium hover:underline"
+                                    >
+                                        {showFull
+                                            ? "Tampilkan lebih sedikit"
+                                            : "Baca selengkapnya"}
+                                    </button>
                                     {informasiUtama?.narahubung && (
                                         <div className="bg-primary5/5 p-4 rounded-lg border border-primary5/20">
                                             <p className="text-sm font-medium text-primary5">
