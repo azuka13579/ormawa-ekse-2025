@@ -33,7 +33,7 @@ const CarouselCardproker = (props) => {
         }
     };
     const divisi = divisiData.find((d) => d.id === props.div_id);
-    console.log("divisi cek", divisi);
+    //console.log("divisi cek", divisi);
 
     return (
         <>

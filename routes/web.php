@@ -17,7 +17,9 @@ use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ProductController;
-
+Route::fallback(function () {
+    return Inertia::render('Errors/404');
+});
 // -------------------WEBSITE ORMAWAEKSE-------------------
 // Home
 Route::get('/', function () {

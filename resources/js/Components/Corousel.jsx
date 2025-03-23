@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CarouselCardproker from "./CorouselCardProker";
-import { easeIn } from "framer-motion";
 
 const Carousel = forwardRef(({ prokers }, ref) => {
     const today = new Date();

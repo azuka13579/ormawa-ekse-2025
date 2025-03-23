@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { createPortal } from "react-dom";
 const divisiData = [
     { id: 1, nama: "Departemen Advokasi Kesejahteraan Mahasiswa" },
     { id: 2, nama: "Departemen Sosial dan Lingkungan Hidup" },
@@ -19,90 +20,106 @@ const divisiData = [
 
 export default function Cardproker(props) {
     const [isOpen, setIsOpen] = useState(false);
-    const divisi = divisiData.find((d) => d.id === props.div_id);
-    console.log(divisi);
-    return (
-        <div className="bg-white p-4">
-            <div
-                className="w-full h-80 bg-gradient-to-t from-primary4 to-[#31BFE3] rounded-lg group hover:scale-105 relative transition duration-300 overflow-hidden flex justify-center shadow-md"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay={props.delay}
-                onClick={() => setIsOpen(true)}
-            >
-                {/* <div className="p-6 flex items-center">
-                    <h1 className="text-white font-montserrat text-2xl font-bold group-hover:text-black transition duration-300">
-                        {props.nama}
-                    </h1>
-                </div> */}
-                <img
-                    src={`${window.location.origin}/${props.image_path}`}
-                    alt=""
-                    className="w-full h-full object-cover group-hover:scale-125 duration-700 ease-in-out"
-                />
-                <div className="w-full h-full absolute bg-gradient-to-t from-primary4 to-transparent -bottom-10"></div>
-                <h1
-                    className="text-slate-300 font-montserrat text-3xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6 
-                group-hover:text-white transition duration-300 group-hover:scale-105 text-center"
-                >
-                    {props.judul}
-                </h1>
-            </div>
+    const divisi = divisiData.find((d) => d.id === props.div_id) || { nama: "Divisi Tidak Diketahui" };
+    console.log(props)
 
-            {isOpen && (
-                <div
-                    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10 font-montserrat"
-                    onClick={() => {
-                        setIsOpen(false);
-                        console.log(isOpen);
-                    }}
+    return (
+        <article className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button 
+                onClick={() => setIsOpen(true)}
+                className="w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-primary4"
+                aria-label={`Buka detail program kerja ${props.judul}`}
+            >
+                <div className="relative aspect-video overflow-hidden rounded-t-xl">
+                    <img
+                        src={`${window.location.origin}/${props.image_path}`}
+                        alt={`Cover program kerja ${props.judul}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        onError={(e) => {
+                            e.target.src = '/placeholder-proker.jpg'; // Ganti dengan fallback image
+                        }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
+                </div>
+                
+                <div className="p-6 space-y-2">
+                    <span className="text-sm md:text-xl lg:text-xl bg-gradient-to-r py-16 from-primary7 to-primary5 bg-clip-text text-transparent font-montserrat">
+                        {divisi.nama}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900 line-clamp-2">
+                        {props.judul}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                        {props.start} - {props.end}
+                    </p>
+                </div>
+            </button>
+
+            {isOpen && createPortal(
+                <div 
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-title"
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm transition-all"
                 >
-                    <div
-                        className="w-4/5 max-h-[80vh] p-6 bg-white rounded-2xl shadow-xl relative overflow-auto scroll-smooth scrollbar-hidden"
-                        data-aos="zoom-in"
-                        data-aos-duration="400"
-                    >
-                        <button className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 z-20">
-                            <X size={20} />
+                    <div 
+                        className="absolute inset-0 bg-black/30" 
+                        onClick={() => setIsOpen(false)}
+                    />
+                    
+                    <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                        <button
+                            className="absolute top-4 right-4 p-1 rounded-full hover:bg-gray-100 text-gray-500"
+                            onClick={() => setIsOpen(false)}
+                            aria-label="Tutup modal"
+                        >
+                            <X size={24} />
                         </button>
-                        <div className="flex md:flex-row flex-col gap-6">
-                            <div className="flex-1 aspect-square bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg md:mb-0 mb-4 text-primary5 flex justify-center">
-                                <img
-                                    src={`${window.location.origin}/${props.image_path}`}
-                                    alt=""
-                                    className="h-full w-full object-cover rounded-xl"
-                                />
-                            </div>
-                            <div className="text-primary5 md:w-3/5">
-                                <div className="border-b-[2px] border-primary5 pb-4">
-                                    <h2 className="text-2xl md:text-4xl font-bold ">
-                                        {props.nama}
-                                    </h2>
-                                    <p className="text-sm md:text-xl">
-                                        {props.start} - {props.end}
-                                    </p>
-                                    <p className="text-sm italic">
+                        
+                        <div className="md:w-3/5 p-6 md:p-8 space-y-6 overflow-y-auto">
+                        <div className="md:w-2/5 bg-gray-100">
+                            <img
+                                src={`${window.location.origin}/${props.image_path}`}
+                                alt={`Detail program kerja ${props.judul}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                            <header>
+                                <h1 
+                                    id="modal-title"
+                                    className="text-3xl font-bold text-gray-900 mb-2"
+                                >
+                                    {props.judul}
+                                </h1>
+                                <div className="space-y-1 text-sm text-gray-500">
+                                    <p>{props.start} - {props.end}</p>
+                                    <p className="font-medium text-primary4">
                                         {divisi.nama}
                                     </p>
                                 </div>
-                                <h1 className="text-2xl font-bold mt-4 ">
-                                    Tujuan
-                                </h1>
+                            </header>
 
-                                <p className="text-sm text-justify whitespace-pre-line">
-                                    {props.tujuan}
-                                </p>
-                                <h1 className="text-2xl font-bold mt-4 ">
-                                    Deskripsi
-                                </h1>
-                                <p className="text-sm text-justify whitespace-pre-line">
-                                    {props.deskripsi}
-                                </p>
-                            </div>
+                            <section className="space-y-4">
+                                <div>
+                                    <h2 className="text-xl font-semibold mb-2">Tujuan</h2>
+                                    <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                                        {props.tujuan}
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h2 className="text-xl font-semibold mb-2">Deskripsi</h2>
+                                    <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                                        {props.deskripsi}
+                                    </p>
+                                </div>
+                            </section>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
-        </div>
+        </article>
     );
 }

@@ -8,13 +8,13 @@ export default function SakarsaDaily({ Proker, Divisi }) {
         <div
             data-aos="fade-up"
             data-aos-duration="800"
-            className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 pb-8 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
+            className="max-w-xl md:max-w-7xl mx-auto sm:px-6 lg:px-8 py-5 pb-8 bg-sakarsaBlue mt-8 rounded-3xl shadow-md relative"
         >
             <div className="relative">
-                <h1 className="font-rowdies text-4xl md:text-5xl text-fontcolors">
+                <h1 className="px-5 pt-4 font-rowdies text-4xl md:text-5xl text-fontcolors">
                     Sakarsa’s
                 </h1>
-                <h3 className="font-montserrat text-lg md:text-xl text-fontcolors pb-10">
+                <h3 className="px-5 font-montserrat text-lg md:text-xl text-fontcolors pb-10">
                     Weekly Daily
                 </h3>
 

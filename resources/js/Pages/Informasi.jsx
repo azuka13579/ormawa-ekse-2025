@@ -6,7 +6,7 @@ import BlurText from "../Components/BlurText";
 
 export default function Informasi(props) {
     const informasi = props.informasi;
-    console.log(informasi.length);
+    //console.log(informasi.length);
     return (
         <div>
             <Navbar></Navbar>

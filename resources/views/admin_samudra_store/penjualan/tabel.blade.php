@@ -9,40 +9,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body class="bg-gray-100">
-    <nav class="bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white shadow-lg">
-        <div class="container font-montserrat mx-auto flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center space-x-3">
-                <img src="../../img/Samudrastore.png" alt="Samudra Store" class="max-w-[80px] md:max-w-[100px] h-auto">
-                <h1 class="text-2xl font-bold tracking-tight text-primary5">Halo {{ $nama_admin->name }}!</h1>
-            </div>
+    <nav class="bg-gray-800 border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left Section -->
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <img src="../../img/Samudrastore.png" alt="Samudra Store" class="h-10 w-auto mr-6">
+                    
+                    <!-- Navigation -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="{{ route('admin.products.index') }}" class="text-gray-300 hover:text-white px-1 pt-1 text-sm font-medium flex items-center space-x-2 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                            </svg>
+                            <span>Manajemen Produk</span>
+                        </a>
+                        
+                        <a href="{{ route('admin.products.penjualan') }}" class="text-gray-300 hover:text-white px-1 pt-1 text-sm font-medium flex items-center space-x-2 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Laporan Penjualan</span>
+                        </a>
+                    </div>
+                </div>
     
-            <!-- Navigasi -->
-            <div class="hidden md:flex space-x-6">
-                <a href="{{ route('admin.products.index') }}" class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-blue-700/30 transition-all duration-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                    </svg>
-                    <span>Produk</span>
-                </a>
-                <a href="{{ route('admin.products.penjualan') }}" class="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-blue-700/30 transition-all duration-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                    </svg>
-                    <span>Penjualan</span>
-                </a>
-            </div>
+                <!-- Right Section -->
+                <div class="flex items-center space-x-6">
+                    <!-- User Greeting -->
+                    <div class="text-sm text-gray-400">
+                        <span class="hidden sm:inline">Admin: </span>{{ $nama_admin->name }}
+                    </div>
     
-            <!-- Logout -->
-            <form action="{{ route('admin.logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="flex items-center space-x-2 bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
-                    </svg>
-                    <span>Logout</span>
-                </button>
-            </form>
+                    <!-- Logout -->
+                    <form action="{{ route('admin.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-gray-300 hover:text-white flex items-center space-x-2 group transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                            </svg>
+                            <span class="text-sm font-medium">Keluar</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -475,7 +486,7 @@ document.querySelectorAll(".toggle-diterima-btn").forEach(button => {
             return response.json();
         })
         .then(data => {
-            console.log("Response:", data);
+            //console.log("Response:", data);
             if (!data.success) {
                 // Revert UI changes if server reports failure
                 this.setAttribute("data-status", currentStatus);

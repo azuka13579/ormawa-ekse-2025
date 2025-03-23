@@ -92,8 +92,7 @@ export default function Home({ proker, informasi }) {
                                 Ormawa Eksekutif PKU IPB
                             </span>{" "}
                             merupakan organisasi kemahasiswaan di lingkup
-                            Pendidikan Kompetensi Umum yang dikhususkan untuk
-                            mahasiswa tingkat PKU IPB. Fungsinya melibatkan
+                            Pendidikan Kompetensi Umum yang dikhususkan dari, oleh, dan untuk mahasiswa tingkat PKU IPB. Fungsinya melibatkan
                             pemberian kesejahteraan penanganan segala
                             problematika yang dialami mahasiswa PKU IPB.
                         </p>
@@ -119,8 +118,8 @@ export default function Home({ proker, informasi }) {
                             Peran Ormawa Eksekutif PKU IPB
                         </h2>
                         <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
-                            Perannya sangat signifikan dalam kehidupan kampus
-                            mahasiswa PKU, dengan pergerakan, pengembangan,
+                            Perannya sangat signifikan dalam 4 Pilar kehidupan kampus
+                            mahasiswa PKU, yaitu dengan pergerakan, pengembangan,
                             pelayanan, dan pengabdian. Dengan demikian,
                             organisasi ini bukan hanya berfungsi sebagai
                             penanganan masalah, tetapi juga sebagai penggerak
@@ -226,7 +225,10 @@ export default function Home({ proker, informasi }) {
             <Visi />
             <Misi />
             {/* Konten lain */}
+            <div className="p-3">
+
             <SakarsaDaily Proker={proker} />
+            </div>
             <div className="flex flex-row justify-between items-end mt-8 md:px-16 px-4">
                 <div
                     className="space-y-3"
