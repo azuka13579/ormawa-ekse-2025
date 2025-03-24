@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Disallow: /masuk
+Disallow: /samudra-store/admin/masuk/
