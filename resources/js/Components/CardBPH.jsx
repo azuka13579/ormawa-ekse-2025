@@ -1,26 +1,26 @@
 import React from "react";
 
-export default function CardBPH(props) {
+export default function CardBPH({ image_path, nama, jabatan, delay }) {
     return (
-        <div className="">
-            <div
-                className="h-[370px] max-w-[300px] bg-primary7 from-primary4 to-[#31BFE3] rounded-lg flex items-end group hover:scale-105 overflow-hidden shadow-primary4 shadow-md"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay={props.delay}
-            >
-                <div className="flex flex-col relative">
-                    <img
-                        src={`${window.location.origin}/${props.image_path}`}
-                        alt=""
-                        className={`left-5 top-16 relative scale-[1.0] w-full`}
-                    />
-                    <h1 className="text-white font-montserrat text-lg font-bold drop-shadow-lg absolute bottom-20 left-6 right-6">
-                        {props.nama}
+        <div
+            className="h-[400px] w-[300px] bg-primary7 rounded-lg flex items-end group hover:scale-105 overflow-hidden shadow-md shadow-primary4"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay={delay}
+        >
+            <div className="relative w-full h-full flex flex-col items-center p-4">
+                <img
+                    src={`${window.location.origin}/${image_path}`}
+                    alt={nama}
+                    className="w-full h-[350px] object-cover rounded-t-lg absolute bottom-0"
+                />
+                <div className="absolute bottom-10 left-4 right-4 text-center">
+                    <h1 className="text-primary4 font-montserrat text-lg font-bold drop-shadow-lg">
+                        {nama}
                     </h1>
-                    <h1 className="text-white font-montserrat text-lg font-light drop-shadow-lg absolute bottom-6 left-6 right-6">
-                        {props.jabatan}
-                    </h1>
+                    <h2 className="text-primary4 font-montserrat text-md font-light drop-shadow-lg mt-1">
+                        {jabatan}
+                    </h2>
                 </div>
             </div>
         </div>
