@@ -48,14 +48,14 @@ export default function Divisicopy(props) {
                             data-aos-duration="800"
                         />
                         <div
-                            className="font-rowdies font-bold text-5xl md:text-6xl text-center md:text-left"
+                            className="font-rowdies font-bold text-4xl md:text-6xl text-center md:text-left"
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
                             <p>{props.divisi}</p>
                         </div>
                         <div
-                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify max-w-[1000px]"
+                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify max-w-[350px]"
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="200"
@@ -81,7 +81,7 @@ export default function Divisicopy(props) {
                         <img
                             src={`${window.location.origin}/${props.deskripsi.image_path}`}
                             alt="Gambar di kanan tengah"
-                            className="w-4/5 h-auto object-cover max-w-[600px] hover:scale-110 transition duration-1000"
+                            className="w-4/5 h-auto object-cover max-w-[500px] hover:scale-110 transition duration-1000"
                         />
                     </div>
                 </div>
