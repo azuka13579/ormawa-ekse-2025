@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import Card4 from "../Components/CardPrestasi";
 import SakarsaDaily from "../Components/SakarsaDaily";
 import Footer from "../Components/Footer";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 import Visi from "../Components/Visi";
 import Misi from "../Components/Misi";
 import { useState } from "react";
@@ -13,10 +13,35 @@ export default function Home({ proker, informasi }) {
     const [showFull, setShowFull] = useState(false);
 
     return (
+        
         <div>
+            
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar></Navbar>
-                <Head title="Ormawa Eksekutif PKU IPB" />
+                <Head title="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa - Organisasi Mahasiswa PPKU">
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB. Bergabunglah dengan kami!" />
+    <meta name="keywords" content="Ormawa Eksekutif PKU, Samudra Wirakarsa, Organisasi Mahasiswa IPB, PPKU IPB, BEM PPKU, organisasi kampus IPB, mahasiswa IPB, kegiatan mahasiswa IPB" />
+    <meta name="author" content="Biro Riset Pengembangan" />
+    
+    <meta property="og:title" content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa" />
+    <meta property="og:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB." />
+    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/home1.png" />
+    <meta property="og:url" content="https://ormawaeksekutifpku.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa" />
+    <meta name="twitter:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB." />
+    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/home1.png" />
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ormawaeksekutifpku.com" />
+</Head>
+
+
 
                 {/* Bagian Header untuk mobile */}
                 <div className="md:hidden bg-primary1 p-3 mb-20">

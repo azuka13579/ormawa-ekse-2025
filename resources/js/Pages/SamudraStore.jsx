@@ -19,11 +19,35 @@ export default function SamudraStore() {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const { products } = usePage().props;
     const cartLength = cart.length;
-    const productLength = products.length;
+    const productLength = products.length;  
 
     return (
         <div>
-            <Head title="Samudra Store" />
+           <Head title="Samudra Store | Samudra Wirakarsa - Belanja Kebutuhan KM IPB">
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Samudra Store adalah toko digital yang menyediakan berbagai produk untuk KM PKU IPB. Dikelola oleh Departemen Ekonomi Kreatif Ormawa Eksekutif PKU IPB, mendukung ekonomi kreatif mahasiswa, dan menghasilkan income generation." />
+    <meta name="keywords" content="Samudra Store, Ormawa Eksekutif PKU, Samudra Wirakarsa, Organisasi Mahasiswa IPB, PPKU IPB, Jas Lab IPB, Jual Kebutuhan KM IPB, Toko Online IPB" />
+    <meta name="author" content="Biro Riset Pengembangan" />
+    
+    <meta property="og:title" content="Samudra Store | Belanja Kebutuhan KM IPB" />
+    <meta property="og:description" content="Samudra Store adalah toko digital yang menyediakan berbagai produk untuk KM PKU IPB. Bergabunglah dan dukung ekonomi kreatif mahasiswa!" />
+    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/samudrastore.png" />
+    <meta property="og:url" content="https://ormawaeksekutifpku.com/samudra-store" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Samudra Store" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Samudra Store | Belanja Kebutuhan KM IPB" />
+    <meta name="twitter:description" content="Samudra Store adalah toko digital yang menyediakan berbagai produk untuk KM PKU IPB. Dukung ekonomi kreatif mahasiswa dengan belanja di sini!" />
+    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/samudrastore.png" />
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ormawaeksekutifpku.com/samudra-store" />
+</Head>
+
+
             <div className="flex px-10 justify-between py-2 md:shadow-md fixed bg-white mt-0 z-40 w-full">
                 <img
                     src="img/Samudra.png"
@@ -178,11 +202,9 @@ export default function SamudraStore() {
                         <span className="font-bold">Samudera Store</span> adalah
                         salah satu program dari{" "}
                         <span className="font-bold">
-                            Departemen Ekonomi Kreatif
+                            Departemen Ekonomi Kreatif.
                         </span>{" "}
-                        yang berfokus pada kewirausahaan. Program ini dirancang
-                        untuk menciptakan peluang bisnis yang inovatif dan
-                        berkelanjutan.{" "}
+                        Program kerja ini bertujuan mengembangkan toko usaha digital yang menyediakan berbagai produk dan jasa untuk memenuhi kebutuhan Ormawa Eksekutif PKU IPB dan KM PKU IPB, sekaligus membangun platform terintegrasi, memberdayakan anggota Departemen Ekonomi Kreatif, menciptakan ekosistem ekonomi internal yang mandiri, serta menghasilkan income generation untuk mendukung program kerja organisasi.
                     </p>
                 </div>
             </div>

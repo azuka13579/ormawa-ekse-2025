@@ -33,7 +33,31 @@ export default function Tentang(props) {
 
     return (
         <div className="">
-            <Head title="Ormawa Eksekutif PKU IPB" />
+            <Head title="Tentang Kami | Ormawa Eksekutif PKU IPB - Samudra Wirakarsa">
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa PPKU IPB yang fokus pada kesejahteraan mahasiswa, pengembangan potensi, dan inovasi ekonomi kreatif. Kenali lebih dalam tentang kami!" />
+    <meta name="keywords" content="Ormawa Eksekutif PKU, Samudra Wirakarsa, Organisasi Mahasiswa IPB, PPKU IPB, Mahasiswa IPB, Pengembangan Mahasiswa, Ekonomi Kreatif, BEM PPKU" />
+    <meta name="author" content="Biro Riset Pengembangan" />
+    
+    <meta property="og:title" content="Tentang Kami | Ormawa Eksekutif PKU IPB" />
+    <meta property="og:description" content="Ormawa Eksekutif PKU IPB adalah organisasi yang mendukung kesejahteraan dan pengembangan mahasiswa PPKU IPB. Kenali lebih jauh visi dan program kami!" />
+    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/Home1.png" />
+    <meta property="og:url" content="https://ormawaeksekutifpku.com/tentang" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ormawa Eksekutif PKU IPB" />
+    <meta property="og:locale" content="id_ID" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tentang Kami | Ormawa Eksekutif PKU IPB" />
+    <meta name="twitter:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan, inovasi, dan pengembangan potensi mahasiswa IPB." />
+    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/Home1.png" />
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ormawaeksekutifpku.com/tentang" />
+</Head>
+
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar />
 
