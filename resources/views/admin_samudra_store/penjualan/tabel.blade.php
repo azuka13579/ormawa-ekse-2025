@@ -362,7 +362,7 @@
         const statusCell = cells[9];
         if (statusCell.querySelector('span')) {
             const statusText = statusCell.querySelector('span').textContent.trim();
-            statusPembayaran = statusText.includes('Valid') ? 'Status Pembayaran Valid' : 'Status Pembayaran Tidak Valid';
+            statusPembayaran = statusText.includes('Tidak') ? 'Status Pembayaran Tidak Valid' : 'Status Pembayaran Valid';
         }
         
         const statusDiterima = cells[10].querySelector('button').textContent.trim().includes('Sudah') ? 'Sudah Diterima KM IPB' : 'Belum Diterima KM IPB';

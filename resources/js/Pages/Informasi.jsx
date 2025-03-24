@@ -11,7 +11,11 @@ export default function Informasi(props) {
         <div>
             <Navbar></Navbar>
             <div className="flex flex-col items-center">
-                <BlurText text="Semua Informasi" delay={100} />
+                <BlurText
+                    text="Semua Informasi"
+                    delay={100}
+                    className="md:text-8xl text-4xl font-bold text-center my-4"
+                />
 
                 <div className="grid grid-cols-2 md:grid-cols-3 xxl:grid-cols-4 w-full gap-6 px-8 pb-4">
                     {informasi.length > 0 ? (

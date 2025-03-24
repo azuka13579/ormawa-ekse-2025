@@ -11,7 +11,7 @@ export default function Tentang(props) {
     // Updated carousel options with center focused settings
     const options = {
         loop: true,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         responsive: {
@@ -22,7 +22,7 @@ export default function Tentang(props) {
             480: {
                 items: 1,
                 stagePadding: 50,
-            }
+            },
         },
         nav: false,
         dots: true,
@@ -30,7 +30,7 @@ export default function Tentang(props) {
         center: true,
         margin: 0,
     };
-    
+
     return (
         <div className="">
             <Head title="Ormawa Eksekutif PKU IPB" />
@@ -74,8 +74,8 @@ export default function Tentang(props) {
                                 Pendidikan Kompetensi Umum yang dikhususkan
                                 untuk mahasiswa tingkat PKU IPB. Fungsinya
                                 melibatkan pemberian kesejahteraan penanganan
-                                segala problematika yang dialami
-                                mahasiswa PKU IPB.
+                                segala problematika yang dialami mahasiswa PKU
+                                IPB.
                             </p>
                         </div>
                     </div>
@@ -114,10 +114,7 @@ export default function Tentang(props) {
                     {/* Centered BPH OwlCarousel for mobile */}
                     <div className="flex justify-center">
                         <div className="w-full">
-                            <OwlCarousel
-                                className="owl-theme"
-                                {...options}
-                            >
+                            <OwlCarousel className="owl-theme" {...options}>
                                 <div className="item flex justify-center">
                                     <CardBPH
                                         nama="Fiezha Hasby Ari Widana"
@@ -181,7 +178,7 @@ export default function Tentang(props) {
                         <CardBPH
                             nama="Fatma Dwi Hasanah"
                             jabatan="Wakil Ketua Umum Ormawa Eksekutif PKU"
-                            delay=""
+                            delay="100"
                             image_path="images/bph/wakil.png"
                         ></CardBPH>
                     </div>
@@ -195,19 +192,19 @@ export default function Tentang(props) {
                         <CardBPH
                             nama="Arifatu Dzikra"
                             jabatan="Sekretaris Eksternal Ormawa Eksekutif PKU"
-                            delay=""
+                            delay="100"
                             image_path="images/bph/sekre2.png"
                         ></CardBPH>
                         <CardBPH
                             nama="Dewi Ayu Lestari"
                             jabatan="Bendahara Internal Ormawa Eksekutif PKU"
-                            delay=""
+                            delay="200"
                             image_path="images/bph/bend1.png"
                         ></CardBPH>
                         <CardBPH
                             nama="Nur Fadillah"
                             jabatan="Bendahara Eksternal Ormawa Eksekutif PKU"
-                            delay=""
+                            delay="300"
                             image_path="images/bph/bend2.png"
                         ></CardBPH>
                     </div>
@@ -217,7 +214,10 @@ export default function Tentang(props) {
             {/* sektion2 */}
             <div className="bg-white px-2 md:px-8 py-4 flex flex-col gap-8 mt-8">
                 <div className="flex justify-center">
-                   <BlurText text="Biro"></BlurText>
+                    <BlurText
+                        text="Biro"
+                        className="md:text-8xl text-5xl font-bold"
+                    ></BlurText>
                 </div>
                 <div className="sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
                     {props.biro.map((divisi, index) => (
@@ -233,12 +233,12 @@ export default function Tentang(props) {
                     {/* Centered Biro OwlCarousel for mobile */}
                     <div className="flex justify-center">
                         <div className="w-full">
-                            <OwlCarousel
-                                className="owl-theme"
-                                {...options}
-                            >
+                            <OwlCarousel className="owl-theme" {...options}>
                                 {props.biro.map((divisi, index) => (
-                                    <div key={index} className="item flex justify-center">
+                                    <div
+                                        key={index}
+                                        className="item flex justify-center"
+                                    >
                                         <CardTentang
                                             delay={index * 100}
                                             nama={divisi.divisi}
@@ -251,7 +251,10 @@ export default function Tentang(props) {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <BlurText text="Departemen"></BlurText>
+                    <BlurText
+                        text="Departemen"
+                        className="md:text-8xl text-5xl font-bold"
+                    ></BlurText>
                 </div>
                 <div className="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
                     {props.departemen.map((divisi, index) => (
@@ -267,12 +270,12 @@ export default function Tentang(props) {
                     {/* Centered Departemen OwlCarousel for mobile */}
                     <div className="flex justify-center">
                         <div className="w-full">
-                            <OwlCarousel
-                                className="owl-theme"
-                                {...options}
-                            >
+                            <OwlCarousel className="owl-theme" {...options}>
                                 {props.departemen.map((divisi, index) => (
-                                    <div key={index} className="item flex justify-center">
+                                    <div
+                                        key={index}
+                                        className="item flex justify-center"
+                                    >
                                         <CardTentang
                                             delay={(index % 4) * 100}
                                             nama={divisi.divisi}
@@ -285,7 +288,7 @@ export default function Tentang(props) {
                     </div>
                 </div>
             </div>
-           
+
             <Footer></Footer>
         </div>
     );

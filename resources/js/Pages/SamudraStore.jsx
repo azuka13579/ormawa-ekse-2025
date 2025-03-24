@@ -195,11 +195,18 @@ export default function SamudraStore() {
                     Happy Shopping!
                 </h1>
             </div>
-            <BlurText text="In Sale"></BlurText>
+            <BlurText
+                text="In Sale"
+                className="text-4xl md:text-6xl"
+            ></BlurText>
             {productLength === 0 ? (
-                <BlurText text="COMING SOON!" delay={200} />
+                <BlurText
+                    text="COMING SOON!"
+                    delay={200}
+                    className="text-4xl md:text-6xl mb-8"
+                />
             ) : (
-                <div className="container mx-auto px-4 my-4">
+                <div className="container mx-auto px-4 my-4 mb-8">
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative">
                         {products.map((product, index) => (
                             <ProdukSamudra product={product} index={index} />

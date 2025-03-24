@@ -54,7 +54,7 @@ export default function CardPrestasi(props) {
                     <div
                         data-aos="zoom-in"
                         data-aos-duration="400"
-                        className="bg-white rounded-xl  w-4/5 max-h-[90vh] overflow-y-auto relative scrollbar-hidden"
+                        className="bg-white rounded-xl  md:w-4/5 w-full max-h-[90vh] overflow-y-auto relative scrollbar-hidden"
                     >
                         <button
                             className="sticky top-2 left-full -translate-x-6 bg-white/80 backdrop-blur-sm rounded-full p-1 shadow-sm hover:bg-gray-100 transition-colors"

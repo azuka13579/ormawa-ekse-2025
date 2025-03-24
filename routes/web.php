@@ -17,9 +17,12 @@ use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ProductController;
+
+// -------------------Error-------------------
 Route::fallback(function () {
     return Inertia::render('Errors/404');
 });
+
 Route::middleware(['throttle:10,1'])->group(function(){
     
     // -------------------WEBSITE ORMAWAEKSE-------------------

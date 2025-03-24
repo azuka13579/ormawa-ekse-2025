@@ -23,7 +23,7 @@ export default function Divisicopy(props) {
             480: {
                 items: 1,
                 stagePadding: 50,
-            }
+            },
         },
         nav: false,
         dots: true,
@@ -31,7 +31,6 @@ export default function Divisicopy(props) {
         center: true,
         margin: 0,
     };
-    
 
     return (
         <div>
@@ -118,30 +117,29 @@ export default function Divisicopy(props) {
                             />
                         ))}
                     </div>
-                    
-                                <div className="sm:hidden block w-full">
-                                    {/* Centered Biro OwlCarousel for mobile */}
-                                    <div className="flex justify-center">
-                                        <div className="w-full">
-                                            <OwlCarousel
-                                                className="owl-theme"
-                                                {...options}
-                                            >
-                                                {props.data.map((kapten, index) => (
-                                                    <div key={index} className="item flex justify-center">
-                                                        <Cardkapten
-                                                            key={index}
-                                                            delay={index * 100}
-                                                            no={index + 1}
-                                                            {...kapten}
-                                                        />
-                                                    </div>
-                                                ))}
-                                            </OwlCarousel>
+
+                    <div className="sm:hidden block w-full">
+                        {/* Centered Biro OwlCarousel for mobile */}
+                        <div className="flex justify-center">
+                            <div className="w-full">
+                                <OwlCarousel className="owl-theme" {...options}>
+                                    {props.data.map((kapten, index) => (
+                                        <div
+                                            key={index}
+                                            className="item flex justify-center"
+                                        >
+                                            <Cardkapten
+                                                key={index}
+                                                delay={index * 100}
+                                                no={index + 1}
+                                                {...kapten}
+                                            />
                                         </div>
-                                    </div>
-                                </div>
-                    
+                                    ))}
+                                </OwlCarousel>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Anggota */}
@@ -160,8 +158,11 @@ export default function Divisicopy(props) {
                     >
                         {props.divisi || "Nama Divisi"}
                     </h1>
-                    <BlurText text="Coming Sooon!" />
-                   {/*<imageSlider images={props.anggota} />*/}
+                    <BlurText
+                        text="Coming Soon!!!"
+                        className="text-4xl md:text-6xl my-14"
+                    />
+                    {/* <ImageSlider images={props.anggota} /> */}
                 </div>
             </div>
 
@@ -208,40 +209,37 @@ export default function Divisicopy(props) {
                     </h1>
                 </div>
                 <div className="sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
-                                    {props.proker.map((proker, index) => (
-                                        <Cardproker
+                    {props.proker.map((proker, index) => (
+                        <Cardproker
+                            key={index}
+                            judul={proker.namasingkatan}
+                            delay={index % 2 === 0 ? "" : "150"}
+                            {...proker}
+                        />
+                    ))}
+                </div>
+                <div className="sm:hidden block w-full">
+                    {/* Centered Biro OwlCarousel for mobile */}
+                    <div className="flex justify-center">
+                        <div className="w-full">
+                            <OwlCarousel className="owl-theme" {...options}>
+                                {props.proker.map((proker, index) => (
+                                    <div
                                         key={index}
-                                        judul={proker.namasingkatan}
-                                        delay={index % 2 === 0 ? "" : "150"}
-                                        {...proker}
+                                        className="item flex justify-center"
+                                    >
+                                        <Cardproker
+                                            key={index}
+                                            judul={proker.namasingkatan}
+                                            delay={index % 2 === 0 ? "" : "150"}
+                                            {...proker}
                                         />
-                                    ))}
-                                </div>
-                                <div className="sm:hidden block w-full">
-                                    {/* Centered Biro OwlCarousel for mobile */}
-                                    <div className="flex justify-center">
-                                        <div className="w-full">
-                                            <OwlCarousel
-                                                className="owl-theme"
-                                                {...options}
-                                            >
-                                                {props.proker.map((proker, index) => (
-                                                    <div key={index} className="item flex justify-center">
-                                                        <Cardproker
-                                                            key={index}
-                                                            judul={proker.namasingkatan}
-                                                            delay={index % 2 === 0 ? "" : "150"}
-                                                            {...proker}
-                                                        />
-                                                    </div>
-                                                ))}
-                                            </OwlCarousel>
-                                        </div>
                                     </div>
-                                </div>
-                
-                
-
+                                ))}
+                            </OwlCarousel>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <Footer />
