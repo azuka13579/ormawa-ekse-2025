@@ -3,7 +3,7 @@ import React from "react";
 export default function CardBPH({ image_path, nama, jabatan, delay }) {
     return (
         <div
-            className="h-[400px] w-[300px] bg-primary7 rounded-lg flex items-end group hover:scale-105 overflow-hidden shadow-md shadow-primary4"
+            className="h-[380px] w-[270px] bg-primary7 rounded-lg flex items-end group hover:scale-105 overflow-hidden shadow-md shadow-primary4"
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay={delay}

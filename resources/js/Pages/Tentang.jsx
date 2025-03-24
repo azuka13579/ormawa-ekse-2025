@@ -206,7 +206,7 @@ export default function Tentang(props) {
                             image_path="images/bph/wakil.png"
                         ></CardBPH>
                     </div>
-                    <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
+                    <div className="grid md:grid-cols-4 gap-6 sm:grid-cols-2 grid-cols-1 place-items-center px-4 md:px-8">
                         <CardBPH
                             nama="Tedy Kusuma Hidayat"
                             jabatan="Sekretaris Internal Ormawa Eksekutif PKU"
