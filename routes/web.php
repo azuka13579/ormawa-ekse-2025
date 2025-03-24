@@ -23,7 +23,7 @@ Route::fallback(function () {
     return Inertia::render('Errors/404');
 });
 
-Route::middleware(['throttle:10,1'])->group(function(){
+Route::middleware(['throttle:30,1'])->group(function(){
     
     // -------------------WEBSITE ORMAWAEKSE-------------------
     // Home

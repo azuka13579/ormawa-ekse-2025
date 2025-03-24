@@ -4,7 +4,7 @@ export default function Cardkapten(props) {
     return (
         <div className="">
             <div
-                className="w-[300px] h-[400px] bg-primary7 from-primary4 to-[#31BFE3] rounded-lg flex 
+                className="w-[300px] h-[400px] bg-primary7 rounded-lg flex 
                 items-center justify-center group hover:scale-105 overflow-hidden shadow-primary4 shadow-md relative "
                 data-aos="fade-up"
                 data-aos-duration="800"
