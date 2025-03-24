@@ -55,7 +55,7 @@ export default function Divisicopy(props) {
                             <p>{props.divisi}</p>
                         </div>
                         <div
-                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify max-w-[350px]"
+                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify max-w-[350px] md:max-w-[800px]"
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="200"
