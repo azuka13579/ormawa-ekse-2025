@@ -14,11 +14,11 @@ export default function CardBPH({ image_path, nama, jabatan, delay }) {
                     alt={nama}
                     className="w-full h-[350px] object-cover rounded-t-lg absolute bottom-0"
                 />
-                <div className="absolute bottom-10 left-4 right-4 text-center">
-                    <h1 className="text-primary4 font-montserrat text-lg font-bold drop-shadow-lg">
+                <div className="absolute bottom-4 left-4 right-4">
+                    <h1 className="text-black font-montserrat text-lg font-bold drop-shadow-lg">
                         {nama}
                     </h1>
-                    <h2 className="text-primary4 font-montserrat text-md font-light drop-shadow-lg mt-1">
+                    <h2 className="text-black font-montserrat text-md font-light drop-shadow-lg mt-1">
                         {jabatan}
                     </h2>
                 </div>

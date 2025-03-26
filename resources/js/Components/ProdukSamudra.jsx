@@ -12,6 +12,7 @@ export default function ProductsSamudra({ product, index }) {
     const { addToCart } = useCart();
     const { selectedSizes, setSelectedSize } = useSize();
     const selectedSize = selectedSizes[product.id] || "";
+    const [sizeError, setSizeError] = useState(false);
 
     return (
         <div className="group relative">
@@ -139,9 +140,11 @@ export default function ProductsSamudra({ product, index }) {
                                                         {size}
                                                     </button>
                                                 ))}
+
                                         </div>
                                     </div>
                                 )}
+                                {sizeError && <p className="text-red-500 text-sm mt-2">Silakan pilih ukuran terlebih dahulu!</p>}
 
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between">
@@ -197,6 +200,10 @@ export default function ProductsSamudra({ product, index }) {
 
                                     <button
                                         onClick={() => {
+                                            if (!selectedSize && product.size !== "-") {
+                                                setSizeError(true);
+                                                return;
+                                            }
                                             addToCart(product, quantity);
                                             setIsOpen(false);
                                         }}
