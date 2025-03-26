@@ -88,6 +88,7 @@
             <p><strong>Fakultas:</strong> {{ $order['fakultas'] }}</p>
             <p><strong>Departemen:</strong> {{ $order['departemen'] }}</p>
             <p><strong>WhatsApp:</strong> {{ $order['no_wa'] }}</p>
+            <p><strong>Catatan:</strong> {{ $order['catatan'] }}</p>
         </div>
 
         <h3>DETAIL PRODUK PESANAN</h3>

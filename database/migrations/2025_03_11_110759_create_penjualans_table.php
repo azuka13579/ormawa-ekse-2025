@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('departemen');
             $table->string('email');
             $table->string('no_wa');
+            $table->string('catatan');
             $table->jsonb(
                 'produk'
             );

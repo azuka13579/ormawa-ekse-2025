@@ -92,11 +92,13 @@ export default function Home({ proker, informasi }) {
             </div>
 
             {/* Animasi untuk bagian kedua */}
+            <div className="p-3">
+
             <div
                 data-aos="fade-up"
                 data-aos-duration="800"
                 className="px-5 py-9 md:px-10 md:py-10 md:max-w-screen-xl max-w-96 max-h-[1200px] mx-auto bg-fontcolors rounded-3xl shadow-md"
-            >
+                >
                 <div className="text-center mb-8">
                     <h1 className="md:text-6xl text-4xl font-bold text-white font-rowdies">
                         Selayang Pandang
@@ -124,7 +126,7 @@ export default function Home({ proker, informasi }) {
                     </div>
 
                     {/* Gambar hanya muncul di tampilan mobile */}
-                    <div className="block md:hidden w-full h-auto">
+                    <div className="block md:hidden my-2 w-full h-auto">
                         <img src="img/LineHp.png" alt="Line Image" />
                     </div>
 
@@ -134,7 +136,7 @@ export default function Home({ proker, informasi }) {
                             src="img/Line.png"
                             alt="Line Image"
                             className="w-full h-auto"
-                        />
+                            />
                     </div>
 
                     {/* Kanan */}
@@ -156,6 +158,7 @@ export default function Home({ proker, informasi }) {
                 </div>
             </div>
 
+            </div>
             {/* Animasi teks saat scroll */}
             <div
                 data-aos="fade-up"
@@ -247,8 +250,11 @@ export default function Home({ proker, informasi }) {
                     </div>
                 </div>
             </div>
+            <div className="p-3">
+
             <Visi />
             <Misi />
+            </div>
             {/* Konten lain */}
             <div className="p-3">
 

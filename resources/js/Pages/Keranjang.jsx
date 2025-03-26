@@ -120,6 +120,7 @@ const { data, setData, post, processing } = useForm({
     fakultas: "",
     departemen: "",
     whatsapp: "",
+    catatan: "",
     bukti_transfer: null,
     cart: mergedCart || [], // Tambahkan fallback ke array kosong
     total: Array.isArray(cartData) ? cartData.reduce(
@@ -137,6 +138,7 @@ const sendEmail = async () => {
             departemen: data.departemen,
             whatsapp: data.whatsapp,
             email: data.email,
+            catatan: data.catatan,
             cart: mergedCart,
             total: data.total,
         });
@@ -168,9 +170,50 @@ const sendEmail = async () => {
     // Error popup state
     const [showError, setShowError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-    
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
     const handleSubmitClick = (e) => {
         e.preventDefault();
+        
+        if (!data.email.trim()) {
+            // Show error popup instead of alert
+            setErrorMessage("Email Tidak Boleh Kosong");
+            setShowError(true);
+            return;
+        }else if (!validateEmail(data.email.trim())){
+            setErrorMessage("Masukkan format email dengan benar!");
+            setShowError(true);
+            return;
+        }
+        if (!data.name.trim()) {
+            setErrorMessage("Nama Tidak Boleh Kosong");
+            setShowError(true);
+            return;
+        }
+        if (!data.nim.trim()) {
+            setErrorMessage("NIM Tidak Boleh Kosong");
+            setShowError(true);
+            return;
+        }
+        
+        if (!data.fakultas){
+            setErrorMessage("Fakultas Harap Diisi!");
+            setShowError(true);
+            return;
+        }
+        if (!data.departemen){
+            setErrorMessage("Departemen Harap Diisi!");
+            setShowError(true);
+            return;
+        }
+        if (!data.whatsapp.trim()) {
+            setErrorMessage("No Whatsapp Tidak Boleh Kosong");
+            setShowError(true);
+            return;
+        }
+
         
         if (!data.bukti_transfer) {
             // Show error popup instead of alert
@@ -302,9 +345,10 @@ const sendEmail = async () => {
                                         setData("email", e.target.value)
                                     }
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
-                                    placeholder="email@example.com"
+                                    placeholder="email@gmail.com"
                                     required
                                 />
+                                
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -424,6 +468,29 @@ const sendEmail = async () => {
                                     required
                                 />
                             </div>
+                            
+                            <div>
+    <label 
+        htmlFor="catatan" 
+        className="block text-sm font-medium text-gray-700 mb-2"
+    >
+        Catatan (Wajib Diisi Untuk Pembelian Jas Lab)
+    </label>
+    <textarea
+        id="catatan"
+        value={data.catatan}
+        onChange={(e) => setData("catatan", e.target.value)}
+        className="w-full h-40 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
+        placeholder="Catatan tambahan untuk store [Wajib Diisi Untuk Pembelian Jas Lab - Bordir Nama Maks 7 Huruf (Contoh: SYARIEF)]"
+        required
+        maxLength={250}
+    />
+    {data.catatan.length > 0 && (
+        <p className="text-xs text-gray-500 mt-1">
+            {data.catatan.length} / 250 karakter
+        </p>
+    )}
+</div>
 
                             <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                                 <div className="mb-2 text-sm text-gray-600">
@@ -471,9 +538,7 @@ const sendEmail = async () => {
                     required
                 />
             </label>
-            {errorMessage && (
-                <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
-            )}
+            
                             </div>
                         </div>
 

@@ -46,6 +46,7 @@ class PaymentController extends Controller
             'departemen' => $request->departemen,
             'email' => $request->email,
             'no_wa' => $request->whatsapp,
+            'catatan' => $request->catatan,
             'produk' => $produk,
             'image_path' => $image_path
         ];
@@ -94,6 +95,7 @@ class PaymentController extends Controller
                 'departemen' => $pembeli->departemen,
                 'email' => $pembeli->email,
                 'no_wa' => $pembeli->no_wa,
+                'catatan' => $pembeli->catatan,
                 'produk' => $tmp1,
                 'recipe_path' => $pembeli->image_path,
                 'status' => $pembeli->status,

@@ -116,6 +116,7 @@
                         <th class="p-5 text-left font-bold text-gray-800 px-32">Produk</th>
                         <th class="p-5 text-left font-bold text-gray-800">Total</th>
                         <th class="p-5 text-left font-bold text-gray-800">Resi</th>
+                        <th class="p-5 text-left font-bold text-gray-800">Catatan</th>
                         <th class="p-5 text-center font-bold text-gray-800">Status Pembayaran</th>
                         <th class="p-5 text-center font-bold text-gray-800">Status Terima</th>
                         <th class="p-5 text-center font-bold text-gray-800">Waktu Pembelian</th>
@@ -161,6 +162,7 @@
                      class="w-24 h-24 rounded-md border shadow-sm object-cover transition-transform hover:scale-110">
             </div>
         </td>
+        <td class="p-3 text-gray-700">{{ $pembeli['catatan'] }}</td>
         <td class="p-3 text-center">
             <div class="flex flex-col space-y-3 items-center">
                 @if($pembeli['status'] == 'pending')
@@ -320,135 +322,140 @@
         exportButton.addEventListener("click", function() {
                 exportTableToExcel();
             });
-        
             function exportTableToExcel() {
-    // Show loading state
-    
-    exportButton.innerHTML = '<svg class="animate-spin w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Exporting...';
-    exportButton.disabled = true;
+    try {
+        // Validate export button and XLSX library
+        if (!exportButton) {
+            console.error('Export button not found');
+            return;
+        }
+        if (typeof XLSX === 'undefined') {
+            console.error('XLSX library not loaded');
+            return;
+        }
 
-    // Prepare data array for Excel
-    let data = [];
-    
-    // Add header row
-    const headers = [
-        'Nama', 'NIM', 'Email', 'No WhatsApp', 'Fakultas', 'Departemen', 
-        'Produk', 'Ukuran', 'Jumlah', 'Harga Satuan', 'Total Produk',
-        'Total Belanja', 'Status Pembayaran', 'Status Penerimaan', 'Waktu Pembelian'
-    ];
-    data.push(headers);
-    
-    // Extract data from table rows
-    document.querySelectorAll('#sales-table tbody tr').forEach(row => {
-        const cells = row.querySelectorAll('td');
+        // Show loading state
+        exportButton.innerHTML = `
+            <svg class="animate-spin w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg> 
+            Exporting...
+        `;
+        exportButton.disabled = true;
+
+        // Prepare headers matching the table structure
+        const headers = [
+            'Nama', 'NIM', 'Email', 'No WhatsApp', 'Fakultas', 'Departemen', 
+            'Produk', 'Total', 'Resi', 'Catatan', 'Status Pembayaran', 
+            'Status Terima', 'Waktu Pembelian'
+        ];
+        const data = [headers];
         
-        const nama = cells[0].textContent.trim();
-        const nim = cells[1].textContent.trim();
-        const email = cells[2].textContent.trim();
-        const noWa = cells[3].textContent.trim();
-        const fakultas = cells[4].textContent.trim();
-        const departemen = cells[5].textContent.trim();
-        
-        // Handle products
-        const produkCell = cells[6];
-        const produkItems = produkCell.querySelectorAll('.flex.mb-2');
-        
-        // Parse total belanja (remove currency formatting)
-        const totalBelanjaText = cells[7].textContent.trim().replace('Rp', '').replace(/\./g, '');
-        const totalBelanja = parseFloat(totalBelanjaText);
-        
-        // Status conditions
-        let statusPembayaran = "Pending";
-        const statusCell = cells[9];
-        if (statusCell.querySelector('span')) {
-            const statusText = statusCell.querySelector('span').textContent.trim();
-            statusPembayaran = statusText.includes('Tidak') ? 'Status Pembayaran Tidak Valid' : 'Status Pembayaran Valid';
+        // Extract rows from the table
+        const tableRows = document.querySelectorAll('#sales-table tbody tr');
+        if (tableRows.length === 0) {
+            throw new Error('No data found in the table');
         }
-        
-        const statusDiterima = cells[10].querySelector('button').textContent.trim().includes('Sudah') ? 'Sudah Diterima KM IPB' : 'Belum Diterima KM IPB';
-        const waktuPembelian = cells[11].textContent.trim();
-        
-        // Process products
-        if (produkItems.length > 0) {
-            produkItems.forEach((item, index) => {
-                const namaProduk = item.querySelector('p.text-gray-800').textContent.trim();
-                const infoText = item.querySelector('p.text-base.text-gray-600').textContent;
-                
-                // Extract size and quantity
-                const sizeMatch = infoText.match(/Ukuran:\s*([^\s]+)/);
-                const quantityMatch = infoText.match(/Jumlah:\s*(\d+)/);
-                const ukuran = sizeMatch?.[1] || '';
-                const jumlah = quantityMatch?.[1] || '';
-                
-                // Extract price and subtotal from data attributes
-                const hargaSatuan = parseFloat(item.dataset.price) || 0;
-                const totalProduk = parseFloat(item.dataset.subtotal) || 0;
-                
-                // Build row data
-                const rowData = [
-                    nama, nim, email, noWa, fakultas, departemen,
-                    namaProduk, ukuran, jumlah,
-                    hargaSatuan,
-                    totalProduk,
-                    index === 0 ? totalBelanja : '', // Show total once
-                    index === 0 ? statusPembayaran : '',
-                    index === 0 ? statusDiterima : '',
-                    index === 0 ? waktuPembelian : ''
-                ];
-                
-                data.push(rowData);
-            });
-        } else {
-            // Fallback for rows without products
-            data.push([
-                nama, nim, email, noWa, fakultas, departemen,
-                '', '', '', 0, 0,
-                totalBelanja, statusPembayaran, statusDiterima, waktuPembelian
-            ]);
-        }
-    });
-    
-    // Create workbook and worksheet
-    const ws = XLSX.utils.aoa_to_sheet(data);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Sales Data");
-    
-    // Set column widths and styles
-    const colWidths = [
-        { wch: 20 }, { wch: 15 }, { wch: 25 }, { wch: 15 }, 
-        { wch: 15 }, { wch: 15 }, { wch: 30 }, { wch: 10 }, 
-        { wch: 10 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, 
-        { wch: 20 }, { wch: 20 }, { wch: 20 }
-    ];
-    ws['!cols'] = colWidths;
-    
-    // Format numbers
-    const numberColumns = [8, 9, 10]; // Jumlah, Harga, Total Produk, Total Belanja
-    const range = XLSX.utils.decode_range(ws['!ref']);
-    for (let col = 0; col <= range.e.c; col++) {
-        if (numberColumns.includes(col)) {
-            for (let row = 1; row <= range.e.r; row++) {
-                const cell = XLSX.utils.encode_cell({ r: row, c: col });
-                if (ws[cell] && !isNaN(ws[cell].v)) {
-                    ws[cell].t = 'n'; // Set type to number
-                    ws[cell].z = '#,##0.00'; // Format with thousand separator
-                }
+
+        tableRows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            
+            // Extract basic row data
+            const baseData = {
+                nama: cells[0].textContent.trim(),
+                nim: cells[1].textContent.trim(),
+                email: cells[2].textContent.trim(),
+                noWa: cells[3].textContent.trim(),
+                fakultas: cells[4].textContent.trim(),
+                departemen: cells[5].textContent.trim(),
+                total: cells[7].textContent.trim(),
+                catatan: cells[9].textContent.trim(),
+                statusPembayaran: cells[10].textContent.trim(),
+                statusTerima: cells[11].textContent.trim(),
+                waktuPembelian: cells[12].textContent.trim()
+            };
+
+            // Handle products in the 7th column (Produk)
+            const produkCell = cells[6];
+            const produkItems = produkCell.querySelectorAll('.flex.mb-2');
+
+            if (produkItems.length > 0) {
+                produkItems.forEach((item, index) => {
+                    const namaProduk = item.querySelector('p.text-gray-800')?.textContent.trim() || '';
+                    const infoText = item.querySelector('p.text-base.text-gray-600')?.textContent || '';
+                    
+                    // Extract size and quantity
+                    const sizeMatch = infoText.match(/Ukuran:\s*([^\s]+)/);
+                    const quantityMatch = infoText.match(/Jumlah:\s*(\d+)/);
+                    
+                    // Prepare row data
+                    const rowData = [
+                        baseData.nama, baseData.nim, baseData.email, baseData.noWa, 
+                        baseData.fakultas, baseData.departemen, 
+                        `${namaProduk} (Ukuran: ${sizeMatch?.[1] || ''}, Jumlah: ${quantityMatch?.[1] || ''})`,
+                        index === 0 ? baseData.total : '',
+                        '', // Resi column (left empty)
+                        index === 0 ? baseData.catatan : '',
+                        index === 0 ? baseData.statusPembayaran : '',
+                        index === 0 ? baseData.statusTerima : '',
+                        index === 0 ? baseData.waktuPembelian : ''
+                    ];
+                    
+                    data.push(rowData);
+                });
+            } else {
+                // Fallback for rows without products
+                data.push([
+                    baseData.nama, baseData.nim, baseData.email, baseData.noWa, 
+                    baseData.fakultas, baseData.departemen, 
+                    '', baseData.total, '', baseData.catatan, 
+                    baseData.statusPembayaran, baseData.statusTerima, 
+                    baseData.waktuPembelian
+                ]);
             }
-        }
-    }
-    
-    // Generate Excel file
-    const currentDate = new Date().toISOString().slice(0, 10);
-    XLSX.writeFile(wb, `Samudra_Store_Sales_${currentDate}.xlsx`);
-    
-    // Reset button
-    setTimeout(() => {
-        exportButton.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-        </svg>
-        Export ke Excel`;
+        });
+
+        // Create workbook
+        const ws = XLSX.utils.aoa_to_sheet(data);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Sales Data");
+        
+        // Set column widths
+        const colWidths = [
+            { wch: 20 }, { wch: 15 }, { wch: 25 }, { wch: 15 }, 
+            { wch: 15 }, { wch: 15 }, { wch: 30 }, { wch: 15 }, 
+            { wch: 15 }, { wch: 30 }, { wch: 20 }, { wch: 20 }, { wch: 20 }
+        ];
+        ws['!cols'] = colWidths;
+        
+        // Generate Excel file
+        const currentDate = new Date().toISOString().slice(0, 10);
+        XLSX.writeFile(wb, `Samudra_Store_Sales_${currentDate}.xlsx`);
+        
+        // Reset button
+        setTimeout(() => {
+            exportButton.innerHTML = `
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Export ke Excel
+            `;
+            exportButton.disabled = false;
+        }, 1000);
+
+    } catch (error) {
+        console.error('Export to Excel failed:', error);
+        
+        // Error notification
+        exportButton.innerHTML = `
+            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Export Failed
+        `;
         exportButton.disabled = false;
-    }, 1000);
+    }
 }
 document.querySelectorAll(".toggle-diterima-btn").forEach(button => {
     button.addEventListener("click", function() {

@@ -280,7 +280,7 @@ export default function Tentang(props) {
                         className="md:text-8xl text-5xl font-bold"
                     ></BlurText>
                 </div>
-                <div className="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
+                <div className="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden mb-4">
                     {props.departemen.map((divisi, index) => (
                         <CardTentang
                             key={index}
@@ -290,7 +290,7 @@ export default function Tentang(props) {
                         />
                     ))}
                 </div>
-                <div className="sm:hidden block w-full">
+                <div className="sm:hidden block w-full mb-4">
                     {/* Centered Departemen OwlCarousel for mobile */}
                     <div className="flex justify-center">
                         <div className="w-full">
