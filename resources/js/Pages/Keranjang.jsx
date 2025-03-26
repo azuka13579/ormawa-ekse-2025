@@ -229,7 +229,13 @@ const sendEmail = async () => {
     const handleConfirmSubmit = () => {
         setShowConfirmation(false);
         
-        post("/samudra-store/checkout/payment", {
+        const formData = new FormData();
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+        });
+    
+        post("/samudra-store/checkout/payment", formData, {
+            forceFormData: true, // Agar file dikirim dengan benar
             onSuccess: () => {
                 setBerhasil(true);
             },
@@ -239,6 +245,7 @@ const sendEmail = async () => {
             },
         });
     };
+    
     const handleFileChange = (e) => {
         const file = e.target.files[0];
     
