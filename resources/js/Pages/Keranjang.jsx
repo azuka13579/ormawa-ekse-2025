@@ -241,18 +241,25 @@ const sendEmail = async () => {
     };
     const handleFileChange = (e) => {
         const file = e.target.files[0];
-
+    
         if (file) {
+            const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+            if (!allowedTypes.includes(file.type)) {
+                setErrorMessage("Format file harus JPG, PNG, atau PDF.");
+                return;
+            }
+    
             if (file.size > 4 * 1024 * 1024) { // 4MB dalam byte
                 setErrorMessage("Ukuran file tidak boleh lebih dari 4MB.");
                 return;
             }
-
+    
             setErrorMessage(""); // Reset error jika valid
             setSelectedFileName(file.name);
             setData("bukti_transfer", file);
         }
     };
+    
     
 
     return (
@@ -540,6 +547,8 @@ const sendEmail = async () => {
             </label>
             
                             </div>
+                            {errorMessage && <p className="text-red-500 text-sm mt-2">{errorMessage}</p>}
+
                         </div>
 
                         {/* Submit Button */}
