@@ -235,7 +235,7 @@ const sendEmail = async () => {
         });
     
         post("/samudra-store/checkout/payment", formData, {
-            forceFormData: true, // Agar file dikirim dengan benar
+            
             onSuccess: () => {
                 setBerhasil(true);
             },
@@ -244,6 +244,7 @@ const sendEmail = async () => {
                 setShowError(true);
             },
         });
+        setShowConfirmation(true);
     };
     
     const handleFileChange = (e) => {
