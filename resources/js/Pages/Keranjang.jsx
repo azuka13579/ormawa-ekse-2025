@@ -229,12 +229,9 @@ const sendEmail = async () => {
     const handleConfirmSubmit = () => {
         setShowConfirmation(false);
         
-        const formData = new FormData();
-        Object.keys(data).forEach((key) => {
-            formData.append(key, data[key]);
-        });
+        
     
-        post("/samudra-store/checkout/payment", formData, {
+        post("/samudra-store/checkout/payment",  {
             
             onSuccess: () => {
                 setBerhasil(true);
