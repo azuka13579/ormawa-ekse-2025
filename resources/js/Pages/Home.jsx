@@ -28,14 +28,14 @@ export default function Home({ proker, informasi }) {
     
     <meta property="og:title" content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa" />
     <meta property="og:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB." />
-    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/home1.png" />
+    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/Home1.png" />
     <meta property="og:url" content="https://ormawaeksekutifpku.com" />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa" />
     <meta name="twitter:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB." />
-    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/home1.png" />
+    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/Home1.png" />
 
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ormawaeksekutifpku.com" />

@@ -33,7 +33,7 @@ export default function SamudraStore() {
     
     <meta property="og:title" content="Samudra Store | Belanja Kebutuhan KM IPB" />
     <meta property="og:description" content="Samudra Store adalah toko digital yang menyediakan berbagai produk untuk KM PKU IPB. Bergabunglah dan dukung ekonomi kreatif mahasiswa!" />
-    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/samudrastore.png" />
+    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/Samudrastore.png" />
     <meta property="og:url" content="https://ormawaeksekutifpku.com/samudra-store" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Samudra Store" />
@@ -41,7 +41,7 @@ export default function SamudraStore() {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Samudra Store | Belanja Kebutuhan KM IPB" />
     <meta name="twitter:description" content="Samudra Store adalah toko digital yang menyediakan berbagai produk untuk KM PKU IPB. Dukung ekonomi kreatif mahasiswa dengan belanja di sini!" />
-    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/samudrastore.png" />
+    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/Samudrastore.png" />
 
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ormawaeksekutifpku.com/samudra-store" />
