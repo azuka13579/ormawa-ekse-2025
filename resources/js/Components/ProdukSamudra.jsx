@@ -124,12 +124,10 @@ export default function ProductsSamudra({ product, index }) {
                                                 .map((size) => (
                                                     <button
                                                         key={size}
-                                                        onClick={() =>
-                                                            setSelectedSize(
-                                                                product.id,
-                                                                size
-                                                            )
-                                                        }
+                                                        onClick={() => {
+                                                            setSelectedSize(product.id, size);
+                                                            setSizeError(false);
+                                                        }}
                                                         className={`size-button ${
                                                             selectedSize ===
                                                             size
