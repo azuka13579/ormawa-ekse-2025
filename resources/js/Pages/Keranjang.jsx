@@ -241,7 +241,7 @@ const sendEmail = async () => {
                 setShowError(true);
             },
         });
-        setShowConfirmation(true);
+       
     };
     
     const handleFileChange = (e) => {
