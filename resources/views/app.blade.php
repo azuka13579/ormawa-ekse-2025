@@ -44,7 +44,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Nama Website Anda",
+      "name": "Ormawa Eksekutif PKU IPB | Samudra Wirakarsa",
       "url": "{{ url()->current() }}"
     }
     </script>
