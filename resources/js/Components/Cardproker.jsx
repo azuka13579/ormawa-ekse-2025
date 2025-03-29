@@ -20,12 +20,18 @@ const divisiData = [
 
 export default function Cardproker(props) {
     const [isOpen, setIsOpen] = useState(false);
-    const divisi = divisiData.find((d) => d.id === props.div_id) || { nama: "Divisi Tidak Diketahui" };
-    console.log(props)
+    const divisi = divisiData.find((d) => d.id === props.div_id) || {
+        nama: "Divisi Tidak Diketahui",
+    };
+    console.log(props);
 
     return (
-        <article className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <button 
+        <article
+            className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+            data-aos-duration="800"
+            data-aos="fade-up"
+        >
+            <button
                 onClick={() => setIsOpen(true)}
                 className="w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-primary4"
                 aria-label={`Buka detail program kerja ${props.judul}`}
@@ -37,17 +43,17 @@ export default function Cardproker(props) {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                         onError={(e) => {
-                            e.target.src = '/placeholder-proker.jpg'; // Ganti dengan fallback image
+                            e.target.src = "/placeholder-proker.jpg"; // Ganti dengan fallback image
                         }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 </div>
-                
+
                 <div className="p-6 space-y-2">
                     <span className="text-sm md:text-xl lg:text-xl bg-gradient-to-r py-16 from-primary7 to-primary5 bg-clip-text text-transparent font-montserrat">
                         {divisi.nama}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 line-clamp-2">
+                    <h3 className="text-xl font-bold text-primary5 line-clamp-2">
                         {props.judul}
                     </h3>
                     <p className="text-sm text-gray-500">
@@ -56,70 +62,82 @@ export default function Cardproker(props) {
                 </div>
             </button>
 
-            {isOpen && createPortal(
-                <div 
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="modal-title"
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm transition-all"
-                >
-                    <div 
-                        className="absolute inset-0 bg-black/30" 
-                        onClick={() => setIsOpen(false)}
-                    />
-                    
-                    <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                        <button
-                            className="absolute top-4 right-4 p-1 rounded-full hover:bg-gray-100 text-gray-500"
+            {isOpen &&
+                createPortal(
+                    <div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="modal-title"
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm transition-all"
+                    >
+                        <div
+                            className="absolute inset-0 bg-black/30"
                             onClick={() => setIsOpen(false)}
-                            aria-label="Tutup modal"
+                        />
+
+                        <div
+                            className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+                            data-aos-duration="500"
+                            data-aos="zoom-in"
                         >
-                            <X size={24} />
-                        </button>
-                        
-                        <div className="md:w-3/5 p-6 md:p-8 space-y-6 overflow-y-auto">
-                        <div className="md:w-2/5 bg-gray-100">
-                            <img
-                                src={`${window.location.origin}/${props.image_path}`}
-                                alt={`Detail program kerja ${props.judul}`}
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                            <header>
-                                <h1 
-                                    id="modal-title"
-                                    className="text-3xl font-bold text-gray-900 mb-2"
-                                >
-                                    {props.judul}
-                                </h1>
-                                <div className="space-y-1 text-sm text-gray-500">
-                                    <p>{props.start} - {props.end}</p>
-                                    <p className="font-medium text-primary4">
-                                        {divisi.nama}
-                                    </p>
-                                </div>
-                            </header>
+                            <button
+                                className="absolute top-4 right-4 p-1 rounded-full hover:bg-gray-100 text-gray-500"
+                                onClick={() => setIsOpen(false)}
+                                aria-label="Tutup modal"
+                            >
+                                <X size={24} />
+                            </button>
 
-                            <section className="space-y-4">
-                                <div>
-                                    <h2 className="text-xl font-semibold mb-2">Tujuan</h2>
-                                    <p className="text-gray-600 whitespace-pre-line leading-relaxed">
-                                        {props.tujuan}
-                                    </p>
+                            <div className="md:w-full p-6 md:p-8 overflow-y-auto flex md:flex-row flex-col gap-6">
+                                <div className="md:w-2/5 bg-gray-100 ">
+                                    <img
+                                        src={`${window.location.origin}/${props.image_path}`}
+                                        alt={`Detail program kerja ${props.judul}`}
+                                        className="w-full h-full object-cover rounded-lg"
+                                    />
                                 </div>
+                                <div className="">
+                                    <header>
+                                        <h1
+                                            id="modal-title"
+                                            className="text-3xl font-bold text-primary5 mb-2"
+                                        >
+                                            {props.judul}
+                                        </h1>
+                                        <div className="space-y-1 text-sm text-gray-500">
+                                            <p>
+                                                {props.start} - {props.end}
+                                            </p>
+                                            <p className="font-medium text-primary4">
+                                                {divisi.nama}
+                                            </p>
+                                        </div>
+                                    </header>
+                                    <section className="space-y-4 mt-4">
+                                        <div>
+                                            <h2 className="text-xl font-semibold mb-2">
+                                                Tujuan
+                                            </h2>
+                                            <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                                                {props.tujuan}
+                                            </p>
+                                        </div>
 
-                                <div>
-                                    <h2 className="text-xl font-semibold mb-2">Deskripsi</h2>
-                                    <p className="text-gray-600 whitespace-pre-line leading-relaxed">
-                                        {props.deskripsi}
-                                    </p>
+                                        <div>
+                                            <h2 className="text-xl font-semibold mb-2">
+                                                Deskripsi
+                                            </h2>
+                                            <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                                                {props.deskripsi}
+                                            </p>
+                                        </div>
+                                    </section>
                                 </div>
-                            </section>
+                            </div>
                         </div>
-                    </div>
-                </div>,
-                document.body
-            )}
+                    </div>,
+                    document.body
+                )}
         </article>
     );
 }

@@ -48,13 +48,14 @@
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">
-                            Narahubung (WhatsApp) <span class="text-red-500">*</span>
+                            Narahubung Informasi <span class="text-red-500">*</span>
                         </label>
                         <input type="tel" name="narahubung" required 
                             class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            placeholder="Contoh: 0812-3456-7890"
-                            pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}">
-                        <p class="text-sm text-gray-500 mt-1">Gunakan format: 0812-3456-7890</p>
+                            placeholder="No Wa / Instagram / bebas yang bisa dihubungi"
+                            {{-- pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" --}}
+                            >
+                        <p class="text-sm text-gray-900 mt-1">Contoh : Biro Riset Pengembangan | @nextinpku | 0834-4344-3434</p>
                     </div>
                 </div>
 

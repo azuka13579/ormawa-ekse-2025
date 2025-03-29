@@ -26,8 +26,8 @@ export default function CardTentang(props) {
                     className="md:w-full md:h-full md:object-contain w-full h-auto object-contain group-hover:scale-100 scale-90 transition duration-700 ease-in-out"
                 />
                 <h1
-                    className="text-white font-montserrat text-2xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6
-                group-hover:text-black transition duration-300 group-hover:scale-105"
+                    className="text-slate-100 font-montserrat text-2xl font-bold drop-shadow-lg absolute bottom-6 left-6 right-6
+                group-hover:text-white transition duration-300 group-hover:scale-105"
                 >
                     {props.nama}
                 </h1>
