@@ -11,7 +11,7 @@ export default function InformasiDetail(props) {
         <div className="overflow-hidden">
             <div className="min-h-screen">
                 <Navbar></Navbar>
-                <div className="flex justify-center font-montserrat p-4">
+                <div className="flex justify-center font-montserrat p-5">
                     <div className="md:w-2/3 w-full flex justify-center flex-col gap-6">
                         <div className="">
                             <h1
@@ -61,12 +61,7 @@ export default function InformasiDetail(props) {
                             {informasi.deskripsi}
                         </p>
 
-                        <div
-                            className="bg-primary5/10 p-4 rounded-lg"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-anchor-placement="center-bottom"
-                        >
+                        <div className="bg-primary5/10 p-4 rounded-lg">
                             <p className="text-sm font-semibold text-primary5">
                                 Narahubung Informasi:
                                 <span className="block mt-1 font-normal">
@@ -76,9 +71,6 @@ export default function InformasiDetail(props) {
                         </div>
                         <Link
                             href="/informasi"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
-                            data-aos-anchor-placement="center-bottom"
                             className="bg-primary4 hover:bg-primary5 text-white duration-300 transition p-4 rounded-lg"
                         >
                             Kembali
