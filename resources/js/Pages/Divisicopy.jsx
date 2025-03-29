@@ -39,7 +39,7 @@ export default function Divisicopy(props) {
                 <Navbar />
 
                 <div className="h-full flex flex-1">
-                    <div className="kiri md:w-3/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative items-center">
+                    <div className="kiri md:w-3/5 bg-white text-primary5 h-full flex justify-center gap-10 px-4 md:ml-20 flex-col relative items-start">
                         <img
                             src={`${window.location.origin}/${props.deskripsi.image_path}`}
                             alt="Gambar mobile di tengah"
@@ -48,14 +48,14 @@ export default function Divisicopy(props) {
                             data-aos-duration="800"
                         />
                         <div
-                            className="font-rowdies font-bold text-4xl md:text-6xl text-center md:text-left"
+                            className="font-rowdies font-bold text-4xl md:text-6xl text-center md:text-left block"
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
                             <p>{props.divisi}</p>
                         </div>
                         <div
-                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify max-w-[350px] md:max-w-[800px]"
+                            className="p-5 bg-primary4 text-white md:w-full rounded-xl text-justify  "
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="200"

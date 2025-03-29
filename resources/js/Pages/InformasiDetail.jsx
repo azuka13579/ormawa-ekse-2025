@@ -38,7 +38,7 @@ export default function InformasiDetail(props) {
                             </h1>
                         </div>
                         <div
-                            className="group overflow-hidden rounded-xl"
+                            className="group overflow-hidden rounded-xl flex justify-center"
                             data-aos="fade-up"
                             data-aos-duration="800"
                             data-aos-delay="200"
@@ -46,7 +46,7 @@ export default function InformasiDetail(props) {
                             <img
                                 src={`${window.location.origin}/${informasi.image_path}`}
                                 alt=""
-                                className={`w-full object-cover transition-all duration-700 group-hover:scale-110 overflow-hidden  ${
+                                className={`w-full object-cover transition-all duration-700 group-hover:scale-110 overflow-hidden rounded-xl  ${
                                     isExpanded ? "" : "h-96"
                                 }`}
                                 loading="lazy"
