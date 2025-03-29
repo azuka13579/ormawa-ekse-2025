@@ -29,7 +29,7 @@ export default function Divisicopy(props) {
         dots: true,
         dotsSpeed: 500,
         center: true,
-        margin: 0,
+        margin: 50,
     };
 
     return (
@@ -208,12 +208,12 @@ export default function Divisicopy(props) {
                         Tentang Proker Kami
                     </h1>
                 </div>
-                <div className="sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:grid hidden">
+                <div className="sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:grid hidden">
                     {props.proker.map((proker, index) => (
                         <Cardproker
                             key={index}
                             judul={proker.namasingkatan}
-                            delay={index % 2 === 0 ? "" : "150"}
+                            delay={index % 3 === 0 ? "" : "150"}
                             {...proker}
                         />
                     ))}

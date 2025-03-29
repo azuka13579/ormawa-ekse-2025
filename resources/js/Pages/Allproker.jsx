@@ -7,11 +7,11 @@ export default function Allproker(props) {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="flex flex-col items-center">
-                <h1 className="text-7xl my-4 bg-gradient-to-r from-primary2 to-primary5 text-transparent bg-clip-text font-montserrat font-bold">
+            <div className="flex flex-col items-center p-6">
+                <h1 className="text-7xl pb-6 bg-gradient-to-r from-primary2 to-primary5 text-transparent bg-clip-text font-montserrat font-bold">
                     Semua Program Kerja
                 </h1>
-                <div className="grid grid-cols-3 w-full">
+                <div className="grid-cols-2 md:grid-cols-3 grid gap-6 w-full">
                     {props.proker.map((proker, index) => (
                         <Cardproker
                             key={index}
