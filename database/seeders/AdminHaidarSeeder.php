@@ -20,7 +20,7 @@ class AdminHaidarSeeder extends Seeder
                 'nama' => 'Muhammad Haidar',
                 'nim' => 'M0403241038',
                 'div' => 'Master',
-                'password' => Hash::make('haidarganteng')
+                'password' => Hash::make('melinda123')
             ],[
                 'nama' => 'Kyla Anggrahita Wahyudin',
                 'nim' => 'adkesy1',

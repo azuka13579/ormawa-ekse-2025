@@ -17,6 +17,14 @@ use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ProductController;
+use Spatie\Sitemap\SitemapGenerator;
+
+Route::get('/generate-sitemap', function () {
+    SitemapGenerator::create(config('app.url'))
+        ->writeToFile(public_path('sitemap.xml'));
+
+    return "Sitemap berhasil dibuat!";
+});
 
 // -------------------Error-------------------
 Route::fallback(function () {
