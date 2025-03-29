@@ -9,7 +9,8 @@ export default function CardPrestasi(props) {
 
     return (
         <div className="w-full md:w-full">
-            <div
+            <Link
+                href={"informasi/" + props.judul}
                 className="bg-white text-primary5 font-montserrat flex flex-col rounded-lg group transition duration-300 overflow-hidden shadow-md hover:shadow-lg cursor-pointer"
                 onClick={() => setIsOpen(true)}
                 data-aos="fade-up"
@@ -46,10 +47,10 @@ export default function CardPrestasi(props) {
                         )}
                     </span>
                 </div>
-            </div>
+            </Link>
 
             {/* Modal */}
-            {isOpen && (
+            {/* {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
                     <div
                         data-aos="zoom-in"
@@ -112,7 +113,7 @@ export default function CardPrestasi(props) {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
         </div>
     );
 }

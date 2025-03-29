@@ -15,6 +15,7 @@ use App\Models\Information;
 use App\Models\Proker;
 use App\Models\Div;
 use App\Http\Controllers\AdminSamudraStoreController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ProductController;
 
@@ -27,23 +28,16 @@ Route::middleware(['throttle:30,1'])->group(function(){
     
     // -------------------WEBSITE ORMAWAEKSE-------------------
     // Home
-    Route::get('/', function () {
-        $proker = Proker::all();
-        $informasi = Information::latest()->take(4)->get();
-        return Inertia::render('Home',["proker" => $proker,"informasi" => $informasi]);
-    })->name('home');
+    Route::get('/', [HomeController::class,'index'])->name('home');
     
 // Home - Proker Selengkapnya
-Route::get('/proker', function () {
-     $proker = Proker::latest()->get(); 
-    return Inertia::render('Allproker',["proker" => $proker]);
-})->name('proker');
+Route::get('/proker',[HomeController::class,'proker'])->name('proker');
 
 // Home - Informasinya Selengkapnya
-Route::get('/informasi', function () {
-     $informasi = Information::latest()->get(); 
-    return Inertia::render('Informasi',["informasi" => $informasi]);
-})->name('informasi');
+Route::get('/informasi',[HomeController::class,'informasi'])->name('informasi');
+
+// Home - Informasinya Selengkapnya
+Route::get('/informasi/{judul}', [HomeController::class,'detailinformasi'])->name('detailinformasi');
 
 // Sakarsa Care
 Route::get('/sakarsa-care', function () {
@@ -53,8 +47,9 @@ Route::get('/sakarsa-care', function () {
 // Tentang
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/tentang/{divisi}', [TentangController::class, 'divisi'])->middleware(CheckDivision::class)->name('tentang-divisi');
+
 // -------------------WEBSITE SAMUDRA STORE----------------------
-// Home
+// Samudra Store
 Route::get('/samudra-store', [StoreController::class, 'index'])->name('samudra.store');
 
 // Checkout Keranjang
