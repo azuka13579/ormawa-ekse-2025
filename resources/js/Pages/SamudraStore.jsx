@@ -48,7 +48,16 @@ export default function SamudraStore() {
 </Head>
 
 
-            <div className="flex px-10 justify-between py-2 md:shadow-md fixed bg-white mt-0 z-40 w-full">
+            <div className="flex pr-10 justify-between py-2 md:shadow-md fixed bg-white mt-0 z-40 w-full">
+            <a href="/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary5 font-semibold text-lg flex items-center">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+       Back
+    </a>
                 <img
                     src="img/Samudra.png"
                     alt="Samudra Store"

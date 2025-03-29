@@ -76,7 +76,7 @@ export default function Cardproker(props) {
                         />
 
                         <div
-                            className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+                            className="relative w-full max-w-[80vw] max-h-[90vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row"
                             data-aos-duration="500"
                             data-aos="zoom-in"
                         >
@@ -89,14 +89,14 @@ export default function Cardproker(props) {
                             </button>
 
                             <div className="md:w-full p-6 md:p-8 overflow-y-auto flex md:flex-row flex-col gap-6">
-                                <div className="md:w-2/5 bg-gray-100 ">
+                                <div className="flex-1 bg-gray-100 ">
                                     <img
                                         src={`${window.location.origin}/${props.image_path}`}
                                         alt={`Detail program kerja ${props.judul}`}
                                         className="w-full h-full object-cover rounded-lg"
                                     />
                                 </div>
-                                <div className="">
+                                <div className="md:w-1/2">
                                     <header>
                                         <h1
                                             id="modal-title"
@@ -115,19 +115,19 @@ export default function Cardproker(props) {
                                     </header>
                                     <section className="space-y-4 mt-4">
                                         <div>
-                                            <h2 className="text-xl font-semibold mb-2">
+                                            <h2 className="text-xl font-semibold mb-2 text-primary5">
                                                 Tujuan
                                             </h2>
-                                            <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                                            <p className="text-black whitespace-pre-line leading-relaxed">
                                                 {props.tujuan}
                                             </p>
                                         </div>
 
                                         <div>
-                                            <h2 className="text-xl font-semibold mb-2">
+                                            <h2 className="text-xl font-semibold mb-2 text-primary5">
                                                 Deskripsi
                                             </h2>
-                                            <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                                            <p className="text-black whitespace-pre-line leading-relaxed">
                                                 {props.deskripsi}
                                             </p>
                                         </div>

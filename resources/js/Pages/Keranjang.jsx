@@ -493,7 +493,7 @@ const sendEmail = async () => {
         value={data.catatan}
         onChange={(e) => setData("catatan", e.target.value)}
         className="w-full h-40 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary3 focus:border-primary3"
-        placeholder="Catatan tambahan untuk store [Wajib Diisi Untuk Pembelian Jas Lab - Bordir Nama Maks 7 Huruf (Contoh: SYARIEF)]"
+        placeholder="Catatan tambahan untuk store [Wajib Diisi Untuk Pembelian Jas Lab - Bordir Nama Maks 10 Huruf (Contoh: SYARIEFFAH)]"
         required
         maxLength={250}
     />

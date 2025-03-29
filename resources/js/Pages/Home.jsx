@@ -13,35 +13,64 @@ export default function Home({ proker, informasi }) {
     const [showFull, setShowFull] = useState(false);
 
     return (
-        
         <div>
-            
             <div className="md:h-screen bg-white flex flex-col">
                 <Navbar></Navbar>
                 <Head title="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa - Organisasi Mahasiswa PPKU">
-    <meta charSet="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta name="description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB. Bergabunglah dengan kami!" />
-    <meta name="keywords" content="Ormawa Eksekutif PKU, Samudra Wirakarsa, Organisasi Mahasiswa IPB, PPKU IPB, BEM PPKU, organisasi kampus IPB, mahasiswa IPB, kegiatan mahasiswa IPB" />
-    <meta name="author" content="Biro Riset Pengembangan" />
-    
-    <meta property="og:title" content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa" />
-    <meta property="og:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB." />
-    <meta property="og:image" content="https://ormawaeksekutifpku.com/img/Home1.png" />
-    <meta property="og:url" content="https://ormawaeksekutifpku.com" />
-    <meta property="og:type" content="website" />
+                    <meta charSet="UTF-8" />
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0"
+                    />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa" />
-    <meta name="twitter:description" content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB." />
-    <meta name="twitter:image" content="https://ormawaeksekutifpku.com/img/Home1.png" />
+                    <meta
+                        name="description"
+                        content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB. Bergabunglah dengan kami!"
+                    />
+                    <meta
+                        name="keywords"
+                        content="Ormawa Eksekutif PKU, Samudra Wirakarsa, Organisasi Mahasiswa IPB, PPKU IPB, BEM PPKU, organisasi kampus IPB, mahasiswa IPB, kegiatan mahasiswa IPB"
+                    />
+                    <meta name="author" content="Biro Riset Pengembangan" />
 
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ormawaeksekutifpku.com" />
-</Head>
+                    <meta
+                        property="og:title"
+                        content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa"
+                    />
+                    <meta
+                        property="og:description"
+                        content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB."
+                    />
+                    <meta
+                        property="og:image"
+                        content="https://ormawaeksekutifpku.com/img/Home1.png"
+                    />
+                    <meta
+                        property="og:url"
+                        content="https://ormawaeksekutifpku.com"
+                    />
+                    <meta property="og:type" content="website" />
 
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta
+                        name="twitter:title"
+                        content="Ormawa Eksekutif PKU IPB | Samudra Wirakarsa"
+                    />
+                    <meta
+                        name="twitter:description"
+                        content="Ormawa Eksekutif PKU IPB adalah organisasi mahasiswa tingkat PPKU yang menangani kesejahteraan dan problematika mahasiswa IPB."
+                    />
+                    <meta
+                        name="twitter:image"
+                        content="https://ormawaeksekutifpku.com/img/Home1.png"
+                    />
 
+                    <meta name="robots" content="index, follow" />
+                    <link
+                        rel="canonical"
+                        href="https://ormawaeksekutifpku.com"
+                    />
+                </Head>
 
                 {/* Bagian Header untuk mobile */}
                 <div className="md:hidden bg-primary1 p-3 mb-20">
@@ -90,74 +119,74 @@ export default function Home({ proker, informasi }) {
                     </div>
                 </div>
             </div>
-
             {/* Animasi untuk bagian kedua */}
             <div className="p-3">
-
-            <div
-                data-aos="fade-up"
-                data-aos-duration="800"
-                className="px-5 py-9 md:px-10 md:py-10 md:max-w-screen-xl max-w-96 max-h-[1200px] mx-auto bg-fontcolors rounded-3xl shadow-md"
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    className="px-5 py-9 md:px-10 md:py-10 md:max-w-screen-xl max-w-96 max-h-[1200px] mx-auto bg-fontcolors rounded-3xl shadow-md"
                 >
-                <div className="text-center mb-8">
-                    <h1 className="md:text-6xl text-4xl font-bold text-white font-rowdies">
-                        Selayang Pandang
-                    </h1>
-                    <p className="md:text-2xl text-xl text-white pt-5 font-montserrat">
-                        Ormawa Eksekutif PKU IPB
-                    </p>
-                </div>
-
-                <div className="block md:flex md:space-x-4 font-montserrat md:pl-10 md:pr-10">
-                    {/* Kiri */}
-                    <div className="w-full md:w-1/2">
-                        <h2 className="md:text-3xl text-2xl font-semibold text-white italic">
+                    <div className="text-center mb-8">
+                        <h1 className="md:text-6xl text-4xl font-bold text-white font-rowdies">
+                            Selayang Pandang
+                        </h1>
+                        <p className="md:text-2xl text-xl text-white pt-5 font-montserrat">
                             Ormawa Eksekutif PKU IPB
-                        </h2>
-                        <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
-                            <span className="font-bold">
+                        </p>
+                    </div>
+
+                    <div className="block md:flex md:space-x-4 font-montserrat md:pl-10 md:pr-10">
+                        {/* Kiri */}
+                        <div className="w-full md:w-1/2">
+                            <h2 className="md:text-3xl text-2xl font-semibold text-white italic">
                                 Ormawa Eksekutif PKU IPB
-                            </span>{" "}
-                            merupakan organisasi kemahasiswaan di lingkup
-                            Pendidikan Kompetensi Umum yang dikhususkan dari, oleh, dan untuk mahasiswa tingkat PKU IPB. Fungsinya melibatkan
-                            pemberian kesejahteraan penanganan segala
-                            problematika yang dialami mahasiswa PKU IPB.
-                        </p>
-                    </div>
+                            </h2>
+                            <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
+                                <span className="font-bold">
+                                    Ormawa Eksekutif PKU IPB
+                                </span>{" "}
+                                merupakan organisasi kemahasiswaan di lingkup
+                                Pendidikan Kompetensi Umum yang dikhususkan
+                                dari, oleh, dan untuk mahasiswa tingkat PKU IPB.
+                                Fungsinya melibatkan pemberian kesejahteraan
+                                penanganan segala problematika yang dialami
+                                mahasiswa PKU IPB.
+                            </p>
+                        </div>
 
-                    {/* Gambar hanya muncul di tampilan mobile */}
-                    <div className="block md:hidden my-2 w-full h-auto">
-                        <img src="img/LineHp.png" alt="Line Image" />
-                    </div>
+                        {/* Gambar hanya muncul di tampilan mobile */}
+                        <div className="block md:hidden my-2 w-full h-auto">
+                            <img src="img/LineHp.png" alt="Line Image" />
+                        </div>
 
-                    {/* Gambar hanya muncul di tampilan desktop atau tablet ke atas */}
-                    <div className="justify-center items-center mx-1 hidden md:flex ">
-                        <img
-                            src="img/Line.png"
-                            alt="Line Image"
-                            className="w-full h-auto"
+                        {/* Gambar hanya muncul di tampilan desktop atau tablet ke atas */}
+                        <div className="justify-center items-center mx-1 hidden md:flex ">
+                            <img
+                                src="img/Line.png"
+                                alt="Line Image"
+                                className="w-full h-auto"
                             />
-                    </div>
+                        </div>
 
-                    {/* Kanan */}
-                    <div className="w-full md:w-1/2">
-                        <h2 className="md:text-3xl text-2xl font-semibold text-white italic">
-                            Peran Ormawa Eksekutif PKU IPB
-                        </h2>
-                        <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
-                            Perannya sangat signifikan dalam 4 Pilar kehidupan kampus
-                            mahasiswa PKU, yaitu dengan pergerakan, pengembangan,
-                            pelayanan, dan pengabdian. Dengan demikian,
-                            organisasi ini bukan hanya berfungsi sebagai
-                            penanganan masalah, tetapi juga sebagai penggerak
-                            pengembangan dan kesejahteraan mahasiswa PKU IPB
-                            melalui berbagai kegiatan dan program yang
-                            dijalankan.
-                        </p>
+                        {/* Kanan */}
+                        <div className="w-full md:w-1/2">
+                            <h2 className="md:text-3xl text-2xl font-semibold text-white italic">
+                                Peran Ormawa Eksekutif PKU IPB
+                            </h2>
+                            <p className="md:text-lg text-sm text-white pt-4 max-w-[549px] text-justify">
+                                Perannya sangat signifikan dalam 4 Pilar
+                                kehidupan kampus mahasiswa PKU, yaitu dengan
+                                pergerakan, pengembangan, pelayanan, dan
+                                pengabdian. Dengan demikian, organisasi ini
+                                bukan hanya berfungsi sebagai penanganan
+                                masalah, tetapi juga sebagai penggerak
+                                pengembangan dan kesejahteraan mahasiswa PKU IPB
+                                melalui berbagai kegiatan dan program yang
+                                dijalankan.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
             </div>
             {/* Animasi teks saat scroll */}
             <div
@@ -251,15 +280,14 @@ export default function Home({ proker, informasi }) {
                 </div>
             </div>
             <div className="p-3">
-
-            <Visi />
-            <Misi />
+                <Visi />
+                <Misi />
             </div>
             {/* Konten lain */}
             <div className="p-3">
-
-            <SakarsaDaily Proker={proker} />
+                <SakarsaDaily Proker={proker} />
             </div>
+
             <div className="flex flex-row justify-between items-end mt-8 md:px-16 px-4">
                 <div
                     className="space-y-3"

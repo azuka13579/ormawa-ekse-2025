@@ -2,7 +2,6 @@ import React from "react";
 import { Head } from "@inertiajs/react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { Link } from "@inertiajs/react";
 import BlurText from "../Components/Risves3.0";
 
 export default function SakarsaCare() {
@@ -14,14 +13,14 @@ export default function SakarsaCare() {
             <div className="h-full block md:flex mb-20 mx-auto mt-20 px-4">
                 <div className="w-full sm:w-[550px] max-h-[700px] bg-white text-primary5 h-full flex justify-center gap-6 flex-col">
                     <h1
-                        data-aos="fade-right"
+                        data-aos="fade-up"
                         data-aos-duration="800"
                         className="font-rowdies text-5xl sm:text-7xl text-center md:text-left"
                     >
                         Sakarsa Care
                     </h1>
                     <p
-                        data-aos="fade-right"
+                        data-aos="fade-up"
                         data-aos-duration="1000"
                         className="font-montserrat text-lg sm:text-xl text-center sm:text-left"
                     >
@@ -36,7 +35,7 @@ export default function SakarsaCare() {
                     </p>
                 </div>
                 <div
-                    data-aos="fade-left"
+                    data-aos="fade-in"
                     data-aos-duration="1200"
                     className="flex flex-1 justify-center px-6 sm:px-12"
                 >
