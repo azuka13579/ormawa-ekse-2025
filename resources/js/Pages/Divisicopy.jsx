@@ -43,12 +43,12 @@ export default function Divisicopy(props) {
                         <img
                             src={`${window.location.origin}/${props.deskripsi.image_path}`}
                             alt="Gambar mobile di tengah"
-                            className="w-3/4 md:hidden mt-16"
+                            className="w-3/4 max-md:mx-auto md:hidden mt-16"
                             data-aos="fade-up"
                             data-aos-duration="800"
                         />
                         <div
-                            className="font-rowdies font-bold text-4xl md:text-6xl text-center md:text-left block"
+                            className="font-rowdies max-md:mx-auto font-bold text-4xl md:text-6xl text-center md:text-left block"
                             data-aos="fade-right"
                             data-aos-duration="800"
                         >
