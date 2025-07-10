@@ -212,6 +212,9 @@ export default function Checkout() {
             setShowError(true);
             return;
         }
+        if (!data.catatan) {
+            setData("catatan", "-");
+        }
         if (!data.whatsapp.trim()) {
             setErrorMessage("No Whatsapp Tidak Boleh Kosong");
             setShowError(true);
@@ -498,8 +501,7 @@ export default function Checkout() {
                                     htmlFor="catatan"
                                     className="block text-sm font-medium text-gray-700 mb-2"
                                 >
-                                    Catatan (Wajib Diisi Untuk Pembelian Jas
-                                    Lab)
+                                    Catatan
                                 </label>
                                 <textarea
                                     id="catatan"
