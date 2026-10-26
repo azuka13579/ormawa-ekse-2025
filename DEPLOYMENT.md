@@ -6,7 +6,7 @@ Image aplikasi dibangun oleh GitHub Actions dan dipublikasikan ke GitHub Contain
 ghcr.io/azuka13579/ormawa-ekse-2025:latest
 ```
 
-Image tersedia untuk arsitektur `linux/amd64` dan `linux/arm64`.
+Secara default image dibangun untuk arsitektur `linux/amd64`, yang umum digunakan VPS. Build satu arsitektur menghindari emulasi QEMU sehingga jauh lebih cepat. Jika node VPS memakai ARM, ubah `platforms` di `.github/workflows/container-image.yml` menjadi `linux/arm64` dan gunakan runner ARM.
 
 ## 1. Build image di GitHub
 
@@ -37,7 +37,7 @@ Secret dapat ditambah dengan konfigurasi mail atau layanan eksternal lain menggu
 
 ## 3. Sesuaikan dan deploy
 
-Ubah `APP_URL`, koneksi database, ukuran PVC, serta nama image di `k8s/deployment.yaml`, kemudian jalankan:
+Ubah `APP_URL`, host PostgreSQL, ukuran PVC, serta nama image di `k8s/deployment.yaml`, kemudian jalankan. Nilai `DB_HOST=postgres` mengasumsikan Service PostgreSQL di cluster bernama `postgres`; sesuaikan jika nama Service berbeda atau database berada di luar cluster.
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
@@ -78,3 +78,7 @@ kubectl rollout status deployment/ormawa-ekse
 ```
 
 Untuk deployment yang dapat direproduksi, gunakan tag versi (`:1.0.0`) atau tag commit (`:sha-xxxxxxx`) sebagai pengganti `:latest`.
+
+## Kecepatan build
+
+Build pertama tetap perlu mengunduh base image, paket npm, dependency Composer, dan ekstensi PHP. Build berikutnya menggunakan cache GitHub Actions dan biasanya lebih cepat selama lockfile tidak berubah. Tahap Composer dipisahkan dari source aplikasi agar perubahan kode biasa tidak memasang ulang seluruh dependency.

@@ -15,14 +15,10 @@ FROM composer:2 AS composer
 FROM dunglas/frankenphp:1-php8.3-bookworm AS php-base
 
 RUN install-php-extensions \
-    bcmath \
-    intl \
     mbstring \
     opcache \
     pcntl \
-    pdo_mysql \
-    redis \
-    zip
+    pdo_pgsql
 
 
 FROM php-base AS vendor
@@ -30,11 +26,12 @@ FROM php-base AS vendor
 WORKDIR /app
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-COPY . .
+COPY composer.json composer.lock ./
 RUN composer install \
     --no-dev \
     --no-interaction \
     --no-progress \
+    --no-scripts \
     --prefer-dist \
     --optimize-autoloader
 
@@ -45,7 +42,6 @@ WORKDIR /app
 
 COPY --chown=www-data:www-data . .
 COPY --from=vendor --chown=www-data:www-data /app/vendor ./vendor
-COPY --from=vendor --chown=www-data:www-data /app/bootstrap/cache ./bootstrap/cache
 COPY --from=frontend --chown=www-data:www-data /app/public/build ./public/build
 COPY docker/Caddyfile /etc/caddy/Caddyfile
 COPY docker/php.ini /usr/local/etc/php/conf.d/99-app.ini
@@ -59,6 +55,7 @@ RUN mkdir -p \
         bootstrap/cache \
         /config/caddy \
         /data/caddy \
+    && php artisan package:discover --ansi \
     && ln -sfn /app/storage/app/public /app/public/storage \
     && chown -R www-data:www-data /app/storage /app/bootstrap/cache /config/caddy /data/caddy
 
