@@ -1,0 +1,110 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ormawa-ekse-config
+data:
+  APP_NAME: "Ormawa EKSE"
+  APP_ENV: "production"
+  APP_DEBUG: "false"
+  APP_URL: "https://example.com"
+  APP_TIMEZONE: "Asia/Jakarta"
+  LOG_CHANNEL: "stderr"
+  LOG_LEVEL: "info"
+  DB_CONNECTION: "mysql"
+  DB_HOST: "mysql"
+  DB_PORT: "3306"
+  DB_DATABASE: "ormawa_ekse"
+  SESSION_DRIVER: "database"
+  CACHE_STORE: "database"
+  QUEUE_CONNECTION: "database"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ormawa-ekse-uploads
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ormawa-ekse
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: ormawa-ekse
+  template:
+    metadata:
+      labels:
+        app: ormawa-ekse
+    spec:
+      containers:
+        - name: web
+          image: ghcr.io/azuka13579/ormawa-ekse-2025:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: ormawa-ekse-config
+            - secretRef:
+                name: ormawa-ekse-secret
+          readinessProbe:
+            httpGet:
+              path: /up
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /up
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 33
+            runAsGroup: 33
+          volumeMounts:
+            - name: uploads
+              mountPath: /app/storage/app
+      securityContext:
+        fsGroup: 33
+        fsGroupChangePolicy: OnRootMismatch
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: ormawa-ekse-uploads
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ormawa-ekse
+spec:
+  selector:
+    app: ormawa-ekse
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

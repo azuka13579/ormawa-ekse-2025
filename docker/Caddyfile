@@ -1,0 +1,19 @@
+{
+	auto_https off
+	admin off
+	frankenphp
+}
+
+:8080 {
+	root * /app/public
+	encode zstd br gzip
+
+	php_server {
+		try_files {path} index.php
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}
